@@ -1,0 +1,28 @@
+#cajaUsuarioNoEncontrado {
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    font-family: 'Red Hat Display', sans-serif;
+    margin: 1% 1% 1% auto;
+    text-align: center;
+    float: right;
+}
+
+#cajaUsuarioNoEncontrado img{
+    max-height: 50%;
+    max-width: 27%;
+}
+
+#cajaUsuarioNoEncontrado p{
+    font-size: 110%;
+    font-weight: 450;
+}
+
+#cajaUsuarioNoEncontrado h1{
+    font-size: 120%;
+    font-weight: bold;
+}
