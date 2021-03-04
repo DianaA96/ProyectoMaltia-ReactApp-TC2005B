@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Lateral from './lateral';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Lateral />
+    <p>Prueba</p>
   </React.StrictMode>,
   document.getElementById('root')
 );
