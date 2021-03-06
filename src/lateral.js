@@ -1,15 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import salida from './salida.svg';
 import fondo from './fondo.svg';
 import persona from './persona.svg';
-import './lateral.css';
+import './Lateral.css';
 function Lateral(){
     return(
         <div className='contenedor'>
             <div>
-                <img className='fondo' src={fondo}/>
-                <img className='persona' src={persona}/>
+                <img className='fondo' alt = 'fondoPerfil' src={fondo}/>
+                <img className='persona' alt = 'imagenPerfil' src={persona}/>
             </div>
             <div className='btns'>
                 <div>
@@ -20,7 +19,7 @@ function Lateral(){
                 </div>
             </div>
             <div>
-                <img className='Imgbot' src={salida}/>
+                <img className='Imgbot' alt = 'iconoLogOut' src={salida}/>
             </div>
         </div>
     );
