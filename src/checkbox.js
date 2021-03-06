@@ -1,4 +1,4 @@
-import './checkbox.css'
+import './Checkbox.css'
 
 function CheckBox(){
     return(

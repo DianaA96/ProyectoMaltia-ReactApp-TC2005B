@@ -1,9 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import salida from './salida.svg';
 import fondo from './fondo.svg';
 import persona from './persona.svg';
-import './lateral.css';
+import './Lateral.css';
 function Lateral(){
     return(
         <div className='contenedor'>

@@ -1,4 +1,4 @@
-import './inputBuscar.css'
+import './InputBuscar.css'
 
 function InputBuscar(){
     return(
