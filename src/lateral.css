@@ -1,0 +1,70 @@
+.fondo{
+    /* Ellipse 9 */
+    position: absolute;
+    width: 135px;
+    height: 135px;
+    left: 57px;
+    top: 60px;
+    background:  #0F123F;
+
+}
+.persona{
+    position: absolute;
+    width: 102px;
+    height: 102px;
+    left: 74px;
+    top: 76px;
+
+}
+.Imgbot{
+    /*  */
+
+    position: absolute;
+    width: 45px;
+    height: 52px;
+    left: 127px;
+    top: 850px;
+
+}
+.contenedor{
+    background-color: #0F123F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 900px;
+    width: 300px;
+}
+.btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+.admin{
+    position: absolute;
+    width: 282px;
+    height: 109px;
+    left: -12px;
+    top: 287px;
+    background: #EE786C;
+    border-radius: 18px;
+    font-size: 24px;
+    font-family: Red Hat Display;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 40px;
+}
+.noselec{
+    position: absolute;
+    width: 282px;
+    height: 109px;
+    left: -12px;
+    top: 422px;
+    font-family: Red Hat Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: #0F123F;
+    border-style: none;
+}
