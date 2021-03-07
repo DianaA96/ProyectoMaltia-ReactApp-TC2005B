@@ -1,0 +1,45 @@
+.modal{
+    background-color: #E5E5E5;
+    position: relative;
+    width: 63em;
+    height: 63em;
+    color: #0F123F;
+    margin-left: 10em;
+    font-family: "Red Hat Display";
+}
+
+.nombreUsuario{
+    position: relative;
+    margin-left: 4em;
+    margin-bottom: 0%;
+    padding-top: 1.5em;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 60px;
+    color: #0F123F;
+}
+
+.infoPrimaria{
+    display: flex;
+    position:relative;
+    align-items: center;
+    margin-left: 9.3em;
+    position: absolute;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 48px;
+}
+
+.tel{
+    padding-left: .7em;
+}
+
+.formulario{
+    padding-left: 11em;
+    padding-top: 12em;
+}
+
+
+
