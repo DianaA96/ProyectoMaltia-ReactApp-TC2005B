@@ -1,0 +1,36 @@
+button {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+#botonEditarUsuario {
+    background-color: #EE786C;
+}
+
+#botonEliminarUsuario {
+    background-color: #722C2D;
+}
+
+#botonCancelar {
+    background-color: #0F123F;
+}
+
+#botonRegistrar {
+    background-color: #EE786C;
+} 
+
+#botonGuardarCambios {
+    background-color: #EE786C;
+}
+
+#botonConfirmar {
+    background-color: #EE786C;
+}
