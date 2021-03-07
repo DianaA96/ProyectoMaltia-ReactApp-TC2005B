@@ -1,0 +1,33 @@
+.bannerTitulo{
+    left: 346px;
+    height: 7em;
+    width: 40em;
+    padding-left: 1.5em;
+    font-family:'Red Hat Display';
+    background: #0F123F;
+    border-radius: 37px;
+    color: #FFFFFF;
+}
+
+#sabroso{   
+    font-family: 'Raleway',sans-serif;
+    font-weight: 250;
+    font-size: 24px;  
+    padding-left: 2%;
+    margin-bottom: 0em;
+    padding-top: 3%;
+}
+
+#grande{ 
+    position: absolute;
+    font-family: 'Red Hat Display',sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    padding-left: 1%;
+    margin: 0em;
+    margin-top: .5%;
+}
+
+
+
