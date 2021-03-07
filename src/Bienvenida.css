@@ -9,7 +9,7 @@
     color: #FFFFFF;
 }
 
-#sabroso{   
+#txtbienvenida{   
     font-family: 'Raleway',sans-serif;
     font-weight: 250;
     font-size: 24px;  
@@ -18,7 +18,7 @@
     padding-top: 3%;
 }
 
-#grande{ 
+#txtventana{ 
     position: absolute;
     font-family: 'Red Hat Display',sans-serif;
     font-style: normal;

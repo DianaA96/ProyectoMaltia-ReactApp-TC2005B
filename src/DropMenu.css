@@ -20,6 +20,10 @@ select{
     appearance: none;
 }
 
+select:focus{
+    outline:none ;
+}
+
 .menu{
     position: relative;
 }
