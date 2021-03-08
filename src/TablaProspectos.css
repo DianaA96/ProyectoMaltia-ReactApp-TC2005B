@@ -1,0 +1,155 @@
+h5 {
+    color: black;
+}
+
+.contenedorTabla {
+	font-family: 'Raleway', sans-serif;
+	padding-bottom: 0%;
+	margin-bottom: 0%;
+	width: 69%;
+}
+
+.encabezadoTabla {
+	background: #F2F5FA;
+	display: flex;
+	align-content: space-around;
+	max-height: 50%;
+	color: black;
+	text-align: left;
+	font-size: 150%;
+	height: 2.7em;
+	text-align: center;
+}
+
+#encabezadoNombreProspecto {
+	width:40%;
+}
+
+#encabezadoAccionesProspecto {
+	width:60%;
+}
+
+.rwd-table {
+	margin: 0.1em 0em;
+	width: 100%;
+}
+
+.tabla {
+	max-height: 300px;
+	overflow-y: scroll;
+  	scroll-behavior: smooth;
+	margin-top: 0em;
+	padding: 0em 0.2em 0em 0.2em;
+	text-align: left;
+	font-family: 'Raleway', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	background: #F2F5FA;
+}
+
+tr:hover {background-color: #F2F5FA;}
+
+.rwd-table tr {
+	border-bottom: 1px solid #F2F5FA;
+    color: black;
+}
+
+.rwd-table th {
+	display: none;
+	overflow-y: none;
+}
+
+.rwd-table td {
+	display: block;
+	border-bottom: 1px solid #0F123F;
+}
+
+.rwd-table td:first-child {
+	padding-top: 0.5em;
+}
+
+.rwd-table td:last-child {
+	padding-bottom: 0.5em;
+}
+
+.rwd-table td:before {
+	font-weight: bold;
+	width: 6.5em;
+	display: inline-block;
+}
+
+@media (min-width: 380px) {
+    .rwd-table td:before {
+	display: none;
+	}
+}
+
+.rwd-table th, .rwd-table td {
+	text-align: left;
+}
+
+@media (min-width: 380px) {
+	.rwd-table th, .rwd-table td {
+		display: table-cell;
+		padding: 0.25em 0.5em;
+	}
+	.rwd-table th:first-child, .rwd-table td:first-child {
+		padding-left: 0;
+	}
+	.rwd-table th:last-child, .rwd-table td:last-child {
+	padding-right: 0;
+	}
+}
+
+.tabla::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px #F2F5FA;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px #F2F5FA;
+	background-color: #F2F5FA;
+}
+
+.tabla::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F2F5FA;
+}
+
+.tabla::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #C4C4C4;
+}
+
+.rwd-table {
+	background: white;
+	max-height: 50%;
+	color: black;
+	border-radius: 0.4em;
+	overflow: hidden;
+	text-align: left;
+	border-collapse:separate; 
+	border-spacing: 0em;
+	border-left: 0.5em solid white;
+	border-right: 0.5em solid white;
+}
+
+.rwd-table tr {
+	border-color: #f2f5fa00;
+}
+
+.rwd-table th, .rwd-table td {
+	margin: 0.5em 1em;
+}
+
+@media (min-width: 480px) {
+	.rwd-table th, .rwd-table td {
+		padding: 1em !important;
+	}
+}
+
+.rwd-table th, .rwd-table td:before {
+	color: black;
+    text-align: center;
+    background-color: #F2F5FA;
+}
