@@ -15,7 +15,10 @@ function Lateral(){
                     <button id="admin_usuarios" href="" className='admin'>Administrar<br/>usuario</button>
                 </div>
                 <div>
-                    <button id="agregar_usuarios" href=""className='noselec' >Agregar<br/>usuario</button>
+                    <button id="agregar_usuarios" href="" className='noselec' >Agregar<br/>usuario</button>
+                </div>
+                <div>
+                    <button id="agregar_usuarios" href="" className='noselec' >Agregar<br/>usuario</button>
                 </div>
             </div>
             <div>
