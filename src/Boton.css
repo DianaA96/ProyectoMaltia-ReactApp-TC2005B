@@ -1,22 +1,117 @@
-button {
+#botonEditarUsuario {
     font-family: "Red Hat Display", sans-serif;
     font-weight: bold;
     color: white;
     border: none;
-    border-radius: 7px;
+    border-radius: 13px;
     padding-left: 16%;
     padding-right: 16%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     text-align: center;
-}
-
-#botonEditarUsuario {
+    font-size: 104%;
     background-color: #EE786C;
+    border: 2px solid #EE786C;
+    color: white;
+    font-weight: 550;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 #botonEliminarUsuario {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
     background-color: #722C2D;
+    border: 2px solid #722C2D;
+    color: white;
+    font-weight: 550;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#botonEditarProspecto {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: white;
+    color: #EE786C;
+    border: 2px solid #EE786C;
+    font-weight: 550;
+}
+
+#botonContactarProspecto {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: white;
+    color: #455BA6;
+    border: 2px solid #455BA6;
+    font-weight: 550;
+}
+
+#botonIniciarSolicitudProspecto {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: #455BA6;
+    border: 2px solid #455BA6;
+    color: white;
+    font-weight: 550;
+    padding-left:13%;
+    padding-right: 13%;
+}
+
+#botonSeguimiento {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: #455BA6;
+    border: 2px solid #455BA6;
+    color: white;
+    font-weight: 550;
+    padding-left:13%;
+    padding-right: 13%;
 }
 
 #botonCancelar {

@@ -6,31 +6,51 @@ h5 {
 	font-family: 'Raleway', sans-serif;
 	padding-bottom: 0%;
 	margin-bottom: 0%;
-	width: 100%;
+	width: 69%;
 }
 
 .encabezadoTabla {
 	background: #F2F5FA;
 	display: flex;
 	align-content: space-around;
-	max-height: 100%;
-	color: black;
+	max-height: 50%;
+	color: #0F123F;
 	text-align: left;
 	font-size: 150%;
 	height: 2.7em;
 	text-align: center;
 }
 
-#encabezadoNombreUsuario {
-	width:42%;
+#encabezadoNombreCliente {
+	width:45%;
 }
 
-#encabezadoRolUsuario {
-	width:16%;
+#encabezadoEstatusCliente {
+	width:10%;
 }
 
-#encabezadoAccionesUsuario {
-	width:42%;
+#encabezadoAccionesCliente {
+	width:45%;
+}
+
+#semaforoEstatusPendiente {
+    background-color:#84BC6A ;
+    color: #84BC6A;
+    border-radius: 100%;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+#semaforoEstatusDispuesto {
+    background-color:#722C2D ;
+    color: #722C2D;
+    border-radius: 100%;
+    text-align: center;
+    width: 2em;
+    height: 2em;
 }
 
 .rwd-table {
@@ -39,7 +59,7 @@ h5 {
 }
 
 .tabla {
-	max-height: 35em;
+	max-height: 300px;
 	overflow-y: scroll;
   	scroll-behavior: smooth;
 	margin-top: 0em;
@@ -50,13 +70,14 @@ h5 {
 	text-rendering: optimizeLegibility;
 	background: #F2F5FA;	
 	border-radius: 0.6em;
+	width: 68%;
 }
 
 tr:hover {background-color: #F2F5FA;}
 
 .rwd-table tr {
 	border-bottom: 1px solid #F2F5FA;
-	color: black;
+    color: black;
 }
 
 .rwd-table th {
@@ -102,7 +123,7 @@ tr:hover {background-color: #F2F5FA;}
 		padding-left: 0;
 	}
 	.rwd-table th:last-child, .rwd-table td:last-child {
-		padding-right: 0;
+	padding-right: 0;
 	}
 }
 
@@ -149,7 +170,7 @@ tr:hover {background-color: #F2F5FA;}
 
 @media (min-width: 480px) {
 	.rwd-table th, .rwd-table td {
-		padding: 1em !important;
+		padding: 0.3em !important;
 	}
 }
 
