@@ -37,9 +37,38 @@
 }
 
 .formulario{
-    padding-left: 11em;
-    padding-top: 12em;
+    padding-left: 4.5em;
+    padding-top: 6em;    
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    width: 6em;
+
 }
 
+.ctx1{
+    position: relative;
+    padding-bottom: 3em;
+ }
 
+.ctx2{
+    position: relative;
+    padding-top: 2em;
+    padding-bottom: 3em;
+ }
 
+ .ctx3{
+    position: relative;
+    padding-top: 3em;
+ }
+
+ .menudrop{
+    margin-top: -2em;
+    padding-left: 6em;
+    width: 1em;
+ }

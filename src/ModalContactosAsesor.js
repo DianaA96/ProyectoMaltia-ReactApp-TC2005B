@@ -12,15 +12,22 @@ function ModalContactosAsesor(CheckBox){
                 <p className="tel"> 771 245 2723 </p>
             </div>
             <div className="formulario">
-               <p>Contacto 1</p>
-               <Checkbox/> <DropMenu/>
+                <div className="ctx1">
+                    <p>Contacto 1 </p>
+                    <Checkbox /> <div className="menudrop"> <DropMenu/> </div>
+                </div>
+                
+                <div className="ctx2">
+                    <p>Contacto 2</p>
+                    <Checkbox/>  <div className="menudrop"> <DropMenu/> </div>
+                </div>
 
-               <p>Contacto 2</p>
-               <Checkbox/> 
-
-               <p>Contacto 3</p>
-               <Checkbox/> 
+                <div className="ctx3">
+                    <p>Contacto 3</p>
+                    <Checkbox/> <div className="menudrop"> <DropMenu/> </div>
+                </div>
             </div>
+            <
         </div>
     );
 }
