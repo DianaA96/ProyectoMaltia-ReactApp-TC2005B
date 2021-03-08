@@ -27,7 +27,6 @@ function ModalContactosAsesor(CheckBox){
                     <Checkbox/> <div className="menudrop"> <DropMenu/> </div>
                 </div>
             </div>
-            <
         </div>
     );
 }

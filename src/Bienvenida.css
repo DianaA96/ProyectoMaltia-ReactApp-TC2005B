@@ -1,8 +1,7 @@
 .bannerTitulo{
     left: 346px;
-    height: 7em;
-    width: 40em;
-    padding-left: 1.5em;
+    width: 50%;
+    padding: 20px;
     font-family:'Red Hat Display';
     background: #0F123F;
     border-radius: 37px;
@@ -11,22 +10,21 @@
 
 #txtbienvenida{   
     font-family: 'Raleway',sans-serif;
-    font-weight: 250;
-    font-size: 24px;  
+    font-weight: 400;
+    font-size: 18px;  
     padding-left: 2%;
-    margin-bottom: 0em;
-    padding-top: 3%;
+    margin:0;
 }
 
 #txtventana{ 
-    position: absolute;
+   
     font-family: 'Red Hat Display',sans-serif;
     font-style: normal;
     font-weight: 900;
-    font-size: 36px;
+    font-size: 30px;
     padding-left: 1%;
     margin: 0em;
-    margin-top: .5%;
+    margin-top: 2%;
 }
 
 

@@ -21,22 +21,22 @@
     width: 45px;
     height: 52px;
     left: 127px;
-    top: 850px;
-
 }
 .contenedor{
     background-color: #0F123F;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 900px;
+    height: 85vh;
     width: 300px;
 }
+
 .btns{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .admin{
     position: absolute;
     width: 282px;
@@ -45,11 +45,10 @@
     top: 287px;
     background: #EE786C;
     border-radius: 18px;
-    font-size: 24px;
     font-family: Red Hat Display;
     font-style: normal;
     font-weight: 900;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 40px;
 }
 .noselec{
@@ -61,7 +60,7 @@
     font-family: Red Hat Display;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     background-color: #0F123F;
     border-style: none;
 }
