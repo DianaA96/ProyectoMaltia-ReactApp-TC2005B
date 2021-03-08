@@ -7,6 +7,8 @@ h5 {
 	padding-bottom: 0%;
 	margin-bottom: 0%;
 	width: 100%;
+	max-height: 50vh;
+	
 }
 
 .encabezadoTabla {
@@ -39,7 +41,7 @@ h5 {
 }
 
 .tabla {
-	max-height: 35em;
+	max-height: 50vh;
 	overflow-y: scroll;
   	scroll-behavior: smooth;
 	margin-top: 0em;

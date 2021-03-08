@@ -8,12 +8,13 @@ main {
 .contentPage { 
     background-color: #F2F5FA;
     border-radius: 10px;
+    height: 85vh;
     width: 85%;
     margin: 0%;
+    padding: 30px;
 }
 
 header {
-    padding-top: 2%;
     padding-left: 4%;
     padding-bottom: 2%;
 }

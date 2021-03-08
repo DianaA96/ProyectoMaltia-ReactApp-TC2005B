@@ -21,6 +21,12 @@ function LandingAdminUsuarios() {
           {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Asesor"},
           {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
           {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
+          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
+          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
+          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
+          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
+          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
+          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
           {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"}
         ]
       };
@@ -40,7 +46,7 @@ function LandingAdminUsuarios() {
                         <InputBuscar />
                     </section>
                     <section className="tablaContentPage">
-                        <TablaUsuarios{...dataQuery} />
+                        <TablaUsuarios {...dataQuery} />
                     </section>
                 </section>
             </main>
