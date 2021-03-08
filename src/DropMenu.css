@@ -1,21 +1,15 @@
-body {
-    min-height: 100vh;
-    display: grid; 
-    place-items: center;
-}
-
 select{
-    width: 448px;
-    height: 70px;   
+    width: 15em;
+    height: 2em;   
     padding: .5em 1.5em;
     background-color: #CACACA;
-    color: black;
+    color: #0F123F;
     font-family: 'Raleway';
     font-style: normal ;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 28px;
-    border-radius: 40px;
+    font-size: 1.4em;
+    line-height: 1.2em;
+    border-radius: 4em;
     border:0;
     appearance: none;
 }
@@ -25,15 +19,14 @@ select:focus{
 }
 
 .menu{
-    position: relative;
+    position: absolute;
 }
 
 .triangle{
-    display: block;
     position: absolute;
-    border-left: 15px solid  #0F123F;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent; 
+    border-left: .7em solid  #0F123F;
+    border-top: .4em solid transparent;
+    border-bottom: .4em solid transparent; 
     top: 38%;
     right: 10%;
     pointer-events: none;

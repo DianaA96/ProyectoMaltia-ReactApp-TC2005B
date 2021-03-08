@@ -3,7 +3,6 @@ import "./DropMenu.css"
 
 function DropMenu(){
     return(
-        <body>
             <div  className="menu">
                 <select>
                     <option value ="">Perrito</option>
@@ -13,7 +12,6 @@ function DropMenu(){
                 </select>
                 <i class="triangle"></i>
             </div>
-        </body>
     )
 }
 
