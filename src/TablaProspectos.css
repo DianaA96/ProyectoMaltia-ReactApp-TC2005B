@@ -6,14 +6,14 @@ h5 {
 	font-family: 'Raleway', sans-serif;
 	padding-bottom: 0%;
 	margin-bottom: 0%;
-	width: 100%;
+	width: 69%;
 }
 
 .encabezadoTabla {
 	background: #F2F5FA;
 	display: flex;
 	align-content: space-around;
-	max-height: 100%;
+	max-height: 50%;
 	color: black;
 	text-align: left;
 	font-size: 150%;
@@ -21,16 +21,12 @@ h5 {
 	text-align: center;
 }
 
-#encabezadoNombreUsuario {
-	width:42%;
+#encabezadoNombreProspecto {
+	width:40%;
 }
 
-#encabezadoRolUsuario {
-	width:16%;
-}
-
-#encabezadoAccionesUsuario {
-	width:42%;
+#encabezadoAccionesProspecto {
+	width:60%;
 }
 
 .rwd-table {
@@ -39,7 +35,7 @@ h5 {
 }
 
 .tabla {
-	max-height: 35em;
+	max-height: 300px;
 	overflow-y: scroll;
   	scroll-behavior: smooth;
 	margin-top: 0em;
@@ -48,15 +44,14 @@ h5 {
 	font-family: 'Raleway', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
-	background: #F2F5FA;	
-	border-radius: 0.6em;
+	background: #F2F5FA;
 }
 
 tr:hover {background-color: #F2F5FA;}
 
 .rwd-table tr {
 	border-bottom: 1px solid #F2F5FA;
-	color: black;
+    color: black;
 }
 
 .rwd-table th {
@@ -102,7 +97,7 @@ tr:hover {background-color: #F2F5FA;}
 		padding-left: 0;
 	}
 	.rwd-table th:last-child, .rwd-table td:last-child {
-		padding-right: 0;
+	padding-right: 0;
 	}
 }
 
@@ -129,7 +124,7 @@ tr:hover {background-color: #F2F5FA;}
 .rwd-table {
 	background: white;
 	max-height: 50%;
-	color: #0F123F;
+	color: black;
 	border-radius: 0.4em;
 	overflow: hidden;
 	text-align: left;
@@ -154,7 +149,7 @@ tr:hover {background-color: #F2F5FA;}
 }
 
 .rwd-table th, .rwd-table td:before {
-	color: #0F123F;
+	color: black;
     text-align: center;
     background-color: #F2F5FA;
 }
