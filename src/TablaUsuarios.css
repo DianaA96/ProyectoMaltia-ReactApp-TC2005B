@@ -1,16 +1,20 @@
-#contenedorTablaUsuarios {
+h5 {
+    color: black;
+}
+
+.contenedorTabla {
 	font-family: 'Raleway', sans-serif;
 	padding-bottom: 0%;
 	margin-bottom: 0%;
-	width: 50%;
+	width: 100%;
 }
 
-#encabezadoTabla {
+.encabezadoTabla {
 	background: #F2F5FA;
 	display: flex;
 	align-content: space-around;
-	max-height: 50%;
-	color: #0F123F;
+	max-height: 100%;
+	color: black;
 	text-align: left;
 	font-size: 150%;
 	height: 2.7em;
@@ -18,15 +22,15 @@
 }
 
 #encabezadoNombreUsuario {
-	width:47%;
+	width:42%;
 }
 
 #encabezadoRolUsuario {
-	width:15%;
+	width:16%;
 }
 
 #encabezadoAccionesUsuario {
-	width:38%;
+	width:42%;
 }
 
 .rwd-table {
@@ -34,17 +38,25 @@
 	width: 100%;
 }
 
-#tablaUsuarios {
-	max-height: 300px;
+.tabla {
+	max-height: 35em;
 	overflow-y: scroll;
   	scroll-behavior: smooth;
-	background-color: #F2F5FA;
+	margin-top: 0em;
+	padding: 0em 0.2em 0em 0.2em;
+	text-align: left;
+	font-family: 'Raleway', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	background: #F2F5FA;	
+	border-radius: 0.6em;
 }
 
 tr:hover {background-color: #F2F5FA;}
 
 .rwd-table tr {
 	border-bottom: 1px solid #F2F5FA;
+	color: black;
 }
 
 .rwd-table th {
@@ -90,22 +102,11 @@ tr:hover {background-color: #F2F5FA;}
 		padding-left: 0;
 	}
 	.rwd-table th:last-child, .rwd-table td:last-child {
-	padding-right: 0;
+		padding-right: 0;
 	}
 }
 
-#tablaUsuarios {
-	margin-top: 0em;
-	padding: 0em 0.2em 0em 0.2em;
-	text-align: left;
-	font-family: 'Raleway', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-	background: #F2F5FA;	
-	border-radius: 0.6em;
-}
-
-#tablaUsuarios::-webkit-scrollbar-track
+.tabla::-webkit-scrollbar-track
 {
 	box-shadow: inset 0 0 6px #F2F5FA;
 	border-radius: 10px;
@@ -113,13 +114,13 @@ tr:hover {background-color: #F2F5FA;}
 	background-color: #F2F5FA;
 }
 
-#tablaUsuarios::-webkit-scrollbar
+.tabla::-webkit-scrollbar
 {
 	width: 6px;
 	background-color: #F2F5FA;
 }
 
-#tablaUsuarios::-webkit-scrollbar-thumb
+.tabla::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;
 	background-color: #C4C4C4;
