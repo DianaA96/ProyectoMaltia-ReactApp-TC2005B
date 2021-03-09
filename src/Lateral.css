@@ -1,69 +1,80 @@
-.fondo{
-    /* Ellipse 9 */
-    position: absolute;
-    width: 135px;
-    height: 135px;
-    left: 57px;
-    top: 60px;
-    background:  #0F123F;
-
-}
-.persona{
-    position: absolute;
-    width: 102px;
-    height: 102px;
-    left: 74px;
-    top: 76px;
-
-}
-.Imgbot{
-    position: absolute;
-    width: 45px;
-    height: 52px;
-    left: 127px;
-}
-.contenedor{
+.contenedor-lateral{
     background-color: #0F123F;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     height: 85vh;
-    width: 300px;
+    color: #fff;
+    width: 250px;
+    font-family: 'Red Hat Display';
 }
 
-.btns{
+.datosUsuario{
+    height: 10vh;
+}
+
+.cont_icono{
+    width: 130px;
+    height: 130px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nombre_usuario{
+    font-weight: normal;
+}
+
+.tabs{
+    padding: 30px 0;
+    height: 70vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.admin{
-    position: absolute;
-    width: 282px;
-    height: 109px;
-    left: -12px;
-    top: 287px;
+
+a:focus .tab{
+    width: 100%;
+    padding: 15px;
     background: #EE786C;
     border-radius: 18px;
     font-family: Red Hat Display;
-    font-style: normal;
     font-weight: 900;
     font-size: 24px;
     line-height: 40px;
 }
-.noselec{
-    position: absolute;
-    width: 282px;
-    height: 109px;
-    left: -12px;
-    top: 422px;
-    font-family: Red Hat Display;
-    font-style: normal;
-    font-weight: bold;
+
+.tab{
+    width: 70%;
+    padding: 15px;
+    border-radius: 18px;
+    font-weight: 600;
     font-size: 20px;
-    background-color: #0F123F;
-    border-style: none;
+    line-height: 40px;
 }
-button {
-    color: white;
+
+.tabs a{
+    padding-left: 30px;
+    text-align: left;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.logout{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.logout i{
+    font-size: 30px;
+    color: #fff;
 }
