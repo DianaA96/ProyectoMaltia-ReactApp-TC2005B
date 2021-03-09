@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import LandingAdminUsuarios  from './LandingAdminUsuarios'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <LandingAdminUsuarios/>
+    <p>Prueba</p>
   </React.StrictMode>,
   document.getElementById('root')
 );
