@@ -39,7 +39,7 @@ function LandingAdminUsuarios() {
                 </aside>
                 <section className='contentPage'>
                     <header>
-                        <Bienvenida />
+                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Administración de usuarios"/>
                     </header>
                     <section className="filtrosContentPage">
                         <InputBuscar />

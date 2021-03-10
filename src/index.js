@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-
+import VentanaAgregarUsuario from './VentanaAgregarUsuario'
 
 ReactDOM.render(
   <React.StrictMode>
-    <p>Prueba</p>
+    <VentanaAgregarUsuario/>
   </React.StrictMode>,
   document.getElementById('root')
 );
