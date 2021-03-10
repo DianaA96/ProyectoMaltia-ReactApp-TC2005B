@@ -1,12 +1,13 @@
 import React from 'react';
-import './VentanaAgregarUsuario.css';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import RadioButton from './RadioButton';
-import './plantillaInputs.css'
 import DropMenu from './DropMenu'
+import './VentanaAgregarUsuario.css';
+import './plantillaInputs.css'
+import './Boton.css'
 
-function LandingAdminUsuarios() {
+function VentanaAgregarUsuario() {
     return(
         <React.Fragment>
             <main>
@@ -30,10 +31,15 @@ function LandingAdminUsuarios() {
                         <DropMenu contenido="Puesto"/>
                         <DropMenu contenido="Departamento"/>
                     </section>
+
+                    <section className="botonesContentPage">
+                        <button className = "botonAzulMarino">Cancelar</button>
+                        <button className = "botonSalmon">Registrar</button>
+                    </section>
                 </section>
             </main>
         </React.Fragment>
     );
 }
 
-export default LandingAdminUsuarios;
+export default VentanaAgregarUsuario;

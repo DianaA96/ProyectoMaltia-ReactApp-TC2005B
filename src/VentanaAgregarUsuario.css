@@ -14,8 +14,6 @@ main {
     padding: 30px 50px;
 }
 
-
-
 .radiosContentPage {
     width: 100%;
     display: flex;
@@ -29,6 +27,18 @@ main {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap
-};
+}
+
+.botonesContentPage{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    margin-top: 8%;
+}
+
+.botonAzulMarino{
+    margin-right: 5%;
+}

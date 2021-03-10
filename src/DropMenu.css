@@ -15,11 +15,13 @@ select:focus{
 }
 
 .menu{
-    width:  45%;
+    width:  40%;
     padding: 15px 30px;
     background-color: #CACACA;
     border-radius: 50px;
     margin-bottom: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .triangle{
