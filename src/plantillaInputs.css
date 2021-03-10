@@ -1,0 +1,25 @@
+.input-gral{
+    font-size: 22px;
+    font-family: 'Raleway';
+    padding: 15px 30px;
+    border-style: none;
+    background: #CACACA;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.input-gral:focus{
+   outline: none;
+}
+
+
+.w-3{
+    width: 28%;
+}
+
+
+
+.w-2{
+    width: 45%;
+}

@@ -1,15 +1,11 @@
 select{
-    width: 15em;
-    height: 2em;   
-    padding: .5em 1.5em;
+    width: 100%;
     background-color: #CACACA;
     color: #0F123F;
     font-family: 'Raleway';
-    font-style: normal ;
     font-weight: 600;
-    font-size: 1.4em;
+    font-size: 22px;
     line-height: 1.2em;
-    border-radius: 4em;
     border:0;
     appearance: none;
 }
@@ -19,18 +15,18 @@ select:focus{
 }
 
 .menu{
-    position: absolute;
+    width:  45%;
+    padding: 15px 30px;
+    background-color: #CACACA;
+    border-radius: 50px;
+    margin-bottom: 50px;
 }
 
 .triangle{
     position: absolute;
-    border-left: .7em solid  #0F123F;
-    border-top: .4em solid transparent;
-    border-bottom: .4em solid transparent; 
-    top: 38%;
-    right: 10%;
+    margin-left: -30px;
+    font-size: 30px;
     pointer-events: none;
-    transform: rotate(90deg);
-    border-top-right-radius: 30%;
 }
+
 
