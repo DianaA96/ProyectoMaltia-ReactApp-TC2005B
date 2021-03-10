@@ -1,29 +1,28 @@
 import React from 'react';
-import salida from './salida.svg';
-import fondo from './fondo.svg';
 import persona from './persona.svg';
 import './Lateral.css';
+
 function Lateral(){
     return(
-        <div className='contenedor'>
-            <div>
-                <img className='fondo' alt = 'fondoPerfil' src={fondo}/>
-                <img className='persona' alt = 'imagenPerfil' src={persona}/>
+        <div className="contenedor-lateral">
+            <div className = "datos_usuario">
+                    <div className="cont_icono">
+                        <img classname="icono_usuario" src={persona} alt=""/>
+                    </div>
+                    <h4 className="nombre_usuario">Usuario #12124</h4>
             </div>
-            <div className='btns'>
-                <div>
-                    <button id="admin_usuarios" href="" className='admin'>Administrar<br/>usuario</button>
-                </div>
-                <div>
-                    <button id="agregar_usuarios" href="" className='noselec' >Agregar<br/>usuario</button>
-                </div>
-                <div>
-                    <button id="agregar_usuarios" href="" className='noselec' >Agregar<br/>usuario</button>
-                </div>
+
+            <div className='tabs'>
+                <a id="tab" href="" > <div className='tab'>Administrar <br/> usuarios </div></a>
+                <a id="tab" href="" > <div className='tab'>Agregar <br/> usuarios </div></a>
             </div>
-            <div>
-                <img className='Imgbot' alt = 'iconoLogOut' src={salida}/>
+
+            <div className="logout">
+                <a><i class="fas fa-sign-out-alt"></i></a>
+                <p>Cerrar sesión</p>
             </div>
+             
+            
         </div>
     );
 }
