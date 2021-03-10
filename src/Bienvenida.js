@@ -1,10 +1,10 @@
 import './Bienvenida.css';
 
-function Bienvenida() {
+function Bienvenida(props) {
   return (
       <div className="bannerTitulo">
-        <p id="txtbienvenida"> Bienvenido, Administrador </p>
-        <h1 id="txtventana"> Administración de usuarios </h1>
+        <p id="txtbienvenida"> {props.txtbienvenida} </p>
+        <h1 id="txtventana"> {props.txtventana} </h1>
     </div>
   );
 }
