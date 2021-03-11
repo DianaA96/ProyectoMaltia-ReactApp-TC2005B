@@ -31,13 +31,14 @@ function LandingAdminUsuarios() {
       };
 
       let tabs = ["Administrar Usuarios", "Agregar Usuario"];
+      let enlaces = ["./", "./nuevo-usuario"]
 
     return(
         
         <React.Fragment>
             <main>
                 <aside>
-                    <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
+                    <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} enlaces={enlaces}/>
                 </aside>
                 <section className='contentPage'>
                     <header>

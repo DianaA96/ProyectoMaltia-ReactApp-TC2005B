@@ -8,6 +8,14 @@ import './plantillaInputs.css'
 import './Boton.css'
 import admin from './persona.svg';
 
+
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Switch,
+  } from 'react-router-dom';
+
 function VentanaAgregarUsuario() {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
     return(
@@ -18,7 +26,7 @@ function VentanaAgregarUsuario() {
                 </aside>
                 <section className='contentPage'>
                     <header>
-                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Agregar Usuario"/>
+                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Agregar usuario"/>
                     </header>
                     <section className="radiosContentPage">
                         <RadioButton etiqueta="Asesor" />
@@ -26,8 +34,8 @@ function VentanaAgregarUsuario() {
                     </section>
                     <section className="inputsContentPage">
                         <input className = "input-gral w-3" type="text" name="" id="" placeholder="Nombre(s)"/>
-                        <input className = "input-gral w-3" type="text" name="" id="" placeholder="Apellido Materno"/>
                         <input className = "input-gral w-3" type="text" name="" id="" placeholder="Apellido Paterno"/>
+                        <input className = "input-gral w-3" type="text" name="" id="" placeholder="Apellido Materno"/>
                         <input className = "input-gral w-2" type="tel" name="" id="" placeholder="Número de teléfono"/>
                         <input className = "input-gral w-2" type="email" name="" id="" placeholder="Correo electrónico"/>
                         <DropMenu contenido="Puesto"/>
@@ -35,8 +43,8 @@ function VentanaAgregarUsuario() {
                     </section>
 
                     <section className="botonesContentPage">
-                        <button className = "botonAzulMarino">Cancelar</button>
-                        <button className = "botonSalmon">Registrar</button>
+                        <button className = "botonAzulMarino"><Link to='AdministrarUsuarios'>Cancelar</Link></button>
+                        <button className = "botonSalmon"><Link to='AdministrarUsuarios'>Registrar</Link></button>
                     </section>
                 </section>
             </main>

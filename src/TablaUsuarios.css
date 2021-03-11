@@ -41,7 +41,6 @@ h5 {
 }
 
 .tabla {
-	max-height: 50vh;
 	overflow-y: scroll;
   	scroll-behavior: smooth;
 	margin-top: 0em;

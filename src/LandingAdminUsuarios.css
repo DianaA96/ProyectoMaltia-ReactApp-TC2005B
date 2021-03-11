@@ -31,3 +31,7 @@ header {
     padding-left: 4%;
     padding-right: 4%;
 }
+
+.tablaContentPage .tabla {
+    max-height: 40vh;
+}

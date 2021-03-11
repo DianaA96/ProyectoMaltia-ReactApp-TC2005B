@@ -1,7 +1,7 @@
-import React from 'react'
-import FormAutenticacion from './FormAutenticacion'
-import logoMaltia from './img/logoMaltia.png'
-import './VentanaInicioSesion.css'
+import React from 'react';
+import FormAutenticacion from './FormAutenticacion';
+import logoMaltia from './img/logoMaltia.png';
+import './VentanaInicioSesion.css';
 
 function VentanaInicioSesion() {
     return (

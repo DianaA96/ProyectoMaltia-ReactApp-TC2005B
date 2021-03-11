@@ -8,6 +8,13 @@ import './plantillaInputs.css'
 import './Boton.css'
 import admin from './persona.svg';
 
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Switch,
+  } from 'react-router-dom';
+
 function VentanaEditarUsuario() {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
     return(
@@ -35,8 +42,8 @@ function VentanaEditarUsuario() {
                     </section>
 
                     <section className="botonesContentPage">
-                        <button className = "botonAzulMarino">Cancelar</button>
-                        <button className = "botonSalmon">Guardar Cambios</button>
+                        <button className = "botonAzulMarino"><Link to='./AdministrarUsuarios'>Cancelar</Link></button>
+                        <button className = "botonSalmon"><Link to='./AdministrarUsuarios'>Guardar Cambios</Link></button>
                     </section>
                 </section>
             </main>
