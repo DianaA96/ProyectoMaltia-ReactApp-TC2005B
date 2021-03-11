@@ -19,7 +19,7 @@ header {
     padding-bottom: 2%;
 }
 
-.filtrosContentPage {
+.filtrosContentPageLanding {
     display: flex;
     flex-direction: row;
     padding-left: 4%;
@@ -30,4 +30,8 @@ header {
 .tablaContentPage {
     padding-left: 4%;
     padding-right: 4%;
-};
+}
+
+.tablaContentPage .tabla {
+    max-height: 40vh;
+}

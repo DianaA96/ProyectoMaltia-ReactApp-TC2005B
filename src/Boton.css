@@ -14,6 +14,17 @@
     font-weight: 550;
     padding-left: 20%;
     padding-right: 20%;
+    outline: none;
+}
+
+#botonEditarUsuario:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonEditarUsuario:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
 }
 
 #botonEliminarUsuario {
@@ -32,6 +43,17 @@
     font-weight: 550;
     padding-left: 20%;
     padding-right: 20%;
+    outline: none;
+}
+
+#botonEliminarUsuario:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonEliminarUsuario:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
 }
 
 #botonEditarProspecto {
@@ -50,6 +72,17 @@
     color: #EE786C;
     border: 2px solid #EE786C;
     font-weight: 550;
+    outline: none;
+}
+
+#botonEditarProspecto:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonEditarProspecto:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
 }
 
 #botonContactarProspecto {
@@ -68,6 +101,17 @@
     color: #455BA6;
     border: 2px solid #455BA6;
     font-weight: 550;
+    outline: none;
+}
+
+#botonContactarProspecto:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonContactarProspecto:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
 }
 
 #botonIniciarSolicitudProspecto {
@@ -86,6 +130,18 @@
     font-weight: 550;
     padding-left:13%;
     padding-right: 13%;
+    outline: none;
+}
+
+#botonIniciarSolicitudProspecto:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonIniciarSolicitudProspecto:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+    outline: none;
 }
 
 #botonSeguimiento {
@@ -104,6 +160,17 @@
     font-weight: 550;
     padding-left:13%;
     padding-right: 13%;
+    outline: none;
+}
+
+#botonSeguimiento:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonSeguimiento:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
 }
 
 .botonAzulMarino {
@@ -122,6 +189,17 @@
     border: 2px solid #0F123F;
     color: white;
     font-weight: 550;
+    outline: none;
+}
+
+.botonAzulMarino:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+.botonAzulMarino:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
 }
 
 .botonSalmon {
@@ -140,4 +218,15 @@
     border: 2px solid #EE786C;
     color: white;
     font-weight: 550;
+    outline: none;
 } 
+
+.botonSalmon:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+.botonSalmon:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}

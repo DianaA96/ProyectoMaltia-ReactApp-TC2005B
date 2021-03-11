@@ -1,0 +1,14 @@
+#AppHeader {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 40px;
+    color: white;
+}
+
+#navAppDemostracion {
+    font-size: 40px;
+    color:inherit;
+    text-decoration: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
