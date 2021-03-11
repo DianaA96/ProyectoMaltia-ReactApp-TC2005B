@@ -4,7 +4,7 @@ import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import TablaUsuarios from './TablaUsuarios';
-import Boton from './Boton';
+import './Boton.css';
 
 function LandingAdminUsuarios() {
 
@@ -41,7 +41,7 @@ function LandingAdminUsuarios() {
                     <header>
                         <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Administración de usuarios"/>
                     </header>
-                    <section className="filtrosContentPage">
+                    <section className="filtrosContentPageLanding">
                         <InputBuscar />
                         <InputBuscar />
                     </section>
