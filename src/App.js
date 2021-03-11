@@ -4,6 +4,7 @@ import LandingAdminUsuarios from './LandingAdminUsuarios';
 import SolicitudCliente from './SolicitudCliente';
 import UsuarioNoEncontrado from './UsuarioNoEncontrado';
 import VentanaAgregarUsuario from './VentanaAgregarUsuario';
+import VentanaEditarUsuario from './VentanaEditarUsuario';
 import VentanaInicioSesion from './VentanaInicioSesion';
 
 import {
@@ -23,10 +24,11 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/users-list' exact={true}>{LandingAdminUsuarios}</Route>
+        <Route path='/administrarUsuarios' exact={true}>{LandingAdminUsuarios}</Route>
         <Route path='/iniciar-solicitud' exact={true}>{SolicitudCliente(datosSolicitudCliente)}</Route>
         <Route path='/user-not-found' exact={true}>{UsuarioNoEncontrado}</Route>
-        <Route path='/nuevo-usuario' exact={true}>{VentanaAgregarUsuario}</Route>
+        <Route path='/AgregarUsuario' exact={true}>{VentanaAgregarUsuario}</Route>
+        <Route path='/EditarUsuario' exact={true}>{VentanaEditarUsuario}</Route>
         <Route path='/login' exact={true}>{VentanaInicioSesion}</Route>
         <Route path='/' exact={true}>
           <header id='AppHeader'>
@@ -35,8 +37,8 @@ function App() {
               <Link to='./users-list'>Lista de usuarios</Link>
               <Link to='./iniciar-solicitud'>SolicitudCliente</Link>
               <Link to='./user-not-found'>UsuarioNoEncontrado</Link>
-              <Link to='./nuevo-usuario'>AgregarUsuario</Link>
-              <Link to='./login'>IniciarSesión</Link>
+              <Link to='./AgregarUsuario'>AgregarUsuario</Link>
+              <Link to='./login'>Iniciar Sesión</Link>
             </nav>
           </header>
         </Route>
