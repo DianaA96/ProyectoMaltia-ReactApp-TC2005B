@@ -1,21 +1,21 @@
 .modal{
     background-color: #E5E5E5;
     position: relative;
-    width: 63em;
-    height: 63em;
+    width: 45em;
+    height: 45em;
     color: #0F123F;
-    margin-left: 10em;
+    margin-left: 25%;
     font-family: "Red Hat Display";
 }
 
 .nombreUsuario{
     position: relative;
-    margin-left: 4em;
+    margin-left:2em;
     margin-bottom: 0%;
-    padding-top: 1.5em;
+    padding-top: .8em;
     font-style: normal;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 40px;
     line-height: 60px;
     color: #0F123F;
 }
@@ -24,25 +24,25 @@
     display: flex;
     position:relative;
     align-items: center;
-    margin-left: 9.3em;
+    margin-left: 32%;
     position: absolute;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 25px;
     line-height: 48px;
 }
 
 .tel{
-    padding-left: .7em;
+    padding-left: 2em;
 }
 
 .formulario{
     padding-left: 4.5em;
-    padding-top: 6em;    
+    padding-top: 2.5em;    
     font-family: 'Raleway';
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 35px;
     display: flex;
     flex-direction: column;
@@ -53,22 +53,26 @@
 
 .ctx1{
     position: relative;
-    padding-bottom: 3em;
+    align-items: center;
  }
 
 .ctx2{
     position: relative;
-    padding-top: 2em;
-    padding-bottom: 3em;
  }
 
  .ctx3{
     position: relative;
-    padding-top: 3em;
  }
 
  .menudrop{
-    margin-top: -2em;
+    padding-top: 1.3em;
+    margin-top: -3em;
     padding-left: 6em;
-    width: 1em;
+    width:35em;
  }
+
+ .botonSalmon{
+    position: absolute;
+    margin-left:  40%;
+ }
+
