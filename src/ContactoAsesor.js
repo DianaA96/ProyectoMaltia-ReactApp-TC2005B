@@ -1,7 +1,9 @@
 import React from 'react';
+import "./ContactoAsesor.css"
 import Checkbox from './Checkbox.js';
+import './Boton.css';
 import DropMenu from './DropMenu.js';
-import "./ModalContactosAsesor.css"
+
 
 function ModalContactosAsesor(CheckBox){
     return(
@@ -27,6 +29,7 @@ function ModalContactosAsesor(CheckBox){
                     <Checkbox/> <div className="menudrop"> <DropMenu/> </div>
                 </div>
             </div>
+            <button className="botonSalmon"> Guardar cambios </button>
         </div>
     );
 }
