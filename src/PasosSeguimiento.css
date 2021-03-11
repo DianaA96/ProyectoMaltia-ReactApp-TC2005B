@@ -1,0 +1,59 @@
+.cont-seguimiento{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.circulo-texto{
+    font-family: 'Red Hat Display';
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #525252;
+}
+
+.circulo-texto h4{
+    margin-top: 10px;
+}
+
+.circulo-seguimiento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background: #C4C4C4;
+}
+
+.circulo-seguimiento img{
+    width: 60%;
+}
+.cont-seguimiento a{
+    color: #525252;
+}
+.cont-seguimiento i{
+    font-size: 30px;
+}
+
+
+.cont-seguimiento a:hover .circulo-seguimiento{
+    background: #90B4DE;
+}
+
+.cont-seguimiento a:hover .circulo-texto h4{
+    color: #0F123F;
+}
+
+.linea{
+    position: absolute;
+    width: 30%;
+    height: 3px;
+    margin-top: 30px;
+    background: #C4C4C4;
+    z-index: -1;
+}
+

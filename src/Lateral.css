@@ -38,7 +38,8 @@
 
 
 a:focus .tab{
-    width: 100%;
+    text-align: left;
+    width: 95%;
     padding: 15px;
     background: #EE786C;
     border-radius: 18px;
@@ -48,8 +49,10 @@ a:focus .tab{
     line-height: 40px;
 }
 
+
+
 .tab{
-    width: 70%;
+    width: 60%;
     padding: 15px;
     border-radius: 18px;
     font-weight: 600;
