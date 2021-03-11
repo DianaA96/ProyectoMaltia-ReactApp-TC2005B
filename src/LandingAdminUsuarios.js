@@ -4,7 +4,7 @@ import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import TablaUsuarios from './TablaUsuarios';
-import Boton from './Boton';
+import admin from './persona.svg';
 
 function LandingAdminUsuarios() {
 
@@ -31,11 +31,14 @@ function LandingAdminUsuarios() {
         ]
       };
 
+      let tabs = ["Administrar Usuarios", "Agregar Usuario"];
+
     return(
+        
         <React.Fragment>
             <main>
                 <aside>
-                    <Lateral />
+                    <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
                 </aside>
                 <section className='contentPage'>
                     <header>
