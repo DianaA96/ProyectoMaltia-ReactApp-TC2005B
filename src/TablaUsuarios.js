@@ -1,5 +1,12 @@
 import './TablaUsuarios.css';
 
+import {
+      BrowserRouter as Router,
+      Route,
+      Link,
+      Switch,
+    } from 'react-router-dom';
+
 function TablaUsuarios(props) {
     return (
       <section className="contenedorTabla">
@@ -14,7 +21,7 @@ function TablaUsuarios(props) {
                               <tr>
                               <td data-th="nombreUsuario">{registro.nombres + " " + registro.apellidos}</td>
                               <td data-th="rol">{registro.puesto}</td>
-                              <td data-th="botonEditar"><button id="botonEditarUsuario">Editar</button></td>
+                              <td data-th="botonEditar"><button id="botonEditarUsuario"><Link to='./EditarUsuario'>Editar</Link></button></td>
                               <td data-th="botonEliminar"><button id="botonEliminarUsuario">Eliminar</button></td>
                               </tr>
                         ))}

@@ -1,20 +1,43 @@
-#cajaUsuarioNoEncontrado {
-    background-color: #E5E5E5;
+main {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    height: 100%;
+    flex-direction: row;
+    background-color: #0F123F;
+    border: 1em solid #0F123F;
+}
+
+.contentPage { 
+    background-color: #F2F5FA;
     border-radius: 10px;
+    height: 88vh;
+    width: 85%;
+    margin: 0%;
+    padding: 30px;
+}
+
+header {
+    padding-left: 4%;
+    padding-bottom: 2%;
+}
+
+.filtrosContentPage {
+    display: flex;
+    flex-direction: row;
+    padding-left: 4%;
+    padding-right: 4%;
+    justify-content:space-between;
+}
+
+#cajaUsuarioNoEncontrado {
+    padding-left: 0px;
     font-family: 'Red Hat Display', sans-serif;
-    margin: 1% 1% 1% auto;
     text-align: center;
-    float: right;
+    align-content: center;
 }
 
 #cajaUsuarioNoEncontrado img{
     max-height: 50%;
-    max-width: 27%;
+    max-width: 25%;
+    text-align: center;
 }
 
 #cajaUsuarioNoEncontrado p{
