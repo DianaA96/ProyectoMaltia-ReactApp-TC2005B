@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ModalContactosAsesor from './ContactoAsesor.js';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -8,7 +7,6 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <p>Prueba</p>
-    <ModalContactosAsesor/>
   </React.StrictMode>,
   document.getElementById('root')
 );

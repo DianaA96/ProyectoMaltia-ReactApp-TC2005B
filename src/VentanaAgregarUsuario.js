@@ -6,13 +6,15 @@ import DropMenu from './DropMenu'
 import './VentanaAgregarUsuario.css';
 import './plantillaInputs.css'
 import './Boton.css'
+import admin from './persona.svg';
 
 function VentanaAgregarUsuario() {
+    let tabs = ["Administrar Usuarios", "Agregar Usuario"];
     return(
         <React.Fragment>
             <main>
                 <aside>
-                    <Lateral />
+                    <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
                 </aside>
                 <section className='contentPage'>
                     <header>

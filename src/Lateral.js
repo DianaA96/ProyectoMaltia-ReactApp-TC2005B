@@ -1,20 +1,21 @@
 import React from 'react';
-import persona from './persona.svg';
 import './Lateral.css';
+import TabLateral from './TabLateral'
 
-function Lateral(){
+function Lateral(props){
     return(
         <div className="contenedor-lateral">
             <div className = "datos_usuario">
                     <div className="cont_icono">
-                        <img classname="icono_usuario" src={persona} alt=""/>
+                        <img classname="icono_usuario" src={props.img} alt=""/>
                     </div>
-                    <h4 className="nombre_usuario">Usuario #12124</h4>
+                    <h4 className="nombre_usuario">{props.usuario}</h4>
             </div>
 
             <div className='tabs'>
-                <a id="tab" href="" > <div className='tab'>Administrar <br/> usuarios </div></a>
-                <a id="tab" href="" > <div className='tab'>Agregar <br/> usuarios </div></a>
+                {props.tabs.map((ventana) =>
+                    <TabLateral key={ventana} name={ventana} />
+                )}
             </div>
 
             <div className="logout">
