@@ -1,8 +1,17 @@
 .err{
+    padding: 30px;
+    width: 40vw;
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-content: space-around;
     text-align: center;
+    background: #FFF8F8;
+}
+
+.err i{
+    font-size: 50px;
+    color:#722C2D
 }
 .cabeza{
     display: flex;
@@ -16,44 +25,41 @@
 
 }
 .btns{
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-left: 50%;
-    margin-right: 30%;
+    justify-content: flex-end;
+}
 
-}
-.advertencia{
-    width: 8%;
-}
 .eliminando{
     font-family:'Red Hat Display';
     font-style: normal;
-    font-size: 200%;
+    font-size: 36px;
     text-align: center;
     font-weight: bold;
     color: #722C2D;
 }
+
 .us{
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: bold;
-    font-size: 250%;
+    font-size: 30px;
     text-align: center;
 }
+
 .num{
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: normal;
-    font-size: 150%;
+    font-size: 30px;
     color: #000000;
 }
+
 .pregunta{
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: bold;
-    font-size: 200%;
+    font-size: 30px;
     text-align: center;
-
     color: #000000;
-
 }
