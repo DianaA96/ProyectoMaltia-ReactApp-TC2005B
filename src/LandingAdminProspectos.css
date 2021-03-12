@@ -1,0 +1,36 @@
+main {
+    display: flex;
+    flex-direction: row;
+    background-color: #0F123F;
+    border: 1em solid #0F123F;
+}
+
+.contenido { 
+    background-color: #F2F5FA;
+    border-radius: 10px;
+    height: 90vh;
+    width: 85%;
+    margin: 0%;
+    padding: 30px;
+}
+
+header {
+    padding-left: 4%;
+    padding-bottom: 2%;
+    width: 110%;
+}
+
+.filtros {
+    display: flex;
+    flex-direction: row;
+    padding-left: 4%;
+    padding-right: 4%;
+    justify-content:space-between;
+}
+
+.tablaProspectos {
+    padding-left: 4%;
+    padding-right: 4%;
+    height: 85vh;
+    width: 93%;
+};
