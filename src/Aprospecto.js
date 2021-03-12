@@ -6,20 +6,29 @@ import './Aprospecto.css';
 import './plantillaInputs.css';
 import './Boton.css';
 
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Switch,
+  } from 'react-router-dom';
+
 function Aprospecto(){
+
+    let fecha = new Date();
+    let mes = fecha.toLocaleString('default', { month: 'long' });
+
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
     return(
         <React.Fragment>
             <div className='cuerpote'>
                 <aside>
-
                     <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} />
-
                 </aside>
                 <div className='cuerpito'>
                         <div className='cabeza'>
-                            <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Agregar Prospecto"/>
-                            <p className='fechachida'>03 de septiembre de 2001</p>
+                            <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Agregar prospecto"/>
+                            <p className='fechachida'>{`${fecha.getDate()} de ${mes} del ${fecha.getFullYear()}`}</p>
                         </div>
                         <div className='cuerpitocontenido'>
                             <div className='primeralinea'>
@@ -32,15 +41,16 @@ function Aprospecto(){
                                 <input className = "input-gral w-2" type="text" placeholder="Correo electrónico"/>
                             </div>
                             <div className='aprospectobtns'>
-                                <button href=""  className="botonAzulMarino">Cancelar</button>
-                                <button href=""  className="botonSalmon">Continuar solicitud</button>
-                                <button href=""  className="botonSalmon">Registrar</button>
-                            </div>
-                        </div>
+                                <button href=""  className="botonAzulMarino"><Link to='./administrarProspectos'>Cancelar</Link></button>
+                                <button href=""  className="botonSalmon"><Link to='./solicitudCliente'>Continuar solicitud</Link></button>
+                                <button href=""  className="botonSalmon"><Link to='./administrarProspectos'>Registrar</Link></button>
+                         </div>
+                     </div>
                 </div>
             </div>
         </React.Fragment>
         
     );
 }
+
 export default Aprospecto;
