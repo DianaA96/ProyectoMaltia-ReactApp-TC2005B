@@ -1,0 +1,36 @@
+.cuerpotee{
+    display: flex;
+    flex-direction: row;
+    background-color: #0F123F;
+    border: 1em solid #0F123F;
+}
+.cuerpitoe{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #F2F5FA;
+    border-radius: 10px;
+    height: 85vh;
+    width: 85%;
+    margin: 0%;
+    padding: 30px 50px;
+}
+.cabezae{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12%;
+}
+
+.primeralineae{
+    margin-bottom: 2%;
+}
+.segundalineae{
+    display: flex;
+    margin-bottom: 7%;
+}
+.aprospectobtnse{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60%;
+    margin-right: 6%;
+}
