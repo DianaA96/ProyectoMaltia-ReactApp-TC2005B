@@ -4,13 +4,17 @@ import ZorroMaltia from './img/zorroMaltiaNotFound.svg';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
+import asesor from './img/asesor.png';
 
 function UsuarioNoEncontrado() {
+      
+      let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
+
     return (
       <React.Fragment>
             <main>
                   <aside>
-                        <Lateral />
+                        <Lateral tabs = {tabs} img = {asesor}/>
                   </aside>
                   <section className='contentPage'>
                         <header>
@@ -21,14 +25,16 @@ function UsuarioNoEncontrado() {
                               <InputBuscar />
                         </section>
                         <section id="cajaUsuarioNoEncontrado">
-                                    <img src={ZorroMaltia} alt='Elemento no encontrado.'/> 
-                                    <h1>Parece que tu búsqueda no ha arrojado resultados.</h1>
-                                    <p>Prueba con otro usuario :)</p>
+                                    <img src={ZorroMaltia} alt='Elemento no encontrado.'/>
+                                    <div>
+                                          <h1>Parece que tu búsqueda no ha arrojado resultados.</h1>
+                                          <p>Prueba con otro usuario :)</p>
+                                    </div>
                         </section>
                   </section>
             </main>
-        </React.Fragment>
-    );
-  }
+      </React.Fragment>
+      );
+}
   
-  export default UsuarioNoEncontrado;
+export default UsuarioNoEncontrado;
