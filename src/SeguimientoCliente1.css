@@ -9,7 +9,7 @@ main {
     z-index: 0;
     background-color: #F2F5FA;
     border-radius: 10px;
-    height: 160vh;
+    height: 150vh;
     width: 85%;
     margin: 0%;
     padding: 30px;
@@ -37,15 +37,18 @@ main {
 }
 
 .accionesSeguimiento{
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    height: 30vh;
 }
 .pregunta-antiguedad{
     font-weight: bold;
     color: #0F123F;
 }
+
 .pregunta-capacidad{
     font-weight: bold;
     color: #0F123F;
@@ -53,6 +56,8 @@ main {
 }
 
 .lineaSeguimiento{
+    margin-left: 5%;
+    margin-right: 5%;
     width: 3px;
     height: 85vh;
     background: #0F123F;
@@ -60,10 +65,12 @@ main {
 }
 
 .solicitudSeguimiento{
-    width: 50%;
+    width: 40%;
+    
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    text-align:start;
 }
 
 .solicitudSeguimiento h4{
@@ -72,14 +79,15 @@ main {
 }
 
 .solicitudSeguimiento h2{
+    text-align: center;
     color: #0F123F;
 }
 .solicitudSeguimiento span{
+    text-align:start;
     font-weight: bold;
 }
 
 .solicitudSeguimiento p{
-    
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 16px;
