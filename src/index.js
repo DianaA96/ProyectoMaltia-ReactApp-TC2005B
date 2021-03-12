@@ -2,17 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import LandingAdminProspectos from './LandingAdminProspectos';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-} from 'react-router-dom';
+import App from './App';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router><LandingAdminProspectos/></Router>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
