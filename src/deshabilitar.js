@@ -1,16 +1,12 @@
 import './Boton.css';
 import './deshabilitar.css';
-import Advertencia from './img/advertencia.svg';
+import Advertencia from './img/advertencia.png';
 function Deshabilitar(){
     return(
         <div className='err'>
             <div className='cabeza'>
-                <div>
-                    <img className='advertencia' src={Advertencia}/>
-                </div>
-                <div>
-                     <p className='eliminando'>Eliminando usuario</p>
-                </div>
+                <i class="fas fa-exclamation-triangle"></i>
+                <p className='eliminando'>Eliminando usuario</p>
             </div>
             <div className='centro'>
                 <p className='us'>Harry José  Potter Hernández</p>

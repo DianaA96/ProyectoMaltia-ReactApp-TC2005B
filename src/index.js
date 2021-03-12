@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
+import Deshabilitar from './deshabilitar'
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <Router>
+      <Deshabilitar/> 
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -6,7 +6,6 @@ import InputBuscar from './InputBuscar';
 import TablaProspectos from './TablaProspectos';
 
 
-
 function LandingAdminProspectos() {
 
     let datosProspect = {
