@@ -2,7 +2,7 @@ h5 {
     color: black;
 }
 
-.contenedorTabla {
+.contenedorTablaProspectos {
 	font-family: 'Raleway', sans-serif;
 	padding-bottom: 0%;
 	margin-bottom: 0%;
@@ -24,7 +24,7 @@ h5 {
 
 #encabezadoNombreProspecto {
 	width:40%;
-	text-align: left;
+	text-align: center;
 	padding-left: 2%;
 }
 
@@ -49,7 +49,6 @@ h5 {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	background: #F2F5FA;
-	
 }
 
 tr:hover {background-color: #F2F5FA;}
@@ -133,7 +132,7 @@ tr:hover {background-color: #F2F5FA;}
 	border-radius: 0.4em;
 	overflow: hidden;
 	text-align: left;
-	border-collapse:separate; 
+	border-collapse: separate; 
 	border-spacing: 0em;
 	border-left: 0.5em solid white;
 	border-right: 0.5em solid white;
