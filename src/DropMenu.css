@@ -19,6 +19,7 @@ select:focus{
     padding: 15px 30px;
     background-color: #CACACA;
     border-radius: 50px;
+    margin-top: auto;
     margin-bottom: auto;
     margin-left: 10px;
     margin-right: 10px;

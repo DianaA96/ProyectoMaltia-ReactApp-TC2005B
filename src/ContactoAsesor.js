@@ -11,23 +11,29 @@ function ModalContactosAsesor(CheckBox){
             <h2 className="nombreUsuario"> Harry Jose Potter Hernandez </h2>
             <div className="infoPrimaria">
                 <i className="fas fa-phone-alt"> </i>
-                <p className="tel"> 771 245 2723 </p>
+                <p className="tel">  771 245 2723 </p>
             </div>
             <div className="formulario">
-                <div className="ctx1">
-                    <p>Contacto 1 </p>
-                    <Checkbox /> <div className="menudrop"> <DropMenu/> </div>
+                <div className="cont-contacto">
+                    <div className="contacto-left">
+                        <p>Contacto 1 </p>
+                        <Checkbox /> 
+                    </div>
+                    <DropMenu contenido="Compromiso"/> 
                 </div>
-                
-                <div className="ctx2">
-                    <p>Contacto 2</p>
-                    <Checkbox/>  <div className="menudrop"> <DropMenu/> </div>
+                <div className="cont-contacto">
+                    <div className="contacto-left">
+                        <p>Contacto 2</p>
+                        <Checkbox/>  
+                    </div>
+                    <DropMenu contenido="Compromiso"/> 
                 </div>
-
-                <div className="ctx3">
-                    <p>Contacto 3</p>
-                    <Checkbox/> 
-                    <div className="menudrop"> <DropMenu/> </div>
+                <div className="cont-contacto">
+                    <div className="contacto-left">
+                        <p>Contacto 3</p>
+                        <Checkbox/> 
+                    </div>
+                    <DropMenu contenido="Compromiso"/> 
                 </div>
             </div>
             <button className="botonSalmon"> Guardar cambios </button>
