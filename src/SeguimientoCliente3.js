@@ -1,13 +1,13 @@
 import React from 'react';
-import './SeguimientoCliente1.css';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import PasosSeguimiento from './PasosSeguimiento'
 import admin from './persona.svg';
-import Checkbox from './Checkbox'
 import './plantillaInputs.css'
+import './SeguimientoCliente1.css'; //Se toman los estilos de la primera vista de seguimiento cliente al tener las mismas clases
 
-function SeguimientoCliente1() {
+
+function SeguimientoCliente3() {
         let enlaces = ["./", "./nuevo-usuario"]
         let tabs = ["Solicitudes", "Generar Reportes"];
     return(
@@ -26,12 +26,8 @@ function SeguimientoCliente1() {
                     </section>
                     <section className="mainContentPageSeguimiento">
                         <div className="accionesSeguimiento">
-                            <p className="pregunta-antiguedad">¿Cumple con la antiguedad minima?</p>
-                            <Checkbox/>
-                            <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Especifique la antiguedad"/>
-                            <p className="pregunta-capacidad">¿Cumple con la antiguedad minima?</p>
-                            <Checkbox/>
-                            <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Especifique la capacidad de pago"/>
+                            <input className= "input-gral w-1" type="text" name="Crédito autorizado" placeholder="Crédito autorizado"/>
+                            <input className= "input-gral w-1" type="text" name="Crédito dispuesto"  placeholder="Crédito dispuesto"/>
                         </div>
                         <div className="lineaSeguimiento"></div>
                         
@@ -49,18 +45,18 @@ function SeguimientoCliente1() {
                             <p className="numIne-sol"><span>Número INE: </span>28936132351</p>
                             <h2 className="titulo-referencias">Referencias</h2>
                             <div className="cont-referencias">
-                               <div className="referencia-sol">
+                                <div className="referencia-sol">
                                    <p><span>Harry Potter</span></p>
                                    <p><i class="fas fa-phone-alt"></i> 772 223 23 23</p>
-                               </div>
-                               <div className="referencia-sol">
+                                </div>
+                                <div className="referencia-sol">
                                    <p><span>Hermione Granger</span></p>
                                    <p><i class="fas fa-phone-alt"></i> 772 223 23 23</p>
-                               </div>
-                               <div className="referencia-sol">
+                                </div>
+                                <div className="referencia-sol">
                                    <p><span>Bellatrix Lestrange</span></p>
                                    <p><i class="fas fa-phone-alt"></i> 772 223 23 23</p>
-                               </div>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -70,4 +66,4 @@ function SeguimientoCliente1() {
     );
 }
 
-export default SeguimientoCliente1;
+export default SeguimientoCliente3;
