@@ -6,7 +6,7 @@ h5 {
 	font-family: 'Raleway', sans-serif;
 	padding-bottom: 0%;
 	margin-bottom: 0%;
-	width: 69%;
+	width: 90%; 
 }
 
 .encabezadoTabla {
@@ -22,15 +22,17 @@ h5 {
 }
 
 #encabezadoNombreCliente {
-	width:45%;
+	width:33%;
+	text-align: left;
+	padding-left: 7%;
 }
 
 #encabezadoEstatusCliente {
-	width:10%;
+	width: 33%;
 }
 
 #encabezadoAccionesCliente {
-	width:45%;
+	width:34%;
 }
 
 #semaforoEstatusPendiente {
@@ -42,6 +44,7 @@ h5 {
     height: 2em;
     padding-top: 0%;
     padding-bottom: 0%;
+	margin-left: 10%;
 }
 
 #semaforoEstatusDispuesto {
@@ -51,16 +54,18 @@ h5 {
     text-align: center;
     width: 2em;
     height: 2em;
+	margin-left: 10%;
 }
 
 .rwd-table {
 	margin: 0.1em 0em;
-	width: 100%;
+	width: 95%;
 }
 
 .tabla {
-	max-height: 300px;
+	max-height: 400px;
 	overflow-y: scroll;
+	height: 350px;
   	scroll-behavior: smooth;
 	margin-top: 0em;
 	padding: 0em 0.2em 0em 0.2em;
@@ -70,7 +75,8 @@ h5 {
 	text-rendering: optimizeLegibility;
 	background: #F2F5FA;	
 	border-radius: 0.6em;
-	width: 68%;
+	padding-left: 5%;
+	
 }
 
 tr:hover {background-color: #F2F5FA;}
@@ -178,4 +184,40 @@ tr:hover {background-color: #F2F5FA;}
 	color: #0F123F;
     text-align: center;
     background-color: #F2F5FA;
+}
+
+.semaforoInfo{
+	display: flex;
+	padding-left: 10%;
+	font-family: 'Red Hat Display';
+	font-style: normal;
+	font-weight: bold;
+	
+	color: #000000;
+}
+
+.verde{
+	padding-right: 5%;
+	
+}
+
+.semaforo{	
+	background-color:#84BC6A ;
+    color: #84BC6A;
+    border-radius: 100%;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    margin-left: 40%;
+}
+
+.semaforor {
+	align-items: center;
+    background-color:#722C2D ;
+    color: #722C2D;
+    border-radius: 100%;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    margin-left: 40%;
 }

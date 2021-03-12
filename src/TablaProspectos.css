@@ -6,7 +6,8 @@ h5 {
 	font-family: 'Raleway', sans-serif;
 	padding-bottom: 0%;
 	margin-bottom: 0%;
-	width: 69%;
+	width: 100%;
+	max-height: 50vh;
 }
 
 .encabezadoTabla {
@@ -23,6 +24,8 @@ h5 {
 
 #encabezadoNombreProspecto {
 	width:40%;
+	text-align: left;
+	padding-left: 2%;
 }
 
 #encabezadoAccionesProspecto {
@@ -35,8 +38,9 @@ h5 {
 }
 
 .tabla {
-	max-height: 300px;
+	max-height: 500px;
 	overflow-y: scroll;
+	height: 400px;
   	scroll-behavior: smooth;
 	margin-top: 0em;
 	padding: 0em 0.2em 0em 0.2em;
@@ -45,6 +49,7 @@ h5 {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	background: #F2F5FA;
+	
 }
 
 tr:hover {background-color: #F2F5FA;}
