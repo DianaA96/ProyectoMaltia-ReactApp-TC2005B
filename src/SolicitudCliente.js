@@ -6,23 +6,27 @@ import Bienvenida from './Bienvenida';
 import Lateral from './Lateral';
 import Checkbox from './Checkbox';
 import DropMenu from './DropMenu';
+import asesor from './img/asesor.png';
 
-//Props simuladas que deben pasarse en donde se llame al componente:
-//let datosSolicitudCliente = {
-//    nombreCliente: "José Herón Samperio León",
-//    numTelCliente: "771 235 82 73",
-//  }
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Switch,
+  } from 'react-router-dom';
 
 function SolicitudCliente(props) {
     let fecha = new Date();
     let mes = fecha.toLocaleString('default', { month: 'long' });
     let dropMenuType = {contenido: "Tipo de crédito*",}
+
+    let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar Clientes"];
     
     return(
         <React.Fragment>
             <main>
                 <aside>
-                    <Lateral />
+                    <Lateral tabs = {tabs} img = {asesor} />
                 </aside>
                 <section className='contentPageExtendido'>
                     <header className='headerSolicitudCliente'>
@@ -40,27 +44,27 @@ function SolicitudCliente(props) {
                         </div>
                     </section>
                     <section className='inputsDatosCliente'>
-                        <input className='input-gral' placeholder='Fecha de nacimiento*'></input>
-                        <input className='input-gral' placeholder='Dirección*'></input>
-                        <input className='input-gral' placeholder='No. de cliente Zorro Abarrotero*'></input>
-                        <input className='input-gral' placeholder='INE*'></input>
-                        <input className='input-gral' placeholder='Monto solicitado*'></input>
+                        <input type='text' className='input-gral' placeholder='Fecha de nacimiento*'></input>
+                        <input type='text' className='input-gral' placeholder='Dirección*'></input>
+                        <input type='text' className='input-gral' placeholder='No. de cliente Zorro Abarrotero*'></input>
+                        <input type='text' className='input-gral' placeholder='INE*'></input>
+                        <input type='text' className='input-gral' placeholder='Monto solicitado*'></input>
                         <DropMenu {...dropMenuType}/>
                     </section>
                     <section className='inputsReferenciasCliente'>
                         <h1>Referencia 1:</h1>
                         <h1>Referencia 2:</h1>
                         <h1>Referencia 3:</h1>
-                        <input className='input-gral' placeholder='Nombre'></input>
-                        <input className='input-gral' placeholder='Nombre'></input>
-                        <input className='input-gral' placeholder='Nombre'></input>
-                        <input className='input-gral' placeholder='Teléfono'></input>
-                        <input className='input-gral' placeholder='Teléfono'></input>                        
-                        <input className='input-gral' placeholder='Teléfono'></input>
+                        <input type='text' className='input-gral' placeholder='Nombre'></input>
+                        <input type='text' className='input-gral' placeholder='Nombre'></input>
+                        <input type='text' className='input-gral' placeholder='Nombre'></input>
+                        <input type='text' className='input-gral' placeholder='Teléfono'></input>
+                        <input type='text' className='input-gral' placeholder='Teléfono'></input>                        
+                        <input type='text' className='input-gral' placeholder='Teléfono'></input>
                     </section>
                     <section className='botonesEnviarSolicitud'>
-                        <button className='botonAzulMarino'>Cancelar</button>
-                        <button className='botonSalmon'>Enviar solicitud</button>
+                        <button className='botonAzulMarino'><Link to='./administrarProspectos'>Cancelar</Link></button>
+                        <button className='botonSalmon'><Link to='./administrarProspectos'>Enviar solicitud</Link></button>
                     </section>
                 </section>
             </main>
