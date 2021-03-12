@@ -49,7 +49,6 @@ function Aprospecto(){
                 </div>
             </div>
         </React.Fragment>
-        
     );
 }
 
