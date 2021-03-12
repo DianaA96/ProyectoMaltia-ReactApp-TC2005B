@@ -4,7 +4,7 @@ import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import TablaClientes from './TablaClientes';
-import admin from './persona.svg';
+import  analista from './img/analista.png';
 import './Boton.css';
 
 
@@ -31,23 +31,23 @@ function LandingAnalista() {
         ]
       };
 
-    let tabs = ["Administrar Usuarios", "Agregar Usuario"];
+    let tabs = ["Solicitudes", "Generar reportes"];
     let enlaces = ["./", "./nuevo-usuario"];
 
     return(
         <main>
             <aside>
-                <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} enlaces={enlaces}/>
+                <Lateral img = {analista} usuario="Analista #1234" tabs={tabs} enlaces={enlaces}/>
             </aside>
-            <section className='contenido'>
+            <section className='contentPage'>
                 <header>
-                    <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Administración de prospectos"/>
+                    <Bienvenida txtbienvenida = "Bienvenido, analista" txtventana="Administración de clientes"/>
                 </header>
-                <section className="filtros">
+                <section className="filtrosContentPageLanding">
                     <InputBuscar />
                     <InputBuscar />
                 </section>
-                <section className="tablaClientes">
+                <section className="tablaContentPage">
                     <TablaClientes {...datosProspect} />
                 </section>
             </section>

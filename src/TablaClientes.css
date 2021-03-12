@@ -59,7 +59,7 @@ h5 {
 
 .rwd-table {
 	margin: 0.1em 0em;
-	width: 95%;
+	width: 100%;
 }
 
 .tabla {
@@ -75,7 +75,6 @@ h5 {
 	text-rendering: optimizeLegibility;
 	background: #F2F5FA;	
 	border-radius: 0.6em;
-	padding-left: 5%;
 	
 }
 
