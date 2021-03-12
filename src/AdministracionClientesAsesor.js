@@ -37,7 +37,7 @@ function AdministracionClientesAsesor() {
     return(
         <main>
             <aside>
-                <Lateral img = {asesor} usuario="Ansesor #1234" tabs={tabs} enlaces={enlaces}/>
+                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} enlaces={enlaces}/>
             </aside>
             <section className='contentPage'>
                 <header>
