@@ -51,18 +51,13 @@
 
 }
 
-.ctx1{
-    position: relative;
+.ctx1, .ctx2, .ctx3{
+    display: flex;
     align-items: center;
+    flex-direction: column;
  }
 
-.ctx2{
-    position: relative;
- }
 
- .ctx3{
-    position: relative;
- }
 
  .menudrop{
     padding-top: 1.3em;

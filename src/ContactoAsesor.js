@@ -26,7 +26,8 @@ function ModalContactosAsesor(CheckBox){
 
                 <div className="ctx3">
                     <p>Contacto 3</p>
-                    <Checkbox/> <div className="menudrop"> <DropMenu/> </div>
+                    <Checkbox/> 
+                    <div className="menudrop"> <DropMenu/> </div>
                 </div>
             </div>
             <button className="botonSalmon"> Guardar cambios </button>

@@ -11,7 +11,7 @@ function PasosSeguimiento() {
                         <img src={zorro} alt=""/>
                     </div>
                 </a> 
-                <h4>Consulta Zorro Abarrotero</h4>
+                <h5>Consulta Zorro Abarrotero</h5>
             </div>
 
             <div className="circulo-texto">
@@ -20,7 +20,7 @@ function PasosSeguimiento() {
                         <i class="fas fa-users"></i>
                     </div>
                 </a>
-                <h4>Verificación Buró de Crédito</h4>
+                <h5>Verificación Buró de Crédito</h5>
             </div>
 
 
@@ -30,10 +30,10 @@ function PasosSeguimiento() {
                         <i class="fas fa-check-double"></i>
                     </div>
                 </a>
-                <h4>Disposición</h4>
+                <h5>Disposición</h5>
             </div>   
 
-            <div className="linea"></div>
+            <div className="lineaPasos"></div>
         </div>
     )
 }

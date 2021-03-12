@@ -1,0 +1,103 @@
+main {
+    display: flex;
+    flex-direction: row;
+    background-color: #0F123F;
+    border: 1em solid #0F123F;
+}
+
+.contentPageSeguimiento { 
+    z-index: 0;
+    background-color: #F2F5FA;
+    border-radius: 10px;
+    height: 160vh;
+    width: 85%;
+    margin: 0%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway';
+}
+
+.pasosContentPageSeguimiento{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.mainContentPageSeguimiento{
+    
+    padding: 50px;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.accionesSeguimiento{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pregunta-antiguedad{
+    font-weight: bold;
+    color: #0F123F;
+}
+.pregunta-capacidad{
+    font-weight: bold;
+    color: #0F123F;
+    margin-top: 80px;
+}
+
+.lineaSeguimiento{
+    width: 3px;
+    height: 85vh;
+    background: #0F123F;
+    border-radius: 50px;
+}
+
+.solicitudSeguimiento{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.solicitudSeguimiento h4{
+    color: #0F123F;
+    text-align: center;
+}
+
+.solicitudSeguimiento h2{
+    color: #0F123F;
+}
+.solicitudSeguimiento span{
+    font-weight: bold;
+}
+
+.solicitudSeguimiento p{
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.cont-referencias{
+    display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     width: 100%;
+}
+
+.referencia-sol{
+    width: 50%;
+    text-align: center;
+}
+
+
+
+
+
