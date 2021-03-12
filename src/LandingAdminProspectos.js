@@ -4,8 +4,12 @@ import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import TablaProspectos from './TablaProspectos';
+<<<<<<< HEAD
 import asesor from './img/asesor.png';
 import './Boton.css'
+=======
+
+>>>>>>> 39cbadbddbde07215ac4df41cd6d91c9acf54d47
 
 function LandingAdminProspectos() {
 
