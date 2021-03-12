@@ -6,6 +6,13 @@ import './Eprospecto.css';
 import './plantillaInputs.css';
 import './Boton.css';
 
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Switch,
+  } from 'react-router-dom';
+
 function Aprospecto(){
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
     return(
@@ -31,8 +38,8 @@ function Aprospecto(){
                                 <input className = "input-gral w-2" type="text" placeholder="hagrid@hogwarts.ww"/>
                             </div>
                             <div className='aprospectobtnse'>
-                                <button href=""  className="botonAzulMarino">Cancelar</button>
-                                <button href=""  className="botonSalmon">Guardar cambios</button>
+                                <button href=""  className="botonAzulMarino"><Link to='./administrarProspectos'>Cancelar</Link></button>
+                                <button href=""  className="botonSalmon"><Link to='./administrarProspectos'>Guardar cambios</Link></button>
                             </div>
                         </div>
                 </div>
