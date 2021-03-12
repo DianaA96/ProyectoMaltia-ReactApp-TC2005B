@@ -4,8 +4,8 @@ import Bienvenida from './Bienvenida';
 import RadioButton from './RadioButton';
 import DropMenu from './DropMenu'
 import './VentanaAgregarUsuario.css';
-import './plantillaInputs.css';
-import './Boton.css';
+import './plantillaInputs.css'
+import './Boton.css'
 import admin from './persona.svg';
 
 
