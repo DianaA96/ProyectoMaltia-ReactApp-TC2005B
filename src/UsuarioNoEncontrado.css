@@ -28,15 +28,19 @@ header {
 }
 
 #cajaUsuarioNoEncontrado {
-    padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
     font-family: 'Red Hat Display', sans-serif;
     text-align: center;
     align-content: center;
 }
 
 #cajaUsuarioNoEncontrado img{
-    max-height: 50%;
-    max-width: 25%;
+    max-height: 55vh;
     text-align: center;
 }
 
