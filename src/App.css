@@ -5,10 +5,9 @@
 }
 
 #navAppDemostracion {
-    font-size: 40px;
-    color:inherit;
-    text-decoration: inherit;
+    font-size: 20px;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }

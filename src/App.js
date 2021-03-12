@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
 import LandingAdminUsuarios from './LandingAdminUsuarios';
-import SolicitudCliente from './SolicitudCliente';
+import LandingAdminProspectos from './LandingAdminProspectos';
+import Aprospecto from './Aprospecto';
+import AdministracionClientesAsesor from './AdministracionClientesAsesor';
 import UsuarioNoEncontrado from './UsuarioNoEncontrado';
 import VentanaAgregarUsuario from './VentanaAgregarUsuario';
 import VentanaEditarUsuario from './VentanaEditarUsuario';
 import VentanaInicioSesion from './VentanaInicioSesion';
+import Eprospecto from './Eprospecto';
+import ContactoAsesor from './ContactoAsesor';
+import SolicitudCliente from './SolicitudCliente';
 
 import {
     BrowserRouter as Router,
@@ -16,16 +21,22 @@ import {
 
 function App() {
 
-    let datosSolicitudCliente = {
-    nombreCliente: "José Herón Samperio León",
-    numTelCliente: "771 235 82 73",
+//Props simuladas que deben pasarse en donde se llame al componente:
+  let datosSolicitudCliente = {
+      nombreCliente: "José Herón Samperio León",
+      numTelCliente: "771 235 82 73",
   }
 
   return (
     <Router>
       <Switch>
         <Route path='/administrarUsuarios' exact={true}>{LandingAdminUsuarios}</Route>
-        <Route path='/iniciar-solicitud' exact={true}>{SolicitudCliente(datosSolicitudCliente)}</Route>
+        <Route path='/administrarProspectos' exact={true}>{LandingAdminProspectos}</Route>
+        <Route path='/agregarProspectos' exact={true}>{Aprospecto}</Route>
+        <Route path='/editarProspecto' exact={true}>{Eprospecto}</Route>
+        <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
+        <Route path='/administrarClientes' exact={true}>{AdministracionClientesAsesor}</Route>
+        <Route path='/solicitudCliente' exact={true}><SolicitudCliente{...datosSolicitudCliente}/></Route>
         <Route path='/user-not-found' exact={true}>{UsuarioNoEncontrado}</Route>
         <Route path='/AgregarUsuario' exact={true}>{VentanaAgregarUsuario}</Route>
         <Route path='/EditarUsuario' exact={true}>{VentanaEditarUsuario}</Route>
