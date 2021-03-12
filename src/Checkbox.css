@@ -12,12 +12,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    margin-left: 40%;
     margin-right: auto;
 }
 
 .container-check .checkbox {
-    position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
