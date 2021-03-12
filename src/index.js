@@ -2,21 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import SeguimientoCliente1 from './SeguimientoCliente1'
 import App from './App'
-import ContactoAsesor from './ContactoAsesor'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <ContactoAsesor/>
-    </Router>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
