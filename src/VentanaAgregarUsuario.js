@@ -33,11 +33,11 @@ function VentanaAgregarUsuario() {
                         <RadioButton etiqueta="Analista"/>
                     </section>
                     <section className="inputsContentPage">
-                        <input className = "input-gral w-3" type="text" name="" id="" placeholder="Nombre(s)"/>
-                        <input className = "input-gral w-3" type="text" name="" id="" placeholder="Apellido Paterno"/>
-                        <input className = "input-gral w-3" type="text" name="" id="" placeholder="Apellido Materno"/>
-                        <input className = "input-gral w-2" type="tel" name="" id="" placeholder="Número de teléfono"/>
-                        <input className = "input-gral w-2" type="email" name="" id="" placeholder="Correo electrónico"/>
+                        <input className = "input-gral w-3" type="text" name="Nombre(s)"  placeholder="Nombre(s)"/>
+                        <input className = "input-gral w-3" type="text" name="Apellido Paterno"  placeholder="Apellido Paterno"/>
+                        <input className = "input-gral w-3" type="text" name="Apellido Materno" placeholder="Apellido Materno"/>
+                        <input className = "input-gral w-2" type="tel" name="Número de teléfono"  placeholder="Número de teléfono"/>
+                        <input className = "input-gral w-2" type="email" name="Correo electrónico" placeholder="Correo electrónico"/>
                         <DropMenu contenido="Puesto"/>
                         <DropMenu contenido="Departamento"/>
                     </section>
