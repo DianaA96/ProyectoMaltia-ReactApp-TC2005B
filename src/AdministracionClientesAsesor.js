@@ -1,5 +1,6 @@
 import React from 'react';
-import './LandingAdminUsuarios.css';
+import './LandingAdminUsuarios.css'; //Toma estilos de Vista con mismas clases
+import './AdministracionClientesAsesor.css'
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
