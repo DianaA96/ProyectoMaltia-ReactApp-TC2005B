@@ -1,5 +1,6 @@
 import React from 'react';
 import './TablaClientes.css';
+import CustomLink from './CustomLink';
 
 function TablaClientes(props) {
     return (
@@ -17,7 +18,7 @@ function TablaClientes(props) {
                         <tr>
                               <td data-th="nombreCliente">{registro.nombres+ " " + registro.apellidos}</td>
                               <td data-th="estatusCliente"><p id={"semaforoEstatus" + registro.estatusCliente}> </p></td>
-                              <td data-th="botonSeguimiento"><button id="botonSeguimiento">Seguimiento</button></td>
+                              <td data-th="botonSeguimiento"><CustomLink tag='button' to='./seguimientoCliente1' id="botonSeguimiento">Seguimiento</CustomLink></td>
                         </tr>
                    ))}
                   </table>

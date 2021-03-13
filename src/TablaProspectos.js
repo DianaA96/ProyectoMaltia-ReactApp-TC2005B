@@ -1,12 +1,6 @@
 import React from 'react';
 import './TablaProspectos.css';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-} from 'react-router-dom';
+import CustomLink from './CustomLink';
 
 function TablaProspectos(props) {
     return (
@@ -20,9 +14,9 @@ function TablaProspectos(props) {
                   {props.data.map((registro, indice) => (
                   <tr>
                   <td data-th="nombreProspecto">{registro.nombres + " " + registro.apellidos}</td>
-                  <td data-th="botonEditar"><button id="botonEditarProspecto"><Link to='./editarProspecto'>Editar</Link></button></td>
-                  <td data-th="botonContactar"><button id="botonContactarProspecto"><Link to='./contactarProspecto'>Contactar</Link></button></td>
-                  <td data-th="botonIniciarSolicitud"><button id="botonIniciarSolicitudProspecto"><Link to='./SolicitudCliente'>Iniciar solicitud</Link></button></td>
+                  <td data-th="botonEditar"><CustomLink tag='button' to='./editarProspecto' id="botonEditarProspecto">Editar</CustomLink></td>
+                  <td data-th="botonContactar"><CustomLink tag='button' to='./contactarProspecto' id="botonContactarProspecto">Contactar</CustomLink></td>
+                  <td data-th="botonIniciarSolicitud"><CustomLink tag='button' to='./solicitudCliente' id="botonIniciarSolicitudProspecto">Iniciar solicitud</CustomLink></td>
                   </tr>
                   ))}
               </table>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './LandingAdminProspectos.css';
+import CustomLink from './CustomLink';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
@@ -7,13 +8,6 @@ import InputFiltrar from './InputFiltrar';
 import TablaProspectos from './TablaProspectos';
 import asesor from './img/asesor.png';
 import './Boton.css'
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Switch,
-  } from 'react-router-dom';
 
 function LandingAdminProspectos() {
 
@@ -51,7 +45,7 @@ function LandingAdminProspectos() {
                     <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Administración de prospectos"/>
                 </header>
                 <section className="filtros">
-                    <Link to='/user-not-found'><InputBuscar /></Link>
+                    <CustomLink tag={InputBuscar} to='./user-not-found' className={InputBuscar}>Cancelar</CustomLink>
                     <InputFiltrar />
                 </section>
                 <section className="tablaProspectos">

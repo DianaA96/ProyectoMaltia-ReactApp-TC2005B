@@ -1,5 +1,6 @@
 import React from 'react';
 import './Lateral.css';
+import CustomLink from './CustomLink';
 import TabLateral from './TabLateral';
 
 import {
@@ -26,10 +27,9 @@ function Lateral(props){
                 )}
             </div>
                 
-
             <div className="logout">
                 <a><Link to='./login'><i class="fas fa-sign-out-alt"></i></Link></a>
-                <p><Link to='./login'>Cerrar sesión</Link></p>
+                <CustomLink tag='p' to='./login' className="logout">Cerrar sesión</CustomLink>
             </div>
             
         </div>

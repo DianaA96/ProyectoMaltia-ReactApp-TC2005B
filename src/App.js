@@ -1,77 +1,80 @@
 import React from 'react';
 import './App.css';
-import LandingAdminUsuarios from './LandingAdminUsuarios';
-import LandingAdminProspectos from './LandingAdminProspectos';
-import Aprospecto from './Aprospecto';
-import AdministracionClientesAsesor from './AdministracionClientesAsesor';
-import UsuarioNoEncontrado from './UsuarioNoEncontrado';
-import VentanaAgregarUsuario from './VentanaAgregarUsuario';
-import VentanaEditarUsuario from './VentanaEditarUsuario';
-import VentanaInicioSesion from './VentanaInicioSesion';
-import Eprospecto from './Eprospecto';
-import ContactoAsesor from './ContactoAsesor';
-import SolicitudCliente from './SolicitudCliente';
-import TablaAdminClientesAsesor from './TablaAdminClientesAsesor';
 
 import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Switch,
-  } from 'react-router-dom';
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+} from 'react-router-dom';
+
+//Inicio de sesión general. Llevará por defecto al Administrador
+import VentanaInicioSesion from './VentanaInicioSesion'; //CORRECTO FormAutenticacion
+
+//Vistas Administrador
+import LandingAdminUsuarios from './LandingAdminUsuarios'; //CORRECTO TablaUsuarios, lateral
+import VentanaAgregarUsuario from './VentanaAgregarUsuario'; //CORRECTO Links funcionan
+import VentanaEditarUsuario from './VentanaEditarUsuario'; //CORRECTO links funcionan
+import Deshabilitar from './deshabilitar'; //CORRECTO links funcionan
+import UsuarioNoEncontrado from './UsuarioNoEncontrado'; //
+
+//Vistas Asesor
+import LandingAdminProspectos from './LandingAdminProspectos'; //CORRECTO links funcionan
+import ContactoAsesor from './ContactoAsesor'; //CORRECTO
+import Aprospecto from './Aprospecto';//CORRECTO
+import Eprospecto from './Eprospecto';//CORRECTO
+import SolicitudCliente from './SolicitudCliente'; //CORRECTO
+import AdministracionClientesAsesor from './AdministracionClientesAsesor';
+
+//Vistas Analista
+import LandingAnalista from './LandingAnalista'; //CORRECTO
+import SeguimientoCliente1 from './SeguimientoCliente1'; //CORRECTO
+import SeguimientoCliente2 from './SeguimientoCliente2'; //CORRECTO
+import SeguimientoCliente3 from './SeguimientoCliente3'; //CORRECTO
 
 function App() {
 
-//Props simuladas que deben pasarse en donde se llame al componente:
+//Props simuladas que deben pasarse en donde se llame al componente(necesarios para renderear la solicitud del cliente):
   let datosSolicitudCliente = {
       nombreCliente: "José Herón Samperio León",
       numTelCliente: "771 235 82 73",
   }
 
-  let dataQuery={
-    data: [
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-    ]
-  };
-
   return (
     <Router>
       <Switch>
+        <Route path='/login' exact={true}>{VentanaInicioSesion}</Route>
+
         <Route path='/administrarUsuarios' exact={true}>{LandingAdminUsuarios}</Route>
+        <Route path='/agregarUsuario' exact={true}>{VentanaAgregarUsuario}</Route>
+        <Route path='/editarUsuario' exact={true}>{VentanaEditarUsuario}</Route>
+        <Route path='/eliminarUsuario' exact={true}>{Deshabilitar}</Route>
+        <Route path='/user-not-found' exact={true}>{UsuarioNoEncontrado}</Route>
+
         <Route path='/administrarProspectos' exact={true}>{LandingAdminProspectos}</Route>
+        <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
         <Route path='/agregarProspectos' exact={true}>{Aprospecto}</Route>
         <Route path='/editarProspecto' exact={true}>{Eprospecto}</Route>
-        <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
-        <Route path='/administrarClientes' exact={true}>{AdministracionClientesAsesor}</Route>
         <Route path='/solicitudCliente' exact={true}><SolicitudCliente{...datosSolicitudCliente}/></Route>
-        <Route path='/user-not-found' exact={true}>{UsuarioNoEncontrado}</Route>
-        <Route path='/AgregarUsuario' exact={true}>{VentanaAgregarUsuario}</Route>
-        <Route path='/EditarUsuario' exact={true}>{VentanaEditarUsuario}</Route>
-        <Route path='/login' exact={true}>{VentanaInicioSesion}</Route>
-        <Route path='/administracionClientes' exact={true}><TablaAdminClientesAsesor{...dataQuery}/></Route>
+        <Route path='/administrarClientes' exact={true}>{AdministracionClientesAsesor}</Route>
+        
+        <Route path='/solicitudes' exact={true}>{LandingAnalista}</Route>
+        <Route path='/seguimientoCliente1' exact={true}>{SeguimientoCliente1}</Route>
+        <Route path='/seguimientoCliente2' exact={true}>{SeguimientoCliente2}</Route>
+        <Route path='/seguimientoCliente3' exact={true}>{SeguimientoCliente3}</Route>
+        
         <Route path='/' exact={true}>
           <header id='AppHeader'>
-            Welcome!
-            <nav id="navAppDemostracion">
-              <Link to='./users-list'>Lista de usuarios</Link>
-              <Link to='./iniciar-solicitud'>SolicitudCliente</Link>
-              <Link to='./user-not-found'>UsuarioNoEncontrado</Link>
-              <Link to='./AgregarUsuario'>AgregarUsuario</Link>
-              <Link to='./login'>Iniciar Sesión</Link>
-            </nav>
+            ¡Bienvenido al sistema de Maltia!
+              <nav id="navAppDemostracion">
+                <Link to='./login'>Iniciar Sesión</Link>
+                <Link to='/administrarUsuarios'>Administración usuarios ADMIN</Link>
+                <Link to='/administrarProspectos'>Administración prospectos ASESOR</Link>  
+                <Link to='/solicitudes'>Administración solicitudes ANALISTA</Link>                
+              </nav>
           </header>
         </Route>
-        <Route>Not found!!!!!!!!!!!!!! :c</Route>
+        <Route>¡Ups! Parece que esta ruta todavía no te llevará a ninguna parte :c</Route>
       </Switch>
     </Router>
   );

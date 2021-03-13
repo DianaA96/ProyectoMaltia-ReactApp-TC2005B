@@ -1,4 +1,5 @@
 import './TablaUsuarios.css';
+import CustomLink from './CustomLink';
 
 import {
       BrowserRouter as Router,
@@ -21,8 +22,8 @@ function TablaUsuarios(props) {
                               <tr>
                               <td data-th="nombreUsuario">{registro.nombres + " " + registro.apellidos}</td>
                               <td data-th="rol">{registro.puesto}</td>
-                              <td data-th="botonEditar"><button id="botonEditarUsuario"><Link to='./EditarUsuario'>Editar</Link></button></td>
-                              <td data-th="botonEliminar"><button id="botonEliminarUsuario">Eliminar</button></td>
+                              <td data-th="botonEditar"><CustomLink tag='button' to='./editarUsuario' id="botonEditarUsuario">Editar</CustomLink></td>
+                              <td data-th="botonEliminar"><CustomLink tag='button' to='./eliminarUsuario' id="botonEliminarUsuario">Eliminar</CustomLink></td>
                               </tr>
                         ))}
                   </table>

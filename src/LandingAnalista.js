@@ -7,7 +7,6 @@ import TablaClientes from './TablaClientes';
 import  analista from './img/analista.png';
 import './Boton.css';
 
-
 function LandingAnalista() {
 
     let datosProspect = {
