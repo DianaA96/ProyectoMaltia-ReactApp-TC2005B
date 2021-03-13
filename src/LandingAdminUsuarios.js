@@ -32,21 +32,21 @@ function LandingAdminUsuarios() {
       };
 
       let tabs = ["Administrar Usuarios", "Agregar Usuario"];
-      let enlaces = ["./", "./nuevo-usuario"]
+      
 
     return(
         
         <React.Fragment>
             <main>
                 <aside>
-                    <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} enlaces={enlaces}/>
+                    <Lateral img = {admin} usuario="Admin #1234" tabs={tabs}/>
                 </aside>
                 <section className='contentPage'>
                     <header>
                         <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Administración de usuarios"/>
                     </header>
                     <section className="filtrosContentPageLanding">
-                        <InputBuscar />
+                        <InputBuscar num={1} />
                         <InputFiltrar />
                     </section>
                     <section className="tablaContentPage">

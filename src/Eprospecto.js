@@ -5,13 +5,7 @@ import asesor from './img/asesor.png'
 import './Eprospecto.css';
 import './plantillaInputs.css';
 import './Boton.css';
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Switch,
-  } from 'react-router-dom';
+import CustomLink from './CustomLink';
 
 function Eprospecto(){
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
@@ -38,8 +32,8 @@ function Eprospecto(){
                                 <input className = "input-gral w-2" type="text" placeholder="Correo Electrónico" defaultValue="harry@hogwarts.edu"/>
                             </div>
                             <div className='aprospectobtnse'>
-                                <button href=""  className="botonAzulMarino"><Link to='./administrarProspectos'>Cancelar</Link></button>
-                                <button href=""  className="botonSalmon"><Link to='./administrarProspectos'>Guardar cambios</Link></button>
+                                <CustomLink tag='button' to='./administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
+                                <CustomLink tag='button' to='./administrarProspectos' className="botonSalmon">Guardar cambios</CustomLink>
                             </div>
                         </div>
                 </div>

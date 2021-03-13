@@ -1,5 +1,6 @@
 import React from 'react';
 import Lateral from './Lateral';
+import CustomLink from './CustomLink';
 import Bienvenida from './Bienvenida';
 import RadioButton from './RadioButton';
 import DropMenu from './DropMenu';
@@ -7,14 +8,6 @@ import './VentanaAgregarUsuario.css';
 import './plantillaInputs.css';
 import './Boton.css';
 import admin from './persona.svg';
-
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Switch,
-  } from 'react-router-dom';
 
 function VentanaAgregarUsuario() {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
@@ -43,8 +36,8 @@ function VentanaAgregarUsuario() {
                     </section>
 
                     <section className="botonesContentPage">
-                        <button className = "botonAzulMarino"><Link to='AdministrarUsuarios'>Cancelar</Link></button>
-                        <button className = "botonSalmon"><Link to='AdministrarUsuarios'>Registrar</Link></button>
+                        <CustomLink tag='button' to='./administrarUsuarios' className="botonAzulMarino">Cancelar</CustomLink>
+                        <CustomLink tag='button' to='./administrarUsuarios' className="botonSalmon">Registrar</CustomLink>
                     </section>
                 </section>
             </main>

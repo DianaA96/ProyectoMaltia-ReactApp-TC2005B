@@ -3,13 +3,7 @@ import "./ContactoAsesor.css"
 import Checkbox from './Checkbox.js';
 import './Boton.css';
 import DropMenu from './DropMenu.js';
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Switch,
-  } from 'react-router-dom';
+import CustomLink from './CustomLink';
 
 function ModalContactosAsesor(){
     return(
@@ -42,7 +36,7 @@ function ModalContactosAsesor(){
                     <DropMenu contenido="Compromiso"/> 
                 </div>
             </div>
-            <button className="botonSalmon"><Link to='./administrarProspectos'>Guardar cambios</Link></button>
+            <CustomLink tag='button' to='./administrarProspectos' className="botonSalmon">Guardar cambios</CustomLink>
         </div>
     );
 }

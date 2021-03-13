@@ -5,25 +5,25 @@ import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import InputFiltrar from './InputFiltrar';
-import asesor from './img/asesor.png';
+import admin from './persona.svg';
 
-function UsuarioNoEncontrado() {
+function UsuarioNoEncontrado1() {
       
-      let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
+      let tabs = ["Administrar usuarios", "Agregar usuario"];
 
     return (
       <React.Fragment>
             <main>
                   <aside>
-                        <Lateral tabs = {tabs} img = {asesor}/>
+                        <Lateral img = {admin} usuario="Admin #1234" tabs={tabs}/>
                   </aside>
                   <section className='contentPage'>
                         <header>
                               <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Administración de usuarios"/>
                         </header>
                         <section className="filtrosContentPage">
-                              <InputBuscar />
-                              <InputFiltrar/>
+                              <InputBuscar num={1} />
+                              <InputFiltrar />
                         </section>
                         <section id="cajaUsuarioNoEncontrado">
                               <img src={ZorroMaltia} alt='Elemento no encontrado.'/>
@@ -38,4 +38,4 @@ function UsuarioNoEncontrado() {
       );
 }
   
-export default UsuarioNoEncontrado;
+export default UsuarioNoEncontrado1;

@@ -1,6 +1,7 @@
 import React from 'react';
 import './TablaAdminClientesAsesor.css';
 import './Boton.css';
+import CustomLink from './CustomLink';
 
 function TablaAdminClientesAsesor(props) {
     return (
@@ -17,7 +18,7 @@ function TablaAdminClientesAsesor(props) {
                   {props.data.map((registro, indice)=>(
                         <tr>
                               <td data-th="nombreClientesAsesor" colSpan="1">{registro.nombres+ " " + registro.apellidos}</td>
-                              <td data-th="botonEditarClientesAsesor"><button id="botonEditarClienteAsesor">Editar</button></td>
+                              <td data-th="botonEditarClientesAsesor"><CustomLink tag='button' to='./editarSolicitudCliente' id="botonEditarProspecto">Editar</CustomLink></td>
                               <td data-th="estatusClientesAsesor"><p id={"semaforoEstatus" + registro.estatusCliente}> </p></td>
                         </tr>
                    ))}

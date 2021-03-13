@@ -1,5 +1,6 @@
 import React from 'react';
 import Lateral from './Lateral';
+import CustomLink from'./CustomLink';
 import Bienvenida from './Bienvenida';
 import RadioButton from './RadioButton';
 import DropMenu from './DropMenu'
@@ -7,13 +8,6 @@ import './VentanaEditarUsuario.css';
 import './plantillaInputs.css'
 import './Boton.css'
 import admin from './persona.svg';
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Switch,
-  } from 'react-router-dom';
 
 function VentanaEditarUsuario() {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
@@ -25,7 +19,7 @@ function VentanaEditarUsuario() {
                 </aside>
                 <section className='contentPageEditarUsuario'>
                     <header>
-                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Editar Usuario"/>
+                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Editar usuario"/>
                     </header>
                     <section className="radiosContentPage">
                         <RadioButton etiqueta="Asesor" />
@@ -42,8 +36,8 @@ function VentanaEditarUsuario() {
                     </section>
 
                     <section className="botonesContentPage">
-                        <button className = "botonAzulMarino"><Link to='./AdministrarUsuarios'>Cancelar</Link></button>
-                        <button className = "botonSalmon"><Link to='./AdministrarUsuarios'>Guardar Cambios</Link></button>
+                        <CustomLink tag='button' to='./administrarUsuarios' className="botonAzulMarino">Cancelar</CustomLink>
+                        <CustomLink tag='button' to='./administrarUsuarios' className="botonSalmon">Guardar cambios</CustomLink>
                     </section>
                 </section>
             </main>

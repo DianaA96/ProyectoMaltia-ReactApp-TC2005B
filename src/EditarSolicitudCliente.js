@@ -7,13 +7,7 @@ import Lateral from './Lateral';
 import Checkbox from './Checkbox';
 import DropMenu from './DropMenu';
 import asesor from './img/asesor.png';
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Switch,
-  } from 'react-router-dom';
+import CustomLink from './CustomLink';
 
 function EditarSolicitudCliente(props) {
     let fecha = new Date();
@@ -63,8 +57,8 @@ function EditarSolicitudCliente(props) {
                         <input type='text' className='input-gral' placeholder='Teléfono' defaultValue='723662631'></input>
                     </section>
                     <section className='botonesEnviarSolicitud'>
-                        <button className='botonAzulMarino'><Link to='./administrarProspectos'>Cancelar</Link></button>
-                        <button className='botonSalmon'><Link to='./administrarProspectos'>Editar solicitud</Link></button>
+                        <CustomLink tag='button' to='./administrarClientes' className="botonAzulMarino">Cancelar</CustomLink>
+                        <CustomLink tag='button' to='./administrarClientes' className="botonSalmon">Guardar cambios</CustomLink>
                     </section>
                 </section>
             </main>

@@ -1,5 +1,8 @@
 import './Boton.css';
 import './deshabilitar.css';
+import CustomLink from './CustomLink';
+import Advertencia from './img/advertencia.png';
+
 function Deshabilitar(){
     return(
         <div className='err'>
@@ -13,8 +16,8 @@ function Deshabilitar(){
                 <p className='pregunta'>¿Está seguro de  deshabilitar a este usuario?</p>
             </div>
             <div className='btns'>
-            <button href=""  className="botonAzulMarino">Cancelar</button>
-            <button href=""  className="botonSalmon">Confirmar</button>
+                <CustomLink tag='button' to='./administrarUsuarios' className="botonAzulMarino">Cancelar</CustomLink>
+                <CustomLink tag='button' to='./administrarUsuarios' className="botonSalmon">Confirmar</CustomLink>
             </div>
         </div>
     );

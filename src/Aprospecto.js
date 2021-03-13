@@ -5,13 +5,7 @@ import asesor from './img/asesor.png'
 import './Aprospecto.css';
 import './plantillaInputs.css';
 import './Boton.css';
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Switch,
-  } from 'react-router-dom';
+import CustomLink from './CustomLink';
 
 function Aprospecto(){
 
@@ -41,9 +35,9 @@ function Aprospecto(){
                                 <input className = "input-gral w-2" type="text" placeholder="Correo electrónico" />
                             </div>
                             <div className='aprospectobtns'>
-                                <button href=""  className="botonAzulMarino"><Link to='./administrarProspectos'>Cancelar</Link></button>
-                                <button href=""  className="botonSalmon"><Link to='./solicitudCliente'>Continuar solicitud</Link></button>
-                                <button href=""  className="botonSalmon"><Link to='./administrarProspectos'>Registrar</Link></button>
+                                <CustomLink tag='button' to='./administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
+                                <CustomLink tag='button' to='./solicitudCliente' className="botonSalmon">Continuar solicitud</CustomLink>
+                                <CustomLink tag='button' to='./administrarProspectos' className="botonSalmon">Registrar</CustomLink>
                          </div>
                      </div>
                 </div>
