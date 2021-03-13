@@ -1,6 +1,5 @@
 import './Boton.css';
 import './deshabilitar.css';
-import Advertencia from './img/advertencia.png';
 function Deshabilitar(){
     return(
         <div className='err'>
