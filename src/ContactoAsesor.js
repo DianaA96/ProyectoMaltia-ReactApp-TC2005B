@@ -4,6 +4,12 @@ import Checkbox from './Checkbox.js';
 import './Boton.css';
 import DropMenu from './DropMenu.js';
 
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Switch,
+  } from 'react-router-dom';
 
 function ModalContactosAsesor(CheckBox){
     return(
@@ -36,7 +42,7 @@ function ModalContactosAsesor(CheckBox){
                     <DropMenu contenido="Compromiso"/> 
                 </div>
             </div>
-            <button className="botonSalmon"> Guardar cambios </button>
+            <button className="botonSalmon"><Link to='./administrarProspectos'>Guardar cambios</Link></button>
         </div>
     );
 }

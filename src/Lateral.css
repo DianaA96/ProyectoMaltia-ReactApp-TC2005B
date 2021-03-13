@@ -26,6 +26,7 @@
 
 .nombre_usuario{
     font-weight: normal;
+    text-align: center;
 }
 
 .tabs{
@@ -43,13 +44,11 @@ a:focus .tab{
     padding: 15px;
     background: #EE786C;
     border-radius: 18px;
-    font-family: Red Hat Display;
+    font-family:"Red Hat Display";
     font-weight: 900;
     font-size: 24px;
     line-height: 40px;
 }
-
-
 
 .tab{
     width: 60%;

@@ -2,45 +2,73 @@ h5 {
     color: black;
 }
 
-.contenedorTablaProspectos {
+.contenedorTablaClientesAsesor {
 	font-family: 'Raleway', sans-serif;
 	padding-bottom: 0%;
 	margin-bottom: 0%;
-	width: 100%;
-	max-height: 50vh;
+	width: 90%; 
 }
 
-.encabezadoTabla {
+.encabezadoTablaClientesAsesor {
 	background: #F2F5FA;
 	display: flex;
 	align-content: space-around;
 	max-height: 50%;
-	color: black;
+	color: #0F123F;
 	text-align: left;
 	font-size: 150%;
 	height: 2.7em;
 	text-align: center;
 }
 
-#encabezadoNombreProspecto {
-	width:40%;
-	text-align: center;
-	padding-left: 2%;
+#encabezadoNombreClientesAsesor {
+	width:61%;
+	text-align: left;
+	padding-left: 7%;
 }
 
-#encabezadoAccionesProspecto {
-	width:60%;
+#encabezadoEstatusClientesAsesor {
+	width: 20%;
+    text-align: center;
 }
+
+#encabezadoAccionesClientesAsesor {
+	width: 15%;
+    text-align: center;
+}
+
+#semaforoEstatusAutorizado {
+    background-color:#84BC6A ;
+    color: #84BC6A;
+    border-radius: 100%;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    padding-top: 0%;
+    padding-bottom: 0%;
+	margin-left: 10%;
+}
+
+#semaforoEstatusNoAutorizado {
+    background-color:#C4C4C4 ;
+    color: #C4C4C4;
+    border-radius: 100%;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+	margin-left: 10%;
+}
+
 
 .rwd-table {
 	margin: 0.1em 0em;
 	width: 100%;
 }
 
-.tabla {
-	max-height: 500px;
+.tablaClientesAsesor {
+	max-height: 400px;
 	overflow-y: scroll;
-	height: 400px;
+	height: 350px;
   	scroll-behavior: smooth;
 	margin-top: 0em;
 	padding: 0em 0.2em 0em 0.2em;
@@ -48,7 +76,9 @@ h5 {
 	font-family: 'Raleway', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
-	background: #F2F5FA;
+	background: #F2F5FA;	
+	border-radius: 0.6em;
+	width: 90%;
 }
 
 tr:hover {background-color: #F2F5FA;}
@@ -105,7 +135,7 @@ tr:hover {background-color: #F2F5FA;}
 	}
 }
 
-.tabla::-webkit-scrollbar-track
+.tablaClientesAsesor::-webkit-scrollbar-track
 {
 	box-shadow: inset 0 0 6px #F2F5FA;
 	border-radius: 10px;
@@ -113,13 +143,13 @@ tr:hover {background-color: #F2F5FA;}
 	background-color: #F2F5FA;
 }
 
-.tabla::-webkit-scrollbar
+.tablaClientesAsesor::-webkit-scrollbar
 {
 	width: 6px;
 	background-color: #F2F5FA;
 }
 
-.tabla::-webkit-scrollbar-thumb
+.tablaClientesAsesor::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;
 	background-color: #C4C4C4;
@@ -128,11 +158,11 @@ tr:hover {background-color: #F2F5FA;}
 .rwd-table {
 	background: white;
 	max-height: 50%;
-	color: black;
+	color: #0F123F;
 	border-radius: 0.4em;
 	overflow: hidden;
 	text-align: left;
-	border-collapse: separate; 
+	border-collapse:separate; 
 	border-spacing: 0em;
 	border-left: 0.5em solid white;
 	border-right: 0.5em solid white;
@@ -148,12 +178,47 @@ tr:hover {background-color: #F2F5FA;}
 
 @media (min-width: 480px) {
 	.rwd-table th, .rwd-table td {
-		padding: 1em !important;
+		padding: 0.3em !important;
 	}
 }
 
 .rwd-table th, .rwd-table td:before {
-	color: black;
+	color: #0F123F;
     text-align: center;
     background-color: #F2F5FA;
+}
+
+.semaforoInfo{
+	display: flex;
+	padding-left: 10%;
+	font-family: 'Red Hat Display';
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+}
+
+.verde{
+	padding-right: 5%;
+	
+}
+
+.semaforo{	
+	background-color:#84BC6A ;
+    color: #84BC6A;
+    border-radius: 100%;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    margin-left: 40%;
+}
+
+.semaforor {
+	align-items: center;
+    background-color:#722C2D ;
+    color: #722C2D;
+    border-radius: 100%;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    margin-left: 40%;
 }

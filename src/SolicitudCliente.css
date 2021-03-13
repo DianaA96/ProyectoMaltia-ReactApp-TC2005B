@@ -43,7 +43,7 @@ header {
     font-weight: 550;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 2em;
+    margin-right: 14em;
 }
 
 .datosClienteSolicitud {
@@ -67,6 +67,10 @@ header {
     text-align: center;
     align-items: center;
     font-size: 20px;
+}
+
+.checkSolicitud div{
+    margin-left: 40%;
 }
 
 .inputsDatosCliente {
