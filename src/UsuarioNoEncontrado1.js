@@ -22,8 +22,8 @@ function UsuarioNoEncontrado1() {
                               <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Administración de usuarios"/>
                         </header>
                         <section className="filtrosContentPage">
-                              <InputBuscar />
-                              <InputFiltrar/>
+                              <InputBuscar num={1} />
+                              <InputFiltrar />
                         </section>
                         <section id="cajaUsuarioNoEncontrado">
                               <img src={ZorroMaltia} alt='Elemento no encontrado.'/>

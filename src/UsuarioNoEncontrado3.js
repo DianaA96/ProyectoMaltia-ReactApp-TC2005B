@@ -22,7 +22,7 @@ function UsuarioNoEncontrado3() {
                               <Bienvenida txtbienvenida = "Bienvenido, Analista" txtventana="Administración de solicitudes"/>
                         </header>
                         <section className="filtrosContentPage">
-                              <InputBuscar />
+                              <InputBuscar num={3}/>
                               <InputFiltrar/>
                         </section>
                         <section id="cajaUsuarioNoEncontrado">
