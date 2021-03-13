@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import Pruebas from './AdministracionClientesAsesor'
+import Pruebas from './LandingAnalista'
 
 
 import {

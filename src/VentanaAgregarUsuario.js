@@ -24,7 +24,7 @@ function VentanaAgregarUsuario() {
                 <aside>
                     <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
                 </aside>
-                <section className='contentPage'>
+                <section className='contentPageAgregarUsuario'>
                     <header>
                         <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Agregar usuario"/>
                     </header>

@@ -23,7 +23,7 @@ function VentanaEditarUsuario() {
                 <aside>
                     <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
                 </aside>
-                <section className='contentPage'>
+                <section className='contentPageEditarUsuario'>
                     <header>
                         <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Editar Usuario"/>
                     </header>
