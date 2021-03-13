@@ -11,10 +11,10 @@ import {
     Switch,
   } from 'react-router-dom';
 
-function ModalContactosAsesor(CheckBox){
+function ModalContactosAsesor(){
     return(
         <div className="modal">
-            <h2 className="nombreUsuario"> Harry Jose Potter Hernandez </h2>
+            <h2 className="nombreUsuario"> Harry José Potter Hernandez </h2>
             <div className="infoPrimaria">
                 <i className="fas fa-phone-alt"> </i>
                 <p className="tel">  771 245 2723 </p>

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import Pruebas from './UsuarioNoEncontrado'
+import Pruebas from './ContactoAsesor'
 
 
 import {
@@ -12,13 +12,13 @@ import {
   Link,
   Switch,
 } from 'react-router-dom';
-import UsuarioNoEncontrado from './UsuarioNoEncontrado';
+
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <UsuarioNoEncontrado/>
+      <Pruebas/>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
