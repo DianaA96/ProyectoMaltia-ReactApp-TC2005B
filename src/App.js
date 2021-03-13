@@ -11,6 +11,7 @@ import VentanaInicioSesion from './VentanaInicioSesion';
 import Eprospecto from './Eprospecto';
 import ContactoAsesor from './ContactoAsesor';
 import SolicitudCliente from './SolicitudCliente';
+import TablaAdminClientesAsesor from './TablaAdminClientesAsesor';
 
 import {
     BrowserRouter as Router,
@@ -27,6 +28,22 @@ function App() {
       numTelCliente: "771 235 82 73",
   }
 
+  let dataQuery={
+    data: [
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+      {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+    ]
+  };
+
   return (
     <Router>
       <Switch>
@@ -41,6 +58,7 @@ function App() {
         <Route path='/AgregarUsuario' exact={true}>{VentanaAgregarUsuario}</Route>
         <Route path='/EditarUsuario' exact={true}>{VentanaEditarUsuario}</Route>
         <Route path='/login' exact={true}>{VentanaInicioSesion}</Route>
+        <Route path='/administracionClientes' exact={true}><TablaAdminClientesAsesor{...dataQuery}/></Route>
         <Route path='/' exact={true}>
           <header id='AppHeader'>
             Welcome!
