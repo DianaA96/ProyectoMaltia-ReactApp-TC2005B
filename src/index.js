@@ -3,10 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
+import Pruebas from './LandingAdminUsuarios'
+
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+} from 'react-router-dom';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <Router>
+      <Pruebas/>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
