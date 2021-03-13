@@ -32,13 +32,13 @@ function VentanaEditarUsuario() {
                         <RadioButton etiqueta="Analista"/>
                     </section>
                     <section className="inputsContentPage">
-                        <input className = "input-gral w-3" type="text" name="" id="" placeholder="Nombre(s)"/>
-                        <input className = "input-gral w-3" type="text" name="" id="" placeholder="Apellido Materno"/>
-                        <input className = "input-gral w-3" type="text" name="" id="" placeholder="Apellido Paterno"/>
-                        <input className = "input-gral w-2" type="tel" name="" id="" placeholder="Número de teléfono"/>
-                        <input className = "input-gral w-2" type="email" name="" id="" placeholder="Correo electrónico"/>
-                        <DropMenu contenido="Puesto"/>
-                        <DropMenu contenido="Departamento"/>
+                        <input className = "input-gral w-3" type="text" name="nombres" placeholder="Nombre(s)" defaultValue="Harry José"/>
+                        <input className = "input-gral w-3" type="text" name="apellidom" placeholder="Apellido Materno" defaultValue="Potter"/>
+                        <input className = "input-gral w-3" type="text" name="apellidop" placeholder="Apellido Paterno" defaultValue="Hernández"/>
+                        <input className = "input-gral w-2" type="tel" name="numtelefono" placeholder="Número de teléfono" defaultValue="771 212 23 32"/>
+                        <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico" defaultValue="email@hogwarts.edu"/>
+                        <DropMenu contenido="Asesor"/>
+                        <DropMenu contenido="#1341"/>
                     </section>
 
                     <section className="botonesContentPage">

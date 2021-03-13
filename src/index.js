@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import Pruebas from './VentanaAgregarUsuario'
+import Pruebas from './VentanaEditarUsuario'
 
 
 import {
