@@ -1,4 +1,7 @@
+
 .cont-padre{
+    height: 100vh;
+    background: #F2F5FA;
     display: flex;
     flex-direction: column;
     align-items: center;
