@@ -1,10 +1,11 @@
 import React from 'react';
-import './LandingAdminUsuarios.css';
+import './LandingAdminUsuarios.css'; //Toma estilos de Vista con mismas clases
+import './AdministracionClientesAsesor.css'
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import InputFiltrar from './InputFiltrar';
-import TablaClientes from './TablaClientes';
+import TablaAdminClientesAsesor from './TablaAdminClientesAsesor';
 import asesor from './img/asesor.png';
 import './Boton.css';
 
@@ -13,22 +14,22 @@ function AdministracionClientesAsesor() {
 
     let datosProspect = {
         data: [
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Dispuesto"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Dispuesto"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"}
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"}
         ]
     };
 
@@ -48,7 +49,7 @@ function AdministracionClientesAsesor() {
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaClientes {...datosProspect} />
+                    <TablaAdminClientesAsesor {...datosProspect} />
                 </section>
             </section>
         </main>

@@ -4,6 +4,7 @@ import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import TablaUsuarios from './TablaUsuarios';
+import InputFiltrar from './InputFiltrar';
 import admin from './persona.svg';
 function LandingAdminUsuarios() {
 
@@ -46,7 +47,7 @@ function LandingAdminUsuarios() {
                     </header>
                     <section className="filtrosContentPageLanding">
                         <InputBuscar />
-                        <InputBuscar />
+                        <InputFiltrar />
                     </section>
                     <section className="tablaContentPage">
                         <TablaUsuarios {...dataQuery} />
