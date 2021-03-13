@@ -85,6 +85,35 @@
     transform: scale(.98);
 }
 
+#botonEditarClienteAsesor {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: white;
+    color: #EE786C;
+    border: 2px solid #EE786C;
+    font-weight: 550;
+    outline: none;
+}
+
+#botonEditarClienteAsesor:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonEditarClienteAsesor:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
 #botonContactarProspecto {
     font-family: "Red Hat Display", sans-serif;
     font-weight: bold;
