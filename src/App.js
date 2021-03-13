@@ -16,7 +16,7 @@ import LandingAdminUsuarios from './LandingAdminUsuarios'; //CORRECTO TablaUsuar
 import VentanaAgregarUsuario from './VentanaAgregarUsuario'; //CORRECTO Links funcionan
 import VentanaEditarUsuario from './VentanaEditarUsuario'; //CORRECTO links funcionan
 import Deshabilitar from './deshabilitar'; //CORRECTO links funcionan
-import UsuarioNoEncontrado from './UsuarioNoEncontrado'; //
+import UsuarioNoEncontrado1 from './UsuarioNoEncontrado1'; //CORRECTO
 
 //Vistas Asesor
 import LandingAdminProspectos from './LandingAdminProspectos'; //CORRECTO links funcionan
@@ -24,13 +24,16 @@ import ContactoAsesor from './ContactoAsesor'; //CORRECTO
 import Aprospecto from './Aprospecto';//CORRECTO
 import Eprospecto from './Eprospecto';//CORRECTO
 import SolicitudCliente from './SolicitudCliente'; //CORRECTO
-import AdministracionClientesAsesor from './AdministracionClientesAsesor';
+import AdministracionClientesAsesor from './AdministracionClientesAsesor';//CORRECTO
+import EditarSolicitudCliente from './EditarSolicitudCliente';//CORRECTO
+import UsuarioNoEncontrado2 from './UsuarioNoEncontrado2'; //CORRECTO
 
 //Vistas Analista
 import LandingAnalista from './LandingAnalista'; //CORRECTO
 import SeguimientoCliente1 from './SeguimientoCliente1'; //CORRECTO
 import SeguimientoCliente2 from './SeguimientoCliente2'; //CORRECTO
 import SeguimientoCliente3 from './SeguimientoCliente3'; //CORRECTO
+import UsuarioNoEncontrado3 from './UsuarioNoEncontrado3'; //CORRECTO
 
 function App() {
 
@@ -49,7 +52,7 @@ function App() {
         <Route path='/agregarUsuario' exact={true}>{VentanaAgregarUsuario}</Route>
         <Route path='/editarUsuario' exact={true}>{VentanaEditarUsuario}</Route>
         <Route path='/eliminarUsuario' exact={true}>{Deshabilitar}</Route>
-        <Route path='/user-not-found' exact={true}>{UsuarioNoEncontrado}</Route>
+        <Route path='/user-not-found1' exact={true}>{UsuarioNoEncontrado1}</Route>
 
         <Route path='/administrarProspectos' exact={true}>{LandingAdminProspectos}</Route>
         <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
@@ -57,11 +60,14 @@ function App() {
         <Route path='/editarProspecto' exact={true}>{Eprospecto}</Route>
         <Route path='/solicitudCliente' exact={true}><SolicitudCliente{...datosSolicitudCliente}/></Route>
         <Route path='/administrarClientes' exact={true}>{AdministracionClientesAsesor}</Route>
+        <Route path='/user-not-found2' exact={true}>{UsuarioNoEncontrado2}</Route>
+        <Route path='/editarSolicitudCliente' exact={true}><EditarSolicitudCliente/></Route>
         
         <Route path='/solicitudes' exact={true}>{LandingAnalista}</Route>
         <Route path='/seguimientoCliente1' exact={true}>{SeguimientoCliente1}</Route>
         <Route path='/seguimientoCliente2' exact={true}>{SeguimientoCliente2}</Route>
         <Route path='/seguimientoCliente3' exact={true}>{SeguimientoCliente3}</Route>
+        <Route path='/user-not-found3' exact={true}>{UsuarioNoEncontrado3}</Route>
         
         <Route path='/' exact={true}>
           <header id='AppHeader'>

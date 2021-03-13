@@ -33,19 +33,19 @@ function LandingAdminProspectos() {
       };
 
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
-    let enlaces = ["./", "./nuevo-usuario"];
+
     
     return(
         <main>
             <aside>
-                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} enlaces={enlaces} />
+                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} />
             </aside>
             <section className='contenido'>
                 <header>
                     <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Administración de prospectos"/>
                 </header>
                 <section className="filtros">
-                    <CustomLink tag={InputBuscar} to='./user-not-found' className={InputBuscar}>Cancelar</CustomLink>
+                    <InputBuscar num={2} />
                     <InputFiltrar />
                 </section>
                 <section className="tablaProspectos">

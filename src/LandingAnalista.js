@@ -32,19 +32,18 @@ function LandingAnalista() {
       };
 
     let tabs = ["Solicitudes", "Generar reportes"];
-    let enlaces = ["./", "./nuevo-usuario"];
 
     return(
         <main>
             <aside>
-                <Lateral img = {analista} usuario="Analista #1234" tabs={tabs} enlaces={enlaces}/>
+                <Lateral img = {analista} usuario="Analista #1234" tabs={tabs}/>
             </aside>
             <section className='contentPage'>
                 <header>
                     <Bienvenida txtbienvenida = "Bienvenido, analista" txtventana="Administración de solicitudes"/>
                 </header>
                 <section className="filtrosContentPageLanding">
-                    <InputBuscar />
+                    <InputBuscar num={3} />
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">

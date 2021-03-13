@@ -5,17 +5,17 @@ import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import InputFiltrar from './InputFiltrar';
-import asesor from './img/asesor.png';
+import admin from './persona.svg';
 
-function UsuarioNoEncontrado() {
+function UsuarioNoEncontrado1() {
       
-      let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
+      let tabs = ["Administrar usuarios", "Agregar usuario"];
 
     return (
       <React.Fragment>
             <main>
                   <aside>
-                        <Lateral tabs = {tabs} img = {asesor}/>
+                        <Lateral img = {admin} usuario="Admin #1234" tabs={tabs}/>
                   </aside>
                   <section className='contentPage'>
                         <header>
@@ -38,4 +38,4 @@ function UsuarioNoEncontrado() {
       );
 }
   
-export default UsuarioNoEncontrado;
+export default UsuarioNoEncontrado1;
