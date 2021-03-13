@@ -24,7 +24,7 @@ function TablaClientes(props) {
                   
             </section> 
             <div className='semaforoInfo'>
-                  <p className="verde">Credito pendiente<p className="semaforo"></p></p> <p className="rojo">Credito dispuesto <p className="semaforor"></p></p>
+                  <p className="verde">Crédito pendiente<p className="semaforo"></p></p> <p className="rojo">Crédito dispuesto <p className="semaforor"></p></p>
             </div>
       </React.Fragment>
     );
