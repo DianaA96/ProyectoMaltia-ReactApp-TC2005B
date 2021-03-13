@@ -38,7 +38,7 @@ function Aprospecto(){
                             </div>
                             <div className='segundalinea'>
                                 <input className = "input-gral w-2" type="text" placeholder="Teléfono"/>
-                                <input className = "input-gral w-2" type="text" placeholder="Correo electrónico"/>
+                                <input className = "input-gral w-2" type="text" placeholder="Correo electrónico" />
                             </div>
                             <div className='aprospectobtns'>
                                 <button href=""  className="botonAzulMarino"><Link to='./administrarProspectos'>Cancelar</Link></button>

@@ -24,7 +24,7 @@ function TablaAdminClientesAsesor(props) {
                   </table>
                   
             </section> 
-            <div className='semaforoInfo'>
+            <div className='semaforoInfoClientesAsesor'>
                   <p className="verde">Crédito autorizado <p className="semaforo"></p></p> 
             </div>
       </React.Fragment>

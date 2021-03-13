@@ -4,6 +4,7 @@ import ZorroMaltia from './img/zorroMaltiaNotFound.svg';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
+import InputFiltrar from './InputFiltrar';
 import asesor from './img/asesor.png';
 
 function UsuarioNoEncontrado() {
@@ -22,14 +23,14 @@ function UsuarioNoEncontrado() {
                         </header>
                         <section className="filtrosContentPage">
                               <InputBuscar />
-                              <InputBuscar />
+                              <InputFiltrar/>
                         </section>
                         <section id="cajaUsuarioNoEncontrado">
-                                    <img src={ZorroMaltia} alt='Elemento no encontrado.'/>
-                                    <div>
-                                          <h1>Parece que tu búsqueda no ha arrojado resultados.</h1>
-                                          <p>Prueba con otro usuario :)</p>
-                                    </div>
+                              <img src={ZorroMaltia} alt='Elemento no encontrado.'/>
+                              <div>
+                                    <h1>Parece que tu búsqueda no ha arrojado resultados.</h1>
+                                    <p>Prueba con otro usuario :)</p>
+                              </div>
                         </section>
                   </section>
             </main>

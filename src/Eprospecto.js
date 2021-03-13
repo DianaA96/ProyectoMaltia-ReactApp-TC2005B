@@ -13,7 +13,7 @@ import {
     Switch,
   } from 'react-router-dom';
 
-function Aprospecto(){
+function Eprospecto(){
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
     return(
         <React.Fragment>
@@ -29,13 +29,13 @@ function Aprospecto(){
                         </div>
                         <div className='cuerpitocontenidoe'>
                             <div className='primeralineae'>
-                                <input className = "input-gral w-3" type="text" placeholder="Harry José"/>
-                                <input className = "input-gral w-3" type="text" placeholder="Potter"/>
-                                <input className = "input-gral w-3" type="text" placeholder="Hernandez"/>
+                                <input className = "input-gral w-3" type="text" placeholder="Nombre(s)"  defaultValue="Harry José"/>
+                                <input className = "input-gral w-3" type="text" placeholder="Apellido Paterno" defaultValue="Potter"/>
+                                <input className = "input-gral w-3" type="text" placeholder="Apellido Materno" defaultValue="Hernández"/>
                             </div>
                             <div className='segundalineae'>
-                                <input className = "input-gral w-2" type="text" placeholder="772 123 273 2"/>
-                                <input className = "input-gral w-2" type="text" placeholder="hagrid@hogwarts.ww"/>
+                                <input className = "input-gral w-2" type="text" placeholder="Teléfono" defaultValue="772 312 23 23"/>
+                                <input className = "input-gral w-2" type="text" placeholder="Correo Electrónico" defaultValue="harry@hogwarts.edu"/>
                             </div>
                             <div className='aprospectobtnse'>
                                 <button href=""  className="botonAzulMarino"><Link to='./administrarProspectos'>Cancelar</Link></button>
@@ -48,4 +48,4 @@ function Aprospecto(){
         
     );
 }
-export default Aprospecto;
+export default Eprospecto;

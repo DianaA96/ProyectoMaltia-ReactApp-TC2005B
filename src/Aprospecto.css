@@ -54,7 +54,13 @@
 }
 
 .aprospectobtns{
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-left: 60%;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
+
+.aprospectobtns .botonSalmon{
+    margin-left: 5%;
+}
+

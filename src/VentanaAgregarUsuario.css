@@ -5,7 +5,7 @@ main {
     border: 1em solid #0F123F;
 }
 
-.contentPage { 
+.contentPageAgregarUsuario { 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
