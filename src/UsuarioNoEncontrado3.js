@@ -19,7 +19,7 @@ function UsuarioNoEncontrado3() {
                   </aside>
                   <section className='contentPage'>
                         <header>
-                              <Bienvenida txtbienvenida = "Bienvenido, Analista" txtventana="Administración de solicitudes"/>
+                              <Bienvenida txtBienvenida = "Bienvenido, Analista" txtVentana="Administración de solicitudes"/>
                         </header>
                         <section className="filtrosContentPage">
                               <InputBuscar num={3}/>

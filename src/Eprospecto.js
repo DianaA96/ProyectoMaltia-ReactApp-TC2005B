@@ -19,7 +19,7 @@ function Eprospecto(){
                 </aside>
                 <div className='cuerpitoe'>
                         <div className='cabezae'>
-                            <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Editar Prospecto"/>
+                            <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Editar Prospecto"/>
                         </div>
                         <div className='cuerpitocontenidoe'>
                             <div className='primeralineae'>

@@ -19,7 +19,7 @@ function VentanaEditarUsuario() {
                 </aside>
                 <section className='contentPageEditarUsuario'>
                     <header>
-                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Editar usuario"/>
+                        <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Editar usuario"/>
                     </header>
                     <section className="radiosContentPage">
                         <RadioButton etiqueta="Asesor" />

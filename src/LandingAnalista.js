@@ -40,7 +40,7 @@ function LandingAnalista() {
             </aside>
             <section className='contentPage'>
                 <header>
-                    <Bienvenida txtbienvenida = "Bienvenido, analista" txtventana="Administración de solicitudes"/>
+                    <Bienvenida txtBienvenida = "Bienvenido, analista" txtVentana="Administración de solicitudes"/>
                 </header>
                 <section className="filtrosContentPageLanding">
                     <InputBuscar num={3} />

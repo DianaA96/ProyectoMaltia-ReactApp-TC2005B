@@ -42,7 +42,7 @@ function LandingAdminProspectos() {
             </aside>
             <section className='contenido'>
                 <header>
-                    <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Administración de prospectos"/>
+                    <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de prospectos"/>
                 </header>
                 <section className="filtros">
                     <InputBuscar num={2} />

@@ -24,7 +24,7 @@ function SolicitudCliente(props) {
                 </aside>
                 <section className='contentPageExtendido'>
                     <header className='headerSolicitudCliente'>
-                        <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Llenar la solicitud del cliente"/>
+                        <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Llenar la solicitud del cliente"/>
                         <h2 className="fechaLlenadoSolicitud">{`${fecha.getDate()} de ${mes} del ${fecha.getFullYear()}`}</h2>
                     </header>
                     <section className='datosClienteSolicitud'>

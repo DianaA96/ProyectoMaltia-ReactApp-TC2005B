@@ -18,7 +18,7 @@ function SeguimientoCliente2() {
                 </aside>
                 <section className='contentPageSeguimiento'>
                     <header>
-                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Seguimiento de solicitudes"/>
+                        <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Seguimiento de solicitudes"/>
                     </header>
                     <section className="pasosContentPageSeguimiento">
                         <h2 className="nombreCliente">Harry José Potter Hernandez</h2>

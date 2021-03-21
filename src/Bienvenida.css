@@ -7,7 +7,7 @@
     color: #FFFFFF;
 }
 
-#txtbienvenida{   
+#txtBienvenida{   
     font-family: 'Raleway',sans-serif;
     font-weight: 400;
     font-size: 18px;  
@@ -15,8 +15,7 @@
     margin:0;
 }
 
-#txtventana{ 
-   
+#txtVentana{ 
     font-family: 'Red Hat Display',sans-serif;
     font-style: normal;
     font-weight: 900;
@@ -25,6 +24,3 @@
     margin: 0em;
     margin-top: 2%;
 }
-
-
-

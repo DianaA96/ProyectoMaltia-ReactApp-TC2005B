@@ -42,7 +42,7 @@ function AdministracionClientesAsesor() {
             </aside>
             <section className='contentPage'>
                 <header>
-                    <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Administración de clientes"/>
+                    <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de clientes"/>
                 </header>
                 <section className="filtrosContentPageLanding">
                     <InputBuscar num={2} />

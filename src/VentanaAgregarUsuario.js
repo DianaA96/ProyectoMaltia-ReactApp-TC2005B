@@ -19,7 +19,7 @@ function VentanaAgregarUsuario() {
                 </aside>
                 <section className='contentPageAgregarUsuario'>
                     <header>
-                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Agregar usuario"/>
+                        <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Agregar usuario"/>
                     </header>
                     <section className="radiosContentPage">
                         <RadioButton etiqueta="Asesor" />

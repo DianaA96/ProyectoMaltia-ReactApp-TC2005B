@@ -24,7 +24,7 @@ function EditarSolicitudCliente(props) {
                 </aside>
                 <section className='contentPageExtendido'>
                     <header className='headerSolicitudCliente'>
-                        <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Editar la solicitud del cliente"/>
+                        <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Editar la solicitud del cliente"/>
                         <h2 className="fechaLlenadoSolicitud">{`${fecha.getDate()} de ${mes} del ${fecha.getFullYear()}`}</h2>
                     </header>
                     <section className='datosClienteSolicitud'>

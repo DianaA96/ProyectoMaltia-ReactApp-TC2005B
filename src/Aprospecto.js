@@ -21,7 +21,7 @@ function Aprospecto(){
                 </aside>
                 <div className='cuerpito'>
                         <div className='cabeza'>
-                            <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Agregar prospecto"/>
+                            <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Agregar prospecto"/>
                             <p className='fechachida'>{`${fecha.getDate()} de ${mes} del ${fecha.getFullYear()}`}</p>
                         </div>
                         <div className='cuerpitocontenido'>
