@@ -1,11 +1,11 @@
 import React from 'react';
 import './UsuarioNoEncontrado.css';
-import ZorroMaltia from './img/zorroMaltiaNotFound.svg';
+import ZorroMaltia from './assets/zorroMaltiaNotFound.svg';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import InputFiltrar from './InputFiltrar';
-import  analista from './img/analista.png';
+import  analista from './assets/analista.png';
 
 function UsuarioNoEncontrado3() {
       

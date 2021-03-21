@@ -6,7 +6,7 @@ import Bienvenida from './Bienvenida';
 import Lateral from './Lateral';
 import Checkbox from './Checkbox';
 import DropMenu from './DropMenu';
-import asesor from './img/asesor.png';
+import asesor from './assets/asesor.png';
 import CustomLink from './CustomLink';
 
 function SolicitudCliente(props) {

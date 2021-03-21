@@ -7,7 +7,7 @@ import DropMenu from './DropMenu';
 import './VentanaAgregarUsuario.css';
 import './plantillaInputs.css';
 import './Boton.css';
-import admin from './persona.svg';
+import admin from './assets/persona.svg';
 
 function VentanaAgregarUsuario() {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];

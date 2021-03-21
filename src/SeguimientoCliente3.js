@@ -2,7 +2,7 @@ import React from 'react';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import PasosSeguimiento from './PasosSeguimiento'
-import admin from './persona.svg';
+import admin from './assets/persona.svg';
 import './plantillaInputs.css'
 import './SeguimientoCliente1.css'; //Se toman los estilos de la primera vista de seguimiento cliente al tener las mismas clases
 

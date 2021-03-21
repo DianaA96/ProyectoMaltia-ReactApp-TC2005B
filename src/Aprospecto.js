@@ -1,7 +1,7 @@
 import Lateral from'./Lateral';
 import Bienvenida from './Bienvenida';
 import React from 'react';
-import asesor from './img/asesor.png'
+import asesor from './assets/asesor.png'
 import './Aprospecto.css';
 import './plantillaInputs.css';
 import './Boton.css';

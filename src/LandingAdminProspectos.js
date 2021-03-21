@@ -6,7 +6,7 @@ import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import InputFiltrar from './InputFiltrar';
 import TablaProspectos from './TablaProspectos';
-import asesor from './img/asesor.png';
+import asesor from './assets/asesor.png';
 import './Boton.css'
 
 function LandingAdminProspectos() {

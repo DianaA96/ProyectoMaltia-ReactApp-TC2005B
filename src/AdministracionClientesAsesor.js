@@ -6,7 +6,7 @@ import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import InputFiltrar from './InputFiltrar';
 import TablaAdminClientesAsesor from './TablaAdminClientesAsesor';
-import asesor from './img/asesor.png';
+import asesor from './assets/asesor.png';
 import './Boton.css';
 
 

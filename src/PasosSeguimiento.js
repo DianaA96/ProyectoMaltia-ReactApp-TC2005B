@@ -1,6 +1,6 @@
 import React from 'react'
 import './PasosSeguimiento.css'
-import zorro from './img/ZorroSeguimiento.png'
+import zorro from './assets/ZorroSeguimiento.png'
 import CustomLink from './CustomLink';
 
 function PasosSeguimiento() {

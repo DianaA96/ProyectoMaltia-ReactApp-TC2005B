@@ -5,7 +5,7 @@ import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import TablaUsuarios from './TablaUsuarios';
 import InputFiltrar from './InputFiltrar';
-import admin from './persona.svg';
+import admin from './assets/persona.svg';
 function LandingAdminUsuarios() {
 
     let dataQuery = {

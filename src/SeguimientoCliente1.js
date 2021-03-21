@@ -3,7 +3,7 @@ import './SeguimientoCliente1.css';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import PasosSeguimiento from './PasosSeguimiento'
-import admin from './persona.svg';
+import admin from './assets/persona.svg';
 import Checkbox from './Checkbox'
 import './plantillaInputs.css'
 

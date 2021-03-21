@@ -5,7 +5,7 @@ import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import TablaClientes from './TablaClientes';
 import InputFiltrar from './InputFiltrar';
-import  analista from './img/analista.png';
+import  analista from './assets/analista.png';
 import './Boton.css';
 
 function LandingAnalista() {
