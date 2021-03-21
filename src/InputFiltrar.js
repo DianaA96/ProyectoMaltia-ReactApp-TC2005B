@@ -5,7 +5,7 @@ function InputFiltrar(){
         <div className="filterInput">
             <input id="searchFilter" type="text" placeholder="Escribe para filtrar"/>
             <i class="fas fa-filter"></i>
-            <ul class="dropFilter"></ul>
+            <ul className="dropFilter"></ul>
         </div>
     );
 }
