@@ -36,12 +36,12 @@ function LandingAdminProspectos() {
 
     
     return(
-        <main>
+        <main id='mainAdminProspectos'>
             <aside>
                 <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} />
             </aside>
             <section className='contenido'>
-                <header>
+                <header id='headerAdminProspectos'>
                     <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de prospectos"/>
                 </header>
                 <section className="filtros">
