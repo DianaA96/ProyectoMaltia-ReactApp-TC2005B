@@ -10,7 +10,7 @@ import CustomLink from './CustomLink';
 function Aprospecto(){
 
     let fecha = new Date();
-    let mes = fecha.toLocaleString('default', { month: 'long' });
+    let varFecha = `${fecha.getDate()} de ${fecha.toLocaleString('default', { month: 'long' })} del ${fecha.getFullYear()}`;
 
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
     return(
@@ -22,7 +22,7 @@ function Aprospecto(){
                 <div className='cuerpito'>
                         <div className='cabeza'>
                             <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Agregar prospecto"/>
-                            <p className='fechachida'>{`${fecha.getDate()} de ${mes} del ${fecha.getFullYear()}`}</p>
+                            <p className='fechachida'>{varFecha}</p>
                         </div>
                         <div className='cuerpitocontenido'>
                             <div className='primeralinea'>
