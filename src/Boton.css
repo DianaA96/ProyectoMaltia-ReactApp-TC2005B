@@ -1,4 +1,4 @@
-button {
+button:focus {
     outline: none;
 }
 
@@ -28,6 +28,10 @@ button:active {
     font-weight: 550;
     padding-left: 20%;
     padding-right: 20%;
+    cursor: pointer;
+}
+
+#botonEditarUsuario:focus {
     outline: none;
 }
 
@@ -57,6 +61,10 @@ button:active {
     font-weight: 550;
     padding-left: 20%;
     padding-right: 20%;
+    cursor: pointer;
+}
+
+#botonEliminarUsuario:focus {
     outline: none;
 }
 
@@ -86,6 +94,10 @@ button:active {
     color: #EE786C;
     border: 2px solid #EE786C;
     font-weight: 550;
+    cursor: pointer;
+}
+
+#botonEditarProspecto:focus {
     outline: none;
 }
 
@@ -115,6 +127,10 @@ button:active {
     color: #EE786C;
     border: 2px solid #EE786C;
     font-weight: 550;
+    cursor: pointer;
+}
+
+#botonEditarClienteAsesor:focus {
     outline: none;
 }
 
@@ -144,6 +160,10 @@ button:active {
     color: #455BA6;
     border: 2px solid #455BA6;
     font-weight: 550;
+    cursor: pointer;
+}
+
+#botonContactarProspecto:focus {
     outline: none;
 }
 
@@ -173,6 +193,10 @@ button:active {
     font-weight: 550;
     padding-left:13%;
     padding-right: 13%;
+    cursor: pointer;
+}
+
+#botonIniciarSolicitudProspecto:focus {
     outline: none;
 }
 
@@ -203,6 +227,10 @@ button:active {
     font-weight: 550;
     padding-left:13%;
     padding-right: 13%;
+    cursor: pointer;
+}
+
+#botonSeguimiento:focus {
     outline: none;
 }
 
@@ -232,6 +260,10 @@ button:active {
     border: 2px solid #0F123F;
     color: white;
     font-weight: 550;
+    cursor: pointer;
+}
+
+#botonAzulMarino:focus {
     outline: none;
 }
 
@@ -261,8 +293,12 @@ button:active {
     border: 2px solid #EE786C;
     color: white;
     font-weight: 550;
-    outline: none;
+    cursor: pointer;
 } 
+
+#botonSalmon:focus {
+    outline: none;
+}
 
 .botonSalmon:hover {
     box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
