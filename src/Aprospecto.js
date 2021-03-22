@@ -1,7 +1,7 @@
 import Lateral from'./Lateral';
 import Bienvenida from './Bienvenida';
 import React from 'react';
-import asesor from './img/asesor.png'
+import asesor from './assets/asesor.png'
 import './Aprospecto.css';
 import './plantillaInputs.css';
 import './Boton.css';
@@ -10,7 +10,7 @@ import CustomLink from './CustomLink';
 function Aprospecto(){
 
     let fecha = new Date();
-    let mes = fecha.toLocaleString('default', { month: 'long' });
+    let varFecha = `${fecha.getDate()} de ${fecha.toLocaleString('default', { month: 'long' })} del ${fecha.getFullYear()}`;
 
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
     return(
@@ -21,8 +21,8 @@ function Aprospecto(){
                 </aside>
                 <div className='cuerpito'>
                         <div className='cabeza'>
-                            <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Agregar prospecto"/>
-                            <p className='fechachida'>{`${fecha.getDate()} de ${mes} del ${fecha.getFullYear()}`}</p>
+                            <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Agregar prospecto"/>
+                            <p className='fechachida'>{varFecha}</p>
                         </div>
                         <div className='cuerpitocontenido'>
                             <div className='primeralinea'>

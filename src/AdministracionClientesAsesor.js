@@ -6,7 +6,7 @@ import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import InputFiltrar from './InputFiltrar';
 import TablaAdminClientesAsesor from './TablaAdminClientesAsesor';
-import asesor from './img/asesor.png';
+import asesor from './assets/asesor.png';
 import './Boton.css';
 
 
@@ -42,7 +42,7 @@ function AdministracionClientesAsesor() {
             </aside>
             <section className='contentPage'>
                 <header>
-                    <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Administración de clientes"/>
+                    <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de clientes"/>
                 </header>
                 <section className="filtrosContentPageLanding">
                     <InputBuscar num={2} />

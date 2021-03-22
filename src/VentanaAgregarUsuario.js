@@ -7,7 +7,7 @@ import DropMenu from './DropMenu';
 import './VentanaAgregarUsuario.css';
 import './plantillaInputs.css';
 import './Boton.css';
-import admin from './persona.svg';
+import admin from './assets/persona.svg';
 
 function VentanaAgregarUsuario() {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
@@ -19,7 +19,7 @@ function VentanaAgregarUsuario() {
                 </aside>
                 <section className='contentPageAgregarUsuario'>
                     <header>
-                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Agregar usuario"/>
+                        <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Agregar usuario"/>
                     </header>
                     <section className="radiosContentPage">
                         <RadioButton etiqueta="Asesor" />

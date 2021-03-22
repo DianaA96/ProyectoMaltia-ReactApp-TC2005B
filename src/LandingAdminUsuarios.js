@@ -5,7 +5,7 @@ import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import TablaUsuarios from './TablaUsuarios';
 import InputFiltrar from './InputFiltrar';
-import admin from './persona.svg';
+import admin from './assets/persona.svg';
 function LandingAdminUsuarios() {
 
     let dataQuery = {
@@ -35,26 +35,23 @@ function LandingAdminUsuarios() {
       
 
     return(
-        
-        <React.Fragment>
-            <main>
-                <aside>
-                    <Lateral img = {admin} usuario="Admin #1234" tabs={tabs}/>
-                </aside>
-                <section className='contentPage'>
-                    <header>
-                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Administración de usuarios"/>
-                    </header>
-                    <section className="filtrosContentPageLanding">
-                        <InputBuscar num={1} />
-                        <InputFiltrar />
-                    </section>
-                    <section className="tablaContentPage">
-                        <TablaUsuarios {...dataQuery} />
-                    </section>
+         <main>
+            <aside>
+                 <Lateral img = {admin} usuario="Admin #1234" tabs={tabs}/>
+            </aside>
+            <section className='contentPage'>
+                <header>
+                    <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Administración de usuarios"/>
+                </header>
+                <section className="filtrosContentPageLanding">
+                    <InputBuscar num={1} />
+                    <InputFiltrar />
                 </section>
-            </main>
-        </React.Fragment>
+                <section className="tablaContentPage">
+                    <TablaUsuarios {...dataQuery} />
+                </section>
+            </section>
+        </main>
     );
 }
 

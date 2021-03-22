@@ -6,7 +6,7 @@ import Bienvenida from './Bienvenida';
 import Lateral from './Lateral';
 import Checkbox from './Checkbox';
 import DropMenu from './DropMenu';
-import asesor from './img/asesor.png';
+import asesor from './assets/asesor.png';
 import CustomLink from './CustomLink';
 
 function SolicitudCliente(props) {
@@ -24,7 +24,7 @@ function SolicitudCliente(props) {
                 </aside>
                 <section className='contentPageExtendido'>
                     <header className='headerSolicitudCliente'>
-                        <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Llenar la solicitud del cliente"/>
+                        <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Llenar la solicitud del cliente"/>
                         <h2 className="fechaLlenadoSolicitud">{`${fecha.getDate()} de ${mes} del ${fecha.getFullYear()}`}</h2>
                     </header>
                     <section className='datosClienteSolicitud'>

@@ -1,7 +1,7 @@
 import Lateral from'./Lateral';
 import Bienvenida from './Bienvenida';
 import React from 'react';
-import asesor from './img/asesor.png'
+import asesor from './assets/asesor.png'
 import './Eprospecto.css';
 import './plantillaInputs.css';
 import './Boton.css';
@@ -19,7 +19,7 @@ function Eprospecto(){
                 </aside>
                 <div className='cuerpitoe'>
                         <div className='cabezae'>
-                            <Bienvenida txtbienvenida = "Bienvenido, Asesor" txtventana="Editar Prospecto"/>
+                            <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Editar Prospecto"/>
                         </div>
                         <div className='cuerpitocontenidoe'>
                             <div className='primeralineae'>

@@ -1,11 +1,11 @@
 import React from 'react';
 import './UsuarioNoEncontrado.css';
-import ZorroMaltia from './img/zorroMaltiaNotFound.svg';
+import ZorroMaltia from './assets/zorroMaltiaNotFound.svg';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
 import InputFiltrar from './InputFiltrar';
-import admin from './persona.svg';
+import admin from './assets/persona.svg';
 
 function UsuarioNoEncontrado1() {
       
@@ -19,7 +19,7 @@ function UsuarioNoEncontrado1() {
                   </aside>
                   <section className='contentPage'>
                         <header>
-                              <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Administración de usuarios"/>
+                              <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Administración de usuarios"/>
                         </header>
                         <section className="filtrosContentPage">
                               <InputBuscar num={1} />

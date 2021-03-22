@@ -1,4 +1,4 @@
-main {
+#mainAdminProspectos {
     display: flex;
     flex-direction: row;
     background-color: #0F123F;
@@ -14,10 +14,9 @@ main {
     padding: 30px;
 }
 
-header {
+#headerAdminProspectos {
     padding-left: 4%;
     padding-bottom: 2%;
-    width: 110%;
 }
 
 .filtros {

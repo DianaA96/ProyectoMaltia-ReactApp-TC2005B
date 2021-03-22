@@ -2,10 +2,10 @@ import './Checkbox.css'
 
 function CheckBox(){
     return(
-        <div class="cont-component">
-            <label class="container-check">
-                <input class="checkbox" type="checkbox"/>
-                <span class="checkmark"></span>
+        <div className="cont-component">
+            <label className="container-check">
+                <input className="checkbox" type="checkbox"/>
+                <span className="checkmark"></span>
             </label>
         </div>
     )

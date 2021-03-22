@@ -2,7 +2,7 @@ import React from 'react';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import PasosSeguimiento from './PasosSeguimiento'
-import admin from './persona.svg';
+import admin from './assets/persona.svg';
 import ToggleSwitch from './ToggleSwitch'
 import './SeguimientoCliente1.css'; //Se toman los estilos de la primera vista de seguimiento cliente al tener las mismas clases
 import './SeguimientoCliente2.css'; //Estilos para elementos diferentes en la vista
@@ -18,7 +18,7 @@ function SeguimientoCliente2() {
                 </aside>
                 <section className='contentPageSeguimiento'>
                     <header>
-                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Seguimiento de solicitudes"/>
+                        <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Seguimiento de solicitudes"/>
                     </header>
                     <section className="pasosContentPageSeguimiento">
                         <h2 className="nombreCliente">Harry José Potter Hernandez</h2>

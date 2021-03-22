@@ -3,7 +3,7 @@ import './SeguimientoCliente1.css';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import PasosSeguimiento from './PasosSeguimiento'
-import admin from './persona.svg';
+import admin from './assets/persona.svg';
 import Checkbox from './Checkbox'
 import './plantillaInputs.css'
 
@@ -18,7 +18,7 @@ function SeguimientoCliente1() {
                 </aside>
                 <section className='contentPageSeguimiento'>
                     <header>
-                        <Bienvenida txtbienvenida = "Bienvenido, Administrador" txtventana="Seguimiento de solicitudes"/>
+                        <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Seguimiento de solicitudes"/>
                     </header>
                     <section className="pasosContentPageSeguimiento">
                         <h2 className="nombreCliente">Harry José Potter Hernandez</h2>
