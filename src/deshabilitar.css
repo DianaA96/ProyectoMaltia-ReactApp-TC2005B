@@ -13,7 +13,7 @@
     font-size: 50px;
     color:#722C2D
 }
-.cabeza{
+.err .cabeza{
     display: flex;
     justify-content: center;
     flex-direction: column;
