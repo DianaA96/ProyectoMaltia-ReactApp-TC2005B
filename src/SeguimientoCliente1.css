@@ -18,6 +18,12 @@ main {
     font-family: 'Raleway';
 }
 
+.contentPageSeguimiento header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .pasosContentPageSeguimiento{
     width: 100%;
     display: flex;
@@ -54,6 +60,35 @@ main {
     margin-top: 80px;
 }
 
+.input-ayuda{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input-ayuda i{
+    font-size: 30px;
+    color: #C4C4C4;
+}
+
+
+.tooltip{
+    opacity: 0;
+    visibility: hidden;
+    padding: 5px;
+    font-size: 16px;
+    position: absolute;
+    background: #C4C4C4;
+    border-radius: 10px;
+    margin-top: -120px;
+    margin-left: 300px;
+}
+
+.input-ayuda i:hover .tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+
 .lineaSeguimiento{
     margin-left: 5%;
     margin-right: 5%;
@@ -63,45 +98,7 @@ main {
     border-radius: 50px;
 }
 
-.solicitudSeguimiento{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    text-align:start;
-}
 
-.solicitudSeguimiento h4{
-    color: #0F123F;
-    text-align: center;
-}
-
-.solicitudSeguimiento h2{
-    text-align: center;
-    color: #0F123F;
-}
-.solicitudSeguimiento span{
-    text-align:start;
-    font-weight: bold;
-}
-
-.solicitudSeguimiento p{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.cont-referencias{
-    display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     width: 100%;
-}
-
-.referencia-sol{
-    width: 50%;
-    text-align: center;
-}
 
 
 
