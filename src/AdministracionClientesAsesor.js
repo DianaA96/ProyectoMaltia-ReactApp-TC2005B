@@ -48,8 +48,22 @@ function AdministracionClientesAsesor() {
                     <InputBuscar num={2} />
                     <InputFiltrar />
                 </section>
-                <section className="tablaContentPage">
+                <section className="tablaContentPageAsesor">
                     <TablaAdminClientesAsesor {...datosProspect} />
+                </section>
+                <section className='semaforos'>
+                    <div className='tarjetaSemaforo'>
+                        <p className="semaforo"></p>
+                        <p className="verde">Crédito autorizado</p>
+                    </div>
+                    <div className='tarjetaSemaforo'>
+                        <p className="semaforoRojo"></p>
+                        <p className="rojoEncendido">Crédito no autorizado</p>
+                    </div>
+                    <div className="tarjetaSemaforo">
+                        <p className="semaforog"></p>
+                        <p className="gris">Crédito no revisado</p>
+                    </div>
                 </section>
             </section>
         </main>
