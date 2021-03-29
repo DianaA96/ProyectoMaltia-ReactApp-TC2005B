@@ -1,5 +1,5 @@
 import React from 'react';
-import './LandingAdminUsuarios.css'; //Toma estilos de Vista con mismas clases
+import './LandingAnalista.css';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
@@ -40,14 +40,24 @@ function LandingAnalista() {
             </aside>
             <section className='contentPage'>
                 <header>
-                    <Bienvenida txtBienvenida = "Bienvenido, analista" txtVentana="Administración de solicitudes"/>
+                    <Bienvenida txtBienvenida = "Bienvenido, Analista" txtVentana="Administración de solicitudes"/>
                 </header>
                 <section className="filtrosContentPageLanding">
-                    <InputBuscar num={3} />
+                    <InputBuscar num={1} />
                     <InputFiltrar />
                 </section>
-                <section className="tablaContentPage">
+                <section className="tablaContentPageAnalista">
                     <TablaClientes {...datosProspect} />
+                </section>
+                <section className='semaforos'>
+                    <div className='tarjetaSemaforo'>
+                        <p className="semaforo"></p>
+                        <p className="verde">Crédito pendiente</p>
+                    </div>
+                    <div className="tarjetaSemaforo">
+                        <p className="semaforor"></p>
+                        <p className="rojo">Crédito dispuesto </p>
+                    </div>
                 </section>
             </section>
         </main>
