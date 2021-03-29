@@ -1,38 +1,28 @@
-h5 {
-    color: black;
-}
-
-.contenedorTabla {
+.contenedorTablaClientes {
 	font-family: 'Raleway', sans-serif;
-	padding-bottom: 0%;
-	margin-bottom: 0%;
-	width: 90%; 
 }
 
-.encabezadoTabla {
+.encabezadoTablaClientes {
 	background: #F2F5FA;
 	display: flex;
 	align-content: space-around;
-	max-height: 50%;
-	color: #0F123F;
-	text-align: left;
+	max-height: 100%;
+	color: black;
 	font-size: 150%;
 	height: 2.7em;
 	text-align: center;
 }
 
 #encabezadoNombreCliente {
-	width:33%;
-	text-align: left;
-	padding-left: 7%;
+	width: 51%;
 }
 
 #encabezadoEstatusCliente {
-	width: 33%;
+	width: 18%;
 }
 
 #encabezadoAccionesCliente {
-	width:34%;
+	width: 31%;
 }
 
 #semaforoEstatusPendiente {
@@ -57,82 +47,61 @@ h5 {
 	margin-left: 10%;
 }
 
-.rwd-table {
+.clientsTable {
 	margin: 0.1em 0em;
 	width: 100%;
+	border-collapse: separate; 
+	border-spacing: 0em;
 }
 
-.tabla {
-	max-height: 400px;
+.tablaClientes {
+	max-height: 50vh;
+	width:100%;
 	overflow-y: scroll;
-	height: 350px;
   	scroll-behavior: smooth;
 	margin-top: 0em;
 	padding: 0em 0.2em 0em 0.2em;
-	text-align: left;
-	font-family: 'Raleway', sans-serif;
 	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-	background: #F2F5FA;	
+	text-rendering: optimizeLegibility;	
+	background: white;
 	border-radius: 0.6em;
-	
 }
 
 tr:hover {background-color: #F2F5FA;}
 
-.rwd-table tr {
+.clientsTable tr {
 	border-bottom: 1px solid #F2F5FA;
-    color: black;
+	color: black;
 }
 
-.rwd-table th {
-	display: none;
-	overflow-y: none;
-}
-
-.rwd-table td {
-	display: block;
+.clientsTable td {
 	border-bottom: 1px solid #0F123F;
 }
 
-.rwd-table td:first-child {
+.clientsTable td:first-child {
 	padding-top: 0.5em;
 }
 
-.rwd-table td:last-child {
-	padding-bottom: 0.5em;
-}
-
-.rwd-table td:before {
+.clientsTable td:before {
 	font-weight: bold;
 	width: 6.5em;
 	display: inline-block;
 }
 
-@media (min-width: 380px) {
-    .rwd-table td:before {
-	display: none;
-	}
-}
-
-.rwd-table th, .rwd-table td {
-	text-align: left;
+.clientsTable th, .clientsTable td:nth-last-child(-n+2) {
+	text-align: center;
 }
 
 @media (min-width: 380px) {
-	.rwd-table th, .rwd-table td {
+	.clientsTable th, .clientsTable td {
 		display: table-cell;
-		padding: 0.25em 0.5em;
 	}
-	.rwd-table th:first-child, .rwd-table td:first-child {
+	.clientsTable th:first-child, .clientsTable td:first-child {
 		padding-left: 0;
 	}
-	.rwd-table th:last-child, .rwd-table td:last-child {
-	padding-right: 0;
-	}
 }
 
-.tabla::-webkit-scrollbar-track
+.tablaClientes::-webkit-scrollbar-track
 {
 	box-shadow: inset 0 0 6px #F2F5FA;
 	border-radius: 10px;
@@ -140,83 +109,34 @@ tr:hover {background-color: #F2F5FA;}
 	background-color: #F2F5FA;
 }
 
-.tabla::-webkit-scrollbar
+.tablaClientes::-webkit-scrollbar
 {
 	width: 6px;
 	background-color: #F2F5FA;
 }
 
-.tabla::-webkit-scrollbar-thumb
+.tablaClientes::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;
 	background-color: #C4C4C4;
 }
 
-.rwd-table {
-	background: white;
-	max-height: 50%;
-	color: #0F123F;
-	border-radius: 0.4em;
-	overflow: hidden;
-	text-align: left;
-	border-collapse:separate; 
-	border-spacing: 0em;
-	border-left: 0.5em solid white;
-	border-right: 0.5em solid white;
-}
-
-.rwd-table tr {
+.clientsTable tr {
 	border-color: #f2f5fa00;
 }
 
-.rwd-table th, .rwd-table td {
+.clientsTable th, .clientsTable td {
 	margin: 0.5em 1em;
 }
 
 @media (min-width: 480px) {
-	.rwd-table th, .rwd-table td {
-		padding: 0.3em !important;
+	.clientsTable th, .clientsTable td {
+		padding: 0.2em 1em 0.2em 1em !important;
 	}
 }
 
-.rwd-table th, .rwd-table td:before {
+.clientsTable th, .clientsTable td:before {
 	color: #0F123F;
     text-align: center;
     background-color: #F2F5FA;
-}
-
-.semaforoInfo{
-	display: flex;
-	padding-left: 10%;
-	font-family: 'Red Hat Display';
-	font-style: normal;
-	font-weight: bold;
-	
-	color: #000000;
-}
-
-.verde{
-	padding-right: 5%;
-	
-}
-
-.semaforo{	
-	background-color:#84BC6A ;
-    color: #84BC6A;
-    border-radius: 100%;
-    text-align: center;
-    width: 2em;
-    height: 2em;
-    margin-left: 40%;
-}
-
-.semaforor {
-	align-items: center;
-    background-color:#722C2D ;
-    color: #722C2D;
-    border-radius: 100%;
-    text-align: center;
-    width: 2em;
-    height: 2em;
-    margin-left: 40%;
 }

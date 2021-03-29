@@ -1,33 +1,28 @@
 import './TablaUsuarios.css';
 import CustomLink from './CustomLink';
 
-import {
-      BrowserRouter as Router,
-      Route,
-      Link,
-      Switch,
-    } from 'react-router-dom';
-
 function TablaUsuarios(props) {
     return (
-      <section className="contenedorTabla">
-         <div className="encabezadoTabla">
-             <h5 id="encabezadoNombreUsuario">Nombre del usuario</h5>
-             <h5 id="encabezadoRolUsuario">Rol</h5>
-             <h5 id="encabezadoAccionesUsuario">Acciones</h5>
-         </div>
-          <section className="tabla">
-                  <table className="rwd-table">
-                        {props.data.map((registro, indice) => (
-                              <tr>
-                              <td data-th="nombreUsuario">{registro.nombres + " " + registro.apellidos}</td>
-                              <td data-th="rol">{registro.puesto}</td>
-                              <td data-th="botonEditar"><CustomLink tag='button' to='./editarUsuario' id="botonEditarUsuario">Editar</CustomLink></td>
-                              <td data-th="botonEliminar"><CustomLink tag='button' to='./eliminarUsuario' id="botonEliminarUsuario">Eliminar</CustomLink></td>
+      <section className="contenedorTablaUsuarios">
+            <div className="encabezadoTablaUsuarios">
+                  <h5 id="encabezadoNombreUsuario">Nombre del usuario</h5>
+                  <h5 id="encabezadoRolUsuario">Rol</h5>
+                  <h5 id="encabezadoAccionesUsuario">Acciones</h5>
+            </div>
+            <section className="tablaUsuarios">
+                  <table className="userTable">
+                  {props.data.map((registro, indice) => (
+                        <tbody>
+                              <tr key={indice}>
+                                    <td>{registro.nombres + " " + registro.apellidos}</td>
+                                    <td>{registro.puesto}</td>
+                                    <td><CustomLink tag='button' to='./editarUsuario' id="botonEditarUsuario">Editar</CustomLink></td>
+                                    <td><CustomLink tag='button' to='./eliminarUsuario' id="botonEliminarUsuario">Eliminar</CustomLink></td>
                               </tr>
-                        ))}
+                        </tbody>
+                  ))}
                   </table>
-        </section>
+            </section>
      </section>
     );
   }
