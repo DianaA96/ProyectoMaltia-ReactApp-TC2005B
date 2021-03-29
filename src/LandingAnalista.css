@@ -1,0 +1,85 @@
+.tablaContentPageAnalista {
+    font-family: 'Raleway', sans-serif;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.semaforos {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    padding-left: 4%;
+    padding-right: 4%;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: flex-start;
+}
+
+.tarjetaSemaforo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 50%;
+    white-space:nowrap;
+}
+
+
+.semaforoInfo{
+	color: #000000;
+}
+
+.semaforo{	
+	background-color:#84BC6A ;
+    color: #84BC6A;
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    margin-left: 5%;
+}
+
+.semaforor {
+    background-color:#722C2D ;
+    color: #722C2D;
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    margin-left: 5%;
+}
+
+.semaforog {
+    background-color:#C4C4C4 ;
+    color: #C4C4C4;
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    margin-left: 5%;
+}
+
+.semaforoRojo {
+    background-color:#a10909 ;
+    color: #a10909;
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    margin-left: 5%;
+}
+
+.verde{
+    padding-left: 10px;
+    line-height: 35px;
+}
+
+.rojo{
+    padding-left: 10px;
+    line-height: 35px;
+}
+
+.gris{
+    padding-left: 10px;
+    line-height: 35px;
+}
+
+.rojoEncendido{
+    padding-left: 10px;
+    line-height: 35px;
+}
