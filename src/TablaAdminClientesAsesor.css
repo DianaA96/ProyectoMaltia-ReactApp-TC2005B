@@ -8,8 +8,8 @@
 	align-content: space-around;
 	max-height: 100%;
 	color: black;
-	font-size: 150%;
-	height: 2.7em;
+	font-size: 2.5vh;
+	height: 6.5vh;
 	text-align: center;
 }
 
@@ -31,8 +31,8 @@
     color: #84BC6A;
     border-radius: 100%;
     text-align: center;
-    width: 2em;
-    height: 2em;
+    width: 2vw;
+    height: 2vw;
     padding-top: 0%;
     padding-bottom: 0%;
 	margin-left: 10%;
@@ -43,8 +43,8 @@
     color: #a10909;
     border-radius: 100%;
     text-align: center;
-    width: 2em;
-    height: 2em;
+    width: 2vw;
+    height: 2vw;
     padding-top: 0%;
     padding-bottom: 0%;
 	margin-left: 10%;
@@ -55,17 +55,17 @@
     color: #C4C4C4;
     border-radius: 100%;
     text-align: center;
-    width: 2em;
-    height: 2em;
+    width: 2vw;
+    height: 2vw;
 	margin-left: 10%;
 }
 
 .clientsTable2 {
 	font-family: "Raleway", sans-serif;
-	margin: 0.1em 0em;
+	margin: 0.1vw 0vw;
 	width: 100%;
 	border-collapse: separate; 
-	border-spacing: 0em;
+	border-spacing: 0vw;
 }
 
 .tablaClientesAsesor {
@@ -73,12 +73,12 @@
 	width: 100%;
 	overflow-y: scroll;
   	scroll-behavior: smooth;
-	margin-top: 0em;
-	padding: 0em 0.2em 0em 0.2em;
+	margin-top: 0vw;
+	padding: 0vw 0.2vw 0vw 0.2vw;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;	
 	background: white;
-	border-radius: 0.6em;
+	border-radius: 0.6vw;
 }
 
 tr:hover {background-color: #F2F5FA;}
@@ -93,12 +93,12 @@ tr:hover {background-color: #F2F5FA;}
 }
 
 .clientsTable2 td:first-child {
-	padding-top: 0.5em;
+	padding-top: 0.5vw;
 }
 
 .clientsTable2 td:before {
 	font-weight: bold;
-	width: 6.5em;
+	width: 6.5vw;
 	display: inline-block;
 }
 
@@ -140,12 +140,12 @@ tr:hover {background-color: #F2F5FA;}
 }
 
 .clientsTable2 th, .clientsTable2 td {
-	margin: 0.5em 1em;
+	margin: 0.5vw 1vw;
 }
 
 @media (min-width: 480px) {
 	.clientsTable2 th, .clientsTable2 td {
-		padding: 0.2em 1em 0.2em 1em !important;
+		padding: 0.4vw 1.13vw 0.4vw 1.13vw !important;
 	}
 }
 
