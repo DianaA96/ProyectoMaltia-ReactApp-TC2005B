@@ -28,6 +28,7 @@
 .cont-input i{
     width: 20%;
     color: #0F123F;
+    margin-left: 0vw;
 }
 
 .input-search:focus{
@@ -36,4 +37,17 @@
 
 .input-search:focus > .cont-input{
     background: #000;
+}
+
+.buttonInputSearch {
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 0vw;
+}
+
+.buttonInputSearch:hover {
+    box-shadow: none;
+    transform: none;
 }
