@@ -19,13 +19,13 @@ function LandingAnalista() {
             {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
             {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
             {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
             {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
             {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoRevisado"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoRevisado"},
             {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
+            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Dispuesto"},
             {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
             {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"}
         ]
@@ -52,11 +52,19 @@ function LandingAnalista() {
                 <section className='semaforos'>
                     <div className='tarjetaSemaforo'>
                         <p className="semaforo"></p>
-                        <p className="verde">Crédito pendiente</p>
+                        <p className="verde">Crédito autorizado</p>
+                    </div>
+                    <div className='tarjetaSemaforo'>
+                        <p className="semaforoRojo"></p>
+                        <p className="rojoEncendido">Crédito no autorizado</p>
+                    </div>
+                    <div className="tarjetaSemaforo">
+                        <p className="semaforog"></p>
+                        <p className="gris">Crédito no revisado</p>
                     </div>
                     <div className="tarjetaSemaforo">
                         <p className="semaforor"></p>
-                        <p className="rojo">Crédito dispuesto </p>
+                        <p className="gris">Crédito dispuesto</p>
                     </div>
                 </section>
             </section>
