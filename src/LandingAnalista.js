@@ -43,7 +43,7 @@ function LandingAnalista() {
                     <Bienvenida txtBienvenida = "Bienvenido, Analista" txtVentana="Administración de solicitudes"/>
                 </header>
                 <section className="filtrosContentPageLanding">
-                    <InputBuscar num={1} />
+                    <InputBuscar num={3} />
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPageAnalista">

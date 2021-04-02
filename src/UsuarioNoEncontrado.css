@@ -22,7 +22,7 @@ header {
 
 #cajaUsuarioNoEncontrado {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding-left: 5%;
@@ -37,12 +37,11 @@ header {
     text-align: center;
 }
 
-#cajaUsuarioNoEncontrado p{
+#cajaUsuarioNoEncontrado p:nth-child(1){
     font-size: 110%;
-    font-weight: 450;
+    font-weight: bold;
 }
 
-#cajaUsuarioNoEncontrado h1{
-    font-size: 120%;
-    font-weight: bold;
+#cajaUsuarioNoEncontrado div{
+    line-height: 1vw;
 }

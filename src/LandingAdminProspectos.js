@@ -45,7 +45,7 @@ function LandingAdminProspectos() {
                     <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de prospectos"/>
                 </header>
                 <section className="filtrosContentPageLanding">
-                    <InputBuscar num={1} />
+                    <InputBuscar num={2} />
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">

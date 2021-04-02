@@ -45,7 +45,7 @@ function AdministracionClientesAsesor() {
                     <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de clientes"/>
                 </header>
                 <section className="filtrosContentPageLanding">
-                    <InputBuscar num={2} />
+                    <InputBuscar num={21} />
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPageAsesor">
