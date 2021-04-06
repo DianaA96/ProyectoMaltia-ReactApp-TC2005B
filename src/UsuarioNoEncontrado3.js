@@ -28,7 +28,7 @@ function UsuarioNoEncontrado3() {
                         <section id="cajaUsuarioNoEncontrado">
                               <img src={ZorroMaltia} alt='Elemento no encontrado.'/>
                               <div>
-                                    <h1>Parece que tu búsqueda no ha arrojado resultados.</h1>
+                                    <p>Parece que tu búsqueda no ha arrojado resultados.</p>
                                     <p>Prueba con otro usuario :)</p>
                               </div>
                         </section>

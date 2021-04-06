@@ -11,7 +11,85 @@
     margin-right: 1%;
 }
 
-.input-gral:focus{
+.inputFormularios{
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Raleway';
+    padding: 15px 30px;
+    border-style: none;
+    border-radius: 50px;
+    background: #CACACA;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    transition: border-color 0.2s;
+}
+
+.grupoInput {
+    font-weight: 600;
+    position: relative;
+    padding: 15px 0 0;
+    width: 50%;
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.inputFormularios:placeholder-shown ~ .etiquetaInputs {
+    top: 25%;
+}
+
+.etiquetaInputs {
+    position: absolute;
+    display: block;
+    transition: 0.2s;
+    font-size: 22px;
+    font-family: 'Raleway';
+    color:rgb(118, 118, 118); 
+    border-image: initial;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+    margin-left: 6%;
+    margin-right: 1%;
+}
+
+.inputFormularios:not(focus) ~ .etiquetaInputs {
+    color:transparent;
+}
+
+.inputFormularios:focus::placeholder {
+    color:transparent;
+}
+
+.inputFormularios:focus ~ .etiquetaInputs {
+    position: absolute;
+    top: -15%;
+    display: block;
+    transition: 0.4s;
+    font-size: 1rem;
+    color: #0f123f;
+    font-weight: 700;
+}
+
+.inputFormularios:not(:placeholder-shown) ~ .etiquetaInputs{
+    position: absolute;
+    top: -15%;
+    display: block;
+    transition: 1s;
+    font-size: 1rem;
+    color: #0f123f;
+    font-weight: 700;
+}
+
+.inputFormularios:focus{
    outline: none;
 }
 

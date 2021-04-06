@@ -2,7 +2,7 @@ main {
     display: flex;
     flex-direction: row;
     background-color: #0F123F;
-    border: 1em solid #0F123F;
+    border: 2vh solid #0F123F;
 }
 
 .contentPageEditarUsuario { 

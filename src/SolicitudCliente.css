@@ -1,4 +1,4 @@
-main {
+#mainSolicitudCliente {
     display: flex;
     flex-direction: row;
     background-color: #0F123F;
@@ -14,13 +14,10 @@ main {
     padding: 30px;
 }
 
-header {
+.headerSolicitudCliente {
     padding-left: 4%;
     padding-bottom: 2%;
     padding-right: 4%;
-}
-
-.headerSolicitudCliente {
     display: flex;
     justify-content: space-between;
 }
@@ -40,7 +37,7 @@ header {
     background-color: #A5A5A5;
     border: 2px solid #A5A5A5;
     color: white;
-    font-weight: 550;
+    font-weight: 400;
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 14em;
@@ -61,12 +58,14 @@ header {
 
 .datosCliente {
     font-size: 26px;
+    font-weight: 600;
 }
 
 .checkSolicitud {
     text-align: center;
     align-items: center;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 140%;
 }
 
 .checkSolicitud div{
@@ -80,8 +79,14 @@ header {
     flex-wrap: wrap;
 }
 
+.inputsDatosCliente .menu {
+    width: 40%;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+
 .inputsDatosCliente input:nth-child(n) {
-    width: 42%;
+    width: 80%;
 }
 
 .inputsReferenciasCliente h1 {
@@ -100,13 +105,18 @@ header {
     align-content: space-between;
 }
 
-.inputsReferenciasCliente h1:nth-child(n) {
+.tarjetaReferencia {
     width: 33%;
+    justify-content: center;
+}
+
+.tarjetaReferencia h1:nth-child(n) {
+    width: 100%;
     text-align: center;
 }
 
-.inputsReferenciasCliente input:nth-child(n) {
-    width: 26%;
+.tarjetaReferencia input:nth-child(n) {
+    width: 80%;
 }
 
 .botonesEnviarSolicitud {

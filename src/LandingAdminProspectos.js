@@ -1,11 +1,11 @@
 import React from 'react';
-import './LandingAdminProspectos.css';
+import './LandingAdminUsuarios.css';
 import CustomLink from './CustomLink';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
-import InputFiltrar from './InputFiltrar';
 import TablaProspectos from './TablaProspectos';
+import InputFiltrar from './InputFiltrar';
 import asesor from './assets/asesor.png';
 import './Boton.css'
 
@@ -36,24 +36,23 @@ function LandingAdminProspectos() {
 
     
     return(
-        <main id='mainAdminProspectos'>
+        <main>
             <aside>
                 <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} />
             </aside>
-            <section className='contenido'>
-                <header id='headerAdminProspectos'>
+            <section className='contentPage'>
+                <header>
                     <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de prospectos"/>
                 </header>
-                <section className="filtros">
+                <section className="filtrosContentPageLanding">
                     <InputBuscar num={2} />
                     <InputFiltrar />
                 </section>
-                <section className="tablaProspectos">
+                <section className="tablaContentPage">
                     <TablaProspectos {...datosProspect} />
                 </section>
             </section>
         </main>
-        
     );
 }
 

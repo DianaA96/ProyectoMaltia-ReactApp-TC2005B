@@ -14,20 +14,18 @@ function TablaAdminClientesAsesor(props) {
                   </div>
             </section>
             <section className="tablaClientesAsesor">
-                  <table className="rwd-table">         
+                  <table className="clientsTable2">         
                   {props.data.map((registro, indice)=>(
-                        <tr>
-                              <td data-th="nombreClientesAsesor" colSpan="1">{registro.nombres+ " " + registro.apellidos}</td>
-                              <td data-th="botonEditarClientesAsesor"><CustomLink tag='button' to='./editarSolicitudCliente' id="botonEditarProspecto">Editar</CustomLink></td>
-                              <td data-th="estatusClientesAsesor"><p id={"semaforoEstatus" + registro.estatusCliente}> </p></td>
-                        </tr>
+                       <tbody>
+                              <tr key={indice}>
+                                    <td colSpan="1">{registro.nombres+ " " + registro.apellidos}</td>
+                                    <td><CustomLink tag='button' to='./editarSolicitudCliente' id="botonEditarProspecto">Editar</CustomLink></td>
+                                    <td><p id={"semaforoEstatus" + registro.estatusCliente}> </p></td>
+                              </tr>
+                        </tbody>
                    ))}
                   </table>
-                  
             </section> 
-            <div className='semaforoInfoClientesAsesor'>
-                  <p className="verde">Crédito autorizado <p className="semaforo"></p></p> 
-            </div>
       </React.Fragment>
     );
   }
