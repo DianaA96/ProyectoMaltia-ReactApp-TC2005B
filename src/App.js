@@ -27,6 +27,7 @@ import SolicitudCliente from './SolicitudCliente'; //CORRECTO
 import AdministracionClientesAsesor from './AdministracionClientesAsesor';//CORRECTO
 import EditarSolicitudCliente from './EditarSolicitudCliente';//CORRECTO
 import UsuarioNoEncontrado2 from './UsuarioNoEncontrado2'; //CORRECTO
+import UsuarioNoEncontrado21 from './UsuarioNoEncontrado2_1'; //CORRECTO
 
 //Vistas Analista
 import LandingAnalista from './LandingAnalista'; //CORRECTO
@@ -61,6 +62,7 @@ function App() {
         <Route path='/solicitudCliente' exact={true}><SolicitudCliente{...datosSolicitudCliente}/></Route>
         <Route path='/administrarClientes' exact={true}>{AdministracionClientesAsesor}</Route>
         <Route path='/user-not-found2' exact={true}>{UsuarioNoEncontrado2}</Route>
+        <Route path='/user-not-found21' exact={true}>{UsuarioNoEncontrado21}</Route>
         <Route path='/editarSolicitudCliente' exact={true}><EditarSolicitudCliente/></Route>
         
         <Route path='/solicitudes' exact={true}>{LandingAnalista}</Route>

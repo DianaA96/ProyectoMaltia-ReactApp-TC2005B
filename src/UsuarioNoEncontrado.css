@@ -1,17 +1,10 @@
-main {
-    display: flex;
-    flex-direction: row;
-    background-color: #0F123F;
-    border: 1em solid #0F123F;
-}
-
 .contentPage { 
     background-color: #F2F5FA;
     border-radius: 10px;
-    height: 88vh;
+    height: 91vh;
     width: 85%;
     margin: 0%;
-    padding: 30px;
+    padding: 1vw;
 }
 
 header {
@@ -29,7 +22,7 @@ header {
 
 #cajaUsuarioNoEncontrado {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding-left: 5%;
@@ -44,12 +37,11 @@ header {
     text-align: center;
 }
 
-#cajaUsuarioNoEncontrado p{
+#cajaUsuarioNoEncontrado p:nth-child(1){
     font-size: 110%;
-    font-weight: 450;
+    font-weight: bold;
 }
 
-#cajaUsuarioNoEncontrado h1{
-    font-size: 120%;
-    font-weight: bold;
+#cajaUsuarioNoEncontrado div{
+    line-height: 1vw;
 }
