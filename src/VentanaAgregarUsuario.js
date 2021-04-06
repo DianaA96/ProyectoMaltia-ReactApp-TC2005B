@@ -8,6 +8,7 @@ import './VentanaAgregarUsuario.css';
 import './plantillaInputs.css';
 import './Boton.css';
 import admin from './assets/persona.svg';
+import MultipleSelect from './MultipleSelect'
 
 function VentanaAgregarUsuario() {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
@@ -33,6 +34,7 @@ function VentanaAgregarUsuario() {
                         <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico"/>
                         <DropMenu contenido="Puesto"/>
                         <DropMenu contenido="Departamento"/>
+                        <MultipleSelect/>
                     </section>
 
                     <section className="botonesContentPage">
