@@ -3,22 +3,60 @@ import Lateral from './Lateral';
 import CustomLink from './CustomLink';
 import Bienvenida from './Bienvenida';
 import RadioButton from './RadioButton';
-import DropMenu from './DropMenu';
 import './VentanaAgregarUsuario.css';
 import './plantillaInputs.css';
 import './Boton.css';
 import admin from './assets/persona.svg';
-import MultipleSelect from './MultipleSelect'
+import Select from 'react-select'
+
 
 function VentanaAgregarUsuario() {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' },
+      ]
+    const customSelectStyles = {
+        control: (base, state) => ({
+            ...base,
+            background: "#CACACA",
+            borderRadius: "50px" ,
+            boxShadow: state.isFocused ? null : null,
+            padding: "7px 30px",
+            fontSize: "22px",
+            fontFamily: "Raleway",
+            fontWeight: "600",
+          }),
+          menu: base => ({
+            ...base,
+            borderRadius: "25px",
+            fontSize: "22px",
+            fontFamily: "Raleway",
+            
+          }),
+          menuList: base => ({
+            ...base,
+            padding: 0,
+            borderRadius: "25px",
+          }),
+          dropdownIndicator: base => ({
+            ...base,
+            color: "#0f123f"
+          }),
+          container: base => ({
+            ...base,
+            width:"44.5%" 
+          })
+    }
+
     return(
         <React.Fragment>
             <main>
                 <aside>
                     <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
                 </aside>
-                <section className='contentPageAgregarUsuario'>
+                <section className='contentPageFormsUsuario'>
                     <header>
                         <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Agregar usuario"/>
                     </header>
@@ -32,9 +70,8 @@ function VentanaAgregarUsuario() {
                         <input className = "input-gral w-3" type="text" name="apellidom" placeholder="Apellido Materno"/>
                         <input className = "input-gral w-2" type="tel" name="numtelefono"  placeholder="Número de teléfono"/>
                         <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico"/>
-                        <DropMenu contenido="Puesto"/>
-                        <DropMenu contenido="Departamento"/>
-                        <MultipleSelect/>
+                        <Select placeholder = {"Departamento"} options={options} styles = {customSelectStyles}/>
+                        <Select placeholder = {"Tiendas"} options={options} isMulti styles = {customSelectStyles}/>
                     </section>
 
                     <section className="botonesContentPage">
