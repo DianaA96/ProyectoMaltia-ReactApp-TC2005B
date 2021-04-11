@@ -4,7 +4,7 @@ import CustomLink from'./CustomLink';
 import Bienvenida from './Bienvenida';
 import RadioButton from './RadioButton';
 import DropMenu from './DropMenu'
-import './VentanaAgregarUsuario.css';
+import './AgregarEditarUsuario.css';
 import './plantillaInputs.css'
 import './Boton.css'
 import admin from './assets/persona.svg';
@@ -64,13 +64,15 @@ function VentanaEditarUsuario() {
                         <RadioButton etiqueta="Analista"/>
                     </section>
                     <section className="inputsContentPage">
-                        <input className = "input-gral w-3" type="text" name="nombres" placeholder="Nombre(s)" defaultValue="Harry José"/>
-                        <input className = "input-gral w-3" type="text" name="apellidom" placeholder="Apellido Materno" defaultValue="Potter"/>
-                        <input className = "input-gral w-3" type="text" name="apellidop" placeholder="Apellido Paterno" defaultValue="Hernández"/>
-                        <input className = "input-gral w-2" type="tel" name="numtelefono" placeholder="Número de teléfono" defaultValue="771 212 23 32"/>
-                        <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico" defaultValue="email@hogwarts.edu"/>
-                        <Select defaultValue = {options[0]} options={options} styles = {customSelectStyles}/>
-                        <Select defaultValue = {[options[0], options[2]]} options={options} isMulti styles = {customSelectStyles}/>
+                        <form action="" className="inputsContentPage">
+                            <input className = "input-gral w-3" type="text" name="nombres" placeholder="Nombre(s)" defaultValue="Harry José"/>
+                            <input className = "input-gral w-3" type="text" name="apellidom" placeholder="Apellido Materno" defaultValue="Potter"/>
+                            <input className = "input-gral w-3" type="text" name="apellidop" placeholder="Apellido Paterno" defaultValue="Hernández"/>
+                            <input className = "input-gral w-2" type="tel" name="numtelefono" placeholder="Número de teléfono" defaultValue="771 212 23 32"/>
+                            <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico" defaultValue="email@hogwarts.edu"/>
+                            <Select defaultValue = {options[0]} options={options} styles = {customSelectStyles}/>
+                            <Select defaultValue = {[options[0], options[2]]} options={options} isMulti styles = {customSelectStyles}/>
+                        </form>
                     </section>
 
                     <section className="botonesContentPage">
