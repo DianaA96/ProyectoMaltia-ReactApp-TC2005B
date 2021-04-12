@@ -14,10 +14,10 @@ function TablaUsuarios(props) {
                   {props.data.map((registro, indice) => (
                         <tbody>
                               <tr key={indice}>
-                                    <td>{registro.nombres + " " + registro.apellidos}</td>
+                                    <td data-th={`\u000A ${registro.puesto}`}>{registro.nombres + " " + registro.apellidos}</td>
                                     <td>{registro.puesto}</td>
-                                    <td><CustomLink tag='button' to='./editarUsuario' id="botonEditarUsuario">Editar</CustomLink></td>
-                                    <td><CustomLink tag='button' to='./eliminarUsuario' id="botonEliminarUsuario">Eliminar</CustomLink></td>
+                                    <td><CustomLink tag='button' to='./editarUsuario' id="botonEditarUsuario"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></CustomLink></td>
+                                    <td><CustomLink tag='button' to='./eliminarUsuario' id="botonEliminarUsuario"><i class="fas fa-user-slash"></i></CustomLink></td>
                               </tr>
                         </tbody>
                   ))}
