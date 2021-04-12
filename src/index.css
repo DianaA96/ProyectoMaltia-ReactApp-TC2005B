@@ -2,3 +2,10 @@
     margin: 0;
     background: #0F123F;
 }
+
+main {
+    display: flex;
+    flex-direction: row;
+    background-color: #0F123F;
+    border: 2vh solid #0F123F;
+}
