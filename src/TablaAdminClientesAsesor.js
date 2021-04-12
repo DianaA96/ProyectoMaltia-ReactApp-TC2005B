@@ -19,7 +19,7 @@ function TablaAdminClientesAsesor(props) {
                        <tbody>
                               <tr key={indice}>
                                     <td colSpan="1">{registro.nombres+ " " + registro.apellidos}</td>
-                                    <td><CustomLink tag='button' to='./editarSolicitudCliente' id="botonEditarProspecto">Editar</CustomLink></td>
+                                    <td><CustomLink tag='button' to='./editarSolicitudCliente' id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
                                     <td><p id={"semaforoEstatus" + registro.estatusCliente}> </p></td>
                               </tr>
                         </tbody>
