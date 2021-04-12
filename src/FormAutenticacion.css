@@ -48,4 +48,8 @@ input:focus{
     .contenedor {
         width: 90vw;
     }
+
+    .contenedor input {
+        font-weight: lighter;
+    }
 }
