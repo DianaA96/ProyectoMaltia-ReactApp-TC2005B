@@ -6,9 +6,9 @@
     background: #CACACA;
     border-radius: 50px;
     font-weight: 600;
-    margin-bottom: 2%;
+    /* margin-bottom: 2%;
     margin-left: 1%;
-    margin-right: 1%;
+    margin-right: 1%; */
 }
 
 .inputFormularios{
@@ -103,4 +103,22 @@
 
 .w-1{
     width: 70%;
+}
+
+
+@media (max-width: 1080px){
+    .w-3{
+        width: 40%;
+    }
+}
+
+@media (max-width: 860px){
+    .w-3{
+        width: 70%;
+    }
+    
+    .w-2{
+        width: 70%;
+    }
+    
 }
