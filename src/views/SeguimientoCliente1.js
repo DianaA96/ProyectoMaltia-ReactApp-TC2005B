@@ -1,15 +1,16 @@
 import React from 'react';
-import Lateral from './Lateral';
-import Bienvenida from './Bienvenida';
-import PasosSeguimiento from './PasosSeguimiento';
-import admin from './assets/persona.svg';
-import InfoSolicitud from './InfoSolicitud';
-import BotonRegresar from './BotonRegresar';
-import './plantillaInputs.css'
-import './SeguimientoCliente1.css'; //Se toman los estilos de la primera vista de seguimiento cliente al tener las mismas clases
+import './SeguimientoCliente1.css';
+import Lateral from '../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
+import PasosSeguimiento from '../components/PasosSeguimiento'
+import admin from '../assets/persona.svg';
+import Checkbox from '../components/Checkbox'
+import InfoSolicitud from '../components/InfoSolicitud'
+import BotonRegresar from '../components/BotonRegresar'
+import '../components/plantillaInputs.css'
 
 
-function SeguimientoCliente3() {
+function SeguimientoCliente1() {
         let enlaces = ["./", "./nuevo-usuario"]
         let tabs = ["Solicitudes", "Generar Reportes"];
     return(
@@ -29,11 +30,16 @@ function SeguimientoCliente3() {
                     </section>
                     <section className="mainContentPageSeguimiento">
                         <div className="accionesSeguimiento">
-                            <input className= "input-gral w-1" type="text" name="Crédito autorizado" placeholder="Crédito autorizado"/>
-                            <input className= "input-gral w-1" type="text" name="Crédito dispuesto"  placeholder="Crédito dispuesto"/>
+                            <p className="pregunta-antiguedad">¿Cumple con la antigüedad mínima?</p>
+                            <Checkbox/>
+                            <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Antigüedad"/>
+                            <p className="texto-ayuda"></p>
+                            <p className="pregunta-capacidad">¿Cumple con la antigüedad mínima?</p>
+                            <Checkbox/>
+                            <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Capacidad de pago"/>
                         </div>
                         <div className="lineaSeguimiento"></div>
-                        <InfoSolicitud/>
+                       <InfoSolicitud/>
                     </section>
                 </section>
             </main>
@@ -41,4 +47,4 @@ function SeguimientoCliente3() {
     );
 }
 
-export default SeguimientoCliente3;
+export default SeguimientoCliente1;

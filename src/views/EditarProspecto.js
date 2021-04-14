@@ -1,11 +1,11 @@
-import Lateral from'./Lateral';
-import Bienvenida from './Bienvenida';
+import Lateral from'../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
 import React from 'react';
-import asesor from './assets/asesor.png'
-import './Eprospecto.css';
-import './plantillaInputs.css';
-import './Boton.css';
-import CustomLink from './CustomLink';
+import asesor from '../assets/asesor.png'
+import './EditarProspecto.css';
+import '../components/plantillaInputs.css';
+import '../components/Boton.css';
+import CustomLink from '../components/CustomLink';
 
 function Eprospecto(){
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];

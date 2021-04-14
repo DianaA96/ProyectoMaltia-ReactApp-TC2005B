@@ -1,12 +1,12 @@
 import React from 'react';
 import './LandingAnalista.css';
-import Lateral from './Lateral';
-import Bienvenida from './Bienvenida';
-import InputBuscar from './InputBuscar';
-import TablaClientes from './TablaClientes';
-import InputFiltrar from './InputFiltrar';
-import  analista from './assets/analista.png';
-import './Boton.css';
+import Lateral from '../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
+import InputBuscar from '../components/InputBuscar';
+import TablaClientes from '../components/TablaClientes';
+import InputFiltrar from '../components/InputFiltrar';
+import  analista from '../assets/analista.png';
+import '../components/Boton.css';
 
 function LandingAnalista() {
 

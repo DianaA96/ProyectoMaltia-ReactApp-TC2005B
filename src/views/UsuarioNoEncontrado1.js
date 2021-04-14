@@ -1,29 +1,29 @@
 import React from 'react';
 import './UsuarioNoEncontrado.css';
-import ZorroMaltia from './assets/zorroMaltiaNotFound.svg';
-import Lateral from './Lateral';
-import Bienvenida from './Bienvenida';
-import InputBuscar from './InputBuscar';
-import InputFiltrar from './InputFiltrar';
-import  analista from './assets/analista.png';
+import ZorroMaltia from '../assets/zorroMaltiaNotFound.svg';
+import Lateral from '../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
+import InputBuscar from '../components/InputBuscar';
+import InputFiltrar from '../components/InputFiltrar';
+import admin from '../assets/persona.svg';
 
-function UsuarioNoEncontrado3() {
+function UsuarioNoEncontrado1() {
       
-      let tabs = ["Solicitudes", "Generar reportes"];
+      let tabs = ["Administrar usuarios", "Agregar usuario"];
 
     return (
       <React.Fragment>
             <main>
                   <aside>
-                        <Lateral img = {analista} usuario="Analista #1234" tabs={tabs}/>
+                        <Lateral img = {admin} usuario="Admin #1234" tabs={tabs}/>
                   </aside>
                   <section className='contentPage'>
                         <header>
-                              <Bienvenida txtBienvenida = "Bienvenido, Analista" txtVentana="Administración de solicitudes"/>
+                              <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Administración de usuarios"/>
                         </header>
                         <section className="filtrosContentPage">
-                              <InputBuscar num={3}/>
-                              <InputFiltrar/>
+                              <InputBuscar num={1} />
+                              <InputFiltrar />
                         </section>
                         <section id="cajaUsuarioNoEncontrado">
                               <img src={ZorroMaltia} alt='Elemento no encontrado.'/>
@@ -38,4 +38,4 @@ function UsuarioNoEncontrado3() {
       );
 }
   
-export default UsuarioNoEncontrado3;
+export default UsuarioNoEncontrado1;

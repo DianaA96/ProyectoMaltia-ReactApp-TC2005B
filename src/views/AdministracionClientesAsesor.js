@@ -1,13 +1,13 @@
 import React from 'react';
 import './LandingAdminUsuarios.css'; //Toma estilos de Vista con mismas clases
 import './AdministracionClientesAsesor.css'
-import Lateral from './Lateral';
-import Bienvenida from './Bienvenida';
-import InputBuscar from './InputBuscar';
-import InputFiltrar from './InputFiltrar';
-import TablaAdminClientesAsesor from './TablaAdminClientesAsesor';
-import asesor from './assets/asesor.png';
-import './Boton.css';
+import Lateral from '../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
+import InputBuscar from '../components/InputBuscar';
+import InputFiltrar from '../components/InputFiltrar';
+import TablaAdminClientesAsesor from '../components/TablaAdminClientesAsesor';
+import asesor from '../assets/asesor.png';
+import '../components/Boton.css';
 
 
 function AdministracionClientesAsesor() {

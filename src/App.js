@@ -9,32 +9,32 @@ import {
 } from 'react-router-dom';
 
 //Inicio de sesión general. Llevará por defecto al Administrador
-import VentanaInicioSesion from './VentanaInicioSesion'; //CORRECTO FormAutenticacion
+import VentanaInicioSesion from './views/VentanaInicioSesion'; //CORRECTO FormAutenticacion
 
 //Vistas Administrador
-import LandingAdminUsuarios from './LandingAdminUsuarios'; //CORRECTO TablaUsuarios, lateral
-import VentanaAgregarUsuario from './VentanaAgregarUsuario'; //CORRECTO Links funcionan
-import VentanaEditarUsuario from './VentanaEditarUsuario'; //CORRECTO links funcionan
-import Deshabilitar from './deshabilitar'; //CORRECTO links funcionan
-import UsuarioNoEncontrado1 from './UsuarioNoEncontrado1'; //CORRECTO
+import LandingAdminUsuarios from './views/LandingAdminUsuarios'; //CORRECTO TablaUsuarios, lateral
+import VentanaAgregarUsuario from './views/VentanaAgregarUsuario'; //CORRECTO Links funcionan
+import VentanaEditarUsuario from './views/VentanaEditarUsuario'; //CORRECTO links funcionan
+import Deshabilitar from './views/ModalDeshabilitarEmpleado'; //CORRECTO links funcionan
+import UsuarioNoEncontrado1 from './views/UsuarioNoEncontrado1'; //CORRECTO
 
 //Vistas Asesor
-import LandingAdminProspectos from './LandingAdminProspectos'; //CORRECTO links funcionan
-import ContactoAsesor from './ContactoAsesor'; //CORRECTO
-import Aprospecto from './Aprospecto';//CORRECTO
-import Eprospecto from './Eprospecto';//CORRECTO
-import SolicitudCliente from './SolicitudCliente'; //CORRECTO
-import AdministracionClientesAsesor from './AdministracionClientesAsesor';//CORRECTO
-import EditarSolicitudCliente from './EditarSolicitudCliente';//CORRECTO
-import UsuarioNoEncontrado2 from './UsuarioNoEncontrado2'; //CORRECTO
-import UsuarioNoEncontrado21 from './UsuarioNoEncontrado2_1'; //CORRECTO
+import LandingAdminProspectos from './views/LandingAdminProspectos'; //CORRECTO links funcionan
+import ContactoAsesor from './views/ModalContactoAsesor'; //CORRECTO
+import AgregarProspecto from './views/AgregarProspecto';//CORRECTO
+import EditarProspecto from './views/EditarProspecto';//CORRECTO
+import SolicitudCliente from './views/SolicitudCliente'; //CORRECTO
+import AdministracionClientesAsesor from './views/AdministracionClientesAsesor';//CORRECTO
+import EditarSolicitudCliente from './views/EditarSolicitudCliente';//CORRECTO
+import UsuarioNoEncontrado2 from './views/UsuarioNoEncontrado2'; //CORRECTO
+import UsuarioNoEncontrado21 from './views/UsuarioNoEncontrado2_1'; //CORRECTO
 
 //Vistas Analista
-import LandingAnalista from './LandingAnalista'; //CORRECTO
-import SeguimientoCliente1 from './SeguimientoCliente1'; //CORRECTO
-import SeguimientoCliente2 from './SeguimientoCliente2'; //CORRECTO
-import SeguimientoCliente3 from './SeguimientoCliente3'; //CORRECTO
-import UsuarioNoEncontrado3 from './UsuarioNoEncontrado3'; //CORRECTO
+import LandingAnalista from './views/LandingAnalista'; //CORRECTO
+import SeguimientoCliente1 from './views/SeguimientoCliente1'; //CORRECTO
+import SeguimientoCliente2 from './views/SeguimientoCliente2'; //CORRECTO
+import SeguimientoCliente3 from './views/SeguimientoCliente3'; //CORRECTO
+import UsuarioNoEncontrado3 from './views/UsuarioNoEncontrado3'; //CORRECTO
 
 function App() {
 
@@ -57,8 +57,8 @@ function App() {
 
         <Route path='/administrarProspectos' exact={true}>{LandingAdminProspectos}</Route>
         <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
-        <Route path='/agregarProspectos' exact={true}>{Aprospecto}</Route>
-        <Route path='/editarProspecto' exact={true}>{Eprospecto}</Route>
+        <Route path='/agregarProspectos' exact={true}>{AgregarProspecto}</Route>
+        <Route path='/editarProspecto' exact={true}>{EditarProspecto}</Route>
         <Route path='/solicitudCliente' exact={true}><SolicitudCliente{...datosSolicitudCliente}/></Route>
         <Route path='/administrarClientes' exact={true}>{AdministracionClientesAsesor}</Route>
         <Route path='/user-not-found2' exact={true}>{UsuarioNoEncontrado2}</Route>

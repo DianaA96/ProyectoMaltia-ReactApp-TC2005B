@@ -1,13 +1,12 @@
 import React from 'react';
-import Lateral from './Lateral';
-import CustomLink from'./CustomLink';
-import Bienvenida from './Bienvenida';
-import RadioButton from './RadioButton';
-import DropMenu from './DropMenu'
+import Lateral from '../components/Lateral';
+import CustomLink from'../components/CustomLink';
+import Bienvenida from '../components/Bienvenida';
+import RadioButton from '../components/RadioButton';
 import './AgregarEditarUsuario.css';
-import './plantillaInputs.css'
-import './Boton.css'
-import admin from './assets/persona.svg';
+import '../components/plantillaInputs.css'
+import '../components/Boton.css'
+import admin from '../assets/persona.svg';
 import Select from 'react-select'
 
 function VentanaEditarUsuario() {

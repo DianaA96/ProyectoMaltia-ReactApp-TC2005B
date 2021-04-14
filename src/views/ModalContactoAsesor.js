@@ -1,9 +1,9 @@
 import React from 'react';
-import "./ContactoAsesor.css"
-import Checkbox from './Checkbox.js';
-import './Boton.css';
-import DropMenu from './DropMenu.js';
-import CustomLink from './CustomLink';
+import "./ModalContactoAsesor.css"
+import Checkbox from '../components/Checkbox.js';
+import '../components/Boton.css';
+import DropMenu from '../components/DropMenu.js';
+import CustomLink from '../components/CustomLink';
 
 function ModalContactosAsesor(){
     return(

@@ -1,28 +1,28 @@
 import React from 'react';
 import './UsuarioNoEncontrado.css';
-import ZorroMaltia from './assets/zorroMaltiaNotFound.svg';
-import Lateral from './Lateral';
-import Bienvenida from './Bienvenida';
-import InputBuscar from './InputBuscar';
-import InputFiltrar from './InputFiltrar';
-import asesor from './assets/asesor.png';
+import ZorroMaltia from '../assets/zorroMaltiaNotFound.svg';
+import Lateral from '../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
+import InputBuscar from '../components/InputBuscar';
+import InputFiltrar from '../components/InputFiltrar';
+import  analista from '../assets/analista.png';
 
-function UsuarioNoEncontrado2() {
+function UsuarioNoEncontrado3() {
       
-      let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar clientes"];
+      let tabs = ["Solicitudes", "Generar reportes"];
 
     return (
       <React.Fragment>
             <main>
                   <aside>
-                        <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs}/>
+                        <Lateral img = {analista} usuario="Analista #1234" tabs={tabs}/>
                   </aside>
                   <section className='contentPage'>
                         <header>
-                              <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de prospectos"/>
+                              <Bienvenida txtBienvenida = "Bienvenido, Analista" txtVentana="Administración de solicitudes"/>
                         </header>
                         <section className="filtrosContentPage">
-                              <InputBuscar num={2}/>
+                              <InputBuscar num={3}/>
                               <InputFiltrar/>
                         </section>
                         <section id="cajaUsuarioNoEncontrado">
@@ -38,4 +38,4 @@ function UsuarioNoEncontrado2() {
       );
 }
   
-export default UsuarioNoEncontrado2;
+export default UsuarioNoEncontrado3;
