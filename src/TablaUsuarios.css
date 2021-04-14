@@ -118,3 +118,45 @@ tr:hover {background-color: #F2F5FA;}
     text-align: center;
     background-color: #F2F5FA;
 }
+
+i {
+	display: none;
+}
+
+@media only screen and (max-width: 600px) {
+	.contenedorTablaUsuarios {
+		width: 100%;
+	}
+
+	.encabezadoTablaUsuarios {
+		display: none;
+	}
+
+	.tablaUsuarios {
+		max-height: 55vh;
+		padding-right: 0px;
+		border-radius: 15px;
+	}
+
+	.userTable td:first-child {
+		width: 72%;
+		padding-left: 5%;
+		padding-right: 2%;
+		padding-top: 3%;
+		padding-bottom: 3%;
+		font-size: 3.5vw;
+		color: #545454;
+		font-weight: bold;
+	}
+
+	.userTable td:first-child::after {
+		content: attr(data-th);
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		font-weight: normal;
+	}
+
+	.userTable th, .userTable td:nth-child(2) {
+		display: none;
+	}
+}

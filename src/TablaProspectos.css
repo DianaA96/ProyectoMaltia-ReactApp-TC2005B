@@ -119,3 +119,26 @@ h5 {
     text-align: center;
     background-color: #F2F5FA;
 }
+
+@media only screen and (max-width: 600px) {
+	.encabezadoTablaProspectos {
+		display: none;
+	}
+
+	.prospectsTable td:first-child {
+		width: 64%;
+		padding-left: 5%;
+		padding-right: 2%;
+		padding-top: 3%;
+		padding-bottom: 3%;
+		font-size: 3.5vw;
+		color: #545454;
+		font-weight: bold;
+	}
+
+	.tablaProspectos {
+		max-height: 55vh;
+		padding-right: 0px;
+		border-radius: 15px;
+	}
+}

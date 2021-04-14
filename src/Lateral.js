@@ -33,13 +33,19 @@ function Lateral(props){
                 </div>
             </div>
             
-            <div className="tabsMoviles"> 
-                <input type="radio" name="tap" id="t0" checked="checked"/>
-                <label class="round" for="t0"><i class="fas fa-list"></i></label>
-                
-                <input type="radio" name="tap" id="t1"/>
-                <label class="round" for="t1"><i class="fas fa-plus-square"></i></label>
-            </div>
+            <nav class="menuMobile" role="navigation">
+                <div id="hamburgerMenu">
+                <input type="checkbox"/>
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="foldingMenu">
+                    {props.tabs.map((ventana) =>
+                        <li key={ventana}><Link to={ventana.replace(/ /g, "")}>{ventana}</Link></li>
+                    )}
+                </ul>
+                </div>
+            </nav>
         </React.Fragment>
     );
 }

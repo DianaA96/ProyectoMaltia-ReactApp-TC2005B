@@ -31,6 +31,14 @@ button:active {
     cursor: pointer;
 }
 
+#botonEditarUsuario i {
+    display: none;
+}
+
+#botonEditarUsuario::after {
+    content: "Editar";
+}
+
 #botonEditarUsuario:focus {
     outline: none;
 }
@@ -62,6 +70,14 @@ button:active {
     padding-left: 20%;
     padding-right: 20%;
     cursor: pointer;
+}
+
+#botonEliminarUsuario i {
+    display: none;
+}
+
+#botonEliminarUsuario::after {
+    content: "Eliminar";
 }
 
 #botonEliminarUsuario:focus {
@@ -99,6 +115,14 @@ button:active {
 
 #botonEditarProspecto:focus {
     outline: none;
+}
+
+#botonEditarProspecto i {
+    display: none;
+}
+
+#botonEditarProspecto::after {
+    content: "Editar";
 }
 
 #botonEditarProspecto:hover {
@@ -167,6 +191,14 @@ button:active {
     outline: none;
 }
 
+#botonContactarProspecto i {
+    display: none;
+}
+
+#botonContactarProspecto::after {
+    content: "Contactar";
+}
+
 #botonContactarProspecto:hover {
     box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
     transform: scale(1.03);
@@ -194,6 +226,14 @@ button:active {
     padding-left:13%;
     padding-right: 13%;
     cursor: pointer;
+}
+
+#botonIniciarSolicitudProspecto i {
+    display: none;
+}
+
+#botonIniciarSolicitudProspecto::after {
+    content: "Iniciar solicitud";
 }
 
 #botonIniciarSolicitudProspecto:focus {
@@ -228,6 +268,14 @@ button:active {
     padding-left:13%;
     padding-right: 13%;
     cursor: pointer;
+}
+
+#botonSeguimiento i {
+    display: none;
+}
+
+#botonSeguimiento::after {
+    content: "Seguimiento";
 }
 
 #botonSeguimiento:focus {
@@ -309,3 +357,90 @@ button:active {
     box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
     transform: scale(.98);
 }
+
+@media only screen and (max-width: 600px) {
+    #botonEditarUsuario {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonEditarUsuario::after {
+        content: "";
+    }
+
+    #botonEditarUsuario i {
+        display: contents;
+        color: #EE786C;
+    }
+
+    #botonEliminarUsuario {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonEliminarUsuario::after {
+        content: "";
+    }
+
+    #botonEliminarUsuario i {
+        display: contents;
+        color: #722C2D;
+    }
+
+    #botonEditarProspecto {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonEditarProspecto::after {
+        content: "";
+    }
+
+    #botonEditarProspecto i {
+        display: contents;
+        color: #EE786C;
+    }
+
+    #botonContactarProspecto {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonContactarProspecto::after {
+        content: "";
+    }
+
+    #botonContactarProspecto i {
+        display: contents;
+        color: #EE786C;
+    }
+
+    #botonIniciarSolicitudProspecto {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonIniciarSolicitudProspecto::after {
+        content: "";
+    }
+
+    #botonIniciarSolicitudProspecto i {
+        display: contents;
+        color: #0F123F;
+    }
+
+    #botonSeguimiento {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonSeguimiento::after {
+        content: "";
+    }
+
+    #botonSeguimiento i {
+        display: contents;
+        color: #0F123F;
+    }
+}
+

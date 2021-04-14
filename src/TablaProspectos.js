@@ -14,9 +14,9 @@ function TablaProspectos(props) {
             <tbody>
               <tr key={indice}>
                 <td>{registro.nombres + " " + registro.apellidos}</td>
-                <td><CustomLink tag='button' to='./editarProspecto' id="botonEditarProspecto">Editar</CustomLink></td>
-                <td><CustomLink tag='button' to='./contactarProspecto' id="botonContactarProspecto">Contactar</CustomLink></td>
-                <td><CustomLink tag='button' to='./solicitudCliente' id="botonIniciarSolicitudProspecto">Iniciar solicitud</CustomLink></td>
+                <td><CustomLink tag='button' to='./editarProspecto' id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
+                <td><CustomLink tag='button' to='./contactarProspecto' id="botonContactarProspecto"><i class="fas fa-phone"></i></CustomLink></td>
+                <td><CustomLink tag='button' to='./solicitudCliente' id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
               </tr>
             </tbody>
             ))}

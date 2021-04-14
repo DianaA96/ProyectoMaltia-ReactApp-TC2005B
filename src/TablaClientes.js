@@ -19,7 +19,7 @@ function TablaClientes(props) {
                               <tr key={indice}>
                                     <td>{registro.nombres+ " " + registro.apellidos}</td>
                                     <td><p id={"semaforoEstatus" + registro.estatusCliente}></p></td>
-                                    <td><CustomLink tag='button' to='./seguimientoCliente1' id="botonSeguimiento">Seguimiento</CustomLink></td>
+                                    <td><CustomLink tag='button' to='./seguimientoCliente1' id="botonSeguimiento"><i class="fas fa-tasks"></i></CustomLink></td>
                               </tr>
                         </tbody>
                    ))}

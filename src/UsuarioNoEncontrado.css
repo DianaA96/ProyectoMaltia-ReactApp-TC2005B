@@ -45,3 +45,18 @@ header {
 #cajaUsuarioNoEncontrado div{
     line-height: 1vw;
 }
+
+@media only screen and (max-width: 600px) {
+    .contentPage {
+        background-color: #0F123F;
+    }
+
+    header {
+        padding-top: 12vh;
+        height: 20vh;
+        width: 95vw;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+    }
+}

@@ -16,3 +16,38 @@ header {
     padding-right: 4%;
     height: 30vh;
 }
+
+@media only screen and (max-width: 600px) {
+    main {
+        border: none;
+        background-color: #F2F5FA;
+    }
+
+    .filtrosContentPageLanding .filterInput{
+        display: none;
+    }
+    
+    .filtrosContentPageLanding .cont-input{
+        width: 85vw;
+        height: 6vh;
+        font-size: 4vh;
+        margin-bottom: 3vh;
+        margin-left: 1vh;
+        border-radius: 30px;
+        font-weight: 100;
+    }
+
+    .filtrosContentPageLanding .input-search{
+        font-size: 20px;
+        height: 6vh;
+    }
+
+    .tablaContentPage {
+        padding-left: 5vw;
+        padding-right: 4%;
+        height: 30vh;
+        width: 100%;
+    }
+
+    
+}

@@ -154,3 +154,39 @@ tr:hover {background-color: #F2F5FA;}
     text-align: center;
     background-color: #F2F5FA;
 }
+
+@media only screen and (max-width: 600px) {
+	.encabezadoTablaClientesAsesor {
+		display: none;
+	}
+	
+	.tablaClientesAsesor {
+		border-radius: 15px;
+	}
+
+	.clientsTable2 td:first-child {
+		width: 65%;
+		padding-left: 5%;
+		padding-right: 2%;
+		padding-top: 3%;
+		padding-bottom: 3%;
+		font-size: 3.5vw;
+		color: #545454;
+		font-weight: bold;
+	}
+
+	#semaforoEstatusAutorizado {
+		width: 20px;
+		height: 20px;
+	}
+
+	#semaforoEstatusNoAutorizado {
+		width: 20px;
+		height: 20px;
+	}
+	
+	#semaforoEstatusNoRevisado {
+		width: 20px;
+		height: 20px;
+	}
+}

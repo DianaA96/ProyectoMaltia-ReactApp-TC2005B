@@ -84,3 +84,12 @@
     padding-left: 10px;
     line-height: 2vw;
 }
+
+@media only screen and (max-width: 600px) {
+	.tablaContentPageAnalista {
+        padding-left: 5vw;
+        padding-right: 4%;
+        height: 30vh;
+        width: 100%;
+    }
+}

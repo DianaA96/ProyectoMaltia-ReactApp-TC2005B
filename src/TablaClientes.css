@@ -140,3 +140,34 @@ tr:hover {background-color: #F2F5FA;}
     text-align: center;
     background-color: #F2F5FA;
 }
+
+@media only screen and (max-width: 600px) {
+	.encabezadoTablaClientes {
+		display: none;
+	}
+
+	.tablaClientes {
+		border-radius: 15px;
+	}
+
+	.clientsTable td:first-child {
+		width: 75%;
+		padding-left: 5%;
+		padding-right: 7%;
+		padding-top: 3%;
+		padding-bottom: 3%;
+		font-size: 3.5vw;
+		color: #545454;
+		font-weight: bold;
+	}
+
+	#semaforoEstatusPendiente {
+		width: 20px;
+		height: 20px;
+	}
+
+	#semaforoEstatusDispuesto { 
+		width: 20px;
+		height: 20px;
+	}
+}

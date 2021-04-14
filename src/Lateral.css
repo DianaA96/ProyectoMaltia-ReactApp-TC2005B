@@ -87,6 +87,10 @@ a:focus .tab{
     color: #fff;
 }
 
+.menuMobile {
+    display: none;
+}
+
 @media only screen and (max-width: 4500px) {
     .tabsMoviles{
         display: none;
@@ -95,129 +99,110 @@ a:focus .tab{
 
 @media only screen and (max-width: 600px) {
 
-    .contenedor-lateral{
+    .contenedor-lateral {
         display: none;
     }
 
-    .tabsMoviles {
-        background-color: #0F123F;
+    .menuMobile {
         display: contents;
-        display: flex;
+    }
+    
+    #hamburgerMenu{
+      display: contents;
+      display: block;
+      position: relative;
+      top: 8vw;
+      left: 8vw;
+      z-index: 1;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    
+    #hamburgerMenu a {
+      text-decoration: none;
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+     
+    #hamburgerMenu a:hover {
+      color: #EE786C;
+    }
+     
+      #hamburgerMenu input {
+        display: block;
+        width: 40px;
+        height: 32px;
         position: absolute;
-        width: 100%;
-        height: 55px;
-        bottom: 0;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .tabsMoviles input {
-        display: none;
-    }
-
-    .tabsMoviles .round {
-        position: relative;
-        width: 45px;
-        height: 45px;
-        background: white;
-        border-radius: 50%;
-        transform: translate(0, 5px);
-        transition: transform 0.3s ease;
-        will-change: transform;
+        top: -7px;
+        left: -5px;
         cursor: pointer;
+        opacity: 0; 
+        z-index: 2; 
+        -webkit-touch-callout: none;
+      }
+      
+      #hamburgerMenu span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #F19287;
+        border-radius: 3px;
         z-index: 1;
-        text-align: center;
-    }
-
-    .tabsMoviles .round i {
-        color: #aaa;
-        line-height: 45px;
-    }
-
-    .tabsMoviles #back {
-        width: 100%;
-        position: absolute;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            opacity 0.55s ease;
+      }
+      
+      #hamburgerMenu span:first-child {
+        transform-origin: 0% 0%;
+      }
+      
+      #hamburgerMenu span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+      }
+      
+      #hamburgerMenu input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
         background: white;
-        height: 45px;
-        bottom: 0;
-        z-index: 0;
+      }
+      
+      #hamburgerMenu input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+      
+      #hamburgerMenu input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
       }
     
-    .tabsMoviles #back::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: #66ccff;
-    border-radius: 50%;
-    margin-top: -20px;
-    transform: translate(5px, 0);
-    will-change: transform;
-    transition: transform 0.2s ease;
-    }
-
-    .tabsMoviles #t0:checked + .round {
-    transform: translate(0, -7px);
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    .tabsMoviles #t0:checked + .round i {
-    color: #66ccff;
-    }
-
-    .tabsMoviles #t0:checked ~ #back::after {
-    transform: translate(5px, 0);
-    }
-
-    .tabsMoviles #t1:checked + .round {
-    transform: translate(0, -7px);
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    .tabsMoviles #t1:checked + .round i {
-    color: #66ccff;
-    }
-
-    .tabsMoviles #t1:checked ~ #back::after {
-    transform: translate(75px, 0);
-    }
-
-    .tabsMoviles #t2:checked + .round {
-    transform: translate(0, -7px);
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    .tabsMoviles #t2:checked + .round i {
-    color: #66ccff;
-    }
-
-    .tabsMoviles #t2:checked ~ #back::after {
-    transform: translate(145px, 0);
-    }
-
-    .tabsMoviles #t3:checked + .round {
-    transform: translate(0, -7px);
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    .tabsMoviles #t3:checked + .round i {
-    color: #66ccff;
-    }
-
-    .tabsMoviles #t3:checked ~ #back::after {
-    transform: translate(215px, 0);
-    }
-
-    .tabsMoviles #t4:checked + .round {
-    transform: translate(0, -7px);
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    .tabsMoviles #t4:checked + .round i {
-    color: #66ccff;
-    }
-
-    .tabsMoviles #t4:checked ~ #back::after {
-    transform: translate(285px, 0);
-    }
+      #foldingMenu {
+        font-family: 'Red Hat Display', sans-serif;
+        position: absolute;
+        width: 75vw;
+        height: 80vh;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        background: #0F123F;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      }
+      
+      #foldingMenu li {
+        padding: 10px 0;
+        font-size: 22px;
+        color: white;
+        white-space: wrap;
+      }
+    
+      #hamburgerMenu input:checked ~ ul {
+        transform: none;
+      }
 }
