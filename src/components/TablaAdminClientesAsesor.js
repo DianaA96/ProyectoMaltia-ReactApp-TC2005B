@@ -1,7 +1,7 @@
 import React from 'react';
 import './TablaAdminClientesAsesor.css';
 import './Boton.css';
-import CustomLink from './CustomLink';
+import CustomLink from '../CustomLink';
 
 function TablaAdminClientesAsesor(props) {
     return (

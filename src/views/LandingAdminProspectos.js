@@ -1,10 +1,10 @@
 import React from 'react';
 import './LandingAdminUsuarios.css';
-import CustomLink from './CustomLink';
-import Lateral from './Lateral';
+import CustomLink from '../components/CustomLink';
+import Lateral from '../Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
-import TablaProspectos from './TablaProspectos';
+import TablaProspectos from '../TablaProspectos';
 import InputFiltrar from './InputFiltrar';
 import asesor from './assets/asesor.png';
 import './Boton.css'

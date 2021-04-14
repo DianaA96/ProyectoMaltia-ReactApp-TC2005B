@@ -1,6 +1,6 @@
 import React from 'react';
 import Lateral from './Lateral';
-import CustomLink from'./CustomLink';
+import CustomLink from'../CustomLink';
 import Bienvenida from './Bienvenida';
 import RadioButton from './RadioButton';
 import DropMenu from './DropMenu'

@@ -3,11 +3,11 @@ import './SolicitudCliente.css';
 import './Boton.css';
 import './plantillaInputs.css';
 import Bienvenida from './Bienvenida';
-import Lateral from './Lateral';
+import Lateral from '../Lateral';
 import Checkbox from './Checkbox';
 import DropMenu from './DropMenu';
 import asesor from './assets/asesor.png';
-import CustomLink from './CustomLink';
+import CustomLink from '../components/CustomLink';
 
 function EditarSolicitudCliente(props) {
     let fecha = new Date();

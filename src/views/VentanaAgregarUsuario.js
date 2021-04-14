@@ -1,8 +1,8 @@
 import React from 'react';
 import Lateral from './Lateral';
-import CustomLink from './CustomLink';
-import Bienvenida from './Bienvenida';
-import RadioButton from './RadioButton';
+import CustomLink from '../components/CustomLink';
+import Bienvenida from '../components/Bienvenida';
+import RadioButton from '../components/RadioButton';
 import './AgregarEditarUsuario.css';
 import './plantillaInputs.css';
 import './Boton.css';

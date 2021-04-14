@@ -1,6 +1,6 @@
 import './Boton.css';
 import './deshabilitar.css';
-import CustomLink from './CustomLink';
+import CustomLink from '../components/CustomLink';
 import Advertencia from './assets/advertencia.png';
 
 function Deshabilitar(){

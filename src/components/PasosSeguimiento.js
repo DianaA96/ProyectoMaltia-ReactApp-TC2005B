@@ -1,7 +1,7 @@
 import React from 'react'
 import './PasosSeguimiento.css'
 import zorro from './assets/ZorroSeguimiento.png'
-import CustomLink from './CustomLink';
+import CustomLink from '../CustomLink';
 
 function PasosSeguimiento() {
     return (

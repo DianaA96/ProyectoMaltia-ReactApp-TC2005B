@@ -1,9 +1,9 @@
 import React from 'react';
 import './LandingAnalista.css';
-import Lateral from './Lateral';
+import Lateral from '../Lateral';
 import Bienvenida from './Bienvenida';
 import InputBuscar from './InputBuscar';
-import TablaClientes from './TablaClientes';
+import TablaClientes from '../TablaClientes';
 import InputFiltrar from './InputFiltrar';
 import  analista from './assets/analista.png';
 import './Boton.css';

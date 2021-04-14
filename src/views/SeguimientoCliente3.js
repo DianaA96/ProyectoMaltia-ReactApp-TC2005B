@@ -1,16 +1,15 @@
 import React from 'react';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
-import PasosSeguimiento from './PasosSeguimiento'
+import PasosSeguimiento from './PasosSeguimiento';
 import admin from './assets/persona.svg';
-import ToggleSwitch from './ToggleSwitch';
-import InfoSolicitud from './InfoSolicitud';
+import InfoSolicitud from '../InfoSolicitud';
 import BotonRegresar from './BotonRegresar';
+import './plantillaInputs.css'
 import './SeguimientoCliente1.css'; //Se toman los estilos de la primera vista de seguimiento cliente al tener las mismas clases
-import './SeguimientoCliente2.css'; //Estilos para elementos diferentes en la vista
 
 
-function SeguimientoCliente2() {
+function SeguimientoCliente3() {
         let enlaces = ["./", "./nuevo-usuario"]
         let tabs = ["Solicitudes", "Generar Reportes"];
     return(
@@ -30,17 +29,10 @@ function SeguimientoCliente2() {
                     </section>
                     <section className="mainContentPageSeguimiento">
                         <div className="accionesSeguimiento">
-                            <div className="toggle-cont">
-                                <p className="alta-isi">Alta en ISI</p>
-                                <ToggleSwitch/>
-                            </div>
-                            <div className="toggle-cont">
-                                <p className="auditoria-buro">Auditado</p>
-                                <ToggleSwitch/>
-                            </div>
+                            <input className= "input-gral w-1" type="text" name="Crédito autorizado" placeholder="Crédito autorizado"/>
+                            <input className= "input-gral w-1" type="text" name="Crédito dispuesto"  placeholder="Crédito dispuesto"/>
                         </div>
                         <div className="lineaSeguimiento"></div>
-                        
                         <InfoSolicitud/>
                     </section>
                 </section>
@@ -49,4 +41,4 @@ function SeguimientoCliente2() {
     );
 }
 
-export default SeguimientoCliente2;
+export default SeguimientoCliente3;

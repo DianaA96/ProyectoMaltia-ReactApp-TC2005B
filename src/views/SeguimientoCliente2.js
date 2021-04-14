@@ -1,16 +1,16 @@
 import React from 'react';
-import './SeguimientoCliente1.css';
 import Lateral from './Lateral';
 import Bienvenida from './Bienvenida';
 import PasosSeguimiento from './PasosSeguimiento'
 import admin from './assets/persona.svg';
-import Checkbox from './Checkbox'
-import InfoSolicitud from './InfoSolicitud'
-import BotonRegresar from './BotonRegresar'
-import './plantillaInputs.css'
+import ToggleSwitch from '../components/ToggleSwitch';
+import InfoSolicitud from '../InfoSolicitud';
+import BotonRegresar from './BotonRegresar';
+import './SeguimientoCliente1.css'; //Se toman los estilos de la primera vista de seguimiento cliente al tener las mismas clases
+import './SeguimientoCliente2.css'; //Estilos para elementos diferentes en la vista
 
 
-function SeguimientoCliente1() {
+function SeguimientoCliente2() {
         let enlaces = ["./", "./nuevo-usuario"]
         let tabs = ["Solicitudes", "Generar Reportes"];
     return(
@@ -30,16 +30,18 @@ function SeguimientoCliente1() {
                     </section>
                     <section className="mainContentPageSeguimiento">
                         <div className="accionesSeguimiento">
-                            <p className="pregunta-antiguedad">¿Cumple con la antigüedad mínima?</p>
-                            <Checkbox/>
-                            <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Antigüedad"/>
-                            <p className="texto-ayuda"></p>
-                            <p className="pregunta-capacidad">¿Cumple con la antigüedad mínima?</p>
-                            <Checkbox/>
-                            <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Capacidad de pago"/>
+                            <div className="toggle-cont">
+                                <p className="alta-isi">Alta en ISI</p>
+                                <ToggleSwitch/>
+                            </div>
+                            <div className="toggle-cont">
+                                <p className="auditoria-buro">Auditado</p>
+                                <ToggleSwitch/>
+                            </div>
                         </div>
                         <div className="lineaSeguimiento"></div>
-                       <InfoSolicitud/>
+                        
+                        <InfoSolicitud/>
                     </section>
                 </section>
             </main>
@@ -47,4 +49,4 @@ function SeguimientoCliente1() {
     );
 }
 
-export default SeguimientoCliente1;
+export default SeguimientoCliente2;

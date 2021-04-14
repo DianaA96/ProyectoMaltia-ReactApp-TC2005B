@@ -1,5 +1,5 @@
 import React from 'react';
-import FormAutenticacion from './FormAutenticacion';
+import FormAutenticacion from '../FormAutenticacion';
 import logoMaltia from './assets/logoMaltia.png';
 import './VentanaInicioSesion.css';
 

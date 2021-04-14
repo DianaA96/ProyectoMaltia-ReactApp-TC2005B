@@ -1,11 +1,11 @@
-import Lateral from'./Lateral';
-import Bienvenida from './Bienvenida';
+import Lateral from'../Lateral';
+import Bienvenida from '../components/Bienvenida';
 import React from 'react';
 import asesor from './assets/asesor.png'
 import './Aprospecto.css';
 import './plantillaInputs.css';
 import './Boton.css';
-import CustomLink from './CustomLink';
+import CustomLink from '../CustomLink';
 
 function Aprospecto(){
 
