@@ -1,13 +1,13 @@
 import React from 'react';
 import './SeguimientoCliente1.css';
-import Lateral from './Lateral';
-import Bienvenida from './Bienvenida';
-import PasosSeguimiento from './PasosSeguimiento'
-import admin from './assets/persona.svg';
-import Checkbox from './Checkbox'
-import InfoSolicitud from '../InfoSolicitud'
-import BotonRegresar from './BotonRegresar'
-import './plantillaInputs.css'
+import Lateral from '../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
+import PasosSeguimiento from '../components/PasosSeguimiento'
+import admin from '../assets/persona.svg';
+import Checkbox from '../components/Checkbox'
+import InfoSolicitud from '../components/InfoSolicitud'
+import BotonRegresar from '../components/BotonRegresar'
+import '../components/plantillaInputs.css'
 
 
 function SeguimientoCliente1() {

@@ -1,11 +1,11 @@
 import React from 'react';
-import Lateral from './Lateral';
-import Bienvenida from './Bienvenida';
-import PasosSeguimiento from './PasosSeguimiento';
-import admin from './assets/persona.svg';
-import InfoSolicitud from '../InfoSolicitud';
-import BotonRegresar from './BotonRegresar';
-import './plantillaInputs.css'
+import Lateral from '../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
+import PasosSeguimiento from '../components/PasosSeguimiento';
+import admin from '../assets/persona.svg';
+import InfoSolicitud from '../components/InfoSolicitud';
+import BotonRegresar from '../components/BotonRegresar';
+import '../components/plantillaInputs.css'
 import './SeguimientoCliente1.css'; //Se toman los estilos de la primera vista de seguimiento cliente al tener las mismas clases
 
 

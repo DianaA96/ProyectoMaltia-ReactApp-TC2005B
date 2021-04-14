@@ -1,5 +1,5 @@
 import './InputBuscar.css';
-import CustomLink from '../CustomLink';
+import CustomLink from './CustomLink';
 
 function InputBuscar(props){
     return(

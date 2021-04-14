@@ -1,7 +1,7 @@
 import React from 'react';
-import "./ContactoAsesor.css"
-import Checkbox from './Checkbox.js';
-import './Boton.css';
+import "./ModalContactoAsesor.css"
+import Checkbox from '../components/Checkbox.js';
+import '../components/Boton.css';
 import DropMenu from '../components/DropMenu.js';
 import CustomLink from '../components/CustomLink';
 

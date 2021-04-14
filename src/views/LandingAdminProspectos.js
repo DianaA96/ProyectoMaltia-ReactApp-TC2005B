@@ -1,13 +1,13 @@
 import React from 'react';
 import './LandingAdminUsuarios.css';
 import CustomLink from '../components/CustomLink';
-import Lateral from '../Lateral';
-import Bienvenida from './Bienvenida';
-import InputBuscar from './InputBuscar';
-import TablaProspectos from '../TablaProspectos';
-import InputFiltrar from './InputFiltrar';
-import asesor from './assets/asesor.png';
-import './Boton.css'
+import Lateral from '../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
+import InputBuscar from '../components/InputBuscar';
+import TablaProspectos from '../components/TablaProspectos';
+import InputFiltrar from '../components/InputFiltrar';
+import asesor from '../assets/asesor.png';
+import '../components/Boton.css'
 
 function LandingAdminProspectos() {
 

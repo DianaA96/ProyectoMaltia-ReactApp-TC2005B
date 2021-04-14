@@ -1,13 +1,13 @@
 import React from 'react';
 import './SolicitudCliente.css';
-import './Boton.css';
-import './plantillaInputs.css';
-import Bienvenida from './Bienvenida';
-import Lateral from './Lateral';
-import Checkbox from './Checkbox';
-import DropMenu from './DropMenu';
-import asesor from './assets/asesor.png';
-import CustomLink from './CustomLink';
+import '../components/Boton.css';
+import '../components/plantillaInputs.css';
+import Bienvenida from '../components/Bienvenida';
+import Lateral from '../components/Lateral';
+import Checkbox from '../components/Checkbox';
+import DropMenu from '../components/DropMenu';
+import asesor from '../assets/asesor.png';
+import CustomLink from '../components/CustomLink';
 
 function SolicitudCliente(props) {
     let fecha = new Date();

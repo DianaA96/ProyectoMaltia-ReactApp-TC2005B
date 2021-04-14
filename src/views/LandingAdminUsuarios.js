@@ -1,11 +1,11 @@
 import React from 'react';
 import './LandingAdminUsuarios.css';
-import Lateral from '../Lateral';
-import Bienvenida from './Bienvenida';
-import InputBuscar from './InputBuscar';
-import TablaUsuarios from '../TablaUsuarios';
-import InputFiltrar from './InputFiltrar';
-import admin from './assets/persona.svg';
+import Lateral from '../components/Lateral';
+import Bienvenida from '../components/Bienvenida';
+import InputBuscar from '../components/InputBuscar';
+import TablaUsuarios from '../components/TablaUsuarios';
+import InputFiltrar from '../components/InputFiltrar';
+import admin from '../assets/persona.svg';
 function LandingAdminUsuarios() {
 
     let dataQuery = {

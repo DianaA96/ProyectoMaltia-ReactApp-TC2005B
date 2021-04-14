@@ -1,7 +1,7 @@
-import './Boton.css';
-import './deshabilitar.css';
+import '../components/Boton.css';
+import './ModalDeshabilitarEmpleado.css';
 import CustomLink from '../components/CustomLink';
-import Advertencia from './assets/advertencia.png';
+
 
 function Deshabilitar(){
     return(
