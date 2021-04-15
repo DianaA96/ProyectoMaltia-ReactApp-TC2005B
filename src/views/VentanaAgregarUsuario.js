@@ -27,6 +27,10 @@ function VentanaAgregarUsuario() {
             fontSize: "22px",
             fontFamily: "Raleway",
             fontWeight: "600",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+            },
           }),
           menu: base => ({
             ...base,
@@ -46,7 +50,11 @@ function VentanaAgregarUsuario() {
           }),
           container: base => ({
             ...base,
-            width:"44.5%" 
+            width:"44.5%",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                width:"90%",
+            },
           })
     }
 
@@ -56,7 +64,7 @@ function VentanaAgregarUsuario() {
                 <aside>
                     <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
                 </aside>
-                <section className='contentPageFormsUsuario'>
+                <section className='contentPageForms'>
                     <header>
                         <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Agregar usuario"/>
                     </header>

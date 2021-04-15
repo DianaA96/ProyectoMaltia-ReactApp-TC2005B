@@ -64,3 +64,10 @@
     border-radius: 50%;
     background: #0F123F;
 }
+
+@media only screen and (max-width: 576px) {
+    .container-radio{
+        color: #fff;
+        font-size: 5vw;
+    }
+}

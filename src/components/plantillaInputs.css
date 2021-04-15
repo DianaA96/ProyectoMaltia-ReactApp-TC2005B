@@ -106,13 +106,13 @@
 }
 
 
-@media (max-width: 1080px){
+@media only screen and(max-width: 1080px){
     .w-3{
         width: 40%;
     }
 }
 
-@media (max-width: 860px){
+@media only screen and (max-width: 860px){
     .w-3{
         width: 70%;
     }
@@ -120,5 +120,10 @@
     .w-2{
         width: 70%;
     }
-    
+}
+
+@media only screen and (max-width: 576px){
+    .input-gral{
+        background: #F2F5FA;
+    }
 }
