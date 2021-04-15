@@ -45,7 +45,11 @@ function VentanaEditarUsuario() {
           }),
           container: base => ({
             ...base,
-            width:"44.5%" 
+            width:"44.5%",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                width:"90%",
+            },
           })
     }
     return(
