@@ -1,7 +1,7 @@
 .contentPageForms{ 
     background-color: #F2F5FA;
     border-radius: 10px;
-    height: auto;
+    height: 91vh;
     width: 85%;
     margin: 0%;
     padding: 1vw;
@@ -59,6 +59,12 @@
     margin-top: 8%;
 }
 
+
+.botonesContentPage .mr{
+    margin-right: 2%;
+}
+
+
 .botonAzulMarino{
     margin-right: 5%;
 }
@@ -91,7 +97,7 @@
     }
 
     .inputsContentPage{
-        height: 65vh;
+        height: 30em;
     }
 
     .botonesContentPage{

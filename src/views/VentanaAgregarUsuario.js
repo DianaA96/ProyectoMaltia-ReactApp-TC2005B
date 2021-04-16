@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import Lateral from '../components/Lateral';
 import CustomLink from '../components/CustomLink';
 import Bienvenida from '../components/Bienvenida';
@@ -59,6 +59,8 @@ function VentanaAgregarUsuario() {
           })
     }
 
+    const [SelectStatus, setSelectStatus] = useState('hidden');
+
     return(
         <React.Fragment>
             <main>
@@ -70,8 +72,8 @@ function VentanaAgregarUsuario() {
                         <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Agregar usuario"/>
                     </header>
                     <section className="radiosContentPage">
-                        <RadioButton etiqueta="Asesor" />
-                        <RadioButton etiqueta="Analista"/>
+                        <RadioButton etiqueta="Asesor" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
+                        <RadioButton etiqueta="Analista" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
                     </section>
                     <section className="inputsContentPage">
                         <form action="" className="inputsContentPage">
@@ -80,8 +82,8 @@ function VentanaAgregarUsuario() {
                             <input className = "input-gral w-3" type="text" name="apellidom" placeholder="Apellido Materno"/>
                             <input className = "input-gral w-2" type="tel" name="numtelefono"  placeholder="Número de teléfono"/>
                             <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico"/>
-                            <Select placeholder = {"Departamento"} options={options} styles = {customSelectStyles}/>
-                            <Select placeholder = {"Tiendas"} options={options} isMulti styles = {customSelectStyles}/>
+                            {SelectStatus === 'analista' ? <Select placeholder = "Departamento" options={options} styles = {customSelectStyles}/> : null}
+                            {SelectStatus === 'asesor' ? <Select  placeholder = "Tiendas" options={options} isMulti styles = {customSelectStyles}/> : null}
                         </form>
                     </section>
 

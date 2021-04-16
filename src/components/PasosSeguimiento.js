@@ -8,30 +8,30 @@ function PasosSeguimiento() {
         <div className="cont-seguimiento">
 
             <div className="circulo-texto">
-                <a href="" className="cons-zorro">
+                <button href="" className="cons-zorro">
                     <div className="circulo-seguimiento">
                         <CustomLink tag="div" to='./seguimientoCliente1' className="circulo-seguimiento"><img src={zorro} alt=""/></CustomLink>
                     </div>
-                </a> 
+                </button> 
                 <h5>Consulta Zorro Abarrotero</h5>
             </div>
 
             <div className="circulo-texto">
-                <a href="" className="cons-zorro">
+                <button href="" className="cons-zorro">
                     <div className="circulo-seguimiento">
                         <CustomLink tag="div" to='./seguimientoCliente2' className="circulo-seguimiento"><i class="fas fa-users"></i></CustomLink>
                     </div>
-                </a>
+                </button>
                 <h5>Verificación Buró de Crédito</h5>
             </div>
 
 
             <div className="circulo-texto">
-                <a href="" className="cons-zorro">
+                <button href="" className="cons-zorro">
                     <div className="circulo-seguimiento">
                         <CustomLink tag="div" to='./seguimientoCliente3' className="circulo-seguimiento"><i class="fas fa-check-double"></i></CustomLink>
                     </div>
-                </a>
+                </button>
                 <h5>Disposición</h5>
             </div>   
 

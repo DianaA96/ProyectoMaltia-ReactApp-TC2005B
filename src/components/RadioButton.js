@@ -1,10 +1,21 @@
 import './RadioButton.css'
 
 function RadioButton(props){
+
+    function toggleSelectVisibility(){
+        if(props.etiqueta === 'Analista'){
+            props.setSelectStatus('analista');
+        }
+        else if(props.etiqueta === 'Asesor'){
+            props.setSelectStatus('asesor');
+        }
+    }
+
+
     return(
         <div className="cont-component">
             <label className="container-radio"> {props.etiqueta}
-                <input type="radio" name="radio"/>
+                <input onFocus ={toggleSelectVisibility} type="radio" name="radio"/>
                 <span className="checkmark"></span>
             </label>
         </div>

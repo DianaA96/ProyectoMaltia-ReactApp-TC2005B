@@ -35,8 +35,8 @@ function Aprospecto(){
 
                         <section className='botonesContentPage'>
                             <CustomLink tag='button' to='./administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
-                            <CustomLink tag='button' to='./solicitudCliente' className="botonSalmon">Continuar solicitud</CustomLink>
-                            <CustomLink tag='button' to='./administrarProspectos' className="botonSalmon">Registrar</CustomLink>
+                            <CustomLink tag='button' to='./solicitudCliente' className="botonSalmon mr">Continuar solicitud</CustomLink>
+                            <CustomLink tag='button' to='./administrarProspectos' className="botonSalmon mr">Registrar</CustomLink>
                         </section>
                 </div>
             </main>
