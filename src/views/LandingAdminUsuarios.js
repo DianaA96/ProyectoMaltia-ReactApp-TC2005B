@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import './LandingAdminUsuarios.css';
 import Lateral from '../components/Lateral';
 import Bienvenida from '../components/Bienvenida';
 import InputBuscar from '../components/InputBuscar';
 import TablaUsuarios from '../components/TablaUsuarios';
 import InputFiltrar from '../components/InputFiltrar';
+import ModalDeshabilitarEmpleado from './ModalDeshabilitarEmpleado'
 import admin from '../assets/persona.svg';
-function LandingAdminUsuarios() {
+
+
+const LandingAdminUsuarios = () => {
+    
+    const [status, setStatus] = useState('hidden');
 
     let dataQuery = {
         data: [
@@ -32,10 +37,9 @@ function LandingAdminUsuarios() {
       };
 
       let tabs = ["Administrar Usuarios", "Agregar Usuario"];
-      
 
     return(
-         <main>
+        <main>
             <aside>
                  <Lateral img = {admin} usuario="Admin #1234" tabs={tabs}/>
             </aside>
@@ -48,8 +52,9 @@ function LandingAdminUsuarios() {
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaUsuarios {...dataQuery} />
-                </section>
+                    <TablaUsuarios {...dataQuery} status={status} setStatus={setStatus}/>
+                    {status === 'visible' ? <ModalDeshabilitarEmpleado status = {status} setStatus = {setStatus}/> : null}
+                </section> 
             </section>
         </main>
     );

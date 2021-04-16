@@ -1,7 +1,13 @@
 import './TablaUsuarios.css';
 import CustomLink from './CustomLink';
 
+
 function TablaUsuarios(props) {
+
+      function showModal(){
+            props.setStatus('visible')
+      }
+
     return (
       <section className="contenedorTablaUsuarios">
             <div className="encabezadoTablaUsuarios">
@@ -17,7 +23,7 @@ function TablaUsuarios(props) {
                                     <td data-th={`\u000A ${registro.puesto}`}>{registro.nombres + " " + registro.apellidos}</td>
                                     <td>{registro.puesto}</td>
                                     <td><CustomLink tag='button' to='./editarUsuario' id="botonEditarUsuario"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></CustomLink></td>
-                                    <td><CustomLink tag='button' to='./eliminarUsuario' id="botonEliminarUsuario"><i class="fas fa-user-slash"></i></CustomLink></td>
+                                    <td><button onClick={showModal} tag='button' id="botonEliminarUsuario"><i class="fas fa-user-slash"></i></button></td>
                               </tr>
                         </tbody>
                   ))}

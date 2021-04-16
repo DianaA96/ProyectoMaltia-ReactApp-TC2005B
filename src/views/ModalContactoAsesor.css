@@ -1,7 +1,25 @@
+.modalPadre1{
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 2vh;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-transition: 0.5s;
+    overflow: auto;
+    transition: all 0.3s linear;
+    backdrop-filter: blur(5px);
+}
+
 .modal{
+    padding: 20px;
     background-color: #E5E5E5;
-    width: 45vw;
-    height: 90vh;
+    width: 40vw;
     color: #0F123F;
     font-family: "Red Hat Display";
     display: flex;
@@ -13,6 +31,7 @@
     font-weight: bold;
     font-size: 30px;
     color: #0F123F;
+    margin-bottom: 5px;
 }
 
 .infoPrimaria{
@@ -40,8 +59,8 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
-    margin-bottom: 10px;
+    justify-content: space-evenly;
+    align-items: center;
     height: 17vh;
 }
 
@@ -49,9 +68,14 @@
     width: 20%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
     font-size: 18px;
+ }
+
+ .contacto-left p{
+    margin-top: 0;
+    margin-bottom: 5px;
  }
 
 
