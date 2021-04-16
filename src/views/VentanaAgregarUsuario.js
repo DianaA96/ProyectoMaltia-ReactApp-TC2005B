@@ -12,6 +12,7 @@ import Select from 'react-select'
 
 function VentanaAgregarUsuario() {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
+    
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },

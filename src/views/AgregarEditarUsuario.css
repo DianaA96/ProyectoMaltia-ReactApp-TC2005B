@@ -7,7 +7,7 @@
     padding: 1vw;
 }
 
-header{
+.contentPageForms header{
     display: flex;
     justify-content: space-between;
 }

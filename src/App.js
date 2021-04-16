@@ -49,13 +49,13 @@ function App() {
       <Switch>
         <Route path='/login' exact={true}>{VentanaInicioSesion}</Route>
 
-        <Route path='/administrarUsuarios' exact={true}>{LandingAdminUsuarios}</Route>
+        <Route path='/administrarUsuarios' exact={true}><LandingAdminUsuarios></LandingAdminUsuarios></Route>
         <Route path='/agregarUsuario' exact={true}>{VentanaAgregarUsuario}</Route>
         <Route path='/editarUsuario' exact={true}>{VentanaEditarUsuario}</Route>
         <Route path='/eliminarUsuario' exact={true}>{Deshabilitar}</Route>
         <Route path='/user-not-found1' exact={true}>{UsuarioNoEncontrado1}</Route>
 
-        <Route path='/administrarProspectos' exact={true}>{LandingAdminProspectos}</Route>
+        <Route path='/administrarProspectos' exact={true}><LandingAdminProspectos/></Route>
         <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
         <Route path='/agregarProspectos' exact={true}>{AgregarProspecto}</Route>
         <Route path='/editarProspecto' exact={true}>{EditarProspecto}</Route>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import './LandingAdminUsuarios.css';
 import CustomLink from '../components/CustomLink';
 import Lateral from '../components/Lateral';
@@ -7,9 +7,12 @@ import InputBuscar from '../components/InputBuscar';
 import TablaProspectos from '../components/TablaProspectos';
 import InputFiltrar from '../components/InputFiltrar';
 import asesor from '../assets/asesor.png';
+import ModalContactoAsesor from './ModalContactoAsesor'
 import '../components/Boton.css'
 
 function LandingAdminProspectos() {
+
+    const [status, setStatus] = useState('hidden');
 
     let datosProspect = {
         data: [
@@ -49,7 +52,8 @@ function LandingAdminProspectos() {
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaProspectos {...datosProspect} />
+                    <TablaProspectos {...datosProspect} status = {status} setStatus = {setStatus}/>
+                    {status === 'visible' ? <ModalContactoAsesor status = {status} setStatus = {setStatus}/> : null}
                 </section>
             </section>
         </main>
