@@ -31,6 +31,8 @@ function ModalContactoAsesor(props){
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
                 background:"#F2F5FA",
+                fontSize: "5vw",
+                padding: "5px 20px",
             },
         }),
               menu: base => ({
@@ -38,7 +40,10 @@ function ModalContactoAsesor(props){
                 borderRadius: "25px",
                 fontSize: "22px",
                 fontFamily: "Raleway",
-                
+                "@media only screen and (max-width: 576px)": {
+                    ...base["@media only screen and (max-width: 576px)"],
+                    fontSize:"6vw",
+                },
               }),
               menuList: base => ({
                 ...base,
@@ -68,6 +73,7 @@ function ModalContactoAsesor(props){
                     <p className="tel">  771 245 2723 </p>
                 </div>
                 <div className="formulario">
+                    <p className="mobile-contactNum">Contacto 1</p>
                     <div className="cont-contacto">
                         <div className="contacto-left">
                             <p>Contacto 1 </p>
@@ -75,6 +81,8 @@ function ModalContactoAsesor(props){
                         </div>
                         <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
                     </div>
+
+                    <p className="mobile-contactNum">Contacto 2</p>
                     <div className="cont-contacto">
                         <div className="contacto-left">
                             <p>Contacto 2</p>
@@ -82,6 +90,8 @@ function ModalContactoAsesor(props){
                         </div>
                         <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/> 
                     </div>
+
+                    <p className="mobile-contactNum">Contacto 3</p>
                     <div className="cont-contacto">
                         <div className="contacto-left">
                             <p>Contacto 3</p>

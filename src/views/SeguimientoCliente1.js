@@ -34,7 +34,7 @@ function SeguimientoCliente1() {
                             <Checkbox/>
                             <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Antigüedad"/>
                             <p className="texto-ayuda"></p>
-                            <p className="pregunta-capacidad">¿Cumple con la antigüedad mínima?</p>
+                            <p className="pregunta-capacidad">¿Cumple con la capacidad de pago mínima?</p>
                             <Checkbox/>
                             <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Capacidad de pago"/>
                         </div>

@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    align-content: center;
     width: 100%;
     height: 100%;
     padding-top: 30vh;
@@ -65,7 +66,7 @@
     margin-bottom: 0;
 }
 
-.us{
+.centro{
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: bold;
@@ -74,18 +75,32 @@
 }
 
 .num{
-    font-family: 'Red Hat Display';
-    font-style: normal;
     font-weight: normal;
-    font-size: 30px;
-    color: #000000;
 }
 
-.pregunta{
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-    color: #000000;
+
+
+
+@media only screen and (max-width:576px){
+    .modalPadre{
+        padding-top: 10vh;
+    }
+    .err{
+        width: 75vw;
+        margin-top: -10vh;
+        height: 70vh;
+    }
+
+    .eliminando{
+        font-size: 7vw;
+    }
+    .err i{
+        font-size: 30px;
+    }
+    .err .num{
+        margin: 0 0.2em;
+    }
+    .err .centro{
+        font-size: 6vw;
+    }
 }

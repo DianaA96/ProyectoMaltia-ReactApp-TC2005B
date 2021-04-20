@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import Lateral from '../components/Lateral';
 import CustomLink from'../components/CustomLink';
 import Bienvenida from '../components/Bienvenida';
@@ -52,6 +52,9 @@ function VentanaEditarUsuario() {
             },
           })
     }
+
+    const [SelectStatus, setSelectStatus] = useState('hidden');
+
     return(
         <React.Fragment>
             <main>
@@ -63,8 +66,8 @@ function VentanaEditarUsuario() {
                         <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Editar usuario"/>
                     </header>
                     <section className="radiosContentPage">
-                        <RadioButton etiqueta="Asesor" />
-                        <RadioButton etiqueta="Analista"/>
+                        <RadioButton  etiqueta="Asesor" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
+                        <RadioButton  etiqueta="Analista" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
                     </section>
                     <section className="inputsContentPage">
                         <form action="" className="inputsContentPage">
@@ -73,8 +76,9 @@ function VentanaEditarUsuario() {
                             <input className = "input-gral w-3" type="text" name="apellidop" placeholder="Apellido Paterno" defaultValue="Hernández"/>
                             <input className = "input-gral w-2" type="tel" name="numtelefono" placeholder="Número de teléfono" defaultValue="771 212 23 32"/>
                             <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico" defaultValue="email@hogwarts.edu"/>
-                            <Select defaultValue = {options[0]} options={options} styles = {customSelectStyles}/>
-                            <Select defaultValue = {[options[0], options[2]]} options={options} isMulti styles = {customSelectStyles}/>
+                            
+                            {SelectStatus === 'analista' ? <Select defaultValue = {options[0]} options={options} styles = {customSelectStyles}/> : null}
+                            {SelectStatus === 'asesor' ? <Select defaultValue = {[options[0], options[2]]} options={options} isMulti styles = {customSelectStyles}/> : null}
                         </form>
                     </section>
 
