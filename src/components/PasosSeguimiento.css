@@ -65,6 +65,12 @@
 
 @media only screen and (max-width:576px){
     .cont-seguimiento{
-        width: 100%;
+        width: 110%;
+        color: #fff;
+    }
+
+    .circulo-texto h5{
+        font-size: 4vw;
+        color: #fff;
     }
 }

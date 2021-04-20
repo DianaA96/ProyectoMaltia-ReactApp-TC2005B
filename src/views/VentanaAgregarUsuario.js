@@ -77,6 +77,8 @@ function VentanaAgregarUsuario() {
                     </section>
                     <section className="inputsContentPage">
                         <form action="" className="inputsContentPage">
+                            <input className = "input-gral w-2" type="text" name="idEmployee" placeholder="ID de Empleado"/>
+                            <input className = "input-gral w-2" type="password" name="contrasena" placeholder="Contraseña"/>
                             <input className = "input-gral w-3" type="text" name="nombres"  placeholder="Nombre(s)"/>
                             <input className = "input-gral w-3" type="text" name="apellidop"  placeholder="Apellido Paterno"/>
                             <input className = "input-gral w-3" type="text" name="apellidom" placeholder="Apellido Materno"/>

@@ -77,8 +77,55 @@
     margin-top: 0;
     margin-bottom: 5px;
  }
+ 
+ .mobile-contactNum{
+    display: none;
+}
+
+ @media only screen and (max-width:576px){
+    .modalPadre1{
+        padding-top: -10vh;
+    }
+
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .modal{
+        width: 75vw;
+        margin-top: -10vh;
+        height: 80vh;
+        padding: 10px 20px;
+    }
+
+    .nombreUsuario{
+        font-size: 6vw;
+        text-align: center;
+    }
+    
+
+    .contacto-left p{
+        display: none;
+    }
 
 
+    .cont-contacto{
+        margin-bottom: 1em;
+        height: auto;
+    }
+
+    .mobile-contactNum{
+        margin: auto;
+        display:contents;
+        font-size: 5vw;
+        text-align: center;
+        margin-bottom: 1em;
+        font-weight: bold;
+    }
+   
+}
 
 
 

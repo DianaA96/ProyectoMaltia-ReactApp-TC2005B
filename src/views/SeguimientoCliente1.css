@@ -83,18 +83,36 @@
 
 
 @media only screen and (max-width:576px){
+
+    aside{
+        margin-right: -3vw;
+    }
+
     .contentPageSeguimiento{
         background-color: #0F123F;
         color: #fff;
         padding: 5vw;
     }
 
+    .pasosContentPageSeguimiento{
+        text-align: center;
+        font-size: 5vw;
+    }
+
     .mainContentPageSeguimiento{
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        padding: 0;
+        text-align: center;
         color: #fff;
+        height: auto;
+        font-size: 5vw;
     }
 
+    .accionesSeguimiento input{
+        font-size: 5vw;
+    }
 
     .lineaSeguimiento{
         display: none;
@@ -104,7 +122,8 @@
         width: 100%;
         justify-content: center;
         align-items: center;
-        height: 80vh;
+        height: 70vh;
+        border-bottom: 1px solid rgb(255, 255, 255);
     }
 
    
