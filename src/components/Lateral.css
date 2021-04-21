@@ -1,0 +1,208 @@
+.contenedor-lateral{
+    background-color: #0F123F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 85vh;
+    color: #fff;
+    width: 14.5vw;
+    font-family: 'Red Hat Display';
+}
+
+.datosUsuario{
+    height: 10vh;
+}
+
+.cont_icono{
+    width: 7.5vw;
+    height: 7.5vw;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono_usuario {
+    width: 6vw;
+    height: 6vw;
+}
+
+.nombre_usuario{
+    font-weight: normal;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.tabs{
+    padding: 1.7vw 0;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a:focus .tab{
+    text-align: left;
+    width: 95%;
+    padding: 1.75vh;;
+    background: #EE786C;
+    border-radius: 2vh;
+    font-family:"Red Hat Display";
+    font-weight: 900;
+    font-size: 1.29vw;
+    line-height: 4.75vh;
+}
+
+.tab{
+    width: 60%;
+    padding: 1.75vh;
+    border-radius: 2vh;
+    font-weight: 600;
+    font-size: 1.15vw;
+    line-height: 4.75vh;
+}
+
+.tabs a{
+    padding-left: 1.7vw;
+    text-align: left;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.logout{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1vw;
+}
+
+
+.logout i{
+    font-size: 1.7vw;
+    color: #fff;
+}
+
+.menuMobile {
+    display: none;
+}
+
+@media only screen and (max-width: 4500px) {
+    .tabsMoviles{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .contenedor-lateral {
+        display: none;
+    }
+
+    .menuMobile {
+        display: contents;
+    }
+    
+    #hamburgerMenu{
+      display: contents;
+      display: block;
+      position: relative;
+      top: 8vw;
+      left: 8vw;
+      z-index: 1;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    
+    #hamburgerMenu a {
+      text-decoration: none;
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+     
+    #hamburgerMenu a:hover {
+      color: #EE786C;
+    }
+     
+      #hamburgerMenu input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0; 
+        z-index: 2; 
+        -webkit-touch-callout: none;
+      }
+      
+      #hamburgerMenu span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #F19287;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+            opacity 0.55s ease;
+      }
+      
+      #hamburgerMenu span:first-child {
+        transform-origin: 0% 0%;
+      }
+      
+      #hamburgerMenu span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+      }
+      
+      #hamburgerMenu input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: white;
+      }
+      
+      #hamburgerMenu input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+      
+      #hamburgerMenu input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+      }
+    
+      #foldingMenu {
+        font-family: 'Red Hat Display', sans-serif;
+        position: absolute;
+        width: 75vw;
+        height: 80vh;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        background: #0F123F;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      }
+      
+      #foldingMenu li {
+        padding: 10px 0;
+        font-size: 22px;
+        color: white;
+        white-space: wrap;
+      }
+    
+      #hamburgerMenu input:checked ~ ul {
+        transform: none;
+      }
+}

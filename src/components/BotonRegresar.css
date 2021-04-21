@@ -1,0 +1,23 @@
+.regresar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-style: none;
+    background: #EE786C;
+}
+
+.regresar:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 3px  #888888;
+}
+
+.regresar i{
+    font-size: 40px;
+    color: #F2F5FA;
+}
+
+@media only screen and (max-width:576px){
+    .regresar{
+        display: none;
+    }
+}

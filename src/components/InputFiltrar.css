@@ -1,0 +1,35 @@
+.filterInput { 
+    background: #fff;
+    border-radius: 1vw;
+    width: 17.7vw;
+    left: 18vw;
+    top: 17.3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.filterInput i {
+    width: 20%;
+    color: #0F123F;
+    margin-left: 0vw;
+}
+
+.dropFilter {        
+    background: white;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 0;
+    overflow: hidden;  
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.2);
+    transition: .4s height;
+}
+
+.filterInput ul li {
+    font-family: 'Red Hat Display';
+    font-size: 13px;
+    padding: 10px 10px;
+    list-style: none;
+    border-top: 1px solid #0F123F;
+}

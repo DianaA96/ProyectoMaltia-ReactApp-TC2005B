@@ -1,0 +1,76 @@
+.cont-seguimiento{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.cons-zorro{
+    border-style: none;
+    background: rgba(0, 0, 0, 0);
+}
+
+.circulo-texto{
+    font-family: 'Red Hat Display';
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #525252;
+}
+
+.circulo-texto h5{
+    margin-top: 10px;
+}
+
+.circulo-seguimiento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background: #C4C4C4;
+}
+
+.circulo-seguimiento img{
+    width: 60%;
+}
+.cont-seguimiento button{
+    color: #525252;
+}
+.cont-seguimiento i{
+    font-size: 30px;
+}
+
+
+.cont-seguimiento button:hover .circulo-seguimiento{
+    background: #90B4DE;
+    cursor:pointer;
+}
+
+.cont-seguimiento button:hover .circulo-texto h4{
+    color: #0F123F;
+}
+
+.lineaPasos{
+    position: absolute;
+    width: 40%;
+    height: 3px;
+    margin-top: 40px;
+    background: #C4C4C4;
+    z-index: -1;
+}
+
+@media only screen and (max-width:576px){
+    .cont-seguimiento{
+        width: 110%;
+        color: #fff;
+    }
+
+    .circulo-texto h5{
+        font-size: 4vw;
+        color: #fff;
+    }
+}

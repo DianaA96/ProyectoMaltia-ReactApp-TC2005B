@@ -1,0 +1,446 @@
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+button:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+#botonEditarUsuario {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: #EE786C;
+    border: 2px solid #EE786C;
+    color: white;
+    font-weight: 550;
+    padding-left: 20%;
+    padding-right: 20%;
+    cursor: pointer;
+}
+
+#botonEditarUsuario i {
+    display: none;
+}
+
+#botonEditarUsuario::after {
+    content: "Editar";
+}
+
+#botonEditarUsuario:focus {
+    outline: none;
+}
+
+#botonEditarUsuario:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonEditarUsuario:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+#botonEliminarUsuario {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: #722C2D;
+    border: 2px solid #722C2D;
+    color: white;
+    font-weight: 550;
+    padding-left: 20%;
+    padding-right: 20%;
+    cursor: pointer;
+}
+
+#botonEliminarUsuario i {
+    display: none;
+}
+
+#botonEliminarUsuario::after {
+    content: "Eliminar";
+}
+
+#botonEliminarUsuario:focus {
+    outline: none;
+}
+
+#botonEliminarUsuario:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonEliminarUsuario:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+#botonEditarProspecto {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: white;
+    color: #EE786C;
+    border: 2px solid #EE786C;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+#botonEditarProspecto:focus {
+    outline: none;
+}
+
+#botonEditarProspecto i {
+    display: none;
+}
+
+#botonEditarProspecto::after {
+    content: "Editar";
+}
+
+#botonEditarProspecto:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonEditarProspecto:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+#botonEditarClienteAsesor {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: white;
+    color: #EE786C;
+    border: 2px solid #EE786C;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+#botonEditarClienteAsesor:focus {
+    outline: none;
+}
+
+#botonEditarClienteAsesor:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonEditarClienteAsesor:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+#botonContactarProspecto {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: white;
+    color: #455BA6;
+    border: 2px solid #455BA6;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+#botonContactarProspecto:focus {
+    outline: none;
+}
+
+#botonContactarProspecto i {
+    display: none;
+}
+
+#botonContactarProspecto::after {
+    content: "Contactar";
+}
+
+#botonContactarProspecto:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonContactarProspecto:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+#botonIniciarSolicitudProspecto {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: #455BA6;
+    border: 2px solid #455BA6;
+    color: white;
+    font-weight: 550;
+    padding-left:13%;
+    padding-right: 13%;
+    cursor: pointer;
+}
+
+#botonIniciarSolicitudProspecto i {
+    display: none;
+}
+
+#botonIniciarSolicitudProspecto::after {
+    content: "Iniciar solicitud";
+}
+
+#botonIniciarSolicitudProspecto:focus {
+    outline: none;
+}
+
+#botonIniciarSolicitudProspecto:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonIniciarSolicitudProspecto:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+    outline: none;
+}
+
+#botonSeguimiento {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-size: 104%;
+    background-color: #455BA6;
+    border: 2px solid #455BA6;
+    color: white;
+    font-weight: 550;
+    padding-left:13%;
+    padding-right: 13%;
+    cursor: pointer;
+}
+
+#botonSeguimiento i {
+    display: none;
+}
+
+#botonSeguimiento::after {
+    content: "Seguimiento";
+}
+
+#botonSeguimiento:focus {
+    outline: none;
+}
+
+#botonSeguimiento:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+#botonSeguimiento:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+.botonAzulMarino {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-size: 104%;
+    background-color: #0F123F;
+    border: 2px solid #0F123F;
+    color: white;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+#botonAzulMarino:focus {
+    outline: none;
+}
+
+.botonAzulMarino:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+.botonAzulMarino:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+.botonSalmon {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-size: 104%;
+    background-color: #EE786C;
+    border: 2px solid #EE786C;
+    color: white;
+    font-weight: 550;
+    cursor: pointer;
+} 
+
+#botonSalmon:focus {
+    outline: none;
+}
+
+.botonSalmon:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+}
+
+.botonSalmon:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+@media only screen and (max-width: 600px) {
+    #botonEditarUsuario {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonEditarUsuario::after {
+        content: "";
+    }
+
+    #botonEditarUsuario i {
+        display: contents;
+        color: #EE786C;
+    }
+
+    #botonEliminarUsuario {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonEliminarUsuario::after {
+        content: "";
+    }
+
+    #botonEliminarUsuario i {
+        display: contents;
+        color: #722C2D;
+    }
+
+    #botonEditarProspecto {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonEditarProspecto::after {
+        content: "";
+    }
+
+    #botonEditarProspecto i {
+        display: contents;
+        color: #EE786C;
+    }
+
+    #botonContactarProspecto {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonContactarProspecto::after {
+        content: "";
+    }
+
+    #botonContactarProspecto i {
+        display: contents;
+        color: #EE786C;
+    }
+
+    #botonIniciarSolicitudProspecto {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonIniciarSolicitudProspecto::after {
+        content: "";
+    }
+
+    #botonIniciarSolicitudProspecto i {
+        display: contents;
+        color: #0F123F;
+    }
+
+    #botonSeguimiento {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #botonSeguimiento::after {
+        content: "";
+    }
+
+    #botonSeguimiento i {
+        display: contents;
+        color: #0F123F;
+    }
+}
+

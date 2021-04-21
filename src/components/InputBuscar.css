@@ -1,0 +1,53 @@
+.cont-input{
+    background: #fff;
+    border-radius: 1vw;
+    width: 17.7vw;
+    left: 18vw;
+    top: 17.3vw;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.input-search{
+    margin-left: 1.2vh;
+    font-size: 2.2vh;
+    font-family: 'Red Hat Display';
+    font-weight: bold;
+    border-style: none;
+    background: rgba(0, 0, 0, 0);
+    width: 80%;
+    padding: 0.6vh;
+    height: 2vh;
+}
+
+.input-search:nth-child(2) {
+    text-align: center;
+}
+
+.cont-input i{
+    width: 20%;
+    color: #0F123F;
+    margin-left: 0vw;
+}
+
+.input-search:focus{
+    outline: none;
+}
+
+.input-search:focus > .cont-input{
+    background: #000;
+}
+
+.buttonInputSearch {
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 0vw;
+}
+
+.buttonInputSearch:hover {
+    box-shadow: none;
+    transform: none;
+}

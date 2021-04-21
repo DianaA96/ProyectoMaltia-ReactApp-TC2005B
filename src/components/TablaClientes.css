@@ -1,0 +1,173 @@
+.contenedorTablaClientes {
+	font-family: 'Raleway', sans-serif;
+}
+
+.encabezadoTablaClientes {
+	background: #F2F5FA;
+	display: flex;
+	align-content: space-around;
+	max-height: 100%;
+	color: black;
+	font-size: 2.5vh;
+	height: 6.5vh;
+	text-align: center;
+}
+
+#encabezadoNombreCliente {
+	width: 51%;
+}
+
+#encabezadoEstatusCliente {
+	width: 18%;
+}
+
+#encabezadoAccionesCliente {
+	width: 31%;
+}
+
+#semaforoEstatusPendiente {
+    background-color:#84BC6A ;
+    color: #84BC6A;
+    border-radius: 100%;
+    text-align: center;
+    width: 2vw;
+    height: 2vw;
+    padding-top: 0%;
+    padding-bottom: 0%;
+	margin-left: 10%;
+}
+
+#semaforoEstatusDispuesto {
+    background-color:#f17b0d ;
+    color: #f17b0d;
+    border-radius: 100%;
+    text-align: center;
+    width: 2vw;
+    height: 2vw;
+	margin-left: 10%;
+}
+
+.clientsTable {
+	margin: 0.1vw 0vw;
+	width: 100%;
+	border-collapse: separate; 
+	border-spacing: 0vw;
+}
+
+.tablaClientes {
+	max-height: 55vh;
+	width:100%;
+	overflow-y: scroll;
+  	scroll-behavior: smooth;
+	margin-top: 0vw;
+	padding: 0vw 0.2vw 0vw 0.2vw;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;	
+	background: white;
+	border-radius: 0.6vw;
+}
+
+tr:hover {background-color: #F2F5FA;}
+
+.clientsTable tr {
+	border-bottom: 1px solid #F2F5FA;
+	color: black;
+}
+
+.clientsTable td {
+	border-bottom: 1px solid #0F123F;
+}
+
+.clientsTable td:first-child {
+	padding-top: 0.5vw;
+}
+
+.clientsTable td:before {
+	font-weight: bold;
+	width: 6.5vw;
+	display: inline-block;
+}
+
+.clientsTable th, .clientsTable td:nth-last-child(-n+2) {
+	text-align: center;
+}
+
+@media (min-width: 380px) {
+	.clientsTable th, .clientsTable td {
+		display: table-cell;
+	}
+	.clientsTable th:first-child, .clientsTable td:first-child {
+		padding-left: 0;
+	}
+}
+
+.tablaClientes::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px #F2F5FA;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px #F2F5FA;
+	background-color: #F2F5FA;
+}
+
+.tablaClientes::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F2F5FA;
+}
+
+.tablaClientes::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #C4C4C4;
+}
+
+.clientsTable tr {
+	border-color: #f2f5fa00;
+}
+
+.clientsTable th, .clientsTable td {
+	margin: 0.5vw 1vw;
+}
+
+@media (min-width: 480px) {
+	.clientsTable th, .clientsTable td {
+		padding: 0.4vw 1.13vw 0.4vw 1.13vw !important;
+	}
+}
+
+.clientsTable th, .clientsTable td:before {
+	color: #0F123F;
+    text-align: center;
+    background-color: #F2F5FA;
+}
+
+@media only screen and (max-width: 600px) {
+	.encabezadoTablaClientes {
+		display: none;
+	}
+
+	.tablaClientes {
+		border-radius: 15px;
+	}
+
+	.clientsTable td:first-child {
+		width: 75%;
+		padding-left: 5%;
+		padding-right: 7%;
+		padding-top: 3%;
+		padding-bottom: 3%;
+		font-size: 3.5vw;
+		color: #545454;
+		font-weight: bold;
+	}
+
+	#semaforoEstatusPendiente {
+		width: 20px;
+		height: 20px;
+	}
+
+	#semaforoEstatusDispuesto { 
+		width: 20px;
+		height: 20px;
+	}
+}

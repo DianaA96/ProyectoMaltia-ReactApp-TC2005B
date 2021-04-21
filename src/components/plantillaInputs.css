@@ -1,0 +1,129 @@
+.input-gral{
+    font-size: 22px;
+    font-family: 'Raleway';
+    padding: 15px 30px;
+    border-style: none;
+    background: #CACACA;
+    border-radius: 50px;
+    font-weight: 600;
+    /* margin-bottom: 2%;
+    margin-left: 1%;
+    margin-right: 1%; */
+}
+
+.inputFormularios{
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Raleway';
+    padding: 15px 30px;
+    border-style: none;
+    border-radius: 50px;
+    background: #CACACA;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    transition: border-color 0.2s;
+}
+
+.grupoInput {
+    font-weight: 600;
+    position: relative;
+    padding: 15px 0 0;
+    width: 50%;
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.inputFormularios:placeholder-shown ~ .etiquetaInputs {
+    top: 25%;
+}
+
+.etiquetaInputs {
+    position: absolute;
+    display: block;
+    transition: 0.2s;
+    font-size: 22px;
+    font-family: 'Raleway';
+    color:rgb(118, 118, 118); 
+    border-image: initial;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+    margin-left: 6%;
+    margin-right: 1%;
+}
+
+.inputFormularios:not(focus) ~ .etiquetaInputs {
+    color:transparent;
+}
+
+.inputFormularios:focus::placeholder {
+    color:transparent;
+}
+
+.inputFormularios:focus ~ .etiquetaInputs {
+    position: absolute;
+    top: -15%;
+    display: block;
+    transition: 0.4s;
+    font-size: 1rem;
+    color: #0f123f;
+    font-weight: 700;
+}
+
+.inputFormularios:not(:placeholder-shown) ~ .etiquetaInputs{
+    position: absolute;
+    top: -15%;
+    display: block;
+    transition: 1s;
+    font-size: 1rem;
+    color: #0f123f;
+    font-weight: 700;
+}
+
+.inputFormularios:focus{
+   outline: none;
+}
+
+.w-3{
+    width: 25%;
+}
+
+.w-2{
+    width: 40%;
+}
+
+.w-1{
+    width: 70%;
+}
+
+
+@media only screen and(max-width: 1080px){
+    .w-3{
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 860px){
+    .w-3{
+        width: 70%;
+    }
+    
+    .w-2{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .input-gral{
+        background: #F2F5FA;
+    }
+}

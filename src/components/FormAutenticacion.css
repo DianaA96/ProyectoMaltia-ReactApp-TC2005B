@@ -1,0 +1,55 @@
+.contenedor{
+    width: 35vw;
+    background: #0F123F;
+    border-radius: 62px;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway';
+    margin: auto;
+    align-items: center;
+}
+
+.titulo{
+    font-family: 'Red Hat Display';
+    color: #fff;
+    margin-bottom: 7vh;
+}
+
+.contenedor input{
+    width: 80%;
+    border-radius: 35px;
+    border-style: none;
+    background: #fff;
+    font-weight: bold;
+    font-size: 3vh;
+    margin-bottom: 5vh;
+    padding: 2.5vh;
+}
+
+input:focus{
+    outline: none;
+}
+
+.contenedor button{
+    color: #fff;
+    font-weight: bold;
+    width: 60%;
+    border-style: none;
+    background: #EE786C;
+    border-radius: 50px;
+    font-family: 'Raleway';
+    font-size: 3vh;
+    padding: 2.5vh;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .contenedor {
+        width: 90vw;
+    }
+
+    .contenedor input {
+        font-weight: lighter;
+    }
+}

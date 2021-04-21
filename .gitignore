@@ -22,5 +22,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /.vscode
+<<<<<<< HEAD
 package.json
 package-lock.json
+=======
+yarn.lock
+package-lock.json
+>>>>>>> 705fab471011f8d26753e1c2b546bec5d7bfbb95

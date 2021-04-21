@@ -1,0 +1,62 @@
+.contentPage { 
+    background-color: #F2F5FA;
+    border-radius: 10px;
+    height: 91vh;
+    width: 85%;
+    margin: 0%;
+    padding: 1vw;
+}
+
+header {
+    padding-left: 4%;
+    padding-bottom: 2%;
+}
+
+.filtrosContentPage {
+    display: flex;
+    flex-direction: row;
+    padding-left: 4%;
+    padding-right: 4%;
+    justify-content:space-between;
+}
+
+#cajaUsuarioNoEncontrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: 'Red Hat Display', sans-serif;
+    text-align: center;
+    align-content: center;
+}
+
+#cajaUsuarioNoEncontrado img{
+    max-height: 55vh;
+    text-align: center;
+}
+
+#cajaUsuarioNoEncontrado p:nth-child(1){
+    font-size: 110%;
+    font-weight: bold;
+}
+
+#cajaUsuarioNoEncontrado div{
+    line-height: 1vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .contentPage {
+        background-color: #0F123F;
+    }
+
+    header {
+        padding-top: 12vh;
+        height: 20vh;
+        width: 95vw;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+    }
+}

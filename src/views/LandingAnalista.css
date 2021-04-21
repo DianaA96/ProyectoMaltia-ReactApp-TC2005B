@@ -1,0 +1,95 @@
+.tablaContentPageAnalista {
+    font-family: 'Raleway', sans-serif;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.semaforos {
+    font-size: 0.95vw;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    padding-left: 4%;
+    padding-right: 4%;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: flex-start;
+}
+
+.tarjetaSemaforo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 50%;
+    white-space:nowrap;
+}
+
+
+.semaforoInfo{
+	color: #000000;
+}
+
+.semaforo{	
+	background-color:#84BC6A ;
+    color: #84BC6A;
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    margin-left: 5%;
+}
+
+.semaforor {
+    background-color:#f17b0d;
+    color: #f17b0d;
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    margin-left: 5%;
+}
+
+.semaforog {
+    background-color:#C4C4C4 ;
+    color: #C4C4C4;
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    margin-left: 5%;
+}
+
+.semaforoRojo {
+    background-color:#a10909 ;
+    color: #a10909;
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    margin-left: 5%;
+}
+
+.verde{
+    padding-left: 10px;
+    line-height: 2vw;
+}
+
+.rojo{
+    padding-left: 10px;
+    line-height: 2vw;
+}
+
+.gris{
+    padding-left: 10px;
+    line-height: 2vw;
+}
+
+.rojoEncendido{
+    padding-left: 10px;
+    line-height: 2vw;
+}
+
+@media only screen and (max-width: 600px) {
+	.tablaContentPageAnalista {
+        padding-left: 5vw;
+        padding-right: 4%;
+        height: 30vh;
+        width: 100%;
+    }
+}

@@ -1,0 +1,34 @@
+main {
+    display: flex;
+    flex-direction: row;
+    background-color: #0F123F;
+    border: 2vh solid #0F123F;
+}
+
+.contentPage { 
+    background-color: #F2F5FA;
+    border-radius: 10px;
+    height: 85vh;
+    width: 85vw;
+    margin: 0%;
+    padding: 2vw;
+}
+
+header {
+    padding-left: 4%;
+    padding-bottom: 2%;
+}
+
+.filtrosContentPageLanding {
+    display: flex;
+    flex-direction: row;
+    padding-left: 4%;
+    padding-right: 4%;
+    justify-content:space-between;
+}
+
+.tablaContentPage {
+    padding-left: 4%;
+    padding-right: 4%;
+    height: 30vh;
+}

@@ -1,0 +1,138 @@
+.contentPageSeguimiento { 
+    z-index: 0;
+    background-color: #F2F5FA;
+    border-radius: 10px;
+    height: 150vh;
+    width: 80%;
+    margin: 0%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway';
+}
+
+.contentPageSeguimiento header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pasosContentPageSeguimiento{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.mainContentPageSeguimiento{
+    padding: 30px;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.accionesSeguimiento{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 30vh;
+}
+.pregunta-antiguedad{
+    font-weight: bold;
+    color: #0F123F;
+}
+
+.pregunta-capacidad{
+    font-weight: bold;
+    color: #0F123F;
+    margin-top: 80px;
+}
+
+.input-ayuda{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input-ayuda i{
+    font-size: 30px;
+    color: #C4C4C4;
+}
+
+
+
+
+.input-ayuda i:hover .tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+
+.lineaSeguimiento{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 3px;
+    height: 85vh;
+    background: #0F123F;
+    border-radius: 50px;
+}
+
+
+@media only screen and (max-width:576px){
+
+    aside{
+        margin-right: -3vw;
+    }
+
+    .contentPageSeguimiento{
+        background-color: #0F123F;
+        color: #fff;
+        padding: 5vw;
+    }
+
+    .pasosContentPageSeguimiento{
+        text-align: center;
+        font-size: 5vw;
+    }
+
+    .mainContentPageSeguimiento{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        height: auto;
+        font-size: 5vw;
+    }
+
+    .accionesSeguimiento input{
+        font-size: 5vw;
+    }
+
+    .lineaSeguimiento{
+        display: none;
+    }
+
+    .accionesSeguimiento{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+
+   
+    .pregunta-capacidad, .pregunta-antiguedad{
+        margin-top: 0;
+        color: #fff;
+    }
+}
+
+
+
+

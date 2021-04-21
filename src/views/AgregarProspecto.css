@@ -1,0 +1,62 @@
+
+
+.cuerpito{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #F2F5FA;
+    border-radius: 10px;
+    height: 85vh;
+    width: 85%;
+    margin: 0%;
+    padding: 30px 50px;
+}
+
+.cabeza{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12%;
+}
+
+.fechachida{
+    font-family: "Raleway", sans-serif;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-size: 18px;
+    vertical-align: middle;
+    background-color: #A5A5A5;
+    border: 2px solid #A5A5A5;
+    color: white;
+    font-weight: 550;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 4em;
+}
+
+.primeralinea{
+    margin-bottom: 2%;
+}
+
+.segundalinea{
+    display: flex;
+    margin-bottom: 7%;
+}
+
+.aprospectobtns{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.aprospectobtns .botonSalmon{
+    margin-left: 5%;
+}
+
