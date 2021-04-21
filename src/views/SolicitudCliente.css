@@ -129,3 +129,51 @@
     justify-content: flex-end;
     column-gap: 1em;
 }
+
+@media only screen and (max-width: 576px) {
+    .headerSolicitudCliente {
+         padding-left: 0%;
+         padding-bottom: 0%;
+        padding-right: 0;
+    }
+    .contentPageExtendido {
+        background-color: #0F123F;
+        border: none;
+        padding: 0px;
+    }
+    #mainSolicitudCliente{
+        border: none;
+    }
+    .inputsDatosCliente {
+        display: flex;
+        flex-direction: column;
+        width: 35em;
+        align-items: flex-start;
+    }
+    .fechaLlenadoSolicitud{
+        width: 50%;
+    }
+    .datosClienteSolicitud{
+        flex-direction: column;
+        color: #fa8072;
+    }
+    .inputsReferenciasCliente{
+        flex-direction: column;
+    }
+    .tarjetaReferencia {
+        width: 90%;
+        height: 10em;
+        width: 100%;
+        height: 35vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: space-around;
+        flex-wrap: wrap;
+    }
+    .inputsReferenciasCliente h1 {
+        font-size: 24px;
+        font-family: 'Red Hat Display', sans-serif;
+        color: white;
+    }
+}
