@@ -31,6 +31,7 @@ function SeguimientoCliente3() {
                         <div className="accionesSeguimiento">
                             <input className= "input-gral w-1" type="text" name="Crédito autorizado" placeholder="Crédito autorizado"/>
                             <input className= "input-gral w-1" type="text" name="Crédito dispuesto"  placeholder="Crédito dispuesto"/>
+                            <button className="botonSalmon btn-guardar-cambios">Guardar Cambios</button>
                         </div>
                         <div className="lineaSeguimiento"></div>
                         <InfoSolicitud/>

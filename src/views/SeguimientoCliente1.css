@@ -40,17 +40,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 30vh;
+    height: 50vh;
 }
+
+.btn-guardar-cambios{
+    margin-top: 6em;
+    width: 70%;
+    font-size: 25px;
+}
+
 .pregunta-antiguedad{
     font-weight: bold;
     color: #0F123F;
+    text-align: center;
 }
 
 .pregunta-capacidad{
     font-weight: bold;
     color: #0F123F;
-    margin-top: 80px;
+    margin-top: 5em;
+    text-align: center;
 }
 
 .input-ayuda{
@@ -120,7 +129,6 @@
 
     .accionesSeguimiento{
         width: 100%;
-        justify-content: center;
         align-items: center;
         height: 70vh;
         border-bottom: 1px solid rgb(255, 255, 255);
@@ -130,6 +138,13 @@
     .pregunta-capacidad, .pregunta-antiguedad{
         margin-top: 0;
         color: #fff;
+    }
+
+
+    .btn-guardar-cambios{
+        margin: 2em 0;
+        width: 70%;
+        font-size: 5vw;
     }
 }
 

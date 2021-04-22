@@ -3,12 +3,12 @@ import './SeguimientoCliente1.css';
 import Lateral from '../components/Lateral';
 import Bienvenida from '../components/Bienvenida';
 import PasosSeguimiento from '../components/PasosSeguimiento'
-import admin from '../assets/persona.svg';
+import analista from '../assets/asesor.png';
 import Checkbox from '../components/Checkbox'
 import InfoSolicitud from '../components/InfoSolicitud'
 import BotonRegresar from '../components/BotonRegresar'
 import '../components/plantillaInputs.css'
-
+import '../components/Boton.css'
 
 function SeguimientoCliente1() {
         let enlaces = ["./", "./nuevo-usuario"]
@@ -17,7 +17,7 @@ function SeguimientoCliente1() {
         <React.Fragment>
             <main>
                 <aside>
-                    <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} enlaces={enlaces}/>
+                    <Lateral img = {analista} usuario="Admin #1234" tabs={tabs} enlaces={enlaces}/>
                 </aside>
                 <section className='contentPageSeguimiento'>
                     <header>
@@ -37,6 +37,7 @@ function SeguimientoCliente1() {
                             <p className="pregunta-capacidad">¿Cumple con la capacidad de pago mínima?</p>
                             <Checkbox/>
                             <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Capacidad de pago"/>
+                            <button className="botonSalmon btn-guardar-cambios">Guardar Cambios</button>
                         </div>
                         <div className="lineaSeguimiento"></div>
                        <InfoSolicitud/>
