@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./ModalContactoAsesor.css"
 import Checkbox from '../components/Checkbox.js';
 import '../components/Boton.css';
@@ -10,6 +10,8 @@ function ModalContactoAsesor(props){
     function hideModal(){
         props.setStatus('hidden')
     }
+
+    const [isContactDone, setContact] = useState (true)
 
     const options = [
         { value: 'No atiende', label: 'No atiende' },
@@ -77,9 +79,9 @@ function ModalContactoAsesor(props){
                     <div className="cont-contacto">
                         <div className="contacto-left">
                             <p>Contacto 1 </p>
-                            <Checkbox /> 
+                            <Checkbox isDisabled = {isContactDone} /> 
                         </div>
-                        <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
+                        <Select  isDisabled = {isContactDone} placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
                     </div>
 
                     <p className="mobile-contactNum">Contacto 2</p>

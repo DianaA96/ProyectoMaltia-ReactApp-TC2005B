@@ -38,6 +38,7 @@ function SeguimientoCliente2() {
                                 <p className="auditoria-buro">Auditado</p>
                                 <ToggleSwitch/>
                             </div>
+                            <button className="botonSalmon btn-guardar-cambios">Guardar Cambios</button>
                         </div>
                         <div className="lineaSeguimiento"></div>
                         

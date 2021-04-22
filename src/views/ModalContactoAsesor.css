@@ -14,6 +14,7 @@
     overflow: auto;
     transition: all 0.3s linear;
     backdrop-filter: blur(5px);
+    z-index: 5;
 }
 
 .modal{
@@ -98,6 +99,7 @@
         margin-top: -10vh;
         height: 80vh;
         padding: 10px 20px;
+        
     }
 
     .nombreUsuario{

@@ -1,5 +1,7 @@
 import './TablaProspectos.css';
 import CustomLink from './CustomLink';
+import axios from 'axios'
+import React,{useState, useEffect} from 'react';
 
 function TablaProspectos(props) {
 
@@ -7,28 +9,60 @@ function TablaProspectos(props) {
      props.setStatus('visible')
     }
 
-  return (
-      <section className="contenedorTablaProspectos">
-        <div className="encabezadoTablaProspectos">
-            <h5 id="encabezadoNombreProspecto">Nombre del prospecto</h5>
-            <h5 id="encabezadoAccionesProspecto">Acciones</h5>
-        </div>
-        <section className="tablaProspectos">
-          <table className="prospectsTable">
-            {props.data.map((registro, indice) => (
-            <tbody>
-              <tr key={indice}>
-                <td>{registro.nombres + " " + registro.apellidos}</td>
-                <td><CustomLink tag='button' to='./editarProspecto' id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
-                <td><button onClick={showModal} tag='button' id="botonContactarProspecto"><i class="fas fa-phone"></i></button></td>
-                <td><CustomLink tag='button' to='./solicitudCliente' id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
-              </tr>
-            </tbody>
-            ))}
-          </table>
-        </section>
-      </section>
-    );
+  const [status, setStatus ] = useState('idle');
+  const [error, setError] = useState(null);
+  const [prospects, setProspects] = useState([]);
+
+  useEffect(()=>{
+    setStatus('loading')
+    axios.get(`http://localhost:5000/prospects?thisAssessor=1`) //Cómo pasar el id del Asesor que inició sesión
+          .then((result)=>{
+              setProspects(result.data.prospectos)
+              setStatus('resolved')
+          })
+          .catch((error)=>{
+              setError(error)
+              setStatus('error')
+          })
+  }, [])
+
+  if(status === 'idle' || status === 'loading'){
+      return <h1>Cargando...</h1>
   }
-  
+
+
+  if(status === 'error'){
+      return (
+          <div role="alert">
+              <p>There was an error: </p>
+              <pre>{error.message}</pre>
+          </div>
+          
+      )
+  }
+  if(status === 'resolved'){
+    return (
+        <section className="contenedorTablaProspectos">
+          <div className="encabezadoTablaProspectos">
+              <h5 id="encabezadoNombreProspecto">Nombre del prospecto</h5>
+              <h5 id="encabezadoAccionesProspecto">Acciones</h5>
+          </div>
+          <section className="tablaProspectos">
+            <table className="prospectsTable">
+              {prospects.map((registro, indice) => (
+              <tbody>
+                <tr key={indice}>
+                  <td>{registro.nombre + " " + registro.apellidoPaterno+ " " + registro.apellidoMaterno}</td>
+                  <td><CustomLink tag='button' to='./editarProspecto' id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
+                  <td><button onClick={showModal} tag='button' id="botonContactarProspecto"><i class="fas fa-phone"></i></button></td>
+                  <td><CustomLink tag='button' to='./solicitudCliente' id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
+                </tr>
+              </tbody>
+              ))}
+            </table>
+          </section>
+        </section>
+      );
+  }
+}
 export default TablaProspectos;
