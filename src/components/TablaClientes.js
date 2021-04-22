@@ -12,11 +12,9 @@ function TablaClientes(props) {
     
 	useEffect(()=>{
 	setStatus('loading')
-	axios.get(`http://localhost:5000/prospects/clients?thisEmployee=15`) //Cómo pasar el id del Asesor que inició sesión
+	axios.get(`http://localhost:5000/prospects/clients?thisEmployee=1`) //Cómo pasar el id del Asesor que inició sesión
 			.then((result)=>{
-				let [[{result.data.solicitudes}]] = [[{dest1}]];
-				setApplications()
-
+				setApplications(result.data.solicitudes)
 				setStatus('resolved')
 			})
 			.catch((error)=>{
@@ -54,8 +52,8 @@ function TablaClientes(props) {
 							{applications.map((registro, indice)=>(
 								<tbody>
 										<tr key={indice}>
-											<td>{registro.nombre+ " " + registro.apellidoPaterno + " " + registro.apellidoMaterno + registro.estatus}</td>
-											<td><p id={"semaforoEstatus" + registro.estatus}></p></td>
+											<td>{registro.nombre+ " " + registro.apellidoPaterno + " " + registro.apellidoMaterno}</td>
+											<td><p id={"semaforoEstatus" + (registro.estatus).replace(" ", "")}></p></td>
 											<td><CustomLink tag='button' to='./seguimientoCliente1' id="botonSeguimiento"><i class="fas fa-tasks"></i></CustomLink></td>
 										</tr>
 								</tbody>
