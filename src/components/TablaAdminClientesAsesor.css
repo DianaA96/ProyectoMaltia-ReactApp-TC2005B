@@ -38,7 +38,7 @@
 	margin-left: 10%;
 }
 
-#semaforoEstatusNoAutorizado {
+#semaforoEstatusNoautorizado {
     background-color:#a10909 ;
     color: #a10909;
     border-radius: 100%;
@@ -50,7 +50,7 @@
 	margin-left: 10%;
 }
 
-#semaforoEstatusNoRevisado {
+#semaforoEstatusNorevisado {
     background-color:#C4C4C4 ;
     color: #C4C4C4;
     border-radius: 100%;
@@ -180,12 +180,12 @@ tr:hover {background-color: #F2F5FA;}
 		height: 20px;
 	}
 
-	#semaforoEstatusNoAutorizado {
+	#semaforoEstatusNoautorizado {
 		width: 20px;
 		height: 20px;
 	}
 	
-	#semaforoEstatusNoRevisado {
+	#semaforoEstatusNorevisado {
 		width: 20px;
 		height: 20px;
 	}
