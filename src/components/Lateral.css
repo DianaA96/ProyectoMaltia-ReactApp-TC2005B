@@ -205,4 +205,8 @@ a:focus .tab{
       #hamburgerMenu input:checked ~ ul {
         transform: none;
       }
+      
+      aside {
+        width: 3vw;
+      }
 }

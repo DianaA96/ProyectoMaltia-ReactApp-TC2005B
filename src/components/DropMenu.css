@@ -23,6 +23,7 @@ select:focus{
     margin-bottom: auto;
     margin-left: 10px;
     margin-right: 10px;
+    height: 1.5vw;
 }
 
 .triangle{

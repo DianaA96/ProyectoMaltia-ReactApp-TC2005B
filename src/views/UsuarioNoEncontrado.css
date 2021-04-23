@@ -47,13 +47,36 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
+    .filterInput {
+        display:none;
+    }
+
+    #cajaUsuarioNoEncontrado {
+        margin-left: 12vw;
+        color: white;
+    }
+
+    #cajaUsuarioNoEncontrado div{
+        line-height: 8vw;
+    }
+
+    .filtrosContentPage .cont-input{
+        width: 86vw;
+        height: 40px;
+        font-size: 4vh;
+        margin-bottom: 3vh;
+        margin-left: 1vh;
+        border-radius: 30px;
+        font-weight: 100;
+    }
+
     .contentPage {
         background-color: #0F123F;
     }
 
     header {
-        padding-top: 12vh;
-        height: 20vh;
+        padding-top: 23vw;
+        height: 35vw;
         width: 95vw;
         padding-left: 0px;
         padding-right: 0px;
