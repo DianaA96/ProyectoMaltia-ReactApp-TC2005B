@@ -7,7 +7,7 @@ import InputBuscar from '../components/InputBuscar';
 import InputFiltrar from '../components/InputFiltrar';
 import  analista from '../assets/analista.png';
 
-function UsuarioNoEncontrado3() {
+function UsuarioNoEncontrado3(props) {
       
       let tabs = ["Solicitudes", "Generar reportes"];
 
@@ -28,8 +28,8 @@ function UsuarioNoEncontrado3() {
                         <section id="cajaUsuarioNoEncontrado">
                               <img src={ZorroMaltia} alt='Elemento no encontrado.'/>
                               <div>
-                                    <p>Parece que tu búsqueda no ha arrojado resultados.</p>
-                                    <p>Prueba con otro usuario :)</p>
+                                    <p>{props.mensaje}</p>
+                                    <p>Estamos trabajando en ello :)</p>
                               </div>
                         </section>
                   </section>

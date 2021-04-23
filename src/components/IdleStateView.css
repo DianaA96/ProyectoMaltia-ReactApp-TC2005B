@@ -1,7 +1,6 @@
 .center {
-    width: 90vw;
-    margin-top: 25vh;
-    margin-left: 35vw;
+    margin-top: 30vh;
+    margin-left: 3vw;
 }
 
 .loader {
@@ -110,7 +109,9 @@
         -webkit-animation: rotate 3s infinite;
                 animation: rotate 3s infinite;
     }
+
     .center {
-        margin-left: 30vw;
-    }
+      margin-top: 10vh;
+      margin-left: 3vw;
+  }
 }
