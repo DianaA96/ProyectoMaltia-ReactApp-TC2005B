@@ -28,8 +28,8 @@ header {
     }
     
     .filtrosContentPageLanding .cont-input{
-        width: 85vw;
-        height: 6vh;
+        width: 87vw;
+        height: 40px;
         font-size: 4vh;
         margin-bottom: 3vh;
         margin-left: 1vh;
@@ -46,8 +46,6 @@ header {
         padding-left: 5vw;
         padding-right: 4%;
         height: 30vh;
-        width: 100%;
+        width: 87vw;
     }
-
-    
 }

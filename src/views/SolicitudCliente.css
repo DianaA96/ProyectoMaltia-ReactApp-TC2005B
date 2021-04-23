@@ -8,10 +8,14 @@
 .contentPageExtendido { 
     background-color: #F2F5FA;
     border-radius: 10px;
-    height: 130vh;
+    height: 140vh;
     width: 85%;
     margin: 0%;
     padding: 30px;
+}
+
+.contentPageExtendido select {
+    font-size: 1.2vw;
 }
 
 .headerSolicitudCliente {
@@ -32,7 +36,7 @@
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     text-align: center;
-    font-size: 18px;
+    font-size: 1.2vw;
     vertical-align: middle;
     background-color: #A5A5A5;
     border: 2px solid #A5A5A5;
@@ -41,6 +45,7 @@
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 14em;
+    margin-inline: auto;
 }
 
 .datosClienteSolicitud {
@@ -54,18 +59,19 @@
     align-items: center;
     text-align: center;
     font-family: 'Red Hat Display', sans-serif;
+    height: 20vh;
 }
 
 .datosCliente {
-    font-size: 26px;
-    font-weight: 600;
+    font-size: 1.5vw;
+    font-weight: bold;
 }
 
 .checkSolicitud {
     text-align: center;
     align-items: center;
     font-weight: 600;
-    font-size: 140%;
+    font-size: 1.5vw;
 }
 
 .checkSolicitud div{
@@ -85,14 +91,23 @@
     margin-top: 15px;
 }
 
+.inputsDatosCliente input:nth-child(1):focus-within {
+    height:1.5vw
+}
+
+.inputsDatosCliente:focus-within input:nth-child(1) {
+    height:1.5vw
+}
+
 .inputsDatosCliente input:nth-child(n) {
     width: 80%;
 }
 
 .inputsReferenciasCliente h1 {
-    font-size: 24px;
+    font-size: 1.5vw;
     font-family: 'Red Hat Display', sans-serif;
     color: #0F123F;
+    margin-bottom: 0px;
 }
 
 .inputsReferenciasCliente {
@@ -110,18 +125,26 @@
     justify-content: center;
 }
 
+.tarjetaReferencia .input-gral {
+    margin-top: 1.1em;
+    font-size: 1.2vw;
+}
+
 .tarjetaReferencia h1:nth-child(n) {
     width: 100%;
     text-align: center;
 }
 
 .tarjetaReferencia input:nth-child(n) {
-    width: 80%;
+    width: 12vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    height: 1.5vw;
 }
 
 .botonesEnviarSolicitud {
     padding-left: 4%;
-    padding-right: 4%;
+    padding-right: 9%;
     padding-top: 2%;
     padding-bottom: 2%;
     display: flex;
@@ -131,42 +154,122 @@
 }
 
 @media only screen and (max-width: 576px) {
-    .headerSolicitudCliente {
-         padding-left: 0%;
-         padding-bottom: 0%;
-        padding-right: 0;
+    
+    .contentPageExtendido .fechaLlenadoSolicitud{
+        width: 50%;
+        margin-top: -27vh;
+        margin-right: -5vw;
+        background: transparent;
+        border-color: transparent;
+        display: none;
     }
+
+    .checkSolicitud {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        font-weight: normal;
+        font-size: 15px;
+        height: 10vh;
+    }
+
+    .checkSolicitud .container-check .checkmark {
+        top: auto;
+        right: auto;
+    }
+
+    .contentPageExtendido .datosCliente {
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    .contentPageExtendido .headerSolicitudCliente {
+        padding-left: 0%;
+        padding-bottom: 0%;
+    }
+
     .contentPageExtendido {
         background-color: #0F123F;
         border: none;
         padding: 0px;
     }
+
+    .contentPageExtendido .etiquetaInputs {
+        width: 90vw;
+    }
+
+    .contentPageExtendido .inputFormularios:not(:placeholder-shown) ~ .etiquetaInputs{
+        font-size: 12px;
+        color: white;
+    }
+
+    .contentPageExtendido .inputFormularios:focus ~ .etiquetaInputs {
+        font-size: 12px;
+        color: white;
+        
+    }
+
+    .contentPageExtendido .menu {
+        width: 72.5vw;
+        font-size: 18px;
+        height: 5vw;
+    }
+
+    .contentPageExtendido select {
+        font-size: 18px;
+    }
+
+    .datosClienteSolicitud {
+        width: 90vw;
+        margin-bottom: 5vh;
+    }
+
+    .datosClienteSolicitud p:nth-child(2) {
+        margin-bottom: 5px;
+    }
+
     #mainSolicitudCliente{
         border: none;
     }
+
     .inputsDatosCliente {
         display: flex;
         flex-direction: column;
-        width: 35em;
+        width: 90vw;
         align-items: flex-start;
+        margin-left: 2vw;
     }
-    .fechaLlenadoSolicitud{
-        width: 50%;
+
+    .inputsDatosCliente input:nth-child(n) {
+        width: 73vw;
+        font-size: 18px;
+        height: 5vw;
+        margin-bottom: 4vh;
     }
+
+    .inputsDatosCliente input:nth-child(1):focus-within {
+        height:5vw;
+        font-size: 20px;
+    }
+    
+    .inputsDatosCliente:focus-within input:nth-child(1) {
+        height:5vw
+    }
+
     .datosClienteSolicitud{
         flex-direction: column;
         color: #fa8072;
     }
+
     .inputsReferenciasCliente{
         flex-direction: column;
     }
+
     .tarjetaReferencia {
-        width: 90%;
-        height: 10em;
-        width: 100%;
-        height: 35vh;
+        width: 90vw;
+        height: 56vw;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         align-content: space-around;
         flex-wrap: wrap;
@@ -175,5 +278,28 @@
         font-size: 24px;
         font-family: 'Red Hat Display', sans-serif;
         color: white;
+    }
+
+    .tarjetaReferencia input:nth-child(n) {
+        background-color: #CACACA;
+        height: 5vw;
+        width: 73vw;
+        margin-left: 10vw;
+        margin-right: 6vw;
+        font-size: 18px;
+    }
+
+    .tarjetaReferencia h1:nth-child(n) {
+        margin-left: 10vw;
+    }
+
+    .botonesEnviarSolicitud {
+        padding-bottom: 10vh;
+        width: 95vw;
+        justify-content: space-evenly;
+    }
+
+    .tarjetaReferencia:last-child {
+        margin-bottom: 5vh;
     }
 }
