@@ -51,5 +51,6 @@ input:focus{
 
     .contenedor input {
         font-weight: lighter;
+        height: 8vw;
     }
 }
