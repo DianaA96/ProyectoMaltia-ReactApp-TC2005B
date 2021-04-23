@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect}  from 'react';
+import axios from 'axios'
 import "./ModalContactoAsesor.css"
 import Checkbox from '../components/Checkbox.js';
 import '../components/Boton.css';
@@ -10,7 +11,7 @@ function ModalContactoAsesor(props){
     function hideModal(){
         props.setStatus('hidden')
     }
-
+    
     const [isContactDone, setContact] = useState (true)
 
     const options = [
@@ -66,47 +67,79 @@ function ModalContactoAsesor(props){
               })
         }
 
-    return(
-        <div className="modalPadre1">
-            <div className="modal">
-                <h2 className="nombreUsuario"> Harry José Potter Hernandez </h2>
-                <div className="infoPrimaria">
-                    <i class="fas fa-phone-alt"> </i>
-                    <p className="tel">  771 245 2723 </p>
-                </div>
-                <div className="formulario">
-                    <p className="mobile-contactNum">Contacto 1</p>
-                    <div className="cont-contacto">
-                        <div className="contacto-left">
-                            <p>Contacto 1 </p>
-                            <Checkbox isDisabled = {isContactDone} /> 
-                        </div>
-                        <Select  isDisabled = {isContactDone} placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
-                    </div>
+    const [status, setStatus ] = useState('idle');
+    const [error, setError] = useState(null);
+    const [employee, setEmployee] = useState([]);
 
-                    <p className="mobile-contactNum">Contacto 2</p>
-                    <div className="cont-contacto">
-                        <div className="contacto-left">
-                            <p>Contacto 2</p>
-                            <Checkbox/>  
-                        </div>
-                        <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/> 
-                    </div>
+    useEffect(()=>{
+            setStatus('loading')
+            axios.get(`http://localhost:5000/employees/:${props.match.params.idEmployee}`)
+                .then((result)=>{
+                    setEmployee(result.data.empleados)
+                    setStatus('resolved')
+                })
+                .catch((error)=>{
+                    setError(error)
+                    setStatus('error')
+                })
+        }, [])
 
-                    <p className="mobile-contactNum">Contacto 3</p>
-                    <div className="cont-contacto">
-                        <div className="contacto-left">
-                            <p>Contacto 3</p>
-                            <Checkbox/> 
-                        </div>
-                        <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
-                    </div>
+        if(status === 'idle' || status === 'loading'){
+            return <h1>Cargando...</h1>
+        }
+
+
+        if(status === 'error'){
+            return (
+                <div role="alert">
+                    <p>There was an error: </p>
+                    <pre>{error.message}</pre>
                 </div>
-                <button tag='button' onClick={hideModal} className="botonSalmon">Guardar cambios</button>
+            )
+        }
+  
+    if(status === 'resolved'){
+        return(
+            <div className="modalPadre1">
+                <div className="modal">
+                    <h2 className="nombreUsuario"> Harry José Potter Hernandez </h2>
+                    <div className="infoPrimaria">
+                        <i class="fas fa-phone-alt"> </i>
+                        <p className="tel">  771 245 2723 </p>
+                    </div>
+                    <div className="formulario">
+                        <p className="mobile-contactNum">Contacto 1</p>
+                        <div className="cont-contacto">
+                            <div className="contacto-left">
+                                <p>Contacto 1 </p>
+                                <Checkbox isDisabled = {isContactDone} /> 
+                            </div>
+                            <Select  isDisabled = {isContactDone} placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
+                        </div>
+
+                        <p className="mobile-contactNum">Contacto 2</p>
+                        <div className="cont-contacto">
+                            <div className="contacto-left">
+                                <p>Contacto 2</p>
+                                <Checkbox/>  
+                            </div>
+                            <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/> 
+                        </div>
+
+                        <p className="mobile-contactNum">Contacto 3</p>
+                        <div className="cont-contacto">
+                            <div className="contacto-left">
+                                <p>Contacto 3</p>
+                                <Checkbox/> 
+                            </div>
+                            <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
+                        </div>
+                    </div>
+                    <button tag='button' onClick={hideModal} className="botonSalmon">Guardar cambios</button>
+                </div>
             </div>
-        </div>
-        
-    );
+            
+        );
+    }
 }
-
 export default ModalContactoAsesor;

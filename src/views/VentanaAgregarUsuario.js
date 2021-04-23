@@ -1,4 +1,5 @@
-import React, { useState }  from 'react';
+import React, { useState , useEffect}  from 'react';
+import axios from 'axios'
 import Lateral from '../components/Lateral';
 import CustomLink from '../components/CustomLink';
 import Bienvenida from '../components/Bienvenida';
@@ -10,7 +11,7 @@ import admin from '../assets/persona.svg';
 import Select from 'react-select'
 
 
-function VentanaAgregarUsuario() {
+function VentanaAgregarUsuario(props) {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
     
     const options = [
@@ -60,43 +61,82 @@ function VentanaAgregarUsuario() {
     }
 
     const [SelectStatus, setSelectStatus] = useState('hidden');
+    const [status, setStatus ] = useState('idle');
+    const [error, setError] = useState(null);
+    const [employee, setEmployee] = useState({});
+    
+    function handleSave(event){
+        event.preventDefault();
 
-    return(
-        <React.Fragment>
-            <main>
-                <aside>
-                    <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
-                </aside>
-                <section className='contentPageForms'>
-                    <header>
-                        <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Agregar usuario"/>
-                    </header>
-                    <section className="radiosContentPage">
-                        <RadioButton etiqueta="Asesor" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
-                        <RadioButton etiqueta="Analista" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
-                    </section>
-                    <section className="inputsContentPage">
-                        <form action="" className="inputsContentPage">
-                            <input className = "input-gral w-2" type="text" name="idEmployee" placeholder="ID de Empleado"/>
-                            <input className = "input-gral w-2" type="password" name="contrasena" placeholder="Contraseña"/>
-                            <input className = "input-gral w-3" type="text" name="nombres"  placeholder="Nombre(s)"/>
-                            <input className = "input-gral w-3" type="text" name="apellidop"  placeholder="Apellido Paterno"/>
-                            <input className = "input-gral w-3" type="text" name="apellidom" placeholder="Apellido Materno"/>
-                            <input className = "input-gral w-2" type="tel" name="numtelefono"  placeholder="Número de teléfono"/>
-                            <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico"/>
-                            {SelectStatus === 'analista' ? <Select placeholder = "Departamento" options={options} styles = {customSelectStyles}/> : null}
-                            {SelectStatus === 'asesor' ? <Select  placeholder = "Tiendas" options={options} isMulti styles = {customSelectStyles}/> : null}
+        setStatus('loading')
+        setError(null)
+
+        axios.patch(`http://localhost:5000/users/`, {
+            body: JSON.stringify(employee),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        })
+        .then((result)=>{
+            props.onSave(result.data.data);
+            setStatus('pristine')
+        })
+        .catch(error =>{
+            setError(error)
+            setStatus('error')
+        })
+
+
+    }
+
+    if(status === 'idle' || status === 'loading'){
+        return <h1>Loading...</h1>
+    }
+
+    if(status === 'error'){
+        return <h1>There was an error</h1>
+    }
+
+    if(status === 'resolved'){
+
+        return(
+            <React.Fragment>
+                <main>
+                    <aside>
+                        <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
+                    </aside>
+                    <section className='contentPageForms'>
+                        <header>
+                            <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Agregar usuario"/>
+                        </header>
+                        <form onSubmit={handleSave}>
+                            <section className="radiosContentPage">
+                                <RadioButton etiqueta="Asesor" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
+                                <RadioButton etiqueta="Analista" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
+                            </section>
+                            <section className="inputsContentPage">
+                                <form action="" className="inputsContentPage">
+                                    <input className = "input-gral w-2" type="text" name="idEmployee" placeholder="ID de Empleado"/>
+                                    <input className = "input-gral w-2" type="password" name="contrasena" placeholder="Contraseña"/>
+                                    <input className = "input-gral w-3" type="text" name="nombres"  placeholder="Nombre(s)"/>
+                                    <input className = "input-gral w-3" type="text" name="apellidop"  placeholder="Apellido Paterno"/>
+                                    <input className = "input-gral w-3" type="text" name="apellidom" placeholder="Apellido Materno"/>
+                                    <input className = "input-gral w-2" type="tel" name="numtelefono"  placeholder="Número de teléfono"/>
+                                    <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico"/>
+                                    {SelectStatus === 'analista' ? <Select placeholder = "Departamento" options={options} styles = {customSelectStyles}/> : null}
+                                    {SelectStatus === 'asesor' ? <Select  placeholder = "Tiendas" options={options} isMulti styles = {customSelectStyles}/> : null}
+                                </form>
+                            </section>
+                            <section className="botonesContentPage">
+                                <CustomLink tag='button' to='./administrarUsuarios' className="botonAzulMarino">Cancelar</CustomLink>
+                                <CustomLink tag='button' to='./administrarUsuarios' className="botonSalmon">Registrar</CustomLink>
+                            </section>
                         </form>
+                       
                     </section>
-
-                    <section className="botonesContentPage">
-                        <CustomLink tag='button' to='./administrarUsuarios' className="botonAzulMarino">Cancelar</CustomLink>
-                        <CustomLink tag='button' to='./administrarUsuarios' className="botonSalmon">Registrar</CustomLink>
-                    </section>
-                </section>
-            </main>
-        </React.Fragment>
-    );
+                </main>
+            </React.Fragment>
+        );
+    }
 }
-
 export default VentanaAgregarUsuario;
