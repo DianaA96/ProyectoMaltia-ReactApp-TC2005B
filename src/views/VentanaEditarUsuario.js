@@ -9,7 +9,7 @@ import '../components/Boton.css'
 import admin from '../assets/persona.svg';
 import Select from 'react-select'
 
-function VentanaEditarUsuario() {
+function VentanaEditarUsuario(props) {
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
     const options = [
         { value: 'chocolate', label: 'Chocolate' },

@@ -12,7 +12,7 @@ function TablaClientes(props) {
     
 	useEffect(()=>{
 	setStatus('loading')
-	axios.get(`http://localhost:5000/prospects/clients?thisEmployee=1`) //Cómo pasar el id del Asesor que inició sesión
+	axios.get(`http://localhost:5000/prospects/clients?thisEmployee=15`) //Cómo pasar el id del Asesor que inició sesión
 			.then((result)=>{
 				setApplications(result.data.solicitudes)
 				setStatus('resolved')
@@ -53,7 +53,7 @@ function TablaClientes(props) {
 								<tbody>
 										<tr key={indice}>
 											<td>{registro.nombre+ " " + registro.apellidoPaterno + " " + registro.apellidoMaterno}</td>
-											<td><p id={"semaforoEstatus" + (registro.estatus).replace(" ", "")}></p></td>
+											<td><p id={"semaforoEstatus" + registro.estatus.replace(" ", "")}></p></td>
 											<td><CustomLink tag='button' to='./seguimientoCliente1' id="botonSeguimiento"><i class="fas fa-tasks"></i></CustomLink></td>
 										</tr>
 								</tbody>

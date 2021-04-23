@@ -51,7 +51,11 @@ function App() {
 
         <Route path='/administrarUsuarios' exact={true}><LandingAdminUsuarios></LandingAdminUsuarios></Route>
         <Route path='/agregarUsuario' exact={true}>{<VentanaAgregarUsuario/>}</Route>
-        <Route path='/editarUsuario' exact={true}>{<VentanaEditarUsuario/>}</Route>
+        <Route 
+			path="/editarUsuario/:idEmployee"
+			render={(props)=> <VentanaEditarUsuario {...props} 
+			exact/>}
+        	/>
         <Route path='/eliminarUsuario' exact={true}>{Deshabilitar}</Route>
         <Route path='/user-not-found1' exact={true}>{UsuarioNoEncontrado1}</Route>
 
