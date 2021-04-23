@@ -2,6 +2,7 @@ import './TablaUsuarios.css';
 import CustomLink from './CustomLink';
 import axios from 'axios'
 import React,{useState, useEffect} from 'react';
+import IdleStateView from './IdleStateView';
 
 function TablaUsuarios(props) {
 
@@ -27,7 +28,7 @@ function TablaUsuarios(props) {
         }, [])
 
         if(status === 'idle' || status === 'loading'){
-            return <h1>Cargando...</h1>
+            return <IdleStateView></IdleStateView>
         }
 
 

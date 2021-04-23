@@ -92,4 +92,44 @@
         height: 30vh;
         width: 87vw;
     }
+
+    .semaforos {
+        flex-direction:column;
+        margin-top: 28vh;
+    }
+
+    .tarjetaSemaforo {
+        width: 80vw;
+    }
+
+    .verde {
+        font-size: 15px;
+        color: white;
+    }
+
+    .rojoEncendido {
+        font-size: 15px;
+        color: white;
+    }
+
+    .gris {
+        font-size: 15px;
+        color: white;
+    }
+
+    .semaforo {
+        font-size: 15px;
+    }
+
+    .semaforoRojo {
+        font-size: 15px;
+    }
+
+    .semaforog {
+        font-size: 15px;
+    }
+
+    .semaforor {
+        font-size: 15px;
+    }
 }

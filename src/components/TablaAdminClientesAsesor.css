@@ -162,6 +162,7 @@ tr:hover {background-color: #F2F5FA;}
 	
 	.tablaClientesAsesor {
 		border-radius: 15px;
+		width: 87vw;
 	}
 
 	.clientsTable2 td:first-child {
