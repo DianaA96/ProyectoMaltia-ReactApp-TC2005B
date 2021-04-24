@@ -48,7 +48,8 @@
     flex-direction: row;   
     justify-content: space-around;
     align-content: space-around;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    
 }
 
 .botonesContentPage{
@@ -93,15 +94,17 @@
 
     .radiosContentPage {
         justify-content:center;
-       
+        padding-left: 5%;
     }
 
     .inputsContentPage{
         height: 30em;
+        padding-left: 5%;
     }
 
     .botonesContentPage{
         margin-bottom: 50px;
+        padding-left: 8%;
     }
    
 }
