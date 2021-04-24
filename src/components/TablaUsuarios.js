@@ -3,6 +3,7 @@ import CustomLink from './CustomLink';
 import axios from 'axios'
 import React,{useState, useEffect} from 'react';
 import IdleStateView from './IdleStateView';
+import ErrorScreen from './ErrorScreen';
 
 function TablaUsuarios(props) {
 
@@ -34,11 +35,7 @@ function TablaUsuarios(props) {
 
         if(status === 'error'){
             return (
-                <div role="alert">
-                    <p>There was an error: </p>
-                    <pre>{error.message}</pre>
-                </div>
-                
+                <ErrorScreen mensaje = {error.message} respuesta={error.name}/>
             )
         }
 

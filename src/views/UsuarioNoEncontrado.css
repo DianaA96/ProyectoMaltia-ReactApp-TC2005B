@@ -7,6 +7,35 @@
     padding: 1vw;
 }
 
+pre {
+    font-size: 3vh;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 3vh;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
 header {
     padding-left: 4%;
     padding-bottom: 2%;
@@ -54,6 +83,8 @@ header {
     #cajaUsuarioNoEncontrado {
         margin-left: 12vw;
         color: white;
+        padding-left: 0%;
+        padding-right: 12%;
     }
 
     #cajaUsuarioNoEncontrado div{
