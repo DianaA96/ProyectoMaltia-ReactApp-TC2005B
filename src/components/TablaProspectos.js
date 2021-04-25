@@ -12,8 +12,11 @@ import ErrorScreen from './ErrorScreen';
 
 function TablaProspectos(props) {
 
-  function showModal(){
-     props.setStatus('visible')
+  function showModal(event){
+     props.setVisibility('visible')
+     props.setUserId(event.target.name)
+     console.log(props.userId)
+     console.dir(event)
   }
 
   const [ status, setStatus ] = useState('idle');
@@ -72,7 +75,7 @@ function TablaProspectos(props) {
                 <tr key={registro.idProspect}>
                   <td>{registro.nombre + " " + registro.apellidoPaterno+ " " + registro.apellidoMaterno}</td>
                   <td><CustomLink tag='button' to={`./editarProspecto/${registro.idProspect}`} id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
-                  <td><button onClick={showModal} tag='button' id="botonContactarProspecto"><i class="fas fa-phone"></i></button></td>
+                  <td><button name={registro.idProspect} onClick={showModal} tag='button' id="botonContactarProspecto"><i class="fas fa-phone"></i></button></td>
                   <td><CustomLink tag='button' to='./solicitudCliente' id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
                 </tr>
               </tbody>
