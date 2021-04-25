@@ -1,18 +1,89 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./ModalContactoAsesor.css"
 import Checkbox from '../components/Checkbox.js';
 import '../components/Boton.css';
 import DropMenu from '../components/DropMenu.js';
 import Select from 'react-select'
+import axios from 'axios'
+import IdleStateView from '../components/IdleStateView';
+import ErrorScreen from '../components/ErrorScreen'
 
 function ModalContactoAsesor(props){
 
     function hideModal(){
-        props.setStatus('hidden')
+        props.setVisibility('hidden')
+        //let fechaActual = Date.now();
+        //let fechaSequelize = new Date(contactInfo[1].createdAt)
+        //console.log((fechaSequelize-fechaActual)/ (60*60*24*1000))
     }
 
-    const [isContactDone, setContact] = useState (true)
+    function setNumberCont(event){
+        let number = 0
+        
+        if(event.nativeEvent.path.[6].id === "one") {
+            setContactNumber(1)
+        }
 
+        else if(event.nativeEvent.path.[6].id === "two") {
+            setContactNumber(2)
+        }
+
+        else if(event.nativeEvent.path.[6].id === "three") {
+            setContactNumber(3)
+        }
+    }
+
+    function setContact(event) {
+        console.dir(event)
+        let newContact = {
+            idProspect: props.userId,
+            idContact: contactNumber,
+            compromiso : event.value
+        }
+        console.log(newContact)
+        setContactsDone(newContact)
+    }
+
+    function enviarDatosContacto(event) {
+        event.preventDefault()
+        setStatus('loading')
+        let contacto = contactsDone
+        console.log("Estoy haciendo contacto", contacto)
+        axios({
+            method: 'post',
+            url: 'http://localhost:5000/contacts/',
+            data: {
+                body: {contacto},
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                }
+            }
+        })
+        props.setVisibility('hidden')
+    }
+ 
+    const [ contactsDone, setContactsDone ] = useState([])
+    const [ status, setStatus ] = useState('idle')
+    const [ error, setError ] = useState(null)
+    const [ prospectInfo, setProspectInfo ] = useState([])
+    const [ contactInfo, setContactInfo ] = useState([])
+    const [ contactNumber, setContactNumber ] = useState(0)
+
+    useEffect(()=>{
+        setStatus('loading')
+        axios.get(`http://localhost:5000/prospects/${props.userId}/contacts`) 
+            .then((result)=>{
+            setProspectInfo(result.data.prospect)
+            setContactInfo(result.data.datosContactos)
+            setStatus('resolved')
+            })
+            .catch((error)=>{
+                setError(error)
+                setStatus('error')
+            })
+      }, [])
+    
+    // Estilos del select
     const options = [
         { value: 'No atiende', label: 'No atiende' },
         { value: 'No está interesado', label: 'No está interesado' },
@@ -20,6 +91,7 @@ function ModalContactoAsesor(props){
         { value: 'Tomando una decisión', label: 'Tomando una decisión' },
         { value: 'Inicia solicitud', label: 'Inicia solicitud' },
         ]
+
     const customSelectStyles = {
         control: (base, state) => ({
             ...base,
@@ -65,44 +137,84 @@ function ModalContactoAsesor(props){
                 },
               })
         }
-
+    
     return(
         <div className="modalPadre1">
             <div className="modal">
-                <h2 className="nombreUsuario"> Harry José Potter Hernandez </h2>
+                {status === 'loading'|| status === 'idle'? <p>Cargando... provisional</p>:
+                status === 'resolved'? <h2 className="nombreUsuario"> {prospectInfo.nombre} {prospectInfo.apellidoPaterno} {prospectInfo.apellidoMaterno}</h2>:
+                null}
                 <div className="infoPrimaria">
                     <i class="fas fa-phone-alt"> </i>
-                    <p className="tel">  771 245 2723 </p>
+                    <p className="tel"> {prospectInfo.numTelefono} </p>
                 </div>
-                <div className="formulario">
+                <form className="formulario">
+                    
                     <p className="mobile-contactNum">Contacto 1</p>
-                    <div className="cont-contacto">
+                    <div className="cont-contacto" id="one">
                         <div className="contacto-left">
                             <p>Contacto 1 </p>
-                            <Checkbox isDisabled = {isContactDone} /> 
+                            <Checkbox 
+                                name="1" 
+                                isDisabled={contactInfo.[0]?true:false}
+                                onSelect={setContact} 
+                            /> 
                         </div>
-                        <Select  isDisabled = {isContactDone} placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
+                        <Select 
+                            isDisabled={contactInfo.[0]?true:false} 
+                            placeholder = {contactInfo.[0]?contactInfo.[0].compromiso:"Compromiso"} 
+                            options={options} 
+                            styles = {customSelectStyles}
+                            onChange={setContact}
+                            onFocus={setNumberCont}
+                        />
                     </div>
 
                     <p className="mobile-contactNum">Contacto 2</p>
-                    <div className="cont-contacto">
+                    <div className="cont-contacto" id="two">
                         <div className="contacto-left">
                             <p>Contacto 2</p>
-                            <Checkbox/>  
+                            <Checkbox
+                                name="2"  
+                                isDisabled={contactInfo.[1]?true:false}
+                            />  
                         </div>
-                        <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/> 
+                        <Select  
+                            isDisabled={contactInfo.[1]||(!contactInfo.[0])?true:false} 
+                            placeholder = {contactInfo.[1]?contactInfo.[1].compromiso:"Compromiso"} 
+                            options={options} 
+                            styles = {customSelectStyles}
+                            onChange={setContact}
+                            onFocus={setNumberCont}
+                        /> 
                     </div>
 
                     <p className="mobile-contactNum">Contacto 3</p>
-                    <div className="cont-contacto">
+                    <div className="cont-contacto" id="three">
                         <div className="contacto-left">
                             <p>Contacto 3</p>
-                            <Checkbox/> 
+                            <Checkbox 
+                                isDisabled={contactInfo.[2]?true:false}
+                                onChange={setContact}
+                            /> 
                         </div>
-                        <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
+                        <Select  
+                            isDisabled={contactInfo.[2]||(!contactInfo.[0])||(!contactInfo.[1])?true:false} 
+                            placeholder = {contactInfo.[2]?contactInfo.[2].compromiso:"Compromiso"} 
+                            options={options} 
+                            styles = {customSelectStyles}
+                            onChange={setContact}
+                            onFocus={setNumberCont}
+                        />
                     </div>
-                </div>
-                <button tag='button' onClick={hideModal} className="botonSalmon">Guardar cambios</button>
+                
+                    <button
+                        tag='button' 
+                        onClick={enviarDatosContacto} 
+                        className="botonSalmon">
+                        Guardar cambios
+                    </button>
+                </form>
             </div>
         </div>
         
