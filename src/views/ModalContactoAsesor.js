@@ -10,6 +10,10 @@ import ErrorScreen from '../components/ErrorScreen'
 
 function ModalContactoAsesor(props) {
 
+    function hideModal() {
+        props.setVisibility('hidden')
+    }
+
     function setNumberCont(event){
         let number = 0
         
@@ -35,6 +39,7 @@ function ModalContactoAsesor(props) {
         }
         console.log(newContact)
         setContactsDone(newContact)
+        setOptionSelected(true)
     }
 
     function enviarDatosContacto(event) {
@@ -67,6 +72,7 @@ function ModalContactoAsesor(props) {
     const [ contactInfo, setContactInfo ] = useState([])
     const [ contactNumber, setContactNumber ] = useState(0)
     const [ checkboxChecked, setCheckboxChecked] = useState(false)
+    const [ optionSelected, setOptionSelected] = useState(false)
 
     useEffect(()=>{
         setStatus('loading')
@@ -140,6 +146,7 @@ function ModalContactoAsesor(props) {
     return(
         <div className="modalPadre1">
             <div className="modal">
+                <button className="closingModalButton" onClick={hideModal}>x</button>
             {status === 'loading'|| status === 'idle'? <p>Cargando... provisional</p>:
             status === 'resolved'? <h2 className="nombreUsuario"> {prospectInfo.nombre} {prospectInfo.apellidoPaterno} {prospectInfo.apellidoMaterno}</h2>:
             null}
@@ -212,7 +219,7 @@ function ModalContactoAsesor(props) {
             
                 <button
                     tag='button' 
-                    disabled={checkboxChecked?false:true}
+                    disabled={checkboxChecked&&optionSelected?false:true}
                     onClick={enviarDatosContacto} 
                     className="botonSalmon">
                     Guardar cambios
