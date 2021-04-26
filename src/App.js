@@ -63,8 +63,16 @@ function App() {
         <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
         <Route path='/agregarProspectos' exact={true}>{AgregarProspecto}</Route>
         <Route path='/editarProspecto' exact={true}>{EditarProspecto}</Route>
-        <Route path='/solicitudCliente' exact={true}><SolicitudCliente{...datosSolicitudCliente}/></Route>
+
+        <Route 
+          path='/solicitudCliente/:idProspect'
+          render={(props)=> <SolicitudCliente {...props}
+          exact/>} 
+        />
+        
         <Route path='/administrarClientes' exact={true}>{AdministracionClientesAsesor}</Route>
+
+
         <Route path='/user-not-found2' exact={true}>{UsuarioNoEncontrado2}</Route>
         <Route path='/user-not-found21' exact={true}>{UsuarioNoEncontrado21}</Route>
         <Route path='/editarSolicitudCliente' exact={true}><EditarSolicitudCliente/></Route>

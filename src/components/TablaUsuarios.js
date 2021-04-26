@@ -55,7 +55,7 @@ function TablaUsuarios(props) {
                                           <tr key={indice}>
                                                 <td data-th={`\u000A ${registro.puesto}`}>{registro.nombre + " " + registro.apellidoPaterno + " " + registro.apellidoMaterno}</td>
                                                 <td>{registro.puesto}</td>
-                                                <td><CustomLink tag='button' to={`/editarUsuario/${registro.idEmployee}`} id="botonEditarUsuario"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></CustomLink></td>
+                                                <td><CustomLink tag='button' to={`/editarUsuario/${registro.idEmployee}/${registro.puesto}`} id="botonEditarUsuario"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></CustomLink></td>
                                                 <td><button onClick={showModal} tag='button' id="botonEliminarUsuario"><i class="fas fa-user-slash"></i></button></td>
                                           </tr>
                                     </tbody>

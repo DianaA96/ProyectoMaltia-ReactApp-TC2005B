@@ -11,11 +11,10 @@ function RadioButton(props){
         }
     }
 
-
     return(
         <div className="cont-component">
             <label className="container-radio"> {props.etiqueta}
-                <input onFocus ={toggleSelectVisibility} type="radio" name="radio"/>
+                <input onFocus ={toggleSelectVisibility} type="radio" name="radio" defaultChecked={props.isChecked} />
                 <span className="checkmark"></span>
             </label>
         </div>

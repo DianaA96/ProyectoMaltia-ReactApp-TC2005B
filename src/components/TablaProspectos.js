@@ -48,14 +48,16 @@ function TablaProspectos(props) {
   }, [])
 
   if(status === 'idle' || status === 'loading'){
-    return <IdleStateView/>
+      return (
+      <IdleStateView></IdleStateView>
+      )
   }
 
 
   if(status === 'error'){
-    return (
-      <ErrorScreen mensaje = {error.message}/>
-    )
+      return (
+        <ErrorScreen mensaje = {error.message} respuesta={error.name}/>
+      )
   }
 
   if(status === 'resolved'){
@@ -73,7 +75,7 @@ function TablaProspectos(props) {
                   <td>{registro.nombre + " " + registro.apellidoPaterno+ " " + registro.apellidoMaterno}</td>
                   <td><CustomLink tag='button' to={`./editarProspecto/${registro.idProspect}`} id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
                   <td><button onClick={showModal} tag='button' id="botonContactarProspecto"><i class="fas fa-phone"></i></button></td>
-                  <td><CustomLink tag='button' to='./solicitudCliente' id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
+                  <td><CustomLink tag='button' to={`./solicitudCliente/${registro.idProspect}`} id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
                 </tr>
               </tbody>
               ))}
