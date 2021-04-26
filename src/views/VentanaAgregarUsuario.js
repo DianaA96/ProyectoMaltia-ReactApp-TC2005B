@@ -55,8 +55,8 @@ function VentanaAgregarUsuario(props) {
             background: "#CACACA",
             borderRadius: "50px" ,
             boxShadow: state.isFocused ? null : null,
-            padding: "7px 30px",
-            fontSize: "22px",
+            padding: "0px 30px",
+            fontSize: "1.2vw",
             fontFamily: "Raleway",
             fontWeight: "600",
             "@media only screen and (max-width: 576px)": {
@@ -67,7 +67,7 @@ function VentanaAgregarUsuario(props) {
           menu: base => ({
             ...base,
             borderRadius: "25px",
-            fontSize: "22px",
+            fontSize: "1.2vw",
             fontFamily: "Raleway",
             
           }),
@@ -82,7 +82,7 @@ function VentanaAgregarUsuario(props) {
           }),
           container: base => ({
             ...base,
-            width:"44.5%",
+            width:"48%",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
                 width:"90%",
@@ -158,7 +158,7 @@ function VentanaAgregarUsuario(props) {
                     alert('Analista registrado correctamente');
                 })
                 .catch(error =>{
-                    alert('No se pudo registrar el asesor:', error);
+                    alert('No se pudo registrar el analista:', error);
                 })
         }
         
@@ -194,28 +194,29 @@ function VentanaAgregarUsuario(props) {
                 
             })
                 .then((result)=>{
-                    props.onSave(result.data);
-                    alert('Asesor registrado correctamente');
+                    console.log(result)
+                    for(let i=0; i<idTiendas.length;i++){
+                        console.log(typeof(idTiendas[i]), asesorBack.employee.idEmployee)
+        
+                        let assessorData = {"idAssessor" : asesorBack.employee.idEmployee}
+                        axios.patch(`http://localhost:5000/stores/${idTiendas[i]}`, {
+                                data: assessorData,
+                                headers: {
+                                    'Content-type': 'application/json; charset=UTF-8',
+                                }
+                            })
+                            .then((result)=>{
+                                props.onSave(result.data.data);
+                            })
+                            .catch(error =>{
+                            })
+                    }
                 })
                 .catch(error =>{
-                })
+                    
+                });
 
-            for(let i=0; i<idTiendas.length;i++){
-                console.log(idTiendas[i], asesorBack.employee.idEmployee)
-
-                let assessorData = {idAssessor : asesorBack.employee.idEmployee}
-                axios.patch(`http://localhost:5000/stores/${idTiendas[i]}`, {
-                        body: JSON.stringify(assessorData),
-                        headers: {
-                            'Content-type': 'application/json; charset=UTF-8',
-                        }
-                    })
-                    .then((result)=>{
-                        props.onSave(result.data.data);
-                    })
-                    .catch(error =>{
-                    })
-            }
+            
         }
 
         else {
@@ -230,8 +231,6 @@ function VentanaAgregarUsuario(props) {
 
         return(
 
-            
-
             <React.Fragment>
                 <main>
                     <aside>
@@ -241,28 +240,27 @@ function VentanaAgregarUsuario(props) {
                         <header>
                             <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Agregar usuario"/>
                         </header>
-                        <form onSubmit={handleSave}>
+                        <form onSubmit={handleSave} className="form-custom">
                             <section className="radiosContentPage">
                                 <RadioButton etiqueta="Asesor" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
                                 <RadioButton etiqueta="Analista" SelectStatus={SelectStatus} setSelectStatus={setSelectStatus}/>
                             </section>
                             <section className="inputsContentPage">
-                                <input className = "input-gral w-2" type="text" name="idEmployee" placeholder="ID de Empleado*" onChange = {handleChange} required/>
-                                <input className = "input-gral w-2" type="password" name="contrasena" placeholder="Contraseña*" onChange = {handleChange} required/>
                                 <input className = "input-gral w-3" type="text" name="nombre"  placeholder="Nombre(s)*" onChange = {handleChange} required/>
                                 <input className = "input-gral w-3" type="text" name="apellidoPaterno"  placeholder="Apellido Paterno*" onChange = {handleChange} required/>
-                                <input className = "input-gral w-3" type="text" name="apellidoMaterno" placeholder="Apellido Materno" onChange = {handleChange} required/>
+                                <input className = "input-gral w-3" type="text" name="apellidoMaterno" placeholder="Apellido Materno" onChange = {handleChange} />
+                                <input className = "input-gral w-2" type="text" name="idEmployee" placeholder="ID de Empleado*" onChange = {handleChange} required/>
+                                <input className = "input-gral w-2" type="password" name="contrasena" placeholder="Contraseña*" onChange = {handleChange} required/>
                                 <input className = "input-gral w-2" type="tel" name="numTelefono"  placeholder="Número de teléfono*" onChange = {handleChange} required/>
                                 <input className = "input-gral w-2" type="email" name="correoElectronico" placeholder="Correo electrónico*" onChange = {handleChange} required/>
                                 {SelectStatus === 'analista' ? <Select placeholder = "Departamento"  options={departamentos} styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
                                 {SelectStatus === 'asesor' ? <Select  placeholder = "Tiendas"  options={tiendas} isMulti styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
                             </section>
                             <section className="botonesContentPage">
-                                <CustomLink tag='button' to='./administrarUsuarios' className="botonAzulMarino" >Cancelar</CustomLink>
-                                <CustomLink tag='button' to='./AgregarUsuario' className="botonSalmon" type="submit" >Registrar</CustomLink>
+                                <CustomLink tag='button' to='/administrarUsuarios' className="botonAzulMarino" >Cancelar</CustomLink>
+                                <CustomLink tag='button' to='/AgregarUsuario' className="botonSalmon" type="submit" >Registrar</CustomLink>
                             </section>
                         </form>
-                       
                     </section>
                 </main>
             </React.Fragment>

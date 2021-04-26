@@ -13,6 +13,7 @@ const LandingAdminUsuarios = () => {
     
     const [status, setStatus] = useState('hidden');
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
+    const [modalData, setModalData] = useState({});
 
     return(
         <main>
@@ -28,8 +29,8 @@ const LandingAdminUsuarios = () => {
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaUsuarios status={status} setStatus={setStatus}/>
-                    {status === 'visible' ? <ModalDeshabilitarEmpleado status = {status} setStatus = {setStatus}/> : null}
+                    <TablaUsuarios status={status} setStatus={setStatus} setModalData={setModalData}/>
+                    {status === 'visible' ? <ModalDeshabilitarEmpleado modalData = {modalData} status = {status} setStatus = {setStatus}/> : null}
                 </section> 
             </section>
         </main>
