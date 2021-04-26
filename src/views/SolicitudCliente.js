@@ -12,24 +12,18 @@ import axios from 'axios';
 
 function SolicitudCliente(props) {
     const [status, setStatus]= useState('idle');
-    const [datos ,setDatos] = useState([]);
+    const [datos , setDatos] = useState([]);
+    //const [info, setInfo] = useState({});
+    
+
     const{
         nombre,
         apellidoPaterno,
         apellidoMaterno,
         numTelefono,
-        fechaNacimiento='',
-        direccion='',
-        firmaSolicitud=0,
-        numeroClienteZorro=0,
-        numIne=0,
-        refName='',
-        numTelefonoReferencia='',
-    }=datos;
+    }=datos;  
 
-
-
-    useEffect(() =>{
+        useEffect(() =>{
         setStatus('loading')
         axios.get(`http://localhost:5000/prospects/${props.match.params.idProspect}`)
         .then((result) => {
@@ -51,12 +45,37 @@ function SolicitudCliente(props) {
         return<h1>oops</h1>
     }
 
-        let fecha = new Date();
+    /*
+    function handleChange(event){
+        let newFecha={
+            ...datos,
+            [event.target.fechaNacimiento]: event.target.value,
+        };
+        setInfo(newFecha)
+    }
+    */
+    function handleSave(event){
+        event.preventDefault()
+        axios.post(`http://localhost:5000/applications/clients/references/`,{
+            body: JSON.stringify(SolicitudCliente),
+            headers:{
+                'Content-Type': 'application/json: charet=UTF-8'
+            }
+        })
+        .then(()=>{
+
+        })
+        .catch(err=>{
+
+        })
+    }
+
+    let fecha = new Date();
     let varFecha = `${fecha.getDate()} de ${fecha.toLocaleString('default', { month: 'long' })} del ${fecha.getFullYear()}`;
     let dropMenuType = {contenido: "Tipo de crédito*",}
-
     let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar Clientes"];
 
+  
     if(status === 'resolved'){
         return(
             <main id='mainSolicitudCliente'>
@@ -71,7 +90,7 @@ function SolicitudCliente(props) {
                     <section className='datosClienteSolicitud'>
                         <div className='datosCliente'>
                             <p>{nombre} {apellidoPaterno} {apellidoMaterno}</p>
-                            <p><i class="fas fa-phone-alt"></i>{numTelefono}</p>
+                            <p><i class="fas fa-phone-alt"></i> &nbsp; {numTelefono}</p>
                         </div>
                         <div className='checkSolicitud'>
                             <p>Solicitud firmada:</p>
@@ -81,7 +100,7 @@ function SolicitudCliente(props) {
                     <form>
                         <section className='inputsDatosCliente'>
                             <div className='grupoInput'>
-                                <input type='text' className='inputFormularios w-2'  placeholder='Fecha de nacimiento*' onFocus={(e) => {e.currentTarget.type = 'date'}} required ></input>                            
+                                <input type='text' className='inputFormularios w-2'  placeholder='Fecha de nacimiento*' onFocus={(e) => {e.currentTarget.type = 'date'}} ></input>                            
                                 <label htmlFor="name" className="etiquetaInputs">Fecha de nacimiento* (formato dd/mm/aaaa)</label>
                             </div>
                             <div className='grupoInput'>
@@ -121,7 +140,7 @@ function SolicitudCliente(props) {
                         </section>
                         <section className='botonesEnviarSolicitud'>
                             <CustomLink tag='button' to='/administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
-                            <CustomLink tag='input' type='submit' className='botonSalmon' value='Enviar solicitud' to='./administrarProspectos'/>
+                            <CustomLink tag='input' type='submit' className='botonSalmon' value='Enviar solicitud' to='/administrarProspectos' onClick={handleSave}/>
                         </section>
                     </form>
                 </section>
@@ -130,3 +149,4 @@ function SolicitudCliente(props) {
     }
 }
 export default SolicitudCliente;
+                
