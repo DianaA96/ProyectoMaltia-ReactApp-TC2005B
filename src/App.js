@@ -60,7 +60,7 @@ function App() {
 
         <Route path='/administrarProspectos' exact={true}><LandingAdminProspectos/></Route>
         <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
-        <Route path='/agregarProspectos' exact={true}>{AgregarProspecto}</Route>
+        <Route path='/agregarProspectos' exact={true}><AgregarProspecto/></Route>
         <Route 
           path="/editarProspecto/:idProspect"
           render={(props) => <EditarProspecto {...props}/>}
