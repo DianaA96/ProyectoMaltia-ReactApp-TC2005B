@@ -10,6 +10,10 @@ import ErrorScreen from '../components/ErrorScreen'
 
 function ModalContactoAsesor(props) {
 
+    function hideModal() {
+        props.setVisibility('hidden')
+    }
+
     function setNumberCont(event){
         let number = 0
         
@@ -140,6 +144,7 @@ function ModalContactoAsesor(props) {
     return(
         <div className="modalPadre1">
             <div className="modal">
+                <button className="closingModalButton" onClick={hideModal}>x</button>
             {status === 'loading'|| status === 'idle'? <p>Cargando... provisional</p>:
             status === 'resolved'? <h2 className="nombreUsuario"> {prospectInfo.nombre} {prospectInfo.apellidoPaterno} {prospectInfo.apellidoMaterno}</h2>:
             null}
