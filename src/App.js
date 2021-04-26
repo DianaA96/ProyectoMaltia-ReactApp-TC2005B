@@ -52,25 +52,20 @@ function App() {
         <Route path='/administrarUsuarios' exact={true}><LandingAdminUsuarios/></Route>
         <Route path='/agregarUsuario' exact={true}>{<VentanaAgregarUsuario/>}</Route>
         <Route 
-
-            path="/editarUsuario/:idEmployee/:puesto"
-            render= {(props)=> <VentanaEditarUsuario {...props} exact/>}
-            exact={true}/>
-
+          path="/editarUsuario/:idEmployee"
+          render={(props)=> <VentanaEditarUsuario {...props}/>}
+          exact/>
         <Route path='/eliminarUsuario' exact={true}>{Deshabilitar}</Route>
         <Route path='/user-not-found1' exact={true}>{UsuarioNoEncontrado1}</Route>
 
         <Route path='/administrarProspectos' exact={true}><LandingAdminProspectos/></Route>
         <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
-        <Route path='/agregarProspectos' exact={true}>{AgregarProspecto}</Route>
-        <Route path='/editarProspecto' exact={true}>{EditarProspecto}</Route>
-
+        <Route path='/agregarProspectos' exact={true}><AgregarProspecto/></Route>
         <Route 
-          path='/solicitudCliente/:idProspect'
-          render={(props)=> <SolicitudCliente {...props}
-          exact/>} 
-        />
-        
+          path="/editarProspecto/:idProspect"
+          render={(props) => <EditarProspecto {...props}/>}
+          exact/>
+        <Route path='/solicitudCliente' exact={true}><SolicitudCliente{...datosSolicitudCliente}/></Route>
         <Route path='/administrarClientes' exact={true}>{AdministracionClientesAsesor}</Route>
 
 
