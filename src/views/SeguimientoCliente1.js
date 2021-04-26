@@ -30,6 +30,54 @@ function SeguimientoCliente1(props) {
 
         const [prospect, setProspect] = useState([]);
         const[ref,setRef]=useState([]);
+
+        function handleChange(event){
+            let {	capacidadZorro,
+                antiguedadZorro,
+                altaIsi,
+                fechaAlta,
+                auditoriaBuro,
+                creditoAutorizado,
+                fechaAuditoria,
+                montoAutorizado,
+                montoDispuesto,
+                estatus}=prospect;
+
+            let solicitudNueva={
+                capacidadZorro,
+                antiguedadZorro,
+                altaIsi,
+                fechaAlta,
+                auditoriaBuro,
+                creditoAutorizado,
+                fechaAuditoria,
+                montoAutorizado,
+                montoDispuesto,
+                estatus,
+                [event.target.name]: event.target.value
+            }
+            //console.log(solicitudNueva);
+            setProspect(solicitudNueva);
+            console.log(prospect);
+        }
+
+        function handleSave(event){
+            event.preventDefault();
+            //prospect.antiguedadZorro=antiguedad;
+            axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
+                body: prospect,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                }
+            })
+                .then((result)=>{
+
+                })
+                .catch(error =>{
+
+                })
+        }
+
         useEffect(()=>{
             setStatus('loading')
            
@@ -60,6 +108,7 @@ function SeguimientoCliente1(props) {
 
 
         if(status === 'resolved'){
+            //prospect.antiguedadZorro=2;
             return(
                 <React.Fragment>
                     <main>
@@ -75,20 +124,22 @@ function SeguimientoCliente1(props) {
                                 <h2 className="nombreCliente">{prospect.nombre} {prospect.apellidoPaterno} {prospect.apellidoMaterno}</h2>
                                 <PasosSeguimiento id1={props.match.params.idProspect}/>
                             </section>
-                            <section className="mainContentPageSeguimiento">
-                                <div className="accionesSeguimiento">
-                                    <p className="pregunta-antiguedad">¿Cumple con la antigüedad mínima?</p>
-                                    <Checkbox/>
-                                    <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Antigüedad"/>
-                                    <p className="texto-ayuda"></p>
-                                    <p className="pregunta-capacidad">¿Cumple con la capacidad de pago mínima?</p>
-                                    <Checkbox/>
-                                    <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Capacidad de pago"/>
-                                    <button className="botonSalmon btn-guardar-cambios">Guardar Cambios</button>
-                                </div>
-                                <div className="lineaSeguimiento"></div>
-                               <InfoSolicitud id={props.match.params.idProspect}/>
-                            </section>
+                            <form onSubmit={handleSave}>
+                                <section className="mainContentPageSeguimiento">
+                                    <div className="accionesSeguimiento">
+                                        <p className="pregunta-antiguedad">¿Cumple con la antigüedad mínima?</p>
+                                        <Checkbox/>
+                                        <input className = "input-gral w-1" type="text" name="antiguedadZorro" id="" placeholder={prospect.antiguedadZorro} onChange = {handleChange}/>
+                                        <p className="texto-ayuda"></p>
+                                        <p className="pregunta-capacidad">¿Cumple con la capacidad de pago mínima?</p>
+                                        <Checkbox/>
+                                        <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Capacidad de pago"/>
+                                        <button className="botonSalmon btn-guardar-cambios" type='submit'>Guardar Cambios</button>
+                                    </div>
+                                    <div className="lineaSeguimiento"></div>
+                                <InfoSolicitud id={props.match.params.idProspect}/>
+                                </section>
+                            </form>
                         </section>
                     </main>
                 </React.Fragment>
