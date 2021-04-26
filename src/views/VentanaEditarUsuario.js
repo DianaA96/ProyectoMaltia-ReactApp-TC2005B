@@ -23,7 +23,7 @@ function VentanaEditarUsuario(props) {
             background: "#CACACA",
             borderRadius: "50px" ,
             boxShadow: state.isFocused ? null : null,
-            padding: "7px 30px",
+            padding: "0px 30px",
             fontSize: "22px",
             fontFamily: "Raleway",
             fontWeight: "600",
@@ -156,7 +156,7 @@ function VentanaEditarUsuario(props) {
                         <header>
                             <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Editar usuario"/>
                         </header>
-                        <form onSubmit={handleChange}>
+                        <form onSubmit={handleChange} className="form-custom">
                             <section className="radiosContentPage">
                                 
                                 {SelectStatus === 'asesor' ? 
@@ -186,8 +186,8 @@ function VentanaEditarUsuario(props) {
                             </section>
 
                             <section className="botonesContentPage">
-                                <CustomLink tag='button' to='./administrarUsuarios' className="botonAzulMarino">Cancelar</CustomLink>
-                                <CustomLink tag='button' to='./administrarUsuarios' className="botonSalmon" type='submit'>Guardar cambios</CustomLink>
+                                <CustomLink tag='button' to='/administrarUsuarios' className="botonAzulMarino">Cancelar</CustomLink>
+                                <CustomLink tag='button' to='/administrarUsuarios' className="botonSalmon" type='submit'>Guardar cambios</CustomLink>
 
                             </section>
                         </form>
