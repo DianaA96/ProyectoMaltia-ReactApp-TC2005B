@@ -1,6 +1,6 @@
 import Lateral from '../components/Lateral';
 import Bienvenida from '../components/Bienvenida';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import asesor from '../assets/asesor.png'
 import './AgregarEditarUsuario.css';
 import '../components/plantillaInputs.css';
@@ -9,6 +9,7 @@ import CustomLink from '../components/CustomLink';
 import axios from 'axios';
 import IdleStateView from '../components/IdleStateView';
 import ErrorScreen from '../components/ErrorScreen';
+import Select from 'react-select'
 
 // ESTA VISTA REQUIERE CONOCER EL ID DEL ASESOR QUE HA INICIADO SESIÓN
 let idLoggedAssessor = 1
@@ -24,14 +25,78 @@ function Aprospecto(){
     const [ error, setError ] = useState(null);
     const [ prospect, setProspect ] = useState({});
     const [ statusForm, setStatusForm ] = useState('pristine');
+    const [ stores, setStores] = useState([]);
+    const [ SelectValue, setSelectValue ] = useState();
+
+    let tiendas =[];
+
+    useEffect(()=>{
+        //Obtiene lista de tiendas
+        axios.get(`http://localhost:5000/stores/allStores`)
+            .then((result)=>{
+                setStores(result.data.tiendas)
+            })
+            .catch((error)=>{
+                
+            });
+    }, [])
+
+    const customSelectStyles = {
+        control: (base, state) => ({
+            ...base,
+            background: "#CACACA",
+            borderRadius: "50px" ,
+            boxShadow: state.isFocused ? null : null,
+            padding: "0px 30px",
+            fontSize: "1.2vw",
+            fontFamily: "Raleway",
+            fontWeight: "600",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+            },
+          }),
+          menu: base => ({
+            ...base,
+            borderRadius: "25px",
+            fontSize: "1.2vw",
+            fontFamily: "Raleway",
+            
+          }),
+          menuList: base => ({
+            ...base,
+            padding: 0,
+            borderRadius: "25px",
+          }),
+          dropdownIndicator: base => ({
+            ...base,
+            color: "#0f123f"
+          }),
+          container: base => ({
+            ...base,
+            width:"48%",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                width:"90%",
+            },
+          })
+    }
+
+    const handleSelectChange = selectedOption => {
+        let { label, value } = selectedOption
+        setSelectValue(value);
+    }
     
     function handleChange(event) {
+        console.log(SelectValue)
         let nuevaInfo = {
             ...prospect,
             idAssessor: idLoggedAssessor,
-            [event.target.name]: event.target.value 
+            [event.target.name]: event.target.value,
+            idStore: SelectValue
         }
         setProspect(nuevaInfo)
+        console.log(nuevaInfo)
         setStatusForm('dirty')
     }
 
@@ -53,6 +118,10 @@ function Aprospecto(){
             }
         )
     }
+
+    tiendas = stores.map(function(registro, indice){ 
+        return {value: registro.idStore, label: registro.nombreTienda};
+    });
 
     return(
         <main>
@@ -106,14 +175,13 @@ function Aprospecto(){
                         placeholder="Correo electrónico"
                         onChange={handleChange}
                         />
-
-                        <input 
+                    
+                        <Select 
                         name="idStore" 
-                        className = "input-gral w-2" 
-                        type="text" 
-                        placeholder="RED"
-                        onChange={handleChange}
-                        />
+                        placeholder = "RED"  
+                        options={tiendas} 
+                        styles = {customSelectStyles} 
+                        onChange = {handleSelectChange}/>
 
                     </section>
 
