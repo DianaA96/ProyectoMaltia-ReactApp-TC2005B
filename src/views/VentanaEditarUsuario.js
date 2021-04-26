@@ -16,6 +16,7 @@ function VentanaEditarUsuario(props) {
     let tiendasAsociadas =[];
     let departamentos =[];
     let departamentoAsociado = '';
+    
     //React Select Styles
     const customSelectStyles = {
         control: (base, state) => ({
@@ -23,15 +24,15 @@ function VentanaEditarUsuario(props) {
             background: "#CACACA",
             borderRadius: "50px" ,
             boxShadow: state.isFocused ? null : null,
-            padding: "7px 30px",
-            fontSize: "22px",
+            padding: "0px 30px",
+            fontSize: "1.2vw",
             fontFamily: "Raleway",
             fontWeight: "600",
           }),
           menu: base => ({
             ...base,
             borderRadius: "25px",
-            fontSize: "22px",
+            fontSize: "1.2vw",
             fontFamily: "Raleway",
             
           }),
@@ -61,7 +62,7 @@ function VentanaEditarUsuario(props) {
     const [employee, setEmployee] = useState({});
     const [checked, setChecked] = useState(false);
     const [stores, setStores] = useState([]);
-    
+    const [SelectValue, setSelectValue] = useState([]);
     
 
     useEffect(()=>{
@@ -104,10 +105,121 @@ function VentanaEditarUsuario(props) {
             .catch((error)=>{
                 setError(error)
             });
-}, [])
+    }, [])
     
     
-    function handleChange(){
+    function handleChange(event){
+        let newEmployee = {
+            ...employee,
+            [event.target.name]: event.target.value,
+        };
+
+        setEmployee(newEmployee)
+    }
+
+    const handleSelectChange = selectedOption => {
+        setSelectValue(selectedOption);
+    }
+
+     //Función que se ejecuta al registrar un empleado
+     function handleSave(event){
+        event.preventDefault();
+        console.log(SelectValue)
+
+        const {
+            nombre,
+            apellidoPaterno,
+            apellidoMaterno,
+            correoElectronico,
+            numTelefono} = employee;
+        
+
+        if(SelectStatus==='analista'){
+            
+            const{value} = SelectValue;
+            const departamento = value;
+            const puesto = "Analista";
+
+            let analistaBack={
+                employee:{
+                        nombre,
+                        apellidoPaterno,
+                        apellidoMaterno,
+                        correoElectronico,
+                        numTelefono,
+                        puesto,
+                },
+                analyst:{
+                    departamento
+                } 
+            }
+
+            axios.patch(`http://localhost:5000/employees/${props.match.params.idEmployee}/analysts`, {
+                body: analistaBack,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                }
+            })
+                .then((result)=>{
+                    props.onSave(result.data.data);
+                })
+                .catch(error =>{
+                })
+        }
+        
+        
+        else if(SelectStatus==='asesor'){
+
+            const idTiendas = SelectValue.map(function(registro, indice){ 
+                return registro.value;
+            });
+
+            console.log(idTiendas)
+            const puesto = "Asesor";
+
+            let asesorBack={
+                employee:{
+                        nombre,
+                        apellidoPaterno,
+                        apellidoMaterno,
+                        correoElectronico,
+                        numTelefono,
+                        puesto,
+                }
+            }
+
+            axios.patch(`http://localhost:5000/employees/${props.match.params.idEmployee}/assessor`, {
+                body: asesorBack,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                }
+            })
+                .then((result)=>{
+                    console.log('Hola Mundo')
+                    for(let i=0; i<idTiendas.length;i++){
+                        let assessorData = {"idAssessor" : props.match.params.idEmployee}
+                        axios.patch(`http://localhost:5000/stores/${idTiendas[i]}`, {
+                                data: assessorData,
+                                headers: {
+                                    'Content-type': 'application/json; charset=UTF-8',
+                                }
+                            })
+                            .then((result)=>{
+                                props.onSave(result.data.data);
+                            })
+                            .catch(error =>{
+                            })
+                     }
+                })
+                .catch(error =>{
+
+                })
+                   
+        }
+                
+        else {
+            alert('Por favor seleccione un puesto para el empleado')
+        }
 
     }
         
@@ -156,7 +268,7 @@ function VentanaEditarUsuario(props) {
                         <header>
                             <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Editar usuario"/>
                         </header>
-                        <form onSubmit={handleChange}>
+                        <form onSubmit={handleSave} className="form-custom">
                             <section className="radiosContentPage">
                                 
                                 {SelectStatus === 'asesor' ? 
@@ -172,22 +284,20 @@ function VentanaEditarUsuario(props) {
                                 </> : null}
                             </section>
                             <section className="inputsContentPage">
-                                    <input className = "input-gral w-3" type="text" name="nombres" placeholder="Nombre(s)" defaultValue={employee.datosEmpleado.nombre}/>
-                                    <input className = "input-gral w-3" type="text" name="apellidom" placeholder="Apellido Materno" defaultValue={employee.datosEmpleado.apellidoPaterno}/>
-                                    <input className = "input-gral w-3" type="text" name="apellidop" placeholder="Apellido Paterno" defaultValue={employee.datosEmpleado.apellidoMaterno}/>
-                                    <input className = "input-gral w-2" type="tel" name="numtelefono" placeholder="Número de teléfono" defaultValue={employee.datosEmpleado.numTelefono}/>
-                                    <input className = "input-gral w-2" type="email" name="correo" placeholder="Correo electrónico" defaultValue={employee.datosEmpleado.correoElectronico}/>
-                                    
-                                    {props.match.params.puesto === 'Asesor' && SelectStatus === 'asesor' ? <Select defaultValue = {tiendasAsociadas} options={tiendas} isMulti styles = {customSelectStyles}/> : null}
-                                    {props.match.params.puesto === 'Analista' && SelectStatus === 'analista' ? <Select placeholder ={departamentoAsociado} options={departamentos} styles = {customSelectStyles}/> : null}
-                                    {props.match.params.puesto === 'Asesor' && SelectStatus !== 'asesor' ? <Select placeholder = 'Departamento' options={departamentos} styles = {customSelectStyles}/> : null}
-                                    {props.match.params.puesto === 'Analista' && SelectStatus !== 'analista' ? <Select placeholder='Tiendas' options={tiendas} isMulti styles = {customSelectStyles}/> : null}
-                                    
+                                    <input className = "input-gral w-3" type="text" name="nombre" placeholder="Nombre(s)*" defaultValue={employee.datosEmpleado.nombre} onChange = {handleChange} required/>
+                                    <input className = "input-gral w-3" type="text" name="apellidoPaterno" placeholder="Apellido Paterno*" defaultValue={employee.datosEmpleado.apellidoPaterno} onChange = {handleChange} required/>
+                                    <input className = "input-gral w-3" type="text" name="apellidoMaterno" placeholder="Apellido Materno" defaultValue={employee.datosEmpleado.apellidoMaterno} onChange = {handleChange} />
+                                    <input className = "input-gral w-2" type="tel" name="numTelefono" placeholder="Número de teléfono" defaultValue={employee.datosEmpleado.numTelefono} onChange = {handleChange} required/>
+                                    <input className = "input-gral w-2" type="email" name="correoElectronico" placeholder="Correo electrónico" defaultValue={employee.datosEmpleado.correoElectronico} onChange = {handleChange} required/>
+                                    {props.match.params.puesto === 'Asesor' && SelectStatus === 'asesor' ? <Select defaultValue = {tiendasAsociadas} options={tiendas} isMulti styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
+                                    {props.match.params.puesto === 'Analista' && SelectStatus === 'analista' ? <Select placeholder ={departamentoAsociado} options={departamentos} styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
+                                    {props.match.params.puesto === 'Asesor' && SelectStatus !== 'asesor' ? <Select placeholder = 'Departamento' options={departamentos} styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
+                                    {props.match.params.puesto === 'Analista' && SelectStatus !== 'analista' ? <Select placeholder='Tiendas' options={tiendas} isMulti styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
                             </section>
 
                             <section className="botonesContentPage">
-                                <CustomLink tag='button' to='./administrarUsuarios' className="botonAzulMarino">Cancelar</CustomLink>
-                                <CustomLink tag='button' to='./administrarUsuarios' className="botonSalmon" type='submit'>Guardar cambios</CustomLink>
+                                <CustomLink tag='button' to='/administrarUsuarios' className="botonAzulMarino">Cancelar</CustomLink>
+                                <CustomLink tag='button' className="botonSalmon" type='submit'>Guardar cambios</CustomLink>
 
                             </section>
                         </form>
