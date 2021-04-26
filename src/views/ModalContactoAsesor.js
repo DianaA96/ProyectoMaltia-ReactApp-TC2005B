@@ -61,6 +61,11 @@ function ModalContactoAsesor(props){
         })
         props.setVisibility('hidden')
     }
+
+    function setCheckTrue() {
+        console.log("Im changing", checkboxChecked)
+        setCheckboxChecked(!checkboxChecked)
+    }
  
     const [ contactsDone, setContactsDone ] = useState([])
     const [ status, setStatus ] = useState('idle')
@@ -68,6 +73,7 @@ function ModalContactoAsesor(props){
     const [ prospectInfo, setProspectInfo ] = useState([])
     const [ contactInfo, setContactInfo ] = useState([])
     const [ contactNumber, setContactNumber ] = useState(0)
+    const [ checkboxChecked, setCheckboxChecked] = useState(false)
 
     useEffect(()=>{
         setStatus('loading')
@@ -155,9 +161,9 @@ function ModalContactoAsesor(props){
                         <div className="contacto-left">
                             <p>Contacto 1 </p>
                             <Checkbox 
-                                name="1" 
-                                isDisabled={contactInfo.[0]?true:false}
-                                onSelect={setContact} 
+                                isDefaultChecked={contactInfo.[0]?true:null}
+                                isDisabled={contactInfo.[0]?true:null}
+                                setCheckTrue={setCheckTrue}
                             /> 
                         </div>
                         <Select 
@@ -175,8 +181,9 @@ function ModalContactoAsesor(props){
                         <div className="contacto-left">
                             <p>Contacto 2</p>
                             <Checkbox
-                                name="2"  
-                                isDisabled={contactInfo.[1]?true:false}
+                                isDefaultChecked={contactInfo.[1]?true:null} 
+                                isDisabled={contactInfo.[1]||(!contactInfo.[0])?true:null}
+                                setCheckTrue={setCheckTrue}
                             />  
                         </div>
                         <Select  
@@ -194,8 +201,9 @@ function ModalContactoAsesor(props){
                         <div className="contacto-left">
                             <p>Contacto 3</p>
                             <Checkbox 
-                                isDisabled={contactInfo.[2]?true:false}
-                                onChange={setContact}
+                                isDefaultChecked={contactInfo.[2]?true:null}
+                                isDisabled={contactInfo.[2]||(!contactInfo.[0])||(!contactInfo.[1])?true:null}
+                                setCheckTrue={setCheckTrue}
                             /> 
                         </div>
                         <Select  
@@ -210,6 +218,7 @@ function ModalContactoAsesor(props){
                 
                     <button
                         tag='button' 
+                        disabled={checkboxChecked?false:true}
                         onClick={enviarDatosContacto} 
                         className="botonSalmon">
                         Guardar cambios
