@@ -2,13 +2,15 @@ import './TablaProspectos.css';
 import CustomLink from './CustomLink';
 import axios from 'axios'
 import React,{useState, useEffect} from 'react';
+import IdleStateView from './IdleStateView';
+import ErrorScreen from './ErrorScreen';
 
 function TablaProspectos(props) {
 
   function showModal(){
      props.setStatus('visible')
     }
-
+  
   const [status, setStatus ] = useState('idle');
   const [error, setError] = useState(null);
   const [prospects, setProspects] = useState([]);
@@ -27,17 +29,15 @@ function TablaProspectos(props) {
   }, [])
 
   if(status === 'idle' || status === 'loading'){
-      return <h1>Cargando...</h1>
+      return (
+      <IdleStateView></IdleStateView>
+      )
   }
 
 
   if(status === 'error'){
       return (
-          <div role="alert">
-              <p>There was an error: </p>
-              <pre>{error.message}</pre>
-          </div>
-          
+        <ErrorScreen mensaje = {error.message} respuesta={error.name}/>
       )
   }
   if(status === 'resolved'){
@@ -53,9 +53,9 @@ function TablaProspectos(props) {
               <tbody>
                 <tr key={indice}>
                   <td>{registro.nombre + " " + registro.apellidoPaterno+ " " + registro.apellidoMaterno}</td>
-                  <td><CustomLink tag='button' to='./editarProspecto' id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
+                  <td><CustomLink tag='button' to={`./editarProspecto/${registro.idProspect}`} id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
                   <td><button onClick={showModal} tag='button' id="botonContactarProspecto"><i class="fas fa-phone"></i></button></td>
-                  <td><CustomLink tag='button' to='./solicitudCliente' id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
+                  <td><CustomLink tag='button' to={`./solicitudCliente/${registro.idProspect}`} id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
                 </tr>
               </tbody>
               ))}
