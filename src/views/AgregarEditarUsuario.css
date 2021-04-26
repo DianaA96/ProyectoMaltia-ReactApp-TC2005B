@@ -4,12 +4,19 @@
     height: 91vh;
     width: 85%;
     margin: 0%;
-    padding: 1vw;
+    padding: 30px;
 }
 
 .contentPageForms header{
+    padding-left: 4%;
+    padding-bottom: 2%;
+    padding-right: 4%;
     display: flex;
     justify-content: space-between;
+}
+
+.form-custom{
+    margin-top: 2%;
 }
 
 .tag-fecha{
@@ -34,7 +41,7 @@
 }
 
 .radiosContentPage {
-    width: 100%;
+    width: 97%;
     display: flex;
     flex-direction: row;
     justify-content:flex-end;
@@ -42,21 +49,25 @@
 }
 
 .inputsContentPage {
-    width: 100%;
-    height: 35vh;
+    padding-left: 4%;
+    padding-right: 4%;
     display: flex;
     flex-direction: row;   
     justify-content: space-around;
-    align-content: space-around;
-    flex-wrap: wrap
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.inputsContentPage input{
+    margin-bottom: 1em;
 }
 
 .botonesContentPage{
-    width: 100%;
+    margin-top: 5em;
+    width: 95%;
     display: flex;
     flex-direction: row;
     justify-content:flex-end;
-    margin-top: 8%;
 }
 
 
@@ -93,15 +104,17 @@
 
     .radiosContentPage {
         justify-content:center;
-       
+        padding-left: 5%;
     }
 
     .inputsContentPage{
         height: 30em;
+        padding-left: 5%;
     }
 
     .botonesContentPage{
         margin-bottom: 50px;
+        padding-left: 8%;
     }
    
 }

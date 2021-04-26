@@ -12,31 +12,8 @@ import admin from '../assets/persona.svg';
 const LandingAdminUsuarios = () => {
     
     const [status, setStatus] = useState('hidden');
-
-    let dataQuery = {
-        data: [
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Asesor"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Asesor"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Asesor"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Asesor"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Asesor"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"},
-          {nombres: "Harry José", apellidos: "Potter Hernández", puesto: "Analista"}
-        ]
-      };
-
-      let tabs = ["Administrar Usuarios", "Agregar Usuario"];
+    let tabs = ["Administrar Usuarios", "Agregar Usuario"];
+    const [modalData, setModalData] = useState({});
 
     return(
         <main>
@@ -52,8 +29,8 @@ const LandingAdminUsuarios = () => {
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaUsuarios {...dataQuery} status={status} setStatus={setStatus}/>
-                    {status === 'visible' ? <ModalDeshabilitarEmpleado status = {status} setStatus = {setStatus}/> : null}
+                    <TablaUsuarios status={status} setStatus={setStatus} setModalData={setModalData}/>
+                    {status === 'visible' ? <ModalDeshabilitarEmpleado modalData = {modalData} status = {status} setStatus = {setStatus}/> : null}
                 </section> 
             </section>
         </main>

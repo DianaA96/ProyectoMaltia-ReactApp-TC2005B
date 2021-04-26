@@ -1,5 +1,5 @@
 .input-gral{
-    font-size: 22px;
+    font-size: 1.2vw;
     font-family: 'Raleway';
     padding: 15px 30px;
     border-style: none;
@@ -95,11 +95,11 @@
 }
 
 .w-3{
-    width: 25%;
+    width: 27%;
 }
 
 .w-2{
-    width: 40%;
+    width: 43%;
 }
 
 .w-1{
@@ -126,5 +126,12 @@
 @media only screen and (max-width: 576px){
     .input-gral{
         background: #F2F5FA;
+    }
+    
+    .w-3{
+        width: 90%;
+    }
+    .w-2{
+        width: 90%;
     }
 }

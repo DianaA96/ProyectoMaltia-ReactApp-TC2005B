@@ -1,6 +1,8 @@
 import './Checkbox.css'
 
 function CheckBox(props){
+    
+
     return(
         <div className="cont-component">
             <label className="container-check">
