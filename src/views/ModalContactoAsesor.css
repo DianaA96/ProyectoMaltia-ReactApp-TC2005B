@@ -17,6 +17,21 @@
     z-index: 5;
 }
 
+.closingModalButton {
+    background-color: #C4C4C4;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    width: 2vw;
+    height: 2vw;
+    cursor: pointer;
+    position: relative;
+    left: 45%;
+    top: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5vh;
+}
+
 .modal{
     padding: 20px;
     background-color: #E5E5E5;
@@ -49,11 +64,18 @@
 
 .formulario{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Raleway';
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
     color: #000000;
+}
+
+.formulario .botonSalmon {
+    width: 40%;
 }
 
 .cont-contacto{

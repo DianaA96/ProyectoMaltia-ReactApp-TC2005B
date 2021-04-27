@@ -1,11 +1,18 @@
 import Lateral from '../components/Lateral';
 import Bienvenida from '../components/Bienvenida';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import asesor from '../assets/asesor.png'
 import './AgregarEditarUsuario.css';
 import '../components/plantillaInputs.css';
 import '../components/Boton.css';
 import CustomLink from '../components/CustomLink';
+import axios from 'axios';
+import IdleStateView from '../components/IdleStateView';
+import ErrorScreen from '../components/ErrorScreen';
+import Select from 'react-select'
+
+// ESTA VISTA REQUIERE CONOCER EL ID DEL ASESOR QUE HA INICIADO SESIÓN
+let idLoggedAssessor = 1
 
 function Aprospecto(){
 
@@ -13,34 +20,180 @@ function Aprospecto(){
     let varFecha = `${fecha.getDate()} de ${fecha.toLocaleString('default', { month: 'long' })} del ${fecha.getFullYear()}`;
 
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
+
+    const [ status, setStatus ] = useState('idle');
+    const [ error, setError ] = useState(null);
+    const [ prospect, setProspect ] = useState({});
+    const [ statusForm, setStatusForm ] = useState('pristine');
+    const [ stores, setStores] = useState([]);
+    const [ SelectValue, setSelectValue ] = useState();
+
+    let tiendas =[];
+
+    useEffect(()=>{
+        //Obtiene lista de tiendas
+        axios.get(`http://localhost:5000/stores/allStores`)
+            .then((result)=>{
+                setStores(result.data.tiendas)
+            })
+            .catch((error)=>{
+                
+            });
+    }, [])
+
+    const customSelectStyles = {
+        control: (base, state) => ({
+            ...base,
+            background: "#CACACA",
+            borderRadius: "50px" ,
+            boxShadow: state.isFocused ? null : null,
+            padding: "0px 30px",
+            fontSize: "1.2vw",
+            fontFamily: "Raleway",
+            fontWeight: "600",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+            },
+          }),
+          menu: base => ({
+            ...base,
+            borderRadius: "25px",
+            fontSize: "1.2vw",
+            fontFamily: "Raleway",
+            
+          }),
+          menuList: base => ({
+            ...base,
+            padding: 0,
+            borderRadius: "25px",
+          }),
+          dropdownIndicator: base => ({
+            ...base,
+            color: "#0f123f"
+          }),
+          container: base => ({
+            ...base,
+            width:"48%",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                width:"90%",
+            },
+          })
+    }
+
+    const handleSelectChange = selectedOption => {
+        let { label, value } = selectedOption
+        setSelectValue(value);
+    }
+    
+    function handleChange(event) {
+        console.log(SelectValue)
+        let nuevaInfo = {
+            ...prospect,
+            idAssessor: idLoggedAssessor,
+            [event.target.name]: event.target.value,
+            idStore: SelectValue
+        }
+        setProspect(nuevaInfo)
+        console.log(nuevaInfo)
+        setStatusForm('dirty')
+    }
+
+    function handleSave(event) {
+        event.preventDefault()
+        setStatusForm('loading')
+        setError(null)
+        console.log(prospect)
+        
+        axios({
+            method: 'post',
+            url: 'http://localhost:5000/prospects/',
+            data: {
+                body: {prospect},
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    }
+                }
+            }
+        )
+    }
+
+    tiendas = stores.map(function(registro, indice){ 
+        return {value: registro.idStore, label: registro.nombreTienda};
+    });
+
     return(
-        <React.Fragment>
-            <main>
-                <aside>
-                    <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} />
-                </aside>
-                <div className='contentPageForms'>
-                        <header>
-                            <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Agregar prospecto"/>
-                            <p className='tag-fecha'>{varFecha}</p>
-                        </header>
+        <main>
+            <aside>
+                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} />
+            </aside>
 
-                        <section className="inputsContentPage">
-                            <input className = "input-gral w-3" type="text" placeholder="Nombre(s)"/>
-                            <input className = "input-gral w-3" type="text" placeholder="Apellido paterno"/>
-                            <input className = "input-gral w-3" type="text" placeholder="Apellido materno"/>
-                            <input className = "input-gral w-2" type="text" placeholder="Teléfono"/>
-                            <input className = "input-gral w-2" type="text" placeholder="Correo electrónico" />
-                        </section>
+            <div className='contentPageForms'>
+                <header>
+                    <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Agregar prospecto"/>
+                    <p className='tag-fecha'>{varFecha}</p>
+                </header>
 
-                        <section className='botonesContentPage'>
-                            <CustomLink tag='button' to='./administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
-                            <CustomLink tag='button' to='./solicitudCliente' className="botonSalmon mr">Continuar solicitud</CustomLink>
-                            <CustomLink tag='button' to='./administrarProspectos' className="botonSalmon mr">Registrar</CustomLink>
-                        </section>
-                </div>
-            </main>
-        </React.Fragment>
+                <form onSubmit={handleSave}>
+                    <section className="inputsContentPage">
+                        <input name="nombre" 
+                        className = "input-gral w-3" 
+                        type="text" 
+                        placeholder="Nombre(s)"
+                        onChange={handleChange}
+                        />
+
+                        <input 
+                        name="apellidoPaterno" 
+                        className = "input-gral w-3" 
+                        type="text" 
+                        placeholder="Apellido paterno"
+                        onChange={handleChange}
+                        />
+
+                        <input 
+                        name="apellidoMaterno" 
+                        className = "input-gral w-3" 
+                        type="text" 
+                        placeholder="Apellido materno"
+                        onChange={handleChange}
+                        />
+
+                        <input 
+                        name="numTelefono" 
+                        className = "input-gral w-2" 
+                        type="number" 
+                        placeholder="Teléfono"
+                        onChange={handleChange}
+                        />
+
+                        <input 
+                        name="correoElectronico" 
+                        className = "input-gral w-2" 
+                        type="email" 
+                        placeholder="Correo electrónico"
+                        onChange={handleChange}
+                        />
+                    
+                        <Select 
+                        name="idStore" 
+                        placeholder = "RED"  
+                        options={tiendas} 
+                        styles = {customSelectStyles} 
+                        onChange = {handleSelectChange}/>
+
+                    </section>
+
+                    <section className='botonesContentPage'>
+                        <CustomLink tag='button' to='./administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
+                        <CustomLink onClick={handleSave} type="submit" tag='button' to='./solicitudCliente' className="botonSalmon mr">Continuar solicitud</CustomLink>
+                        <CustomLink onClick={handleSave} type="submit" tag='button' to='./administrarProspectos' className="botonSalmon mr">Registrar</CustomLink>
+                    </section>
+                </form>
+
+            </div>
+        </main>
     );
 }
 
