@@ -12,32 +12,11 @@ import '../components/Boton.css'
 
 function LandingAdminProspectos() {
 
-    const [status, setStatus] = useState('hidden');
-
-    let datosProspect = {
-        data: [
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-            {nombres: "Harry José", apellidos: "Potter Hernández"},
-        ]
-      };
+    const [ visibility, setVisibility] = useState('hidden');
+    const [ userId, setUserId ] = useState('1');
 
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
 
-    
     return(
         <main>
             <aside>
@@ -52,8 +31,8 @@ function LandingAdminProspectos() {
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaProspectos {...datosProspect} status = {status} setStatus = {setStatus}/>
-                    {status === 'visible' ? <ModalContactoAsesor status = {status} setStatus = {setStatus}/> : null}
+                    <TablaProspectos visibility={visibility} setVisibility={setVisibility} userId={userId} setUserId={setUserId}/>
+                    {visibility === 'visible' ? <ModalContactoAsesor visibility={visibility} setVisibility={setVisibility} userId={userId}/> : null}
                 </section>
             </section>
         </main>
