@@ -62,6 +62,7 @@ function VentanaAgregarUsuario(props) {
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
                 background:"#F2F5FA",
+                fontSize: "4.5vw"
             },
           }),
           menu: base => ({
@@ -85,7 +86,7 @@ function VentanaAgregarUsuario(props) {
             width:"48%",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
-                width:"90%",
+                width:"100%",
             },
           })
     }
@@ -154,7 +155,7 @@ function VentanaAgregarUsuario(props) {
                 
             })
                 .then((result)=>{
-                    props.onSave(result.data);
+                    // props.onSave(result.data);
                     alert('Analista registrado correctamente');
                 })
                 .catch(error =>{
@@ -191,10 +192,9 @@ function VentanaAgregarUsuario(props) {
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                 }
-                
             })
                 .then((result)=>{
-                    console.log(result)
+                    // alert('Asesor registrado correctamente.')
                     for(let i=0; i<idTiendas.length;i++){
                         console.log(typeof(idTiendas[i]), asesorBack.employee.idEmployee)
         
@@ -206,14 +206,16 @@ function VentanaAgregarUsuario(props) {
                                 }
                             })
                             .then((result)=>{
-                                props.onSave(result.data.data);
+                                // props.onSave(result.data.data);
+                                alert('Asesor registrado correctamente.')
                             })
                             .catch(error =>{
+                                alert(error)
                             })
                     }
                 })
                 .catch(error =>{
-                    
+                    alert(error)
                 });
 
             
