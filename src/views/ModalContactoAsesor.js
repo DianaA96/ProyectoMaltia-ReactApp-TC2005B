@@ -1,19 +1,94 @@
-import React, { useState , useEffect}  from 'react';
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
 import "./ModalContactoAsesor.css"
 import Checkbox from '../components/Checkbox.js';
 import '../components/Boton.css';
 import DropMenu from '../components/DropMenu.js';
 import Select from 'react-select'
+import axios from 'axios'
+import IdleStateView from '../components/IdleStateView';
+import ErrorScreen from '../components/ErrorScreen'
 
-function ModalContactoAsesor(props){
+function ModalContactoAsesor(props) {
 
-    function hideModal(){
-        props.setStatus('hidden')
+    function hideModal() {
+        props.setVisibility('hidden')
     }
-    
-    const [isContactDone, setContact] = useState (true)
 
+    function setNumberCont(event){
+        let number = 0
+        
+        if(event.nativeEvent.path.[6].id === "one") {
+            setContactNumber(1)
+        }
+
+        else if(event.nativeEvent.path.[6].id === "two") {
+            setContactNumber(2)
+        }
+
+        else if(event.nativeEvent.path.[6].id === "three") {
+            setContactNumber(3)
+        }
+    }
+
+    function setContact(event) {
+        console.dir(event)
+        let newContact = {
+            idProspect: props.userId,
+            idContact: contactNumber,
+            compromiso : event.value
+        }
+        console.log(newContact)
+        setContactsDone(newContact)
+        setOptionSelected(true)
+    }
+
+    function enviarDatosContacto(event) {
+        event.preventDefault()
+        setStatus('loading')
+        let contacto = contactsDone
+        console.log("Estoy haciendo contacto", contacto)
+        axios({
+            method: 'post',
+            url: 'http://localhost:5000/contacts/',
+            data: {
+                body: {contacto},
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                }
+            }
+        })
+        props.setVisibility('hidden')
+    }
+
+    function setCheckTrue() {
+        console.log("Im changing", checkboxChecked)
+        setCheckboxChecked(!checkboxChecked)
+    }
+ 
+    const [ contactsDone, setContactsDone ] = useState([])
+    const [ status, setStatus ] = useState('idle')
+    const [ error, setError ] = useState(null)
+    const [ prospectInfo, setProspectInfo ] = useState([])
+    const [ contactInfo, setContactInfo ] = useState([])
+    const [ contactNumber, setContactNumber ] = useState(0)
+    const [ checkboxChecked, setCheckboxChecked] = useState(false)
+    const [ optionSelected, setOptionSelected] = useState(false)
+
+    useEffect(()=>{
+        setStatus('loading')
+        axios.get(`http://localhost:5000/prospects/${props.userId}/contacts`) 
+            .then((result)=>{
+            setProspectInfo(result.data.prospect)
+            setContactInfo(result.data.datosContactos)
+            setStatus('resolved')
+            })
+            .catch((error)=>{
+                setError(error)
+                setStatus('error')
+            })
+    }, [])
+    
+    // Estilos del select
     const options = [
         { value: 'No atiende', label: 'No atiende' },
         { value: 'No está interesado', label: 'No está interesado' },
@@ -21,6 +96,7 @@ function ModalContactoAsesor(props){
         { value: 'Tomando una decisión', label: 'Tomando una decisión' },
         { value: 'Inicia solicitud', label: 'Inicia solicitud' },
         ]
+
     const customSelectStyles = {
         control: (base, state) => ({
             ...base,
@@ -66,80 +142,92 @@ function ModalContactoAsesor(props){
                 },
               })
         }
-
-    const [status, setStatus ] = useState('idle');
-    const [error, setError] = useState(null);
-    const [employee, setEmployee] = useState([]);
-
-    useEffect(()=>{
-            setStatus('loading')
-            axios.get(`http://localhost:5000/employees/:${props.match.params.idEmployee}`)
-                .then((result)=>{
-                    setEmployee(result.data.empleados)
-                    setStatus('resolved')
-                })
-                .catch((error)=>{
-                    setError(error)
-                    setStatus('error')
-                })
-        }, [])
-
-        if(status === 'idle' || status === 'loading'){
-            return <h1>Cargando...</h1>
-        }
-
-
-        if(status === 'error'){
-            return (
-                <div role="alert">
-                    <p>There was an error: </p>
-                    <pre>{error.message}</pre>
-                </div>
-            )
-        }
-  
-    if(status === 'resolved'){
-        return(
-            <div className="modalPadre1">
-                <div className="modal">
-                    <h2 className="nombreUsuario"> Harry José Potter Hernandez </h2>
-                    <div className="infoPrimaria">
-                        <i class="fas fa-phone-alt"> </i>
-                        <p className="tel">  771 245 2723 </p>
-                    </div>
-                    <div className="formulario">
-                        <p className="mobile-contactNum">Contacto 1</p>
-                        <div className="cont-contacto">
-                            <div className="contacto-left">
-                                <p>Contacto 1 </p>
-                                <Checkbox isDisabled = {isContactDone} /> 
-                            </div>
-                            <Select  isDisabled = {isContactDone} placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
-                        </div>
-
-                        <p className="mobile-contactNum">Contacto 2</p>
-                        <div className="cont-contacto">
-                            <div className="contacto-left">
-                                <p>Contacto 2</p>
-                                <Checkbox/>  
-                            </div>
-                            <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/> 
-                        </div>
-
-                        <p className="mobile-contactNum">Contacto 3</p>
-                        <div className="cont-contacto">
-                            <div className="contacto-left">
-                                <p>Contacto 3</p>
-                                <Checkbox/> 
-                            </div>
-                            <Select placeholder = {"Compromiso"} options={options} styles = {customSelectStyles}/>
-                        </div>
-                    </div>
-                    <button tag='button' onClick={hideModal} className="botonSalmon">Guardar cambios</button>
-                </div>
+    
+    return(
+        <div className="modalPadre1">
+            <div className="modal">
+                <button className="closingModalButton" onClick={hideModal}>x</button>
+            {status === 'loading'|| status === 'idle'? <p>Cargando... provisional</p>:
+            status === 'resolved'? <h2 className="nombreUsuario"> {prospectInfo.nombre} {prospectInfo.apellidoPaterno} {prospectInfo.apellidoMaterno}</h2>:
+            null}
+            <div className="infoPrimaria">
+                <i class="fas fa-phone-alt"> </i>
+                <p className="tel"> {prospectInfo.numTelefono} </p>
             </div>
+
+            <form className="formulario">
+                
+                <p className="mobile-contactNum">Contacto 1</p>
+                <div className="cont-contacto" id="one">
+                    <div className="contacto-left">
+                        <p>Contacto 1 </p>
+                        <Checkbox 
+                            isDefaultChecked={contactInfo.[0]?true:null}
+                            isDisabled={contactInfo.[0]?true:null}
+                            setCheckTrue={setCheckTrue}
+                        /> 
+                    </div>
+                    <Select 
+                        isDisabled={contactInfo.[0]?true:false} 
+                        placeholder = {contactInfo.[0]?contactInfo.[0].compromiso:"Compromiso"} 
+                        options={options} 
+                        styles = {customSelectStyles}
+                        onChange={setContact}
+                        onFocus={setNumberCont}
+                    />
+                </div>
+
+                <p className="mobile-contactNum">Contacto 2</p>
+                <div className="cont-contacto" id="two">
+                    <div className="contacto-left">
+                        <p>Contacto 2</p>
+                        <Checkbox
+                            isDefaultChecked={contactInfo.[1]?true:null} 
+                            isDisabled={contactInfo.[1]||(!contactInfo.[0])?true:null}
+                            setCheckTrue={setCheckTrue}
+                        />  
+                    </div>
+                    <Select  
+                        isDisabled={contactInfo.[1]||(!contactInfo.[0])?true:false} 
+                        placeholder = {contactInfo.[1]?contactInfo.[1].compromiso:"Compromiso"} 
+                        options={options} 
+                        styles = {customSelectStyles}
+                        onChange={setContact}
+                        onFocus={setNumberCont}
+                    /> 
+                </div>
+
+                <p className="mobile-contactNum">Contacto 3</p>
+                <div className="cont-contacto" id="three">
+                    <div className="contacto-left">
+                        <p>Contacto 3</p>
+                        <Checkbox 
+                            isDefaultChecked={contactInfo.[2]?true:null}
+                            isDisabled={contactInfo.[2]||(!contactInfo.[0])||(!contactInfo.[1])?true:null}
+                            setCheckTrue={setCheckTrue}
+                        /> 
+                    </div>
+                    <Select  
+                        isDisabled={contactInfo.[2]||(!contactInfo.[0])||(!contactInfo.[1])?true:false} 
+                        placeholder = {contactInfo.[2]?contactInfo.[2].compromiso:"Compromiso"} 
+                        options={options} 
+                        styles = {customSelectStyles}
+                        onChange={setContact}
+                        onFocus={setNumberCont}
+                    />
+                </div>
             
-        );
-    }
+                <button
+                    tag='button' 
+                    disabled={checkboxChecked&&optionSelected?false:true}
+                    onClick={enviarDatosContacto} 
+                    className="botonSalmon">
+                    Guardar cambios
+                </button>
+            </form>
+        </div>
+    </div>
+    );    
 }
+
 export default ModalContactoAsesor;

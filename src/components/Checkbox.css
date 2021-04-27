@@ -37,7 +37,7 @@
 }
 
 .container-check .checkbox:checked~.checkmark {
-    background-color: #EE786C;
+    background-color: #CACACA;
 }
 
 .container-check .checkmark:after {
@@ -61,9 +61,4 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-}
-
-
-.checkmark:disabled{
-        background: #000;
 }
