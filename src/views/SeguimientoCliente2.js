@@ -23,9 +23,74 @@ function SeguimientoCliente2(props) {
         //
         const [ status, setStatus ] = useState('idle');
         const [ error, setError ] = useState(null);
-
+        const[statusToggle1,setStatusToggle1]= useState({});
+        const[statusToggle2,setStatusToggle2]= useState({});
+        const[statusToggle,setStatusToggle]= useState(false);
         const [prospect, setProspect] = useState([]);
         const[ref,setRef]=useState([]);
+
+        function setToggle1(event){
+            [event.target.name],
+            setStatusToggle(!statusToggle);
+        }
+
+        function setToggle2(event){
+            [event.target.name],
+            setStatusToggle(!statusToggle);
+        }
+
+
+        function handleChange(event){
+            let {	capacidadZorro,
+                idApplication,
+                antiguedadZorro,
+                altaIsi,
+                fechaAlta,
+                auditoriaBuro,
+                creditoAutorizado,
+                fechaAuditoria,
+                montoAutorizado,
+                montoDispuesto,
+                estatus}=prospect;
+
+            let solicitudNueva={
+                idApplication,
+                capacidadZorro,
+                antiguedadZorro,
+                altaIsi,
+                fechaAlta,
+                auditoriaBuro,
+                creditoAutorizado,
+                fechaAuditoria,
+                montoAutorizado,
+                montoDispuesto,
+                estatus,
+                [event.target.name]: event.target.value
+            }
+            //console.log(solicitudNueva);
+            setProspect(solicitudNueva);
+            console.log(prospect);
+        }
+
+        function handleSave(event){
+            event.preventDefault();
+            //prospect.antiguedadZorro=antiguedad;
+
+            axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
+                body: prospect,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                }
+            })
+                .then((result)=>{
+
+                })
+                .catch(error =>{
+
+                })
+        }
+
+
         useEffect(()=>{
             setStatus('loading')
            
@@ -72,17 +137,19 @@ function SeguimientoCliente2(props) {
                                 <PasosSeguimiento id1={props.match.params.idProspect}/>
                             </section>
                             <section className="mainContentPageSeguimiento">
-                                <div className="accionesSeguimiento">
-                                    <div className="toggle-cont">
-                                        <p className="alta-isi">Alta en ISI</p>
-                                        <ToggleSwitch/>
+                            <form onSubmit={handleSave}>
+                                    <div className="accionesSeguimiento">
+                                        <div className="toggle-cont">
+                                            <p className="alta-isi">Alta en ISI</p>
+                                            <ToggleSwitch name={"altaIsi"} statusToggle={statusToggle} setToggleTrue={setToggleTrue} onChange = {handleChange}/>
+                                        </div>
+                                        <div className="toggle-cont">
+                                            <p className="auditoria-buro">Auditado</p>
+                                            <ToggleSwitch name={"auditoriaBuro"} statusToggle={statusToggle} setToggleTrue={setToggleTrue} onChange = {handleChange}/>
+                                        </div>
+                                        <button className="botonSalmon btn-guardar-cambios" type='submit'>Guardar Cambios</button>
                                     </div>
-                                    <div className="toggle-cont">
-                                        <p className="auditoria-buro">Auditado</p>
-                                        <ToggleSwitch/>
-                                    </div>
-                                    <button className="botonSalmon btn-guardar-cambios">Guardar Cambios</button>
-                                </div>
+                            </form>
                                 <div className="lineaSeguimiento"></div>
                                 
                                 <InfoSolicitud id={props.match.params.idProspect}/>

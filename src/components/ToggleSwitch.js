@@ -1,10 +1,10 @@
 import './ToggleSwitch.css'
 
-function ToggleSwitch(){
+function ToggleSwitch(props){
     return(
         <div className="cont-component">
             <label className="switch">
-                <input type="checkbox"/>
+                <input name={props.name} type="checkbox" checked={props.statusToggle1} onChange={props.setToggleTrue}/>
                 <span className="slider round"></span>
             </label>
         </div>

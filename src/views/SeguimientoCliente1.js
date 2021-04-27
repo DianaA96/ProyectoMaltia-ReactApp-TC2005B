@@ -33,6 +33,7 @@ function SeguimientoCliente1(props) {
 
         function handleChange(event){
             let {	capacidadZorro,
+                idApplication,
                 antiguedadZorro,
                 altaIsi,
                 fechaAlta,
@@ -44,6 +45,7 @@ function SeguimientoCliente1(props) {
                 estatus}=prospect;
 
             let solicitudNueva={
+                idApplication,
                 capacidadZorro,
                 antiguedadZorro,
                 altaIsi,
@@ -64,6 +66,7 @@ function SeguimientoCliente1(props) {
         function handleSave(event){
             event.preventDefault();
             //prospect.antiguedadZorro=antiguedad;
+
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
                 body: prospect,
                 headers: {
@@ -133,7 +136,7 @@ function SeguimientoCliente1(props) {
                                         <p className="texto-ayuda"></p>
                                         <p className="pregunta-capacidad">¿Cumple con la capacidad de pago mínima?</p>
                                         <Checkbox/>
-                                        <input className = "input-gral w-1" type="text" name="" id="" placeholder=" Capacidad de pago"/>
+                                        <input className = "input-gral w-1" type="text" name="capacidadZorro" id="" placeholder={prospect.capacidadZorro} onChange = {handleChange}/>
                                         <button className="botonSalmon btn-guardar-cambios" type='submit'>Guardar Cambios</button>
                                     </div>
                                     <div className="lineaSeguimiento"></div>

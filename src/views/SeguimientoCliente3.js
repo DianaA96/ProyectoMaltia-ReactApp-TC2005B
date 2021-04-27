@@ -25,6 +25,59 @@ function SeguimientoCliente3(props) {
 
         const [prospect, setProspect] = useState([]);
         const[ref,setRef]=useState([]);
+
+        function handleChange(event){
+            let {	capacidadZorro,
+                idApplication,
+                antiguedadZorro,
+                altaIsi,
+                fechaAlta,
+                auditoriaBuro,
+                creditoAutorizado,
+                fechaAuditoria,
+                montoAutorizado,
+                montoDispuesto,
+                estatus}=prospect;
+
+            let solicitudNueva={
+                idApplication,
+                capacidadZorro,
+                antiguedadZorro,
+                altaIsi,
+                fechaAlta,
+                auditoriaBuro,
+                creditoAutorizado,
+                fechaAuditoria,
+                montoAutorizado,
+                montoDispuesto,
+                estatus,
+                [event.target.name]: event.target.value
+            }
+            //console.log(solicitudNueva);
+            setProspect(solicitudNueva);
+            console.log(prospect);
+        }
+
+        function handleSave(event){
+            event.preventDefault();
+            //prospect.antiguedadZorro=antiguedad;
+
+            axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
+                body: prospect,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                }
+            })
+                .then((result)=>{
+
+                })
+                .catch(error =>{
+
+                })
+        }
+
+
+
         useEffect(()=>{
             setStatus('loading')
            
@@ -71,14 +124,18 @@ function SeguimientoCliente3(props) {
                                 <PasosSeguimiento id1={props.match.params.idProspect}/>
                             </section>
                             <section className="mainContentPageSeguimiento">
+                            <form onSubmit={handleSave}>
                                 <div className="accionesSeguimiento">
-                                    <input className= "input-gral w-1" type="text" name="Crédito autorizado" placeholder="Crédito autorizado"/>
-                                    <input className= "input-gral w-1" type="text" name="Crédito dispuesto"  placeholder="Crédito dispuesto"/>
-                                    <button className="botonSalmon btn-guardar-cambios">Guardar Cambios</button>
+                                    <input className= "input-gral w-1" type="text" name="montoAutorizado" placeholder={prospect.montoAutorizado} onChange = {handleChange}/>
+                                    <input className= "input-gral w-1" type="text" name="montoDispuesto"  placeholder={prospect.montoDispuesto} onChange = {handleChange}/>
+                                    <button className="botonSalmon btn-guardar-cambios"  type='submit'>Guardar Cambios</button>
                                 </div>
+                            </form>
                                 <div className="lineaSeguimiento"></div>
+                            
                                 <InfoSolicitud id={props.match.params.idProspect}/>
                             </section>
+                            
                         </section>
                     </main>
                 </React.Fragment>
