@@ -1,9 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './TablaAdminClientesAsesor.css';
 import './Boton.css';
 import CustomLink from './CustomLink';
+import IdleStateView from './IdleStateView';
+import ErrorScreen from './ErrorScreen';
+import axios from 'axios';
 
 function TablaAdminClientesAsesor(props) {
+         const [status, setStatus ] = useState('idle');
+         const [error, setError] = useState(null);
+         const [clients, setClients] = useState([]);
+       
+         useEffect(()=>{
+           setStatus('loading')
+           axios.get(`http://localhost:5000/prospects?thisAssessor=1`) //Cómo pasar el id del Asesor que inició sesión
+                 .then((result)=>{
+                     setClients(result.data.clientes)
+                     setStatus('resolved')
+                 })
+                 .catch((error)=>{
+                     setError(error)
+                     setStatus('error')
+                 })
+         }, [])
+       
+         if(status === 'idle' || status === 'loading'){
+             return (
+             <IdleStateView></IdleStateView>
+             )
+         }
+       
+       
+         if(status === 'error'){
+             return (
+               <ErrorScreen mensaje = {error.message} respuesta={error.name}/>
+             )
+         }
+         if(status === 'resolved'){
+
+
     return (
           <React.Fragment>
             <section className="contenedorTablaClientesAsesor">
@@ -19,7 +54,7 @@ function TablaAdminClientesAsesor(props) {
                        <tbody>
                               <tr key={indice}>
                                     <td colSpan="1">{registro.nombres+ " " + registro.apellidos}</td>
-                                    <td><CustomLink tag='button' to='./editarSolicitudCliente' id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
+                                    <td><CustomLink tag='button' to={`./editarSolicitudCliente/${registro.idClient}`} id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
                                     <td><p id={"semaforoEstatus" + registro.estatusCliente}> </p></td>
                               </tr>
                         </tbody>
@@ -29,5 +64,5 @@ function TablaAdminClientesAsesor(props) {
       </React.Fragment>
     );
   }
-  
+} 
 export default TablaAdminClientesAsesor;
