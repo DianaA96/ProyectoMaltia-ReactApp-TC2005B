@@ -114,6 +114,9 @@
 }
 
 @media only screen and (max-width: 860px){
+    .input-gral{
+        font-size: 1.8vw;
+    }
     .w-3{
         width: 70%;
     }
@@ -126,6 +129,7 @@
 @media only screen and (max-width: 576px){
     .input-gral{
         background: #F2F5FA;
+        font-size: 4.5vw;
     }
     
     .w-3{
