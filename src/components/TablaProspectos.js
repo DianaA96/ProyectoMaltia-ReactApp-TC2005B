@@ -17,6 +17,7 @@ function TablaProspectos(props) {
      props.setUserId(event.target.name)
      console.log(props.userId)
      console.dir(event)
+
   }
 
   const [ status, setStatus ] = useState('idle');
@@ -70,9 +71,11 @@ function TablaProspectos(props) {
           </div>
           <section className="tablaProspectos">
             <table className="prospectsTable">
+
               {prospects.length > 0 && prospects.map((registro, indice) => (
+
               <tbody>
-                <tr key={indice}>
+                <tr key={registro.idProspect}>
                   <td>{registro.nombre + " " + registro.apellidoPaterno+ " " + registro.apellidoMaterno}</td>
                   <td><CustomLink tag='button' to={`./editarProspecto/${registro.idProspect}`} id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
                   <td><button name={registro.idProspect} onClick={showModal} tag='button' id="botonContactarProspecto"><i class="fas fa-phone"></i></button></td>

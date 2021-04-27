@@ -3,14 +3,14 @@ import './PasosSeguimiento.css'
 import zorro from '../assets/ZorroSeguimiento.png'
 import CustomLink from './CustomLink';
 
-function PasosSeguimiento() {
+function PasosSeguimiento(props) {
     return (
         <div className="cont-seguimiento">
 
             <div className="circulo-texto">
                 <button href="" className="cons-zorro">
                     <div className="circulo-seguimiento">
-                        <CustomLink tag="div" to='./seguimientoCliente1' className="circulo-seguimiento"><img src={zorro} alt=""/></CustomLink>
+                        <CustomLink tag="div" to={`/seguimientoCliente1/${props.id1}`} className="circulo-seguimiento"><img src={zorro} alt=""/></CustomLink>
                     </div>
                 </button> 
                 <h5>Consulta Zorro Abarrotero</h5>
@@ -19,7 +19,7 @@ function PasosSeguimiento() {
             <div className="circulo-texto">
                 <button href="" className="cons-zorro">
                     <div className="circulo-seguimiento">
-                        <CustomLink tag="div" to='./seguimientoCliente2' className="circulo-seguimiento"><i class="fas fa-users"></i></CustomLink>
+                        <CustomLink tag="div" to={`/seguimientoCliente2/${props.id1}`} className="circulo-seguimiento"><i class="fas fa-users"></i></CustomLink>
                     </div>
                 </button>
                 <h5>Verificación Buró de Crédito</h5>
@@ -29,7 +29,7 @@ function PasosSeguimiento() {
             <div className="circulo-texto">
                 <button href="" className="cons-zorro">
                     <div className="circulo-seguimiento">
-                        <CustomLink tag="div" to='./seguimientoCliente3' className="circulo-seguimiento"><i class="fas fa-check-double"></i></CustomLink>
+                        <CustomLink tag="div" to={`/seguimientoCliente3/${props.id1}`} className="circulo-seguimiento"><i class="fas fa-check-double"></i></CustomLink>
                     </div>
                 </button>
                 <h5>Disposición</h5>
