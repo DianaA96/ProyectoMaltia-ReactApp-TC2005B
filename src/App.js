@@ -74,7 +74,7 @@ function App() {
         <Route path='/user-not-found2' exact={true}>{UsuarioNoEncontrado2}</Route>
         <Route path='/user-not-found21' exact={true}>{UsuarioNoEncontrado21}</Route>
         <Route 
-          path='/editarSolicitudCliente/:idApplication' 
+          path='/editarSolicitudCliente/:idProspect' 
           render={(props)=> <EditarSolicitudCliente {...props} 
           exact/>}
         />

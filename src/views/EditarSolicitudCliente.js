@@ -1,20 +1,105 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './SolicitudCliente.css';
 import '../components/Boton.css';
+import zorrito from '../assets/zorrito.gif';
 import '../components/plantillaInputs.css';
 import Bienvenida from '../components/Bienvenida';
 import Lateral from '../components/Lateral';
 import Checkbox from '../components/Checkbox';
-import DropMenu from '../components/DropMenu';
 import asesor from '../assets/asesor.png';
 import CustomLink from '../components/CustomLink';
+import Select from 'react-select';
+import axios from 'axios';
 
 function EditarSolicitudCliente(props) {
+    const [status, setStatus]= useState('idle');
+    const [datos , setDatos] = useState({});
+    const [error, setError] = useState(null);
+    const [SelectValue, setSelectValue] = useState([]);
+    const [fullApplication, setFullApplication] = useState({});
+    const [isCheck, setIsCheck] = useState(false);
+    const idAssessor= "1"
+
+    const customSelectStyles = {
+        control: (base, state) => ({
+            ...base,
+            background: "#CACACA",
+            borderRadius: "50px" ,
+            boxShadow: state.isFocused ? null : null,
+            padding: "7px 30px",
+            fontSize: "1.2vw",
+            fontFamily: "Raleway",
+            fontWeight: "600",
+            marginTop: "1em",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+            },
+          }),
+          menu: base => ({
+            ...base,
+            borderRadius: "25px",
+            fontSize: "1.2vw",
+            fontFamily: "Raleway",
+            
+          }),
+          menuList: base => ({
+            ...base,
+            padding: 0,
+            borderRadius: "25px",
+          }),
+          dropdownIndicator: base => ({
+            ...base,
+            color: "#0f123f"
+          }),
+          container: base => ({
+            ...base,
+            width:"46%",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                width:"90%",
+            },
+          })
+    }
+    const tiposCredito = [
+        {value: 'simple' , label: 'Simple'},
+        {value: 'revolvente' , label: 'Revolvente'}
+    ]
+
+    const handleSelectChange = selectedOption => {
+        setSelectValue(selectedOption);
+    }
+
+    useEffect(() =>{
+        setStatus('loading')
+        axios.get(`http://localhost:5000/applications/full-application-data/${props.match.params.idProspect}`)
+        .then((result) => {
+            setStatus('resolved')
+            setDatos(result.data.infoSolicitud)
+            console.log(datos)
+        })
+        .catch((error) => {
+            setStatus('error')
+        })
+    },[])
+    const{
+        nombre,
+        apellidoPaterno,
+        apellidoMaterno,
+        numTelefono,    
+        fechaNacimiento,    
+        creditoSolicitado,
+        numIne, 
+        direccion,
+        numClienteZorro,
+        montoSolicitado
+    }=datos[0]; 
+
+
     let fecha = new Date();
     let mes = fecha.toLocaleString('default', { month: 'long' });
-    let dropMenuType = {contenido: "Tipo de crédito*",}
-
     let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar Clientes"];
+    
     
     return(
         <main id='mainSolicitudCliente'>
@@ -28,8 +113,8 @@ function EditarSolicitudCliente(props) {
                 </header>
                 <section className='datosClienteSolicitud'>
                     <div className='datosCliente'>
-                        <h1>{props.nombreCliente}</h1>
-                        <h1><i class="fas fa-phone-alt"></i>  {props.numTelCliente}</h1>
+                        <h1>{nombre} {apellidoPaterno} {apellidoMaterno}</h1>
+                        <h1><i class="fas fa-phone-alt"></i> &nbsp; {numTelefono}</h1>
                     </div>
                     <div className='checkSolicitud'>
                         <h3>Solicitud firmada:</h3>
@@ -39,26 +124,26 @@ function EditarSolicitudCliente(props) {
                 <form>
                 <section className='inputsDatosCliente'>
                         <div className='grupoInput'>
-                            <input type='date' className='inputFormularios w-2'  placeholder='Fecha de nacimiento*' defaultValue='1982-02-12' required></input>                            
+                            <input type='date' className='inputFormularios w-2'  placeholder='Fecha de nacimiento*' value={fechaNacimiento}  required></input>                            
                             <label for="name" className="etiquetaInputs">Fecha de nacimiento* (formato dd/mm/aaaa)</label>
                         </div>
                         <div className='grupoInput'>
-                            <input type='text' className='inputFormularios w-2' name="Dirección*" placeholder='Dirección*' defaultValue='Privet Drive No.4' required></input>
+                            <input type='text' className='inputFormularios w-2' name="Dirección*" placeholder='Dirección*' defaultValue='Privet Drive No.4' value={direccion} required></input>
                             <label for="name" className="etiquetaInputs">Dirección*(calle, número, ciudad, estado, código postal)</label>
                         </div>
                         <div className='grupoInput'>
-                            <input type='number' className='inputFormularios w-2' name='No. de cliente Zorro Abarrotero*' placeholder='No. de cliente Zorro Abarrotero*' defaultValue='2371' required></input>
+                            <input type='number' className='inputFormularios w-2' name='No. de cliente Zorro Abarrotero*' placeholder='No. de cliente Zorro Abarrotero*' value={numClienteZorro} required></input>
                             <label for="name" className="etiquetaInputs">No. de cliente Zorro Abarrotero*</label>
                         </div>
                         <div className='grupoInput'>
-                            <input type='number' className='inputFormularios w-2' name='INE*' placeholder='INE*' defaultValue='723462' required></input>
+                            <input type='number' className='inputFormularios w-2' name='INE*' placeholder='INE*' value={numIne} required></input>
                             <label for="name" className="etiquetaInputs" defaultValue="4894892748278">INE*(10 dígitos de la parte posterior)</label>
                         </div>
                         <div className='grupoInput'>
-                            <input type='text' className='inputFormularios w-2' name='Monto solicitado*' placeholder='Monto solicitado*' defaultValue='$25,000.00' required></input>
+                            <input type='text' className='inputFormularios w-2' name='Monto solicitado*' placeholder='Monto solicitado*' value={montoSolicitado} required></input>
                             <label for="name" className="etiquetaInputs">Monto solicitado* (coloque sólo el valor numérico)</label>
                         </div>
-                        <DropMenu {...dropMenuType}/>
+                        <Select placeholder = "Tipo de Credito"  options={tiposCredito} styles = {customSelectStyles} onChange = {handleSelectChange} defaultvalue={creditoSolicitado}/>
                     </section>
                     <section className='inputsReferenciasCliente'>
                         <div className='tarjetaReferencia'>

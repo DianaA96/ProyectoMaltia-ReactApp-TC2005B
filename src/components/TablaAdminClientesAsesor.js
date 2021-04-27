@@ -54,8 +54,8 @@ function TablaAdminClientesAsesor() {
                        <tbody>
                               <tr key={indice}>
                                     <td colSpan="1">{registro.nombre+ " " + registro.apellidoPaterno + " " + registro.apellidoMaterno}</td>
-                                    <td><CustomLink tag='button' to={`./editarSolicitudCliente/${registro.idApplication}`} id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
-                                    <td><p id={"semaforoEstatus" + registro.estatusCliente}> </p></td>
+                                    <td><CustomLink tag='button' to={`./editarSolicitudCliente/${registro.idProspect}`} id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
+                                    <td><p id={"semaforoEstatus" + registro.estatus.replace(" ", "")}> </p></td>
                               </tr>
                         </tbody>
                   ))}
