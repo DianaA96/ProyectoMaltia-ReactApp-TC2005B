@@ -79,7 +79,7 @@ function TablaProspectos(props) {
                   <td>{registro.nombre + " " + registro.apellidoPaterno+ " " + registro.apellidoMaterno}</td>
                   <td><CustomLink tag='button' to={`./editarProspecto/${registro.idProspect}`} id="botonEditarProspecto"><i class="fas fa-user-edit"></i></CustomLink></td>
                   <td><button name={registro.idProspect} onClick={showModal} tag='button' id="botonContactarProspecto"><i class="fas fa-phone"></i></button></td>
-                  <td><CustomLink tag='button' to='./solicitudCliente' id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
+                  <td><CustomLink tag='button' to={`/solicitudCliente/${registro.idProspect}`} id="botonIniciarSolicitudProspecto"><i class="fas fa-play"></i></CustomLink></td>
                 </tr>
               </tbody>
               ))}

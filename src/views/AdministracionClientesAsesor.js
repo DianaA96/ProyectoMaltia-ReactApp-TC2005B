@@ -12,27 +12,6 @@ import '../components/Boton.css';
 
 function AdministracionClientesAsesor() {
 
-    let datosProspect = {
-        data: [
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Autorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"}
-        ]
-    };
-
     let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar clientes"];
 
     return(
@@ -49,7 +28,7 @@ function AdministracionClientesAsesor() {
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPageAsesor">
-                    <TablaAdminClientesAsesor {...datosProspect} />
+                    <TablaAdminClientesAsesor/>
                 </section>
                 <section className='semaforos'>
                     <div className='tarjetaSemaforo'>

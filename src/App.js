@@ -75,7 +75,12 @@ function App() {
         <Route path='/administrarClientes' exact={true}><AdministracionClientesAsesor/></Route>
         <Route path='/user-not-found2' exact={true}>{UsuarioNoEncontrado2}</Route>
         <Route path='/user-not-found21' exact={true}>{UsuarioNoEncontrado21}</Route>
-        <Route path='/editarSolicitudCliente' exact={true}>{EditarSolicitudCliente}</Route>
+        <Route 
+          path='/editarSolicitudCliente/:idProspect' 
+          render={(props)=> <EditarSolicitudCliente {...props} 
+          exact/>}
+        />
+    
         
         <Route path='/solicitudes' exact={true}>{LandingAnalista}</Route>
         <Route
