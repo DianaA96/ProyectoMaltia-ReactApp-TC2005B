@@ -57,7 +57,7 @@ function App() {
         <Route path='/administrarUsuarios' exact={true}>{user?<LandingAdminUsuarios/>:<Redirect to='/login'/>}</Route>
         <Route path='/agregarUsuario' exact={true}>{user?<VentanaAgregarUsuario/>:<Redirect to='/login'/>}</Route>
         <Route 
-          path="/editarUsuario/:idEmployee"
+          path="/editarUsuario/:idEmployee/:puesto"
           render={(props)=>
             <VentanaEditarUsuario {...props}/>
           }/>
@@ -72,7 +72,12 @@ function App() {
           render={(props) => 
             <EditarProspecto {...props}/>
           }/>
-        <Route path='/solicitudCliente' exact={true}>{user? <SolicitudCliente{...datosSolicitudCliente}/> :<Redirect to='/login'/>}</Route>
+
+        <Route path='/solicitudCliente/:idProspect'
+                exact={true}
+                render={(props) => 
+           <SolicitudCliente {...props}/>
+          }/>  
         <Route path='/administrarClientes' exact={true}>{user?<AdministracionClientesAsesor/>:<Redirect to='/login'/>}</Route>
 
 
