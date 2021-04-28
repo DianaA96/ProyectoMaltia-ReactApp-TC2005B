@@ -170,7 +170,7 @@ function SolicitudCliente(props) {
             }
         })
         .then((result)=>{
-            console.log(result)
+            alert('Solicitud creada correctamente')
             setStatus('resolved')
         })
         .catch((error)=>{
@@ -258,7 +258,7 @@ function SolicitudCliente(props) {
                         </section>
                         <section className='botonesEnviarSolicitud'>
                             <CustomLink tag='button' to='/administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
-                            <CustomLink tag='button' type='submit' className='botonSalmon' disabled={isCheck}>Enviar Solicitud</CustomLink>
+                            <CustomLink tag='button' type='submit' className='botonSalmon' >Enviar Solicitud</CustomLink>
                         </section>
                     </form>
                 </section>
