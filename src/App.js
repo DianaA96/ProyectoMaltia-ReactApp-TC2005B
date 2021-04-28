@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { useAuth } from './auth-context';
 
@@ -41,8 +41,11 @@ import NavegacionDemo from './components/NavegacionDemo';
 
 function App() {
 
-  const { user } = useAuth();
+  const { user, getToken } = useAuth();
   console.log(user)
+  useEffect(() => {
+    getToken();
+  }, [user])
 //Props simuladas que deben pasarse en donde se llame al componente(necesarios para renderear la solicitud del cliente):
   let datosSolicitudCliente = {
       nombreCliente: "José Herón Samperio León",

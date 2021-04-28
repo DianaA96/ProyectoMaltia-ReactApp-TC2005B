@@ -9,7 +9,7 @@ import {
 
 function TabLateral(props) {
     return (
-        <Link to={props.name.replace(/ /g, "")}>
+        <Link to={`/${props.name.replace(/ /g, "")}`}>
             <div className='tab'>
                 {props.name ? props.name.split(" ")[0] : null}
                 <br />
