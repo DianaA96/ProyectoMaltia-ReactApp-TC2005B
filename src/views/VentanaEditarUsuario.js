@@ -28,6 +28,11 @@ function VentanaEditarUsuario(props) {
             fontSize: "1.2vw",
             fontFamily: "Raleway",
             fontWeight: "600",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+                fontSize: "4.5vw"
+            },
           }),
           menu: base => ({
             ...base,
@@ -50,7 +55,7 @@ function VentanaEditarUsuario(props) {
             width:"44.5%",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
-                width:"100%",
+                width:"100%"
             },
           })
     }
@@ -161,7 +166,8 @@ function VentanaEditarUsuario(props) {
                 }
             })
                 .then((result)=>{
-                    props.onSave(result.data.data);
+                    // props.onSave(result.data.data);
+                    alert('Analista modificado correctamente')
                 })
                 .catch(error =>{
                 })
@@ -195,7 +201,7 @@ function VentanaEditarUsuario(props) {
                 }
             })
                 .then((result)=>{
-                    console.log('Hola Mundo')
+                    alert('Asesor modificado correctamente')
                     for(let i=0; i<idTiendas.length;i++){
                         let assessorData = {"idAssessor" : props.match.params.idEmployee}
                         axios.patch(`http://localhost:5000/stores/${idTiendas[i]}`, {
@@ -205,7 +211,8 @@ function VentanaEditarUsuario(props) {
                                 }
                             })
                             .then((result)=>{
-                                props.onSave(result.data.data);
+                                // props.onSave(result.data.data);
+                                alert('Asesor modificado correctamente')
                             })
                             .catch(error =>{
                             })
