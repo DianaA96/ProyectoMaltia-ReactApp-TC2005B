@@ -233,6 +233,7 @@ function SolicitudCliente(props) {
                                 <input type='number' className='inputFormularios w-2' name='numIne' placeholder='INE*' required  onChange = {handleChange}></input>
                                 <label htmlFor="name" className="etiquetaInputs">INE*(10 dígitos de la parte posterior)</label>
                             </div>
+                            
                             <div className='grupoInput'>
                                 <input type='number' className='inputFormularios w-2' name='montoSolicitado' placeholder='Monto solicitado*' required  onChange = {handleChange}></input>
                                 <label htmlFor="name" className="etiquetaInputs">Monto solicitado*(coloque sólo el valor numérico)</label>
