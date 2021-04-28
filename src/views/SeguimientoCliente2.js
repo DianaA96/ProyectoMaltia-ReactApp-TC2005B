@@ -8,8 +8,6 @@ import InfoSolicitud from '../components/InfoSolicitud';
 import BotonRegresar from '../components/BotonRegresar';
 import './SeguimientoCliente1.css'; //Se toman los estilos de la primera vista de seguimiento cliente al tener las mismas clases
 import './SeguimientoCliente2.css'; //Estilos para elementos diferentes en la vista
-
-
 import axios from 'axios'
 
 
@@ -29,7 +27,7 @@ function SeguimientoCliente2(props) {
         const [prospect, setProspect] = useState([]);
         const[ref,setRef]=useState([]);
 
-        function setToggle1(event){
+        /*function setToggle1(event){
             [event.target.name],
             setStatusToggle(!statusToggle);
         }
@@ -38,7 +36,7 @@ function SeguimientoCliente2(props) {
             [event.target.name],
             setStatusToggle(!statusToggle);
         }
-
+        */
 
         function handleChange(event){
             let {	capacidadZorro,
@@ -130,7 +128,8 @@ function SeguimientoCliente2(props) {
                         <section className='contentPageSeguimiento'>
                             <header>
                                 <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Seguimiento de solicitudes"/>
-                                <BotonRegresar/>
+                                <BotonRegresar/> 
+                                {/*tienes que indicar la ruta bro*/}
                             </header>
                             <section className="pasosContentPageSeguimiento">
                                 <h2 className="nombreCliente">{prospect.nombre} {prospect.apellidoPaterno} {prospect.apellidoMaterno}</h2>
@@ -141,11 +140,11 @@ function SeguimientoCliente2(props) {
                                     <div className="accionesSeguimiento">
                                         <div className="toggle-cont">
                                             <p className="alta-isi">Alta en ISI</p>
-                                            <ToggleSwitch name={"altaIsi"} statusToggle={statusToggle} setToggleTrue={setToggleTrue} onChange = {handleChange}/>
+                                            {/*<ToggleSwitch name={"altaIsi"} statusToggle={statusToggle} setToggleTrue={setToggleTrue} onChange = {handleChange}/>*/}
                                         </div>
                                         <div className="toggle-cont">
                                             <p className="auditoria-buro">Auditado</p>
-                                            <ToggleSwitch name={"auditoriaBuro"} statusToggle={statusToggle} setToggleTrue={setToggleTrue} onChange = {handleChange}/>
+                                            {/*<ToggleSwitch name={"auditoriaBuro"} statusToggle={statusToggle} setToggleTrue={setToggleTrue} onChange = {handleChange}/>*/}
                                         </div>
                                         <button className="botonSalmon btn-guardar-cambios" type='submit'>Guardar Cambios</button>
                                     </div>

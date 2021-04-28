@@ -9,15 +9,19 @@ import Checkbox from '../components/Checkbox';
 import asesor from '../assets/asesor.png';
 import CustomLink from '../components/CustomLink';
 import Select from 'react-select';
+import IdleStateView from '../components/IdleStateView'
+import ErrorScreen from '../components/ErrorScreen'
 import axios from 'axios';
 
 function EditarSolicitudCliente(props) {
     const [status, setStatus]= useState('idle');
     const [datos , setDatos] = useState({});
-    const [error, setError] = useState(null);
+    const [ errorForm, setErrorForm ] = useState(null);
     const [SelectValue, setSelectValue] = useState([]);
-    const [fullApplication, setFullApplication] = useState({});
-    const [isCheck, setIsCheck] = useState(false);
+    const[ref,setRef]=useState({});
+    const[ref2,setRef2]=useState({});
+    const[ref3,setRef3]=useState({});
+    const[refViejitas,setRefViejitas]=useState({});
     const idAssessor= "1"
 
     const customSelectStyles = {
@@ -31,6 +35,7 @@ function EditarSolicitudCliente(props) {
             fontFamily: "Raleway",
             fontWeight: "600",
             marginTop: "1em",
+            marginLeft: ".5em",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
                 background:"#F2F5FA",
@@ -54,35 +59,37 @@ function EditarSolicitudCliente(props) {
           }),
           container: base => ({
             ...base,
-            width:"46%",
+            width:"48%",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
                 width:"90%",
             },
           })
     }
-    const tiposCredito = [
-        {value: 'simple' , label: 'Simple'},
-        {value: 'revolvente' , label: 'Revolvente'}
-    ]
 
     const handleSelectChange = selectedOption => {
         setSelectValue(selectedOption);
     }
 
+    
     useEffect(() =>{
         setStatus('loading')
         axios.get(`http://localhost:5000/applications/full-application-data/${props.match.params.idProspect}`)
         .then((result) => {
             setStatus('resolved')
-            setDatos(result.data.infoSolicitud)
-            console.log(datos)
+            setDatos(result.data.infoSolicitud[0])
+            setRef(result.data.referencias[0])
+            setRef2(result.data.referencias[1])
+            setRef3(result.data.referencias[2])
+            setRefViejitas(result.data.referencias)
+            
         })
         .catch((error) => {
             setStatus('error')
         })
     },[])
-    const{
+
+    const {
         nombre,
         apellidoPaterno,
         apellidoMaterno,
@@ -92,84 +99,196 @@ function EditarSolicitudCliente(props) {
         numIne, 
         direccion,
         numClienteZorro,
-        montoSolicitado
-    }=datos[0]; 
+        montoSolicitado,
+        firmaSolicitud
+    }=datos; 
 
+    
+    function handleChange(event){
+        
+        let nuevosDatos={
+            ...datos, 
+            ...ref,
+            ...ref2,
+            ...ref3,
+            [event.target.name]: event.target.value
+        }
+        
+        setDatos(nuevosDatos);
+    }
 
+    function handleRef1Change(event){
+        let nuevosDatos={
+            ...ref,
+            [event.target.name]: event.target.value
+        }
+        
+        setRef(nuevosDatos);
+    }
+
+    function handleRef2Change(event){
+        let nuevosDatos={
+            ...ref2,
+            [event.target.name]: event.target.value
+        }
+        
+        setRef2(nuevosDatos);
+    }
+
+    function handleRef3Change(event){
+        let nuevosDatos={
+            ...ref3,
+            [event.target.name]: event.target.value
+        }
+        
+        setRef3(nuevosDatos);
+    }
+
+    function handleSave(event){
+        event.preventDefault();
+        console.log(datos);
+        console.log(ref);
+        console.log(ref2);
+        console.log(ref3);
+        const applicationEdit=
+ 		{
+			"client" : {
+			"idClient" : datos.idClient,
+			"fechaNacimiento" : datos.fechaNacimiento,
+			"numClienteZorro" : datos.numClienteZorro,
+			"numIne" : datos.numIne,
+			"direccion" : datos.direccion
+		},
+
+		"application" : {
+			"idClient" : datos.idClient,
+			"idAssessor" : datos.idAssessor,
+			"creditoSolicitado" : SelectValue.value,
+			"montoSolicitado" : datos.montoSolicitado,
+			"estatus": datos.estatus,
+			"firmaSolicitud" : 1,
+		},
+
+		"reference1" : {
+			"idClient" : datos.idClient,
+			"refName" : ref.refName,
+			"numTelefonoReferencia": ref.numTelefonoReferencia
+		},
+
+		"reference2" : {
+			"idClient" : datos.idClient,
+			"refName" : ref2.refName,
+			"numTelefonoReferencia": ref2.numTelefonoReferencia
+		},
+
+		"reference3" : {
+			"idClient" : datos.idClient,
+			"refName" : ref3.refName,
+			"numTelefonoReferencia":ref3.numTelefonoReferencia
+		},
+        
+        "refViejitas" : refViejitas
+    }
+        console.log(applicationEdit)
+        axios.patch(`http://localhost:5000/applications/clients/references/${props.match.params.idProspect}`, {
+            body: applicationEdit,
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        })
+            .then((result)=>{
+                alert('Solicitud modificada correctamente')
+            })
+            .catch(error =>{
+                setErrorForm(error);
+            })
+    }
+
+    const tiposCredito = [
+        {value: 'simple' , label: 'Simple'},
+        {value: 'revolvente' , label: 'Revolvente'}
+    ]
     let fecha = new Date();
     let mes = fecha.toLocaleString('default', { month: 'long' });
     let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar Clientes"];
     
-    
-    return(
-        <main id='mainSolicitudCliente'>
-            <aside>
-                <Lateral tabs = {tabs} img = {asesor} />
-            </aside>
-            <section className='contentPageExtendido'>
-                <header className='headerSolicitudCliente'>
-                    <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Editar la solicitud del cliente"/>
-                    <h2 className="fechaLlenadoSolicitud">{`${fecha.getDate()} de ${mes} del ${fecha.getFullYear()}`}</h2>
-                </header>
-                <section className='datosClienteSolicitud'>
-                    <div className='datosCliente'>
-                        <h1>{nombre} {apellidoPaterno} {apellidoMaterno}</h1>
-                        <h1><i class="fas fa-phone-alt"></i> &nbsp; {numTelefono}</h1>
-                    </div>
-                    <div className='checkSolicitud'>
-                        <h3>Solicitud firmada:</h3>
-                        <Checkbox />
-                    </div>
+
+    if(status === 'idle' || status === 'loading'){
+        return <IdleStateView/>
+    }
+    if(status === 'error'){
+        return (
+        <img  src={zorrito} alt= "zorroError" />
+        )
+    }
+    if(status === 'resolved'){
+        return(
+            <main id='mainSolicitudCliente'>
+                <aside>
+                    <Lateral tabs = {tabs} img = {asesor} />
+                </aside>
+                <section className='contentPageExtendido'>
+                    <header className='headerSolicitudCliente'>
+                        <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Editar la solicitud del cliente"/>
+                        <h2 className="fechaLlenadoSolicitud">{`${fecha.getDate()} de ${mes} del ${fecha.getFullYear()}`}</h2>
+                    </header>
+                    <section className='datosClienteSolicitud'>
+                        <div className='datosCliente'>
+                            <h1>{nombre} {apellidoPaterno} {apellidoMaterno}</h1>
+                            <h1><i class="fas fa-phone-alt"></i> &nbsp; {numTelefono}</h1>
+                        </div>
+                    </section>
+                    <form onSubmit={handleSave}>
+                    <section className='inputsDatosCliente'>
+                            <div className='grupoInput'>
+                                <input type='date' className='inputFormularios w-2' name="fechaNacimiento" placeholder='Fecha de nacimiento*' defaultValue={fechaNacimiento}  onChange={handleChange}></input>                            
+                                <label for="name" className="etiquetaInputs">Fecha de nacimiento* (formato dd/mm/aaaa)</label>
+                            </div>
+                            <div className='grupoInput'>
+                                <input type='text' className='inputFormularios w-2' name="direccion" placeholder='Dirección*'  defaultValue={direccion} onChange={handleChange}></input>
+                                <label for="name" className="etiquetaInputs">Dirección*(calle, número, ciudad, estado, código postal)</label>
+                            </div>
+                            <div className='grupoInput'>
+                                <input type='number' className='inputFormularios w-2' name='numClienteZorro' placeholder='No. de cliente Zorro Abarrotero*' defaultValue={numClienteZorro} onChange={handleChange}></input>
+                                <label for="name" className="etiquetaInputs">No. de cliente Zorro Abarrotero*</label>
+                            </div>
+                            <div className='grupoInput'>
+                                <input type='number' className='inputFormularios w-2' name='numIne' placeholder='INE*' defaultValue={numIne} onChange={handleChange}></input>
+                                <label for="name" className="etiquetaInputs" defaultValue="4894892748278">INE*(10 dígitos de la parte posterior)</label>
+                            </div>
+                            <div className='grupoInput'>
+                                <input type='text' className='inputFormularios w-2' name='montoSolicitado' placeholder='Monto solicitado*' defaultValue={montoSolicitado} onChange={handleChange}></input>
+                                <label for="name" className="etiquetaInputs">Monto solicitado* (coloque sólo el valor numérico)</label>
+                            </div>
+                            <Select options={tiposCredito} styles = {customSelectStyles} onChange = {handleSelectChange} placeholder={creditoSolicitado}/>
+                        </section>
+                        <section className='inputsReferenciasCliente'>
+                            <div className='tarjetaReferencia'>
+                                <h1>Referencia 1:</h1>
+                                <input type='text' className='input-gral' placeholder='Nombre' name='refName'  defaultValue={ref.refName} onChange = {handleRef1Change} disabled></input>
+                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia' defaultValue={ref.numTelefonoReferencia} onChange = {handleRef1Change}></input>
+                            </div>
+                            <div className='tarjetaReferencia'>
+                                <h1>Referencia 2:</h1>
+                                <input type='text' className='input-gral' placeholder='Nombre' name='refName' defaultValue={ref2.refName} onChange = {handleRef2Change} disabled></input>
+                                <input type='text' className='input-gral' placeholder='Teléfono'  name='numTelefonoReferencia' defaultValue={ref2.numTelefonoReferencia} onChange = {handleRef2Change}></input>
+                            </div>
+                            <div className='tarjetaReferencia'>
+                                <h1>Referencia 3:</h1>
+                                <input type='text' className='input-gral' placeholder='Nombre'  name='refName' defaultValue={ref3.refName} onChange = {handleRef3Change} disabled></input>
+                                <input type='text' className='input-gral' placeholder='Teléfono'  name='numTelefonoReferencia' defaultValue={ref3.numTelefonoReferencia} onChange = {handleRef3Change}></input>
+                            </div>
+                        </section>
+                        <section className='botonesEnviarSolicitud'>
+                            <CustomLink tag='button' to='/administrarClientes' className="botonAzulMarino">Cancelar</CustomLink>
+                            <CustomLink tag='button' type='submit' className="botonSalmon" onSubmit={handleSave}>Guardar cambios</CustomLink>
+                        </section>
+                    </form>
                 </section>
-                <form>
-                <section className='inputsDatosCliente'>
-                        <div className='grupoInput'>
-                            <input type='date' className='inputFormularios w-2'  placeholder='Fecha de nacimiento*' value={fechaNacimiento}  required></input>                            
-                            <label for="name" className="etiquetaInputs">Fecha de nacimiento* (formato dd/mm/aaaa)</label>
-                        </div>
-                        <div className='grupoInput'>
-                            <input type='text' className='inputFormularios w-2' name="Dirección*" placeholder='Dirección*' defaultValue='Privet Drive No.4' value={direccion} required></input>
-                            <label for="name" className="etiquetaInputs">Dirección*(calle, número, ciudad, estado, código postal)</label>
-                        </div>
-                        <div className='grupoInput'>
-                            <input type='number' className='inputFormularios w-2' name='No. de cliente Zorro Abarrotero*' placeholder='No. de cliente Zorro Abarrotero*' value={numClienteZorro} required></input>
-                            <label for="name" className="etiquetaInputs">No. de cliente Zorro Abarrotero*</label>
-                        </div>
-                        <div className='grupoInput'>
-                            <input type='number' className='inputFormularios w-2' name='INE*' placeholder='INE*' value={numIne} required></input>
-                            <label for="name" className="etiquetaInputs" defaultValue="4894892748278">INE*(10 dígitos de la parte posterior)</label>
-                        </div>
-                        <div className='grupoInput'>
-                            <input type='text' className='inputFormularios w-2' name='Monto solicitado*' placeholder='Monto solicitado*' value={montoSolicitado} required></input>
-                            <label for="name" className="etiquetaInputs">Monto solicitado* (coloque sólo el valor numérico)</label>
-                        </div>
-                        <Select placeholder = "Tipo de Credito"  options={tiposCredito} styles = {customSelectStyles} onChange = {handleSelectChange} defaultvalue={creditoSolicitado}/>
-                    </section>
-                    <section className='inputsReferenciasCliente'>
-                        <div className='tarjetaReferencia'>
-                            <h1>Referencia 1:</h1>
-                            <input type='text' className='input-gral' placeholder='Nombre' defaultValue='Albus Dumbledore'></input>
-                            <input type='text' className='input-gral' placeholder='Teléfono' defaultValue='7721232323'></input>
-                        </div>
-                        <div className='tarjetaReferencia'>
-                            <h1>Referencia 2:</h1>
-                            <input type='text' className='input-gral' placeholder='Nombre' defaultValue='Bellatrix Lestrange'></input>
-                            <input type='text' className='input-gral' placeholder='Teléfono' defaultValue='273327329'></input>
-                        </div>
-                        <div className='tarjetaReferencia'>
-                            <h1>Referencia 3:</h1>
-                            <input type='text' className='input-gral' placeholder='Nombre' defaultValue='Tom Riddle'></input>
-                            <input type='text' className='input-gral' placeholder='Teléfono' defaultValue='723662631'></input>
-                        </div>
-                    </section>
-                    <section className='botonesEnviarSolicitud'>
-                        <CustomLink tag='button' to='./administrarClientes' className="botonAzulMarino">Cancelar</CustomLink>
-                        <CustomLink tag='button' to='./administrarClientes' className="botonSalmon">Guardar cambios</CustomLink>
-                    </section>
-                </form>
-            </section>
-        </main>
-    );
+            </main>
+        );
+    }
 }
+
 
 export default EditarSolicitudCliente;
