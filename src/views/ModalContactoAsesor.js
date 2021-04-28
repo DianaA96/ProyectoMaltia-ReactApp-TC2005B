@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import "./ModalContactoAsesor.css"
 import Checkbox from '../components/Checkbox.js';
 import '../components/Boton.css';
-import DropMenu from '../components/DropMenu.js';
 import Select from 'react-select'
 import axios from 'axios'
 import IdleStateView from '../components/IdleStateView';
@@ -15,7 +14,6 @@ function ModalContactoAsesor(props) {
     }
 
     function setNumberCont(event){
-        let number = 0
         
         if(event.nativeEvent.path.[6].id === "one") {
             setContactNumber(1)
@@ -61,7 +59,6 @@ function ModalContactoAsesor(props) {
     }
 
     function setCheckTrue() {
-        console.log("Im changing", checkboxChecked)
         setCheckboxChecked(!checkboxChecked)
     }
  
@@ -82,8 +79,8 @@ function ModalContactoAsesor(props) {
             setContactInfo(result.data.datosContactos)
             setStatus('resolved')
             })
-            .catch((error)=>{
-                setError(error)
+            .catch((err)=>{
+                setError(err)
                 setStatus('error')
             })
     }, [])
@@ -147,84 +144,87 @@ function ModalContactoAsesor(props) {
         <div className="modalPadre1">
             <div className="modal">
                 <button className="closingModalButton" onClick={hideModal}>x</button>
-            {status === 'loading'|| status === 'idle'? <p>Cargando... provisional</p>:
-            status === 'resolved'? <h2 className="nombreUsuario"> {prospectInfo.nombre} {prospectInfo.apellidoPaterno} {prospectInfo.apellidoMaterno}</h2>:
+                {status === 'loading'|| status === 'idle'? <p><IdleStateView/></p>:
+                status === 'resolved'? 
+                <React.Fragment>
+                    <h2 className="nombreUsuario"> {prospectInfo.nombre} {prospectInfo.apellidoPaterno} {prospectInfo.apellidoMaterno}</h2>
+                        <div className="infoPrimaria">
+                            <i class="fas fa-phone-alt"> </i>
+                            <p className="tel"> {prospectInfo.numTelefono} </p>
+                        </div>
+
+                        <form className="formulario">
+                            
+                            <p className="mobile-contactNum">Contacto 1</p>
+                            <div className="cont-contacto" id="one">
+                                <div className="contacto-left">
+                                    <p>Contacto 1 </p>
+                                    <Checkbox 
+                                        isDefaultChecked={contactInfo.[0]?true:null}
+                                        isDisabled={contactInfo.[0]?true:null}
+                                        setCheckTrue={setCheckTrue}
+                                    /> 
+                                </div>
+                                <Select 
+                                    isDisabled={contactInfo.[0]?true:false} 
+                                    placeholder = {contactInfo.[0]?contactInfo.[0].compromiso:"Compromiso"} 
+                                    options={options} 
+                                    styles = {customSelectStyles}
+                                    onChange={setContact}
+                                    onFocus={setNumberCont}
+                                />
+                            </div>
+
+                            <p className="mobile-contactNum">Contacto 2</p>
+                            <div className="cont-contacto" id="two">
+                                <div className="contacto-left">
+                                    <p>Contacto 2</p>
+                                    <Checkbox
+                                        isDefaultChecked={contactInfo.[1]?true:null} 
+                                        isDisabled={contactInfo.[1]||(!contactInfo.[0])?true:null}
+                                        setCheckTrue={setCheckTrue}
+                                    />  
+                                </div>
+                                <Select  
+                                    isDisabled={contactInfo.[1]||(!contactInfo.[0])?true:false} 
+                                    placeholder = {contactInfo.[1]?contactInfo.[1].compromiso:"Compromiso"} 
+                                    options={options} 
+                                    styles = {customSelectStyles}
+                                    onChange={setContact}
+                                    onFocus={setNumberCont}
+                                /> 
+                            </div>
+
+                            <p className="mobile-contactNum">Contacto 3</p>
+                            <div className="cont-contacto" id="three">
+                                <div className="contacto-left">
+                                    <p>Contacto 3</p>
+                                    <Checkbox 
+                                        isDefaultChecked={contactInfo.[2]?true:null}
+                                        isDisabled={contactInfo.[2]||(!contactInfo.[0])||(!contactInfo.[1])?true:null}
+                                        setCheckTrue={setCheckTrue}
+                                    /> 
+                                </div>
+                                <Select  
+                                    isDisabled={contactInfo.[2]||(!contactInfo.[0])||(!contactInfo.[1])?true:false} 
+                                    placeholder = {contactInfo.[2]?contactInfo.[2].compromiso:"Compromiso"} 
+                                    options={options} 
+                                    styles = {customSelectStyles}
+                                    onChange={setContact}
+                                    onFocus={setNumberCont}
+                                />
+                            </div>
+                        
+                            <button
+                                tag='button' 
+                                disabled={checkboxChecked&&optionSelected?false:true}
+                                onClick={enviarDatosContacto} 
+                                className="botonSalmon">
+                                Guardar cambios
+                            </button>
+                        </form>
+                </React.Fragment>: status === 'error'? <ErrorScreen/>:
             null}
-            <div className="infoPrimaria">
-                <i class="fas fa-phone-alt"> </i>
-                <p className="tel"> {prospectInfo.numTelefono} </p>
-            </div>
-
-            <form className="formulario">
-                
-                <p className="mobile-contactNum">Contacto 1</p>
-                <div className="cont-contacto" id="one">
-                    <div className="contacto-left">
-                        <p>Contacto 1 </p>
-                        <Checkbox 
-                            isDefaultChecked={contactInfo.[0]?true:null}
-                            isDisabled={contactInfo.[0]?true:null}
-                            setCheckTrue={setCheckTrue}
-                        /> 
-                    </div>
-                    <Select 
-                        isDisabled={contactInfo.[0]?true:false} 
-                        placeholder = {contactInfo.[0]?contactInfo.[0].compromiso:"Compromiso"} 
-                        options={options} 
-                        styles = {customSelectStyles}
-                        onChange={setContact}
-                        onFocus={setNumberCont}
-                    />
-                </div>
-
-                <p className="mobile-contactNum">Contacto 2</p>
-                <div className="cont-contacto" id="two">
-                    <div className="contacto-left">
-                        <p>Contacto 2</p>
-                        <Checkbox
-                            isDefaultChecked={contactInfo.[1]?true:null} 
-                            isDisabled={contactInfo.[1]||(!contactInfo.[0])?true:null}
-                            setCheckTrue={setCheckTrue}
-                        />  
-                    </div>
-                    <Select  
-                        isDisabled={contactInfo.[1]||(!contactInfo.[0])?true:false} 
-                        placeholder = {contactInfo.[1]?contactInfo.[1].compromiso:"Compromiso"} 
-                        options={options} 
-                        styles = {customSelectStyles}
-                        onChange={setContact}
-                        onFocus={setNumberCont}
-                    /> 
-                </div>
-
-                <p className="mobile-contactNum">Contacto 3</p>
-                <div className="cont-contacto" id="three">
-                    <div className="contacto-left">
-                        <p>Contacto 3</p>
-                        <Checkbox 
-                            isDefaultChecked={contactInfo.[2]?true:null}
-                            isDisabled={contactInfo.[2]||(!contactInfo.[0])||(!contactInfo.[1])?true:null}
-                            setCheckTrue={setCheckTrue}
-                        /> 
-                    </div>
-                    <Select  
-                        isDisabled={contactInfo.[2]||(!contactInfo.[0])||(!contactInfo.[1])?true:false} 
-                        placeholder = {contactInfo.[2]?contactInfo.[2].compromiso:"Compromiso"} 
-                        options={options} 
-                        styles = {customSelectStyles}
-                        onChange={setContact}
-                        onFocus={setNumberCont}
-                    />
-                </div>
-            
-                <button
-                    tag='button' 
-                    disabled={checkboxChecked&&optionSelected?false:true}
-                    onClick={enviarDatosContacto} 
-                    className="botonSalmon">
-                    Guardar cambios
-                </button>
-            </form>
         </div>
     </div>
     );    

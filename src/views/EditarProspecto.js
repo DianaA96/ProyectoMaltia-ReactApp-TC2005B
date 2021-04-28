@@ -86,6 +86,7 @@ function Eprospecto(props) {
             setErrorForm(err);
             setStatusForm('error')
         })
+        statusForm !== 'error'? alert("¡Prospecto actualizado correctamente!😎🦊") : alert("Ocurrió un error al actualizar :(")
     }
 
     return(
@@ -159,7 +160,8 @@ function Eprospecto(props) {
                         <CustomLink 
                             tag='button' 
                             className="botonSalmon" 
-                            disabled={statusForm === 'pristine'} 
+                            disabled={statusForm === 'pristine'}
+                            to='/administrarProspectos' 
                             type="submit">Guardar cambios</CustomLink>
                     </section>
 
