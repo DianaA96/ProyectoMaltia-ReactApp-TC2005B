@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import './Lateral.css';
 import CustomLink from './CustomLink';
 import TabLateral from './TabLateral';
+import { AuthContext } from '../auth-context'
 
 import {
     BrowserRouter as Router,
-    Route,
     Link,
-    Switch,
   } from 'react-router-dom';
 
 function Lateral(props){
+
+    const { logout } = useContext(AuthContext);
+
+    function handleLogout(event){
+        event.preventDefault();
+        logout()
+    }
+
     return(
         <React.Fragment>
             <div className="contenedor-lateral">
@@ -29,21 +36,22 @@ function Lateral(props){
                     
                 <div className="logout">
                     <a><Link to='./login'><i class="fas fa-sign-out-alt"></i></Link></a>
-                    <CustomLink tag='p' to='./login' className="logout">Cerrar sesión</CustomLink>
+                    <CustomLink onClick={handleLogout} tag='button' to='./login' className="logout">Cerrar sesión</CustomLink>
                 </div>
             </div>
             
             <nav class="menuMobile" role="navigation">
                 <div id="hamburgerMenu">
                 <input type="checkbox"/>
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="foldingMenu">
-                    {props.tabs.map((ventana) =>
-                        <li key={ventana}><Link to={ventana.replace(/ /g, "")}>{ventana}</Link></li>
-                    )}
-                </ul>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="foldingMenu">
+                        {props.tabs.map((ventana) => 
+                            <li key={ventana}><Link to={'/'+(ventana.replace(/ /g, ""))}>{ventana}</Link></li>
+                        )}
+                        <li><button className="logoutMobileMenu" onClick={handleLogout}><Link to='./login'>Cerrar sesión <i class="fas fa-sign-out-alt"></i></Link></button></li>
+                    </ul>
                 </div>
             </nav>
         </React.Fragment>

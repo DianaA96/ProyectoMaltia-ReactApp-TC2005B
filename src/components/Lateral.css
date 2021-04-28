@@ -79,6 +79,11 @@ a:focus .tab{
     flex-direction: column;
     align-items: center;
     font-size: 1vw;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Red Hat Display';
 }
 
 
@@ -208,5 +213,13 @@ a:focus .tab{
       
       aside {
         width: 3vw;
+      }
+
+      .logoutMobileMenu { 
+        background: transparent;
+        border: none;
+        font-size: 22px;
+        color: white;
+        font-family: 'Red Hat Display', sans-serif;
       }
 }
