@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
+import { useAuth } from './auth-context';
 
 import {
   BrowserRouter as Router,
   Route,
   Link,
   Switch,
+  Redirect
 } from 'react-router-dom';
 
-//Inicio de sesión general. Llevará por defecto al Administrador
+//Inicio de sesión general.
 import VentanaInicioSesion from './views/VentanaInicioSesion'; //CORRECTO FormAutenticacion
 
 //Vistas Administrador
@@ -35,9 +37,12 @@ import SeguimientoCliente1 from './views/SeguimientoCliente1'; //CORRECTO
 import SeguimientoCliente2 from './views/SeguimientoCliente2'; //CORRECTO
 import SeguimientoCliente3 from './views/SeguimientoCliente3'; //CORRECTO
 import UsuarioNoEncontrado3 from './views/UsuarioNoEncontrado3'; //CORRECTO
+import NavegacionDemo from './components/NavegacionDemo';
 
 function App() {
 
+  const { user } = useAuth();
+  console.log(user)
 //Props simuladas que deben pasarse en donde se llame al componente(necesarios para renderear la solicitud del cliente):
   let datosSolicitudCliente = {
       nombreCliente: "José Herón Samperio León",
@@ -47,49 +52,41 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/login' exact={true}>{VentanaInicioSesion}</Route>
+        <Route path='/login' exact={true}>{user?<Redirect to='/'/>:<VentanaInicioSesion/>}</Route>
 
-        <Route path='/administrarUsuarios' exact={true}><LandingAdminUsuarios/></Route>
-        <Route path='/agregarUsuario' exact={true}>{<VentanaAgregarUsuario/>}</Route>
+        <Route path='/administrarUsuarios' exact={true}>{user?<LandingAdminUsuarios/>:<Redirect to='/login'/>}</Route>
+        <Route path='/agregarUsuario' exact={true}>{user?<VentanaAgregarUsuario/>:<Redirect to='/login'/>}</Route>
         <Route 
           path="/editarUsuario/:idEmployee"
-          render={(props)=> <VentanaEditarUsuario {...props}/>}
-          exact/>
-        <Route path='/eliminarUsuario' exact={true}>{Deshabilitar}</Route>
-        <Route path='/user-not-found1' exact={true}>{UsuarioNoEncontrado1}</Route>
+          render={(props)=>
+            <VentanaEditarUsuario {...props}/>
+          }/>
+        <Route path='/eliminarUsuario' exact={true}>{user?<Deshabilitar/>:<Redirect to='/login'/>}</Route>
+        <Route path='/user-not-found1' exact={true}>{user?<UsuarioNoEncontrado1/>:<Redirect to='/login'/>}</Route>
 
-        <Route path='/administrarProspectos' exact={true}><LandingAdminProspectos/></Route>
-        <Route path='/contactarProspecto' exact={true}>{ContactoAsesor}</Route>
-        <Route path='/agregarProspectos' exact={true}><AgregarProspecto/></Route>
+        <Route path='/administrarProspectos' exact={true}>{user?<LandingAdminProspectos/>:<Redirect to='/login'/>}</Route>
+        <Route path='/contactarProspecto' exact={true}>{user?<ContactoAsesor/>:<Redirect to='/login'/>}</Route>
+        <Route path='/agregarProspectos' exact={true}>{user?<AgregarProspecto/>:<Redirect to='/login'/>}</Route>
         <Route 
           path="/editarProspecto/:idProspect"
-          render={(props) => <EditarProspecto {...props}/>}
-          exact/>
-        <Route path='/solicitudCliente' exact={true}><SolicitudCliente{...datosSolicitudCliente}/></Route>
-        <Route path='/administrarClientes' exact={true}>{AdministracionClientesAsesor}</Route>
+          render={(props) => 
+            <EditarProspecto {...props}/>
+          }/>
+        <Route path='/solicitudCliente' exact={true}>{user? <SolicitudCliente{...datosSolicitudCliente}/> :<Redirect to='/login'/>}</Route>
+        <Route path='/administrarClientes' exact={true}>{user?<AdministracionClientesAsesor/>:<Redirect to='/login'/>}</Route>
 
 
-        <Route path='/user-not-found2' exact={true}>{UsuarioNoEncontrado2}</Route>
-        <Route path='/user-not-found21' exact={true}>{UsuarioNoEncontrado21}</Route>
-        <Route path='/editarSolicitudCliente' exact={true}><EditarSolicitudCliente/></Route>
+        <Route path='/user-not-found2' exact={true}>{user?<UsuarioNoEncontrado2/>:<Redirect to='/login'/>}</Route>
+        <Route path='/user-not-found21' exact={true}>{user?<UsuarioNoEncontrado21/>:<Redirect to='/login'/>}</Route>
+        <Route path='/editarSolicitudCliente' exact={true}>{user?<EditarSolicitudCliente/>:<Redirect to='/login'/>}</Route>
         
-        <Route path='/solicitudes' exact={true}>{LandingAnalista}</Route>
-        <Route path='/seguimientoCliente1' exact={true}>{SeguimientoCliente1}</Route>
-        <Route path='/seguimientoCliente2' exact={true}>{SeguimientoCliente2}</Route>
-        <Route path='/seguimientoCliente3' exact={true}>{SeguimientoCliente3}</Route>
-        <Route path='/user-not-found3' exact={true}>{UsuarioNoEncontrado3}</Route>
+        <Route path='/solicitudes' exact={true}>{user?<LandingAnalista/>:<Redirect to='/login'/>}</Route>
+        <Route path='/seguimientoCliente1' exact={true}>{user?<SeguimientoCliente1/>:<Redirect to='/login'/>}</Route>
+        <Route path='/seguimientoCliente2' exact={true}>{user?<SeguimientoCliente2/>:<Redirect to='/login'/>}</Route>
+        <Route path='/seguimientoCliente3' exact={true}>{user?<SeguimientoCliente3/>:<Redirect to='/login'/>}</Route>
+        <Route path='/user-not-found3' exact={true}>{user?<UsuarioNoEncontrado3/>:<Redirect to='/login'/>}</Route>
         
-        <Route path='/' exact={true}>
-          <header id='AppHeader'>
-            ¡Bienvenido al sistema de Maltia!
-              <nav id="navAppDemostracion">
-                <Link to='./login'>Iniciar Sesión</Link>
-                <Link to='/administrarUsuarios'>Administración usuarios ADMIN</Link>
-                <Link to='/administrarProspectos'>Administración prospectos ASESOR</Link>  
-                <Link to='/solicitudes'>Administración solicitudes ANALISTA</Link>                
-              </nav>
-          </header>
-        </Route>
+        <Route path='/' exact={true}>{user?<NavegacionDemo/>:<Redirect to='/login'/>}</Route>
         <Route>¡Ups! Parece que esta ruta todavía no te llevará a ninguna parte :c</Route>
       </Switch>
     </Router>
