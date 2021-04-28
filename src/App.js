@@ -83,7 +83,11 @@ function App() {
 
         <Route path='/user-not-found2' exact={true}>{user?<UsuarioNoEncontrado2/>:<Redirect to='/login'/>}</Route>
         <Route path='/user-not-found21' exact={true}>{user?<UsuarioNoEncontrado21/>:<Redirect to='/login'/>}</Route>
-        <Route path='/editarSolicitudCliente' exact={true}>{user?<EditarSolicitudCliente/>:<Redirect to='/login'/>}</Route>
+        <Route path='/editarSolicitudCliente/:idProspect' 
+              exact={true}
+              render={(props) => 
+                <EditarSolicitudCliente {...props}/>
+               }/>
         
         <Route path='/solicitudes' exact={true}>{user?<LandingAnalista/>:<Redirect to='/login'/>}</Route>
         <Route path='/seguimientoCliente1' exact={true}>{user?<SeguimientoCliente1/>:<Redirect to='/login'/>}</Route>
