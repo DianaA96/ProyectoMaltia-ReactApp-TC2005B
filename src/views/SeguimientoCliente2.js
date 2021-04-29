@@ -21,8 +21,8 @@ function SeguimientoCliente2(props) {
         //
         const [ status, setStatus ] = useState('idle');
         const [ error, setError ] = useState(null);
-        const [ statusToggle1,setStatusToggle1 ] = useState(prospect.altaIsi);
-        const [ statusToggle2,setStatusToggle2 ] = useState(prospect.auditoriaBuro);
+        const [ statusToggle1,setStatusToggle1 ] = useState(false);
+        const [ statusToggle2,setStatusToggle2 ] = useState(false);
         const [ statusToggle,setStatusToggle] = useState(false);
         const [prospect, setProspect] = useState([]);
         const [ref,setRef]=useState([]);
