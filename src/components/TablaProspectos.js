@@ -18,9 +18,17 @@ function TablaProspectos(props) {
   const [ error, setError ] = useState(null);
   const [ prospects, setProspects ] = useState([]);
 
+  let queryString = ''
+
+  if (props.queryInput !== '') {
+    console.log(queryString)
+    queryString = '&name=';
+  }
+    
+
   useEffect(()=>{
     setStatus('loading')
-    axios.get(`http://localhost:5000/prospects?thisAssessor=1&name=${props.queryInput}`) 
+    axios.get(`http://localhost:5000/prospects?thisAssessor=1${queryString}${props.queryInput}`) 
           .then((result)=>{
             setProspects(result.data.prospectos)
             setStatus('resolved')
