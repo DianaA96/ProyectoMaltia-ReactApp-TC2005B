@@ -136,53 +136,33 @@ function Aprospecto(){
                 </header>
 
                 <form onSubmit={handleSave}>
-                    <section className="inputsContentPage">
-                        <input name="nombre" 
-                        className = "input-gral w-3" 
-                        type="text" 
-                        placeholder="Nombre(s)"
-                        onChange={handleChange}
-                        />
+                    <section className="inputsContentPage mt-5">
+                        <div className='grupoInput-3'>
+                            <input name="nombre" className = "input-gral inputFormularios" type="text" placeholder="Nombre(s)*"onChange={handleChange} required/>
+                            <label htmlFor="name" className="etiquetaInputs">Nombre(s)*</label>
+                        </div>
+                        
+                        <div className='grupoInput-3'>
+                            <input name="apellidoPaterno" className = "input-gral inputFormularios" type="text" placeholder="Apellido paterno*"onChange={handleChange} required/>
+                            <label htmlFor="name" className="etiquetaInputs">Apellido Paterno*</label>
+                        </div>
+                        
+                        <div className='grupoInput-3'>
+                            <input name="apellidoMaterno" className = "input-gral inputFormularios" type="text" placeholder="Apellido materno"onChange={handleChange}/>
+                            <label htmlFor="name" className="etiquetaInputs">Apellido Materno</label>
+                        </div>
+                       
+                        <div className='grupoInput-2'>
+                            <input name="numTelefono" className = "input-gral w-2 inputFormularios" type="number" placeholder="Número de teléfono*"onChange={handleChange} required/>
+                            <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)*</label>
+                        </div>
 
-                        <input 
-                        name="apellidoPaterno" 
-                        className = "input-gral w-3" 
-                        type="text" 
-                        placeholder="Apellido paterno"
-                        onChange={handleChange}
-                        />
-
-                        <input 
-                        name="apellidoMaterno" 
-                        className = "input-gral w-3" 
-                        type="text" 
-                        placeholder="Apellido materno"
-                        onChange={handleChange}
-                        />
-
-                        <input 
-                        name="numTelefono" 
-                        className = "input-gral w-2" 
-                        type="number" 
-                        placeholder="Teléfono"
-                        onChange={handleChange}
-                        />
-
-                        <input 
-                        name="correoElectronico" 
-                        className = "input-gral w-2" 
-                        type="email" 
-                        placeholder="Correo electrónico"
-                        onChange={handleChange}
-                        />
-                    
-                        <Select 
-                        name="idStore" 
-                        placeholder = "RED"  
-                        options={tiendas} 
-                        styles = {customSelectStyles} 
-                        onChange = {handleSelectChange}/>
-
+                        <div className='grupoInput-2'>
+                            <input name="correoElectronico"  className = "input-gral w-2 inputFormularios"  type="email"  placeholder="Correo electrónico*" onChange={handleChange} required/>
+                            <label htmlFor="name" className="etiquetaInputs">Correo electrónico*</label>
+                        </div>
+            
+                        <Select name="idStore" placeholder = "RED"  options={tiendas} styles = {customSelectStyles} onChange = {handleSelectChange}/>
                     </section>
 
                     <section className='botonesContentPage'>

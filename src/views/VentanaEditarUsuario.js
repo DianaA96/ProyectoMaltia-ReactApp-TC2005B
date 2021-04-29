@@ -291,15 +291,30 @@ function VentanaEditarUsuario(props) {
                                 </> : null}
                             </section>
                             <section className="inputsContentPage">
-                                    <input className = "input-gral w-3" type="text" name="nombre" placeholder="Nombre(s)*" defaultValue={employee.datosEmpleado.nombre} onChange = {handleChange} required/>
-                                    <input className = "input-gral w-3" type="text" name="apellidoPaterno" placeholder="Apellido Paterno*" defaultValue={employee.datosEmpleado.apellidoPaterno} onChange = {handleChange} required/>
-                                    <input className = "input-gral w-3" type="text" name="apellidoMaterno" placeholder="Apellido Materno" defaultValue={employee.datosEmpleado.apellidoMaterno} onChange = {handleChange} />
-                                    <input className = "input-gral w-2" type="tel" name="numTelefono" placeholder="Número de teléfono" defaultValue={employee.datosEmpleado.numTelefono} onChange = {handleChange} required/>
-                                    <input className = "input-gral w-2" type="email" name="correoElectronico" placeholder="Correo electrónico" defaultValue={employee.datosEmpleado.correoElectronico} onChange = {handleChange} required/>
-                                    {props.match.params.puesto === 'Asesor' && SelectStatus === 'asesor' ? <Select defaultValue = {tiendasAsociadas} options={tiendas} isMulti styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
-                                    {props.match.params.puesto === 'Analista' && SelectStatus === 'analista' ? <Select placeholder ={departamentoAsociado} options={departamentos} styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
-                                    {props.match.params.puesto === 'Asesor' && SelectStatus !== 'asesor' ? <Select placeholder = 'Departamento' options={departamentos} styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
-                                    {props.match.params.puesto === 'Analista' && SelectStatus !== 'analista' ? <Select placeholder='Tiendas' options={tiendas} isMulti styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
+                                <div className='grupoInput-3'>
+                                    <input className = "input-gral inputFormularios" type="text" name="nombre" placeholder="Nombre(s)*" defaultValue={employee.datosEmpleado.nombre} onChange = {handleChange} required/>
+                                    <label htmlFor="name" className="etiquetaInputs">Nombre(s)</label>
+                                </div>
+                                <div className='grupoInput-3'>
+                                    <input className = "input-gral inputFormularios" type="text" name="apellidoPaterno" placeholder="Apellido Paterno*" defaultValue={employee.datosEmpleado.apellidoPaterno} onChange = {handleChange} required/>
+                                    <label htmlFor="name" className="etiquetaInputs">Apellido Paterno*</label>
+                                </div>
+                                <div className='grupoInput-3'>
+                                    <input className = "input-gral inputFormularios" type="text" name="apellidoMaterno" placeholder="Apellido Materno" defaultValue={employee.datosEmpleado.apellidoMaterno} onChange = {handleChange} />
+                                    <label htmlFor="name" className="etiquetaInputs">Apellido Materno*</label>
+                                </div>
+                                <div className='grupoInput-2'>
+                                    <input className = "input-gral w-2 inputFormularios" type="tel" name="numTelefono" placeholder="Número de teléfono" defaultValue={employee.datosEmpleado.numTelefono} onChange = {handleChange} required/>
+                                    <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)*</label>
+                                </div>
+                                <div className='grupoInput-2'>
+                                <input className = "input-gral w-2 inputFormularios" type="email" name="correoElectronico" placeholder="Correo electrónico" defaultValue={employee.datosEmpleado.correoElectronico} onChange = {handleChange} required/>
+                                    <label htmlFor="name" className="etiquetaInputs">Correo Electrónico*</label>
+                                </div>
+                                {props.match.params.puesto === 'Asesor' && SelectStatus === 'asesor' ? <Select defaultValue = {tiendasAsociadas} options={tiendas} isMulti styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
+                                {props.match.params.puesto === 'Analista' && SelectStatus === 'analista' ? <Select placeholder ={departamentoAsociado} options={departamentos} styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
+                                {props.match.params.puesto === 'Asesor' && SelectStatus !== 'asesor' ? <Select placeholder = 'Departamento' options={departamentos} styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
+                                {props.match.params.puesto === 'Analista' && SelectStatus !== 'analista' ? <Select placeholder='Tiendas' options={tiendas} isMulti styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
                             </section>
 
                             <section className="botonesContentPage">

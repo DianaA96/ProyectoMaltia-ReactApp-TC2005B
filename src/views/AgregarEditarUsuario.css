@@ -80,6 +80,10 @@
     margin-right: 5%;
 }
 
+.mt-5{
+    padding-top: 5em;
+}
+
 @media only screen and (max-width: 576px) {
 
     header{
@@ -92,6 +96,7 @@
 
     .contentPageForms{
         background-color: #0F123F;
+        padding: 0px;
     }
     main {
         border: none;
@@ -104,17 +109,23 @@
 
     .radiosContentPage {
         justify-content:center;
-        padding-left: 5%;
+        padding-left: 10%;
     }
 
     .inputsContentPage{
+        width: 100%;
         height: 30em;
-        padding-left: 5%;
+        margin-left: 3.5vw;
     }
 
     .botonesContentPage{
-        margin-bottom: 50px;
+        margin-top: 2em;
+        padding-bottom: 5em;
         padding-left: 8%;
+    }
+
+    .mt-5{
+        padding-top: 1em;
     }
    
 }
