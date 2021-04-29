@@ -46,50 +46,49 @@ function Eprospecto(props) {
         numTelefono
     } = prospect
 
-    //Función que se hace cargo del evento onChange ,que se lanza al hacer cambios en el input
     function handleChange(event) {
-        // Se mezcla la información que ha cambiado en el formulario 
-        // con la que ya existía anteriormente en prospect (que llegó desde el GET previo)
         let nuevaInfo = {
             ...prospect,
-            [event.target.name]: event.target.value // Bracket notation para asignar valores inválidos a una variable
+            [event.target.name]: event.target.value 
         }
         console.log(nuevaInfo)
-        // Se reasigna de nuevo la información en prospect y se cambia su estado
         setProspect(nuevaInfo)
-        // Se cambia el estado del formulario, ahora que se han hecho cambios en su interior
         setStatusForm('dirty')
     }
 
-    // Función que se hace cargo del evento onSave, que se lanza al enviar el formulario
     function handleSave(event) {
-        
         setStatusForm('pristine')
         setErrorForm(null)
-
         axios.patch(`http://localhost:5000/prospects/${idProspect}`, {
             body: {...prospect},
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             }
         })
+
         .then((result) => {
             setProspect(...result.data.prospectoActualizado)
             setStatusForm('pristine')
             console.log("aaaa")
         })
+
         .catch(err => {
             setErrorForm(err);
             setStatusForm('error')
         })
+
         statusForm !== 'error'? alert("¡Prospecto actualizado correctamente!😎🦊") : alert("Ocurrió un error al actualizar :(")
     }
 
     return(
         <main>
-
             <aside>
-                <Lateral img = {asesor} usuario={idLoggedAssessor} tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
+                <Lateral 
+                    img = {asesor} 
+                    usuario={idLoggedAssessor} 
+                    tabs={tabs} 
+                    TabFocus={TabFocus} 
+                    setTabFocus={setTabFocus}/>
             </aside>
 
             <div className='contentPageForms'>
@@ -101,27 +100,63 @@ function Eprospecto(props) {
                 <form onSubmit={handleSave}>
                     <section className='inputsContentPage mt-5'>
                         <div className='grupoInput-3'>
-                                <input name="nombre" className = "input-gral inputFormularios" type="text" value={nombre} required placeholder="Nombre(s)*"onChange={handleChange} required/>
-                                <label htmlFor="name" className="etiquetaInputs">Nombre(s)*</label>
+                            <input 
+                                name="nombre" 
+                                className = "input-gral inputFormularios" 
+                                type="text" 
+                                value={nombre}  
+                                placeholder="Nombre(s)*"
+                                onChange={handleChange} 
+                                required
+                            />
+                            <label htmlFor="name" className="etiquetaInputs">Nombre(s)*</label>
                         </div>
                         
                         <div className='grupoInput-3'>
-                            <input name="apellidoPaterno" className = "input-gral inputFormularios" type="text" value={apellidoPaterno} required placeholder="Apellido paterno*"onChange={handleChange} required/>
+                            <input 
+                                name="apellidoPaterno" 
+                                className = "input-gral inputFormularios" 
+                                type="text" value={apellidoPaterno} 
+                                required 
+                                placeholder="Apellido paterno*" 
+                                onChange={handleChange}
+                            />
                             <label htmlFor="name" className="etiquetaInputs">Apellido Paterno*</label>
                         </div>
 
                         <div className='grupoInput-3'>
-                            <input name="apellidoMaterno" className = "input-gral inputFormularios" type="text" value={apellidoMaterno} required placeholder="Apellido materno"onChange={handleChange}/>
+                            <input 
+                                name="apellidoMaterno" 
+                                className = "input-gral inputFormularios" 
+                                type="text" value={apellidoMaterno} 
+                                required 
+                                placeholder="Apellido materno" 
+                                onChange={handleChange}/>
                             <label htmlFor="name" className="etiquetaInputs">Apellido Materno</label>
                         </div>
 
                         <div className='grupoInput-2'>
-                            <input name="numTelefono" className = "input-gral w-2 inputFormularios" type="number" value={numTelefono} required placeholder="Número de teléfono*"onChange={handleChange} required/>
+                            <input 
+                                name="numTelefono" 
+                                className = "input-gral w-2 inputFormularios" 
+                                type="number" value={numTelefono} 
+                                required 
+                                placeholder="Número de teléfono*" 
+                                onChange={handleChange} 
+                            />
                             <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)*</label>
                         </div>
 
                         <div className='grupoInput-2'>
-                            <input name="correoElectronico"  className = "input-gral w-2 inputFormularios"  type="email"  required value={correoElectronico}placeholder="Correo electrónico*" onChange={handleChange} required/>
+                            <input 
+                                name="correoElectronico"  
+                                className = "input-gral w-2 inputFormularios"  
+                                type="email"  
+                                required 
+                                value={correoElectronico}
+                                placeholder="Correo electrónico*" 
+                                onChange={handleChange} 
+                            />
                             <label htmlFor="name" className="etiquetaInputs">Correo electrónico*</label>
                         </div>
                     </section>
@@ -138,9 +173,7 @@ function Eprospecto(props) {
                             disabled={statusForm === 'pristine'} 
                             type="submit">Guardar cambios</CustomLink>
                     </section>
-
                 </form>}
-                
             </div>
         </main>
     );

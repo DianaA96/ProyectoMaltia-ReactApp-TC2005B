@@ -33,5 +33,4 @@ function InputBuscar(props){
     )
 }
 
-
 export default InputBuscar;

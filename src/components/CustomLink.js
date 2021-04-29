@@ -20,6 +20,7 @@ CustomLink.propTypes = {
     }).isRequired,
     onClick: PropTypes.func
 };
+
 CustomLink.defaultProps = {
     onClick: () => {}
 };

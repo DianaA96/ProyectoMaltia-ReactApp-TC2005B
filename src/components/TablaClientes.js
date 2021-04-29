@@ -3,7 +3,6 @@ import './TablaClientes.css';
 import CustomLink from './CustomLink';
 import axios from 'axios'
 
-
 function TablaClientes(props) {
 
 	const [status, setStatus ] = useState('idle');
@@ -37,30 +36,31 @@ function TablaClientes(props) {
 			
 		)
 	}
+
 	if(status === 'resolved'){
 		return (
-				<React.Fragment>
-					<section className="contenedorTablaClientes">
-							<div className="encabezadoTablaClientes">
-								<h5 id="encabezadoNombreCliente">Nombre del cliente</h5>
-								<h5 id="encabezadoEstatusCliente"></h5>
-								<h5 id="encabezadoAccionesCliente">Acciones</h5>
-							</div>
-					</section>
-					<section className="tablaClientes">
-							<table className="clientsTable">         
-							{applications.map((registro, indice)=>(
-								<tbody>
-										<tr key={indice}>
-											<td>{registro.nombre+ " " + registro.apellidoPaterno + " " + registro.apellidoMaterno}</td>
-											<td><p id={"semaforoEstatus" + registro.estatus.replace(" ", "")}></p></td>
-											<td><CustomLink tag='button' to={`./seguimientoCliente1/${registro.idProspect}`} id="botonSeguimiento"><i class="fas fa-tasks"></i></CustomLink></td>
-										</tr>
-								</tbody>
-							))}
-							</table>
-					</section> 
-				</React.Fragment>
+			<React.Fragment>
+				<section className="contenedorTablaClientes">
+					<div className="encabezadoTablaClientes">
+						<h5 id="encabezadoNombreCliente">Nombre del cliente</h5>
+						<h5 id="encabezadoEstatusCliente"></h5>
+						<h5 id="encabezadoAccionesCliente">Acciones</h5>
+					</div>
+				</section>
+				<section className="tablaClientes">
+					<table className="clientsTable">         
+					{applications.map((registro, indice)=>(
+						<tbody>
+							<tr key={indice}>
+								<td>{registro.nombre+ " " + registro.apellidoPaterno + " " + registro.apellidoMaterno}</td>
+								<td><p id={"semaforoEstatus" + registro.estatus.replace(" ", "")}></p></td>
+								<td><CustomLink tag='button' to={`./seguimientoCliente1/${registro.idProspect}`} id="botonSeguimiento"><i class="fas fa-tasks"></i></CustomLink></td>
+							</tr>
+						</tbody>
+					))}
+					</table>
+				</section> 
+			</React.Fragment>
 		);
 	}
 } 

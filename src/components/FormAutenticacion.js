@@ -25,9 +25,26 @@ function FormAutenticacion() {
     return (
         <form className="contenedor" onSubmit={handleLogin}>
             <h2 className="titulo">Inicia sesión</h2>
-            <input onChange={handleChange} type="text" name="correoElectronico" placeholder="Usuario" id="inputUsuario" className="inputUsuario"/>
-            <input onChange={handleChange} type="password" name="contrasena" placeholder="Contraseña" id="inputContrasena" className="inputContrasena"/>
-            <CustomLink onClick={handleLogin} type="submit" tag='button' to='./' className="contenedor"> Entrar </CustomLink>
+            <input 
+                onChange={handleChange} 
+                type="text" 
+                name="correoElectronico" 
+                placeholder="Usuario" 
+                id="inputUsuario" 
+                className="inputUsuario"/>
+            <input 
+                onChange={handleChange} 
+                type="password" 
+                name="contrasena" 
+                placeholder="Contraseña" 
+                id="inputContrasena" 
+                className="inputContrasena"/>
+            <CustomLink 
+                onClick={handleLogin} 
+                type="submit" 
+                tag='button' 
+                to='./' 
+                className="contenedor"> Entrar </CustomLink>
         </form>
     )
 }

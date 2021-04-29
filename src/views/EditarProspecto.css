@@ -4,6 +4,7 @@
     background-color: #0F123F;
     border: 1em solid #0F123F;
 }
+
 .cuerpitoe{
     display: flex;
     flex-direction: column;
@@ -15,6 +16,7 @@
     margin: 0%;
     padding: 30px 50px;
 }
+
 .cabezae{
     display: flex;
     justify-content: space-between;
@@ -24,10 +26,12 @@
 .primeralineae{
     margin-bottom: 2%;
 }
+
 .segundalineae{
     display: flex;
     margin-bottom: 7%;
 }
+
 .aprospectobtnse{
     display: flex;
     justify-content: space-between;
