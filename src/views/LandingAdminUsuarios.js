@@ -26,7 +26,7 @@ const LandingAdminUsuarios = () => {
                     <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Administración de usuarios"/>
                 </header>
                 <section className="filtrosContentPageLanding">
-                    <InputBuscar num={1} />
+                    <InputBuscar />
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">

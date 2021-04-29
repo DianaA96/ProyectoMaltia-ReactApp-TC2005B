@@ -14,6 +14,8 @@ function LandingAdminProspectos() {
 
     const [ visibility, setVisibility] = useState('hidden');
     const [ userId, setUserId ] = useState('1');
+    const [ queryInput, setQueryInput ] = useState('')
+
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
     const [TabFocus, setTabFocus] = useState(0);
 
@@ -27,11 +29,11 @@ function LandingAdminProspectos() {
                     <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de prospectos"/>
                 </header>
                 <section className="filtrosContentPageLanding">
-                    <InputBuscar num={2} />
+                    <InputBuscar setQueryInput={setQueryInput}/>
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaProspectos visibility={visibility} setVisibility={setVisibility} userId={userId} setUserId={setUserId}/>
+                    <TablaProspectos queryInput={queryInput} visibility={visibility} setVisibility={setVisibility} userId={userId} setUserId={setUserId}/>
                     {visibility === 'visible' ? <ModalContactoAsesor visibility={visibility} setVisibility={setVisibility} userId={userId}/> : null}
                 </section>
             </section>

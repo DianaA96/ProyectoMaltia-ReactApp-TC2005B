@@ -55,8 +55,7 @@ function SeguimientoCliente1(props) {
         }
 
         function handleSave(event){
-            event.preventDefault();
-            
+                        
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
                 body: {
                     antiguedadZorro: varAntiguedadMinima,
@@ -74,6 +73,7 @@ function SeguimientoCliente1(props) {
                     setError(error)
                     setStatus('error')
                 })
+            formStatus !== 'error'? alert("¡Seguimiento realizado correctamente!😎🦊") : alert("Ocurrió un error al actualizar :(")
         }
 
         useEffect(()=>{
