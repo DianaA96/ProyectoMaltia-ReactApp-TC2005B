@@ -20,7 +20,13 @@ const LandingAdminUsuarios = () => {
     return(
         <main>
             <aside>
-                 <Lateral img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro32`} tabs={tabs} setTabFocus={setTabFocus} TabFocus={TabFocus}/>
+                 <Lateral 
+                    img = {admin} 
+                    usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro32`} 
+                    tabs={tabs} 
+                    setTabFocus={setTabFocus} 
+                    TabFocus={TabFocus}
+                />
             </aside>
             <section className='contentPage'>
                 <header>
@@ -31,8 +37,17 @@ const LandingAdminUsuarios = () => {
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaUsuarios queryInput={queryInput} status={status} setStatus={setStatus} setModalData={setModalData}/>
-                    {status === 'visible' ? <ModalDeshabilitarEmpleado modalData = {modalData} status = {status} setStatus = {setStatus}/> : null}
+                    <TablaUsuarios 
+                        queryInput={queryInput} 
+                        status={status} 
+                        setStatus={setStatus} 
+                        setModalData={setModalData}
+                    />
+                    {status === 'visible' ? 
+                    <ModalDeshabilitarEmpleado 
+                        modalData = {modalData} 
+                        status = {status} 
+                        setStatus = {setStatus}/> : null}
                 </section> 
             </section>
         </main>

@@ -8,15 +8,12 @@ import InputFiltrar from '../components/InputFiltrar';
 import asesor from '../assets/asesor.png';
 import ModalContactoAsesor from './ModalContactoAsesor'
 import '../components/Boton.css';
-import axios from 'axios';
 
 function LandingAdminProspectos() {
 
     const [ visibility, setVisibility] = useState('hidden');
     const [ userId, setUserId ] = useState('1');
-    const [ queryInput, setQueryInput ] = useState('')
-    const [ status, setStatus ] = useState('idle');
-    const [ error, setError ] = useState(null);
+    const [ queryInput, setQueryInput ] = useState('');
 
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
     const [TabFocus, setTabFocus] = useState(0);
@@ -24,19 +21,35 @@ function LandingAdminProspectos() {
     return(
         <main>
             <aside>
-                <Lateral img = {asesor} tabs={tabs} TabFocus={TabFocus} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro5`} setTabFocus={setTabFocus}/>
+                <Lateral 
+                    img = {asesor} 
+                    tabs={tabs} 
+                    TabFocus={TabFocus} 
+                    usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro5`} 
+                    setTabFocus={setTabFocus}/>
             </aside>
             <section className='contentPage'>
                 <header>
-                    <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Administración de prospectos"/>
+                    <Bienvenida 
+                        txtBienvenida = "Bienvenido, Asesor" 
+                        txtVentana="Administración de prospectos"/>
                 </header>
                 <section className="filtrosContentPageLanding">
                     <InputBuscar setQueryInput={setQueryInput}/>
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaProspectos queryInput={queryInput} visibility={visibility} setVisibility={setVisibility} userId={userId} setUserId={setUserId}/>
-                    {visibility === 'visible' ? <ModalContactoAsesor visibility={visibility} setVisibility={setVisibility} userId={userId}/> : null}
+                    <TablaProspectos 
+                        queryInput={queryInput} 
+                        visibility={visibility} 
+                        setVisibility={setVisibility} 
+                        userId={userId} 
+                        setUserId={setUserId}/>
+                    {visibility === 'visible' ? 
+                    <ModalContactoAsesor 
+                        visibility={visibility} 
+                        setVisibility={setVisibility} 
+                        userId={userId}/> : null}
                 </section>
             </section>
         </main>

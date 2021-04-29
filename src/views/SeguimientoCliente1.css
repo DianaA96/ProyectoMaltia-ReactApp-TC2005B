@@ -24,7 +24,6 @@
     align-items: center;
 }
 
-
 .mainContentPageSeguimiento{
     padding: 30px;
     height: 80vh;
@@ -100,10 +99,10 @@
 
 @media only screen and (max-width:576px){
 
-
     .toggle-cont{
         flex-direction: column !important;
     }
+
     aside{
         margin-right: -3vw;
     }
@@ -138,7 +137,6 @@
         margin-top: 1em;
     }
 
-
     .lineaSeguimiento{
         display: none;
     }
@@ -150,13 +148,11 @@
         border-bottom: 1px solid rgb(255, 255, 255);
         margin-top: 2em;
     }
-
    
     .pregunta-capacidad, .pregunta-antiguedad{
         margin-top: 0;
         color: #fff;
     }
-
 
     .btn-guardar-cambios {
         margin: 2em 0;
@@ -164,7 +160,3 @@
         font-size: 5vw;
     }
 }
-
-
-
-

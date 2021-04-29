@@ -29,13 +29,11 @@ function ModalContactoAsesor(props) {
     }
 
     function setContact(event) {
-        console.dir(event)
         let newContact = {
             idProspect: props.userId,
             idContact: contactNumber,
             compromiso : event.value
         }
-        console.log(newContact)
         setContactsDone(newContact)
         setOptionSelected(true)
     }
@@ -44,7 +42,6 @@ function ModalContactoAsesor(props) {
         event.preventDefault()
         setStatus('loading')
         let contacto = contactsDone
-        console.log("Estoy haciendo contacto", contacto)
         axios({
             method: 'post',
             url: 'http://localhost:5000/contacts/',
@@ -86,7 +83,6 @@ function ModalContactoAsesor(props) {
             })
     }, [])
     
-    // Estilos del select
     const options = [
         { value: 'No atiende', label: 'No atiende' },
         { value: 'No está interesado', label: 'No está interesado' },
@@ -148,14 +144,14 @@ function ModalContactoAsesor(props) {
                 {status === 'loading'|| status === 'idle'? <p><IdleStateView/></p>:
                 status === 'resolved'? 
                 <React.Fragment>
-                    <h2 className="nombreUsuario"> {prospectInfo.nombre} {prospectInfo.apellidoPaterno} {prospectInfo.apellidoMaterno}</h2>
+                    <h2 className="nombreUsuario"> 
+                        {prospectInfo.nombre} {prospectInfo.apellidoPaterno} {prospectInfo.apellidoMaterno}
+                    </h2>
                         <div className="infoPrimaria">
                             <i class="fas fa-phone-alt"> </i>
                             <p className="tel"> {prospectInfo.numTelefono} </p>
                         </div>
-
                         <form className="formulario">
-                            
                             <p className="mobile-contactNum">Contacto 1</p>
                             <div className="cont-contacto" id="one">
                                 <div className="contacto-left">
@@ -175,7 +171,6 @@ function ModalContactoAsesor(props) {
                                     onFocus={setNumberCont}
                                 />
                             </div>
-
                             <p className="mobile-contactNum">Contacto 2</p>
                             <div className="cont-contacto" id="two">
                                 <div className="contacto-left">
