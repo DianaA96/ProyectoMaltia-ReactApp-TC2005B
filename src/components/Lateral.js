@@ -1,7 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Lateral.css';
 import TabLateral from './TabLateral';
 import { useAuth } from '../auth-context';
+import axios from 'axios';
 
 import {
     BrowserRouter as Router,
@@ -11,6 +12,23 @@ import {
 function Lateral(props){
 
     const { logout } = useAuth();
+    const [ assessorData, setAssessorData ] = useState({})
+    const [ status, setStatus ] = useState('idle');
+    const [ error, setError ] = useState(null);
+
+    useEffect(()=>{
+        setStatus('loading')
+        axios.get(props.usuario) 
+              .then((result)=>{
+                console.log(result)
+                setAssessorData(result.data.datosEmpleado)
+                setStatus('resolved')
+              })
+              .catch((error)=>{
+                  setError(error)
+                  setStatus('error')
+              })
+      }, [])
 
     return(
         <React.Fragment>
@@ -19,7 +37,7 @@ function Lateral(props){
                     <div className="cont_icono">
                         <img className="icono_usuario" src={props.img} alt=""/>
                     </div>
-                    <h4 className="nombre_usuario">{props.usuario}</h4>
+                    <h4 className="nombre_usuario">{`${assessorData.nombre} ${assessorData.apellidoPaterno}`}</h4>
                 </div>
 
                 <div className='tabs'>

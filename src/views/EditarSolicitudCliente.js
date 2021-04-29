@@ -231,7 +231,7 @@ function EditarSolicitudCliente(props) {
         return(
             <main id='mainSolicitudCliente'>
                 <aside>
-                    <Lateral tabs = {tabs} img = {asesor} usuario="Asesor #1234" TabFocus={TabFocus} setTabFocus={setTabFocus}/>
+                    <Lateral tabs = {tabs} img = {asesor} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro5`} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
                 </aside>
                 <section className='contentPageExtendido'>
                     <header className='headerSolicitudCliente'>

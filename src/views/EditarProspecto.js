@@ -10,14 +10,12 @@ import axios from 'axios';
 import IdleStateView from '../components/IdleStateView';
 import ErrorScreen from '../components/ErrorScreen';
 
-// ESTA VISTA REQUIERE CONOCER EL ID DEL ASESOR QUE HA INICIADO SESIÓN
-const idLoggedAssessor = '#1234'
+const idLoggedAssessor = `http://localhost:5000/employees/assessor?thisAssessor=zorro5`
 
 function Eprospecto(props) {
 
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
 
-    // Se inician los pedazos de estado del componente que nos ayudan a controlar su ciclo de vida
     const [ status, setStatus ] = useState('idle');
     const [ error, setError ] = useState(null);
     const [ prospect, setProspect ] = useState({});
@@ -25,7 +23,6 @@ function Eprospecto(props) {
     const [ errorForm, setErrorForm ] = useState(null);
     const [TabFocus, setTabFocus] = useState(0);
 
-    // Se hace la petición al API de los datos del usuario específico que se va a editar para prellenar el formulario
     useEffect( () => {
         setStatus('loading')
         axios.get(`http://localhost:5000/prospects/${props.match.params.idProspect}`)
@@ -92,7 +89,7 @@ function Eprospecto(props) {
         <main>
 
             <aside>
-                <Lateral img = {asesor} usuario={`Asesor ${idLoggedAssessor}`} tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
+                <Lateral img = {asesor} usuario={idLoggedAssessor} tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
             </aside>
 
             <div className='contentPageForms'>

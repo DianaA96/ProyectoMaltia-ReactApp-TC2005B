@@ -19,7 +19,7 @@ const LandingAdminUsuarios = () => {
     return(
         <main>
             <aside>
-                 <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} setTabFocus={setTabFocus} TabFocus={TabFocus}/>
+                 <Lateral img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro32`} tabs={tabs} setTabFocus={setTabFocus} TabFocus={TabFocus}/>
             </aside>
             <section className='contentPage'>
                 <header>

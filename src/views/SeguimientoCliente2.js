@@ -92,7 +92,7 @@ function SeguimientoCliente2(props) {
                 
                     <main>
                         <aside>
-                            <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} enlaces={enlaces}/>
+                            <Lateral img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs} enlaces={enlaces}/>
                         </aside>
                         <section className='contentPageSeguimiento'>
                             <header>

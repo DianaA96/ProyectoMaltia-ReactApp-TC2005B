@@ -242,7 +242,7 @@ function VentanaAgregarUsuario(props) {
             <React.Fragment>
                 <main>
                     <aside>
-                        <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
+                        <Lateral img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro32`} tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
                     </aside>
                     <section className='contentPageForms'>
                         <header>

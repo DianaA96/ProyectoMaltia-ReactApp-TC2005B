@@ -36,7 +36,7 @@ function LandingAnalista() {
     return(
         <main>
             <aside>
-                <Lateral img = {analista} usuario="Analista #1234" tabs={tabs}/>
+                <Lateral img = {analista} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs}/>
             </aside>
             <section className='contentPage'>
                 <header>
