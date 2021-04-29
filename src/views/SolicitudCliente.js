@@ -238,7 +238,7 @@ function SolicitudCliente(props) {
                                 <input type='number' className='inputFormularios w-2' name='montoSolicitado' placeholder='Monto solicitado*' required  onChange = {handleChange}></input>
                                 <label htmlFor="name" className="etiquetaInputs">Monto solicitado*(coloque sólo el valor numérico)</label>
                             </div>
-                            <Select placeholder = "Departamento"  options={tiposCredito} styles = {customSelectStyles} onChange = {handleSelectChange}/>
+                            <Select placeholder = "Tipo de crédito"  options={tiposCredito} styles = {customSelectStyles} onChange = {handleSelectChange}/>
                         </section>
                         <section className='inputsReferenciasCliente'>
                             <div className='tarjetaReferencia'>

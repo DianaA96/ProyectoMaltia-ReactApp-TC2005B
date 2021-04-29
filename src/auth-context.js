@@ -5,7 +5,7 @@ export const AuthContext = React.createContext({});
 
 export function AuthProvider({ children }) {
 
-    const [ user, setUser ] = useState(null);
+    const [ user, setUser ] = useState(useState(window.localStorage.getItem('gn3ivluxXGi0CNE')));
     const [ status, setStatus ] = useState('idle')
     const [ error, setError ] = useState(null)
 
@@ -39,9 +39,8 @@ export function AuthProvider({ children }) {
 
     function logout() {
         console.log("estoy haciendo logout")
-        setUser(null);
-        console.log(user)
         window.localStorage.removeItem('gn3ivluxXGi0CNE')
+        window.location.reload();
     }
 
     function register(userData) {
