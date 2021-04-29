@@ -129,11 +129,18 @@ function SeguimientoCliente1(props) {
                                     <div className="accionesSeguimiento">
                                         <p className="pregunta-antiguedad">¿Cumple con la antigüedad mínima?</p>
                                         <Checkbox isDefaultChecked={antiguedadMinima} isDisabled={null} setCheckTrue={handleChangeAntiguedad}/>
-                                        <input className = "input-gral w-1" type="date" name="antiguedadZorro" id="dateInput" value={varAntiguedadMinima} onChange={handleChangeVarAntiguedad} />
+                                        <div className='grupoInput'>
+                                            <input placeholder="Antigüedad Zorro abarrotero"className = "input-gral w-1 inputFormularios" type="date" name="antiguedadZorro" id="dateInput" value={varAntiguedadMinima} onChange={handleChangeVarAntiguedad} />                            
+                                            <label htmlFor="name" className="etiquetaInputs">Cliente Zorro Abarrotero desde: (formato dd/mm/aaaa)</label>
+                                        </div>
                                         <p className="texto-ayuda"></p>
                                         <p className="pregunta-capacidad">¿Cumple con la capacidad de pago mínima?</p>
                                         <Checkbox isDefaultChecked={capacidadPago} isDisabled={null} setCheckTrue={handleChangeCapacidad}/>
-                                        <input className = "input-gral w-1" type="text" name="capacidadZorro" id="" value={varCapacidadPago} onChange={handleChangeVarCapacidad} />
+                                        <div className='grupoInput'>
+                                            <input className = "input-gral w-1 inputFormularios" placeholder="Capacidad de pago" type="text" name="capacidadZorro" id="" value={varCapacidadPago} onChange={handleChangeVarCapacidad} />                            
+                                            <label htmlFor="name" className="etiquetaInputs">Especifique la capacidad de pago: (%)</label>
+                                        </div>
+                                        
                                         <button className="botonSalmon btn-guardar-cambios" type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>
                                     </div>
                                     <div className="lineaSeguimiento"></div>

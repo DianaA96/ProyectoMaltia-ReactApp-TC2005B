@@ -112,8 +112,16 @@ function SeguimientoCliente3(props) {
                             <section className="mainContentPageSeguimiento">
                             <form onSubmit={handleSave}>
                                 <div className="accionesSeguimiento">
-                                    <input className= "input-gral w-1" type="text" name="montoAutorizado" value={montoAutorizado} onChange = {handleChangeMontoAut}/>
-                                    <input className= "input-gral w-1" type="text" name="montoDispuesto"  value={montoDispuesto} onChange = {handleChangeMontoDisp}/>
+                                    <div className='grupoInput'>
+                                        <input className= "input-gral w-1 inputFormularios" placeholder="Monto autorizado" type="text" name="montoAutorizado" value={montoAutorizado} onChange = {handleChangeMontoAut}/>                            
+                                        <label htmlFor="name" className="etiquetaInputs">Monto autorizado del crédito (Numero entero, sin comas)</label>
+                                    </div>
+                                    <div className='grupoInput'>
+                                    <input className= "input-gral w-1 inputFormularios" placeholder="Monto dispuesto del crédito" type="text" name="montoDispuesto"  value={montoDispuesto} onChange = {handleChangeMontoDisp}/>                            
+                                        <label htmlFor="name" className="etiquetaInputs">Monto dispuesto del crédito (Numero entero, sin comas)</label>
+                                    </div>
+                                    
+                                    
                                     <button className="botonSalmon btn-guardar-cambios"  type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>
                                 </div>
                             </form>
