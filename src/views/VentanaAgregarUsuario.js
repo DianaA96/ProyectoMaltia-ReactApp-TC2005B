@@ -256,11 +256,11 @@ function VentanaAgregarUsuario(props) {
                             <section className="inputsContentPage">
                                 <div className='grupoInput-3'>
                                     <input className = "input-gral inputFormularios" type="text" name="nombre"  placeholder="Nombre(s)*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Nombre(s)</label>
+                                    <label htmlFor="name" className="etiquetaInputs">Nombre(s)*</label>
                                 </div>
                                 <div className='grupoInput-3'>
                                     <input className = "input-gral inputFormularios" type="text" name="apellidoPaterno"  placeholder="Apellido Paterno*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Apellido Paterno</label>
+                                    <label htmlFor="name" className="etiquetaInputs">Apellido Paterno*</label>
                                 </div>
                                 <div className='grupoInput-3'>
                                     <input className = "input-gral inputFormularios" type="text" name="apellidoMaterno" placeholder="Apellido Materno" onChange = {handleChange} />
@@ -268,19 +268,19 @@ function VentanaAgregarUsuario(props) {
                                 </div>
                                 <div className='grupoInput-2'>
                                     <input className = "input-gral inputFormularios w-2" type="text" name="idEmployee" placeholder="ID de Empleado*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">ID de Empleado</label>
+                                    <label htmlFor="name" className="etiquetaInputs">ID de Empleado*</label>
                                 </div>
                                 <div className='grupoInput-2'>
                                     <input className = "input-gral inputFormularios w-2" type="password" name="contrasena" placeholder="Contraseña*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Contraseña</label>
+                                    <label htmlFor="name" className="etiquetaInputs">Contraseña*</label>
                                 </div>
                                 <div className='grupoInput-2'>
                                     <input className = "input-gral inputFormularios w-2" type="tel" name="numTelefono"  placeholder="Número de teléfono*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos) </label>
+                                    <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)* </label>
                                 </div>
                                 <div className='grupoInput-2'>
                                 <input className = "input-gral inputFormularios w-2" type="email" name="correoElectronico" placeholder="Correo electrónico*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Correo Electrónico</label>
+                                    <label htmlFor="name" className="etiquetaInputs">Correo Electrónico* (Se usará para iniciar sesión)</label>
                                 </div>
                                 {SelectStatus === 'analista' ? <Select placeholder = "Departamento"  options={departamentos} styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
                                 {SelectStatus === 'asesor' ? <Select  placeholder = "Tiendas"  options={tiendas} isMulti styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
