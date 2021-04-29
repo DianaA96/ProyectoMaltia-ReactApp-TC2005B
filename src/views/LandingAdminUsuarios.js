@@ -28,7 +28,7 @@ const LandingAdminUsuarios = () => {
                 </header>
                 <section className="filtrosContentPageLanding">
                     <InputBuscar setQueryInput={setQueryInput}/>
-                    <InputFiltrar />
+                    
                 </section>
                 <section className="tablaContentPage">
                     <TablaUsuarios queryInput={queryInput} status={status} setStatus={setStatus} setModalData={setModalData}/>

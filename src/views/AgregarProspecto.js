@@ -25,7 +25,7 @@ function Aprospecto(){
     const [ stores, setStores] = useState([]);
     const [ SelectValue, setSelectValue ] = useState();
     const [TabFocus, setTabFocus] = useState(1);
-    const [idProspect, setidProspect] = useState(0);
+    const [idProspect, setidProspect] = useState(null);
 
     let tiendas =[];
 

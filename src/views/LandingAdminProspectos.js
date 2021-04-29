@@ -32,7 +32,6 @@ function LandingAdminProspectos() {
                 </header>
                 <section className="filtrosContentPageLanding">
                     <InputBuscar setQueryInput={setQueryInput}/>
-                    <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
                     <TablaProspectos queryInput={queryInput} visibility={visibility} setVisibility={setVisibility} userId={userId} setUserId={setUserId}/>

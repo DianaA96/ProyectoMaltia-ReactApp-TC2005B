@@ -11,7 +11,7 @@ function TablaClientes(props) {
     
 	useEffect(()=>{
 	setStatus('loading')
-	axios.get(`http://localhost:5000/prospects/clients?thisEmployee=15`) //Cómo pasar el id del Asesor que inició sesión
+	axios.get(`http://localhost:5000/prospects/clients?thisEmployee=51`) //Cómo pasar el id del Asesor que inició sesión
 			.then((result)=>{
 				setApplications(result.data.solicitudes)
 				setStatus('resolved')
