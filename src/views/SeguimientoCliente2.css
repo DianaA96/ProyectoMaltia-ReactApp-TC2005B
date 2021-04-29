@@ -8,3 +8,17 @@
     align-items: center;
     margin-bottom: 50px;
 }
+
+.mainContentPageSeguimiento form{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+
+.mainContentPageSeguimiento form .input-gral {
+    width: 20vw;
+}
+
+.mainContentPageSeguimiento form .btn-guardar-cambios {
+    width: 20vw;
+}
