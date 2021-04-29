@@ -1,6 +1,6 @@
 .cont-input{
     background: #fff;
-    border-radius: 1vw;
+    border-radius: 1.5vw;
     width: 17.7vw;
     left: 18vw;
     top: 17.3vw;
@@ -10,6 +10,7 @@
 }
 
 .input-search{
+    padding: 10px 10px;
     margin-left: 1.2vh;
     font-size: 2.2vh;
     font-family: 'Red Hat Display';

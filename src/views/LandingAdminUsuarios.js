@@ -34,7 +34,7 @@ const LandingAdminUsuarios = () => {
                 </header>
                 <section className="filtrosContentPageLanding">
                     <InputBuscar setQueryInput={setQueryInput}/>
-                    <InputFiltrar />
+                    
                 </section>
                 <section className="tablaContentPage">
                     <TablaUsuarios 

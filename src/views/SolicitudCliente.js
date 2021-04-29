@@ -187,7 +187,17 @@ function SolicitudCliente(props) {
         
 
     }
-    
+
+    function setCheckTrue(){
+        if(isCheck){
+            setIsCheck(false)
+        }
+        else{
+            setIsCheck(true)
+        }
+        
+    }
+
     let fecha = new Date();
     let varFecha = `${fecha.getDate()} de ${fecha.toLocaleString('default', { month: 'long' })} del ${fecha.getFullYear()}`;
     let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar Clientes"];
@@ -220,7 +230,7 @@ function SolicitudCliente(props) {
                         </div>
                         <div className='checkSolicitud'>
                             <p>Solicitud firmada:</p>
-                            <Checkbox setCheckTrue={setIsCheck}/>
+                            <Checkbox setCheckTrue={setCheckTrue}/>
                         </div>
                     </section>
                     <form  onSubmit={handleSave}>
@@ -267,7 +277,7 @@ function SolicitudCliente(props) {
                         </section>
                         <section className='botonesEnviarSolicitud'>
                             <CustomLink tag='button' to='/administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
-                            <CustomLink tag='button' type='submit' className='botonSalmon' >Enviar Solicitud</CustomLink>
+                            <CustomLink tag='button' type='submit' className='botonSalmon' disabled={!isCheck}>Enviar Solicitud</CustomLink>
                         </section>
                     </form>
                 </section>

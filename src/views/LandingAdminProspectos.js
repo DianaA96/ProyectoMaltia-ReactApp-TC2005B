@@ -36,7 +36,6 @@ function LandingAdminProspectos() {
                 </header>
                 <section className="filtrosContentPageLanding">
                     <InputBuscar setQueryInput={setQueryInput}/>
-                    <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
                     <TablaProspectos 
