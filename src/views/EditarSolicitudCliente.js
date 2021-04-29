@@ -5,25 +5,23 @@ import zorrito from '../assets/zorrito.gif';
 import '../components/plantillaInputs.css';
 import Bienvenida from '../components/Bienvenida';
 import Lateral from '../components/Lateral';
-import Checkbox from '../components/Checkbox';
 import asesor from '../assets/asesor.png';
 import CustomLink from '../components/CustomLink';
 import Select from 'react-select';
 import IdleStateView from '../components/IdleStateView'
-import ErrorScreen from '../components/ErrorScreen'
 import axios from 'axios';
 
 function EditarSolicitudCliente(props) {
-    const [status, setStatus]= useState('idle');
-    const [datos , setDatos] = useState({});
+    const [ status, setStatus ]= useState('idle');
+    const [ datos , setDatos ] = useState({});
     const [ errorForm, setErrorForm ] = useState(null);
-    const [SelectValue, setSelectValue] = useState([]);
-    const[ref,setRef]=useState({});
-    const[ref2,setRef2]=useState({});
-    const[ref3,setRef3]=useState({});
-    const[refViejitas,setRefViejitas]=useState({});
-    const [TabFocus, setTabFocus] = useState(2);
-    const idAssessor= "1"
+    const [ SelectValue, setSelectValue ] = useState([]);
+    const [ ref, setRef ] = useState({});
+    const [ ref2, setRef2 ] =useState({});
+    const [ ref3, setRef3 ] =useState({});
+    const [ refViejitas, setRefViejitas ] = useState({});
+    const [ TabFocus, setTabFocus ] = useState(2);
+
     const customSelectStyles = {
         control: (base, state) => ({
             ...base,
@@ -105,8 +103,7 @@ function EditarSolicitudCliente(props) {
         direccion,
         numClienteZorro,
         montoSolicitado,
-        firmaSolicitud
-    }=datos; 
+    } = datos; 
 
     
     function handleChange(event){
@@ -118,7 +115,6 @@ function EditarSolicitudCliente(props) {
             ...ref3,
             [event.target.name]: event.target.value
         }
-        
         setDatos(nuevosDatos);
     }
 
@@ -127,7 +123,6 @@ function EditarSolicitudCliente(props) {
             ...ref,
             [event.target.name]: event.target.value
         }
-        
         setRef(nuevosDatos);
     }
 
@@ -136,7 +131,6 @@ function EditarSolicitudCliente(props) {
             ...ref2,
             [event.target.name]: event.target.value
         }
-        
         setRef2(nuevosDatos);
     }
 
@@ -145,7 +139,6 @@ function EditarSolicitudCliente(props) {
             ...ref3,
             [event.target.name]: event.target.value
         }
-        
         setRef3(nuevosDatos);
     }
 
@@ -213,14 +206,15 @@ function EditarSolicitudCliente(props) {
         {value: 'simple' , label: 'Simple'},
         {value: 'revolvente' , label: 'Revolvente'}
     ]
+
     let fecha = new Date();
     let mes = fecha.toLocaleString('default', { month: 'long' });
     let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar Clientes"];
     
-
     if(status === 'idle' || status === 'loading'){
         return <IdleStateView/>
     }
+
     if(status === 'error'){
         return (
         <img  src={zorrito} alt= "zorroError" />
@@ -246,48 +240,163 @@ function EditarSolicitudCliente(props) {
                     </section>
                     <form onSubmit={handleSave}>
                     <section className='inputsDatosCliente'>
-                            <div className='grupoInput'>
-                                <input type='date' className='inputFormularios w-2' name="fechaNacimiento" placeholder='Fecha de nacimiento*' defaultValue={fechaNacimiento}  onChange={handleChange}></input>                            
-                                <label for="name" className="etiquetaInputs">Fecha de nacimiento* (formato dd/mm/aaaa)</label>
-                            </div>
-                            <div className='grupoInput'>
-                                <input type='text' className='inputFormularios w-2' name="direccion" placeholder='Dirección*'  defaultValue={direccion} onChange={handleChange}></input>
-                                <label for="name" className="etiquetaInputs">Dirección*(calle, número, ciudad, estado, código postal)</label>
-                            </div>
-                            <div className='grupoInput'>
-                                <input type='number' className='inputFormularios w-2' name='numClienteZorro' placeholder='No. de cliente Zorro Abarrotero*' defaultValue={numClienteZorro} onChange={handleChange}></input>
-                                <label for="name" className="etiquetaInputs">No. de cliente Zorro Abarrotero*</label>
-                            </div>
-                            <div className='grupoInput'>
-                                <input type='number' className='inputFormularios w-2' name='numIne' placeholder='INE*' defaultValue={numIne} onChange={handleChange}></input>
-                                <label for="name" className="etiquetaInputs" defaultValue="4894892748278">INE*(10 dígitos de la parte posterior)</label>
-                            </div>
-                            <div className='grupoInput'>
-                                <input type='text' className='inputFormularios w-2' name='montoSolicitado' placeholder='Monto solicitado*' defaultValue={montoSolicitado} onChange={handleChange}></input>
-                                <label for="name" className="etiquetaInputs">Monto solicitado* (coloque sólo el valor numérico)</label>
-                            </div>
-                            <Select options={tiposCredito} styles = {customSelectStyles} onChange = {handleSelectChange} placeholder={creditoSolicitado}/>
+                        <div className='grupoInput'>
+                            <input 
+                                type='date' 
+                                className='inputFormularios w-2' 
+                                name="fechaNacimiento" 
+                                placeholder='Fecha de nacimiento*' 
+                                defaultValue={fechaNacimiento}  
+                                onChange={handleChange}>
+                            </input>                            
+                            <label 
+                                for="name" 
+                                className="etiquetaInputs">
+                                    Fecha de nacimiento* (formato dd/mm/aaaa)
+                            </label>
+                        </div>
+                        <div className='grupoInput'>
+                            <input 
+                                type='text' 
+                                className='inputFormularios w-2' 
+                                name="direccion" 
+                                placeholder='Dirección*'  
+                                defaultValue={direccion} 
+                                onChange={handleChange}
+                            >
+                            </input>
+                            <label 
+                                for="name" 
+                                className="etiquetaInputs">
+                                    Dirección*(calle, número, ciudad, estado, código postal)
+                            </label>
+                        </div>
+                        <div className='grupoInput'>
+                            <input 
+                                type='number' 
+                                className='inputFormularios w-2' 
+                                name='numClienteZorro' 
+                                placeholder='No. de cliente Zorro Abarrotero*' 
+                                defaultValue={numClienteZorro} 
+                                onChange={handleChange}>
+                            </input>
+                            <label 
+                                for="name" 
+                                className="etiquetaInputs">
+                                    No. de cliente Zorro Abarrotero*
+                            </label>
+                        </div>
+                        <div className='grupoInput'>
+                            <input 
+                                type='number' 
+                                className='inputFormularios w-2' 
+                                name='numIne' 
+                                placeholder='INE*' 
+                                defaultValue={numIne} 
+                                onChange={handleChange}>
+                            </input>
+                            <label 
+                                for="name" 
+                                className="etiquetaInputs" 
+                                defaultValue="4894892748278">
+                                    INE*(10 dígitos de la parte posterior)
+                            </label>
+                        </div>
+                        <div className='grupoInput'>
+                            <input 
+                                type='text' 
+                                className='inputFormularios w-2' 
+                                name='montoSolicitado' 
+                                placeholder='Monto solicitado*' 
+                                defaultValue={montoSolicitado} 
+                                onChange={handleChange}>
+                            </input>
+                            <label 
+                                for="name" 
+                                className="etiquetaInputs">
+                                    Monto solicitado* (coloque sólo el valor numérico)
+                            </label>
+                        </div>
+                        <Select 
+                            options={tiposCredito} 
+                            styles = {customSelectStyles} 
+                            onChange = {handleSelectChange} 
+                            placeholder={creditoSolicitado}
+                        />
                         </section>
                         <section className='inputsReferenciasCliente'>
                             <div className='tarjetaReferencia'>
                                 <h1>Referencia 1:</h1>
-                                <input type='text' className='input-gral' placeholder='Nombre' name='refName'  defaultValue={ref.refName} onChange = {handleRef1Change} disabled></input>
-                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia' defaultValue={ref.numTelefonoReferencia} onChange = {handleRef1Change}></input>
+                                <input 
+                                    type='text' 
+                                    className='input-gral' 
+                                    placeholder='Nombre' 
+                                    name='refName'  
+                                    defaultValue={ref.refName} 
+                                    onChange = {handleRef1Change} 
+                                    disabled></input>
+                                <input 
+                                    type='text' 
+                                    className='input-gral' 
+                                    placeholder='Teléfono' 
+                                    name='numTelefonoReferencia' 
+                                    defaultValue={ref.numTelefonoReferencia} 
+                                    onChange = {handleRef1Change}>
+                                </input>
                             </div>
                             <div className='tarjetaReferencia'>
                                 <h1>Referencia 2:</h1>
-                                <input type='text' className='input-gral' placeholder='Nombre' name='refName' defaultValue={ref2.refName} onChange = {handleRef2Change} disabled></input>
-                                <input type='text' className='input-gral' placeholder='Teléfono'  name='numTelefonoReferencia' defaultValue={ref2.numTelefonoReferencia} onChange = {handleRef2Change}></input>
+                                <input 
+                                type='text' 
+                                className='input-gral' 
+                                placeholder='Nombre' 
+                                name='refName' 
+                                defaultValue={ref2.refName} 
+                                onChange = {handleRef2Change} 
+                                disabled>
+                                </input>
+                                <input 
+                                type='text' 
+                                className='input-gral' 
+                                placeholder='Teléfono'  
+                                name='numTelefonoReferencia' 
+                                defaultValue={ref2.numTelefonoReferencia} 
+                                onChange = {handleRef2Change}>
+                                </input>
                             </div>
                             <div className='tarjetaReferencia'>
                                 <h1>Referencia 3:</h1>
-                                <input type='text' className='input-gral' placeholder='Nombre'  name='refName' defaultValue={ref3.refName} onChange = {handleRef3Change} disabled></input>
-                                <input type='text' className='input-gral' placeholder='Teléfono'  name='numTelefonoReferencia' defaultValue={ref3.numTelefonoReferencia} onChange = {handleRef3Change}></input>
+                                <input 
+                                    type='text' 
+                                    className='input-gral' 
+                                    placeholder='Nombre'  
+                                    name='refName' 
+                                    defaultValue={ref3.refName} 
+                                    onChange = {handleRef3Change} 
+                                    disabled>
+                                </input>
+                                <input 
+                                    type='text' 
+                                    className='input-gral' 
+                                    placeholder='Teléfono'  
+                                    name='numTelefonoReferencia' 
+                                    defaultValue={ref3.numTelefonoReferencia} 
+                                    onChange = {handleRef3Change}>
+                                </input>
                             </div>
                         </section>
                         <section className='botonesEnviarSolicitud'>
-                            <CustomLink tag='button' to='/administrarClientes' className="botonAzulMarino">Cancelar</CustomLink>
-                            <CustomLink tag='button' type='submit' className="botonSalmon" onSubmit={handleSave}>Guardar cambios</CustomLink>
+                            <CustomLink 
+                                tag='button' 
+                                to='/administrarClientes' 
+                                className="botonAzulMarino">Cancelar
+                            </CustomLink>
+                            <CustomLink 
+                                tag='button' 
+                                type='submit' 
+                                className="botonSalmon" 
+                                onSubmit={handleSave}>Guardar cambios
+                            </CustomLink>
                         </section>
                     </form>
                 </section>
@@ -295,6 +404,5 @@ function EditarSolicitudCliente(props) {
         );
     }
 }
-
 
 export default EditarSolicitudCliente;
