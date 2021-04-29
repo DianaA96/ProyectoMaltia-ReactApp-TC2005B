@@ -384,6 +384,10 @@ button:active {
         border-color: transparent;
     }
 
+    #botonEliminarUsuario > *{
+        pointer-events: none;
+    }
+
     #botonEliminarUsuario::after {
         content: "";
     }
@@ -410,6 +414,10 @@ button:active {
     #botonContactarProspecto {
         background-color: transparent;
         border-color: transparent;
+    }
+
+    #botonContactarProspecto > *{
+        pointer-events: none;
     }
 
     #botonContactarProspecto::after {
