@@ -19,15 +19,15 @@ function Lateral(props){
     useEffect(()=>{
         setStatus('loading')
         axios.get(props.usuario) 
-              .then((result)=>{
+            .then((result)=>{
                 console.log(result)
                 setAssessorData(result.data.datosEmpleado)
                 setStatus('resolved')
-              })
-              .catch((error)=>{
-                  setError(error)
-                  setStatus('error')
-              })
+            })
+            .catch((error)=>{
+                setError(error)
+                setStatus('error')
+            })
       }, [])
 
     return(
@@ -42,7 +42,13 @@ function Lateral(props){
 
                 <div className='tabs'>
                     {props.tabs.map((ventana, index) =>
-                        <TabLateral key={ventana} idx={index} name={ventana} setTabFocus={props.setTabFocus} TabFocus={props.TabFocus}/>
+                        <TabLateral 
+                            key={ventana} 
+                            idx={index} 
+                            name={ventana} 
+                            setTabFocus={props.setTabFocus} 
+                            TabFocus={props.TabFocus}
+                        />
                     )}
                 </div>
                     
@@ -50,7 +56,9 @@ function Lateral(props){
                     <button  
                         onClick={logout} 
                         className="logout">
-                            <i class="fas fa-sign-out-alt"></i>Cerrar sesión</button>
+                            <i class="fas fa-sign-out-alt"></i>
+                            Cerrar sesión
+                    </button>
                 </div>
             </div>
             
@@ -66,7 +74,13 @@ function Lateral(props){
                                 <li key={ventana}><Link to={'/'+(ventana.replace(/ /g, ""))}>{ventana} </Link></li>
                             </React.Fragment>
                         )}
-                        <li><button className="logoutMobileMenu" onClick={logout} to='/login'>Cerrar sesión <i class="fas fa-sign-out-alt"></i></button>
+                        <li><button 
+                            className="logoutMobileMenu" 
+                            onClick={logout} 
+                            to='/login'>
+                                Cerrar sesión 
+                            <i class="fas fa-sign-out-alt"></i>
+                            </button>
                         </li>
                     </ul>
                 </div>

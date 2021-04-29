@@ -164,14 +164,13 @@
   .grupoInput-3 {
     width: 31%;
   }
-
- 
 }
 
 @media only screen and (max-width: 860px) {
   .input-gral {
     font-size: 1.8vw;
   }
+
   .grupoInput-2 {
     width: 45%;
   }

@@ -38,13 +38,14 @@
 .circulo-seguimiento img{
     width: 60%;
 }
+
 .cont-seguimiento button{
     color: #525252;
 }
+
 .cont-seguimiento i{
     font-size: 30px;
 }
-
 
 .cont-seguimiento button:hover .circulo-seguimiento{
     background: #90B4DE;

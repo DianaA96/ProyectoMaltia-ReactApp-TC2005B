@@ -2,7 +2,6 @@
     width: 40%;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     text-align:start;
 }
 
@@ -28,9 +27,9 @@
 
 .cont-referencias{
     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 
 .referencia-sol{

@@ -1,7 +1,6 @@
 import './RadioButton.css'
 
 function RadioButton(props){
-
     function toggleSelectVisibility(){
         if(props.etiqueta === 'Analista'){
             props.setSelectStatus('analista');
@@ -10,16 +9,19 @@ function RadioButton(props){
             props.setSelectStatus('asesor');
         }
     }
-
     return(
         <div className="cont-component">
             <label className="container-radio"> {props.etiqueta}
-                <input onFocus ={toggleSelectVisibility} type="radio" name="radio" defaultChecked={props.isChecked} />
+                <input 
+                    onFocus ={toggleSelectVisibility} 
+                    type="radio" 
+                    name="radio" 
+                    defaultChecked={props.isChecked} 
+                />
                 <span className="checkmark"></span>
             </label>
         </div>
     )
 }
-
 
 export default RadioButton;

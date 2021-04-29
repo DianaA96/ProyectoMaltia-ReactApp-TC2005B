@@ -18,7 +18,13 @@ function AdministracionClientesAsesor() {
     return(
         <main>
             <aside>
-                <Lateral img = {asesor} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro5`} tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
+                <Lateral 
+                    img = {asesor} 
+                    usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro5`} 
+                    tabs={tabs} 
+                    TabFocus={TabFocus} 
+                    setTabFocus={setTabFocus}
+                />
             </aside>
             <section className='contentPage'>
                 <header>

@@ -7,11 +7,9 @@ import '../components/plantillaInputs.css';
 import '../components/Boton.css';
 import CustomLink from '../components/CustomLink';
 import axios from 'axios';
-import IdleStateView from '../components/IdleStateView';
 import ErrorScreen from '../components/ErrorScreen';
 import Select from 'react-select'
 
-// ESTA VISTA REQUIERE CONOCER EL ID DEL ASESOR QUE HA INICIADO SESIÓN
 let idLoggedAssessor = 1
 
 function Aprospecto(){
@@ -21,7 +19,6 @@ function Aprospecto(){
 
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
 
-    const [ status, setStatus ] = useState('idle');
     const [ error, setError ] = useState(null);
     const [ prospect, setProspect ] = useState({});
     const [ statusForm, setStatusForm ] = useState('pristine');
@@ -58,14 +55,14 @@ function Aprospecto(){
                 fontSize: "4.5vw"
             },
           }),
-          menu: base => ({
+        menu: base => ({
             ...base,
             borderRadius: "25px",
             fontSize: "1.2vw",
             fontFamily: "Raleway",
-            
-          }),
-          menuList: base => ({
+        
+        }),
+        menuList: base => ({
             ...base,
             padding: 0,
             borderRadius: "25px",
@@ -73,20 +70,20 @@ function Aprospecto(){
                 ...base["@media only screen and (max-width: 576px)"],
                 background:"#F2F5FA",
                 fontSize: "4.5vw"
-            },
-          }),
-          dropdownIndicator: base => ({
+        },
+        }),
+        dropdownIndicator: base => ({
             ...base,
             color: "#0f123f"
-          }),
-          container: base => ({
+        }),
+        container: base => ({
             ...base,
             width:"48%",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
                 width:"100%",
-            },
-          })
+        },
+        })
     }
 
     const handleSelectChange = selectedOption => {
@@ -137,49 +134,125 @@ function Aprospecto(){
     return(
         <main>
             <aside>
-                <Lateral img = {asesor} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro5`} tabs={tabs} TabFocus ={TabFocus} setTabFocus={setTabFocus}/>
+                <Lateral 
+                    img = {asesor} 
+                    usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro5`} 
+                    tabs={tabs} 
+                    TabFocus ={TabFocus} 
+                    setTabFocus={setTabFocus}
+                />
             </aside>
 
             <div className='contentPageForms'>
                 <header>
-                    <Bienvenida txtBienvenida = "Bienvenido, Asesor" txtVentana="Agregar prospecto"/>
+                    <Bienvenida 
+                        txtBienvenida = "Bienvenido, Asesor" 
+                        txtVentana="Agregar prospecto"
+                    />
                     <p className='tag-fecha'>{varFecha}</p>
                 </header>
 
                 <form onSubmit={handleSave}>
                     <section className="inputsContentPage mt-5">
                         <div className='grupoInput-3'>
-                            <input name="nombre" className = "input-gral inputFormularios" type="text" placeholder="Nombre(s)*" required onChange={handleChange} required/>
-                            <label htmlFor="name" className="etiquetaInputs">Nombre(s)*</label>
+                            <input 
+                                name="nombre" 
+                                className = "input-gral inputFormularios" 
+                                type="text" 
+                                placeholder="Nombre(s)*" 
+                                required 
+                                onChange={handleChange} 
+                                required/>
+                            <label 
+                                htmlFor="name" 
+                                className="etiquetaInputs">
+                                    Nombre(s)*
+                            </label>
                         </div>
                         
                         <div className='grupoInput-3'>
-                            <input name="apellidoPaterno" className = "input-gral inputFormularios" type="text" required placeholder="Apellido paterno*"onChange={handleChange} required/>
+                            <input 
+                                name="apellidoPaterno" 
+                                className = "input-gral inputFormularios" 
+                                type="text" 
+                                required 
+                                placeholder="Apellido paterno*"
+                                onChange={handleChange} 
+                                required
+                            />
                             <label htmlFor="name" className="etiquetaInputs">Apellido Paterno*</label>
                         </div>
                         
                         <div className='grupoInput-3'>
-                            <input name="apellidoMaterno" className = "input-gral inputFormularios" type="text" placeholder="Apellido materno"onChange={handleChange}/>
+                            <input 
+                                name="apellidoMaterno" 
+                                className = "input-gral inputFormularios" 
+                                type="text" 
+                                placeholder="Apellido materno"
+                                onChange={handleChange}
+                            />
                             <label htmlFor="name" className="etiquetaInputs">Apellido Materno</label>
                         </div>
                        
                         <div className='grupoInput-2'>
-                            <input name="numTelefono" pattern=".{10,10}" className = "input-gral w-2 inputFormularios" type="number" required placeholder="Número de teléfono*"onChange={handleChange} required/>
+                            <input 
+                                name="numTelefono" 
+                                pattern=".{10,10}" 
+                                className = "input-gral w-2 inputFormularios" 
+                                type="number" 
+                                required 
+                                placeholder="Número de teléfono*"
+                                onChange={handleChange} 
+                                required
+                            />
                             <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)*</label>
                         </div>
 
                         <div className='grupoInput-2'>
-                            <input name="correoElectronico"  className = "input-gral w-2 inputFormularios"  type="email" required placeholder="Correo electrónico*" onChange={handleChange} required/>
+                            <input 
+                                name="correoElectronico"  
+                                className = "input-gral w-2 inputFormularios"  
+                                type="email" 
+                                required 
+                                placeholder="Correo electrónico*" 
+                                onChange={handleChange} 
+                                required
+                            />
                             <label htmlFor="name" className="etiquetaInputs">Correo electrónico*</label>
                         </div>
             
-                        <Select name="idStore" placeholder = "Tienda*"  options={tiendas} styles = {customSelectStyles} required onChange = {handleSelectChange}/>
+                        <Select 
+                            name="idStore" 
+                            placeholder = "Tienda*"  
+                            options={tiendas} 
+                            styles = {customSelectStyles} 
+                            required 
+                            onChange = {handleSelectChange}/>
                     </section>
 
                     <section className='botonesContentPage ml-1'>
-                        <CustomLink tag='button' to='./administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
-                        <CustomLink onSubmit={handleSave} type="submit" tag='button' to={`/solicitudCliente/${idProspect}`} className="botonSalmon mr" disabled={idProspect===null}>Continuar solicitud</CustomLink>
-                        <CustomLink onSubmit={handleSave} type="submit" tag='button' className="botonSalmon mr">Registrar</CustomLink>
+                        <CustomLink 
+                            tag='button' 
+                            to='./administrarProspectos' 
+                            className="botonAzulMarino">
+                                Cancelar
+                        </CustomLink>
+                        <CustomLink 
+                            onSubmit={handleSave} 
+                            type="submit" 
+                            tag='button' 
+                            to={`/solicitudCliente/${idProspect}`} 
+                            className="botonSalmon mr" 
+                            disabled={idProspect===null}>
+                                Continuar solicitud
+                        </CustomLink>
+                        <CustomLink 
+                            onSubmit={handleSave} 
+                            type="submit" 
+                            tag='button' 
+                            className="botonSalmon mr">
+                                Registrar
+                        </CustomLink>
                     </section>
                 </form>
 
