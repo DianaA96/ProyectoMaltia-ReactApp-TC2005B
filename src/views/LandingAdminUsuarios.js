@@ -13,6 +13,7 @@ const LandingAdminUsuarios = () => {
     
     const [status, setStatus] = useState('hidden');
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
+    const [ queryInput, setQueryInput ] = useState('')
     const [modalData, setModalData] = useState({});
     const [TabFocus, setTabFocus] = useState(0);
     
@@ -26,11 +27,11 @@ const LandingAdminUsuarios = () => {
                     <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Administración de usuarios"/>
                 </header>
                 <section className="filtrosContentPageLanding">
-                    <InputBuscar />
+                    <InputBuscar setQueryInput={setQueryInput}/>
                     <InputFiltrar />
                 </section>
                 <section className="tablaContentPage">
-                    <TablaUsuarios status={status} setStatus={setStatus} setModalData={setModalData}/>
+                    <TablaUsuarios queryInput={queryInput} status={status} setStatus={setStatus} setModalData={setModalData}/>
                     {status === 'visible' ? <ModalDeshabilitarEmpleado modalData = {modalData} status = {status} setStatus = {setStatus}/> : null}
                 </section> 
             </section>

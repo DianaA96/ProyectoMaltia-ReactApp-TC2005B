@@ -16,9 +16,16 @@ function TablaUsuarios(props) {
   const [error, setError] = useState(null);
   const [employees, setEmployees] = useState([]);
 
+  let queryString = ''
+
+  if (props.queryInput !== '') {
+    console.log(queryString)
+    queryString = '?name=';
+  }
+
   useEffect(()=>{
     setStatus('loading')
-    axios.get('http://localhost:5000/employees')
+    axios.get(`http://localhost:5000/employees${queryString}${props.queryInput}`)
       .then((result)=>{
         setEmployees(result.data.empleados)
         setStatus('resolved')
@@ -27,7 +34,7 @@ function TablaUsuarios(props) {
         setError(error)
         setStatus('error')
       })
-}, [])
+}, [props.queryInput])
 
 if(status === 'idle' || status === 'loading'){
     return <IdleStateView></IdleStateView>
