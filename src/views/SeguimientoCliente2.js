@@ -21,18 +21,17 @@ function SeguimientoCliente2(props) {
         //
         const [ status, setStatus ] = useState('idle');
         const [ error, setError ] = useState(null);
-        const[statusToggle1,setStatusToggle1]= useState({});
-        const[statusToggle2,setStatusToggle2]= useState({});
-        const[statusToggle,setStatusToggle]= useState(false);
+        const [ statusToggle1,setStatusToggle1 ] = useState({});
+        const [ statusToggle2,setStatusToggle2 ] = useState({});
+        const [ statusToggle,setStatusToggle] = useState(false);
         const [prospect, setProspect] = useState([]);
-        const[ref,setRef]=useState([]);
+        const [ref,setRef]=useState([]);
 
-        /*function setToggle1(event){
-            [event.target.name],
+        function setToggle1(event){
             setStatusToggle(!statusToggle);
         }
 
-        function setToggle2(event){
+        /*function setToggle2(event){
             [event.target.name],
             setStatusToggle(!statusToggle);
         }
@@ -106,6 +105,8 @@ function SeguimientoCliente2(props) {
 
         }, [])
 
+        console.log(prospect) 
+
         if(status === 'idle' || status === 'loading'){
             return <IdleStateView/>
         }
@@ -137,26 +138,26 @@ function SeguimientoCliente2(props) {
                             </section>
                             <section className="mainContentPageSeguimiento">
                             <form onSubmit={handleSave}>
-                                    <div className="accionesSeguimiento">
-                                        <div className="toggle-cont">
-                                            <p className="alta-isi">Alta en ISI</p>
-                                            {/*<ToggleSwitch name={"altaIsi"} statusToggle={statusToggle} setToggleTrue={setToggleTrue} onChange = {handleChange}/>*/}
-                                        </div>
-                                        <div className="toggle-cont">
-                                            <p className="auditoria-buro">Auditado</p>
-                                            {/*<ToggleSwitch name={"auditoriaBuro"} statusToggle={statusToggle} setToggleTrue={setToggleTrue} onChange = {handleChange}/>*/}
-                                        </div>
-                                        <button className="botonSalmon btn-guardar-cambios" type='submit'>Guardar Cambios</button>
+                                <div className="accionesSeguimiento">
+                                    <div className="toggle-cont">
+                                        <p className="alta-isi">Alta en ISI</p>
+                                        <ToggleSwitch checked={prospect.altaIsi} onChange={setStatusToggle1}/>
                                     </div>
+                                    <div className="toggle-cont">
+                                        <p className="auditoria-buro">Auditado</p>
+                                        <ToggleSwitch checked={prospect.auditoriaBuro}/>                                        
+                                    </div>
+                                    <button className="botonSalmon btn-guardar-cambios" type='submit'>Guardar Cambios</button>
+                                </div>
                             </form>
-                                <div className="lineaSeguimiento"></div>
-                                
-                                <InfoSolicitud id={props.match.params.idProspect}/>
-                            </section>
+                            <div className="lineaSeguimiento"></div>
+                            
+                            <InfoSolicitud id={props.match.params.idProspect}/>
                         </section>
-                    </main>
-                </React.Fragment>
-            );
+                    </section>
+                </main>
+            </React.Fragment>
+        );
     }
 }
 

@@ -6,9 +6,6 @@
   background: #cacaca;
   border-radius: 50px;
   font-weight: 600;
-  /* margin-bottom: 2%;
-    margin-left: 1%;
-    margin-right: 1%; */
 }
 
 .input-gral:disabled {
@@ -43,7 +40,7 @@
   user-select: none;
 }
 
-.inputFormularios:placeholder-shown ~ .etiquetaInputs {
+.inputFormularios:hover ~ .etiquetaInputs {
   top: 25%;
 }
 
@@ -67,29 +64,25 @@
   margin-right: 1%;
 }
 
-.inputFormularios:not(focus) ~ .etiquetaInputs {
+.inputFormularios:not(hover) ~ .etiquetaInputs {
   color: transparent;
 }
 
-.inputFormularios:focus::placeholder {
-  color: transparent;
-}
-
-.inputFormularios:focus ~ .etiquetaInputs {
+.inputFormularios:hover ~ .etiquetaInputs {
   position: absolute;
   top: -15%;
   display: block;
-  transition: 0.4s;
+  transition: 0.01s;
   font-size: 0.8vw;
   color: #0f123f;
   font-weight: 700;
 }
 
-.inputFormularios:not(:placeholder-shown) ~ .etiquetaInputs {
+.inputFormularios:hover ~ .etiquetaInputs {
   position: absolute;
   top: -15%;
   display: block;
-  transition: 1s;
+  transition: 0.6s;
   font-size: 0.8vw;
   color: #0f123f;
   font-weight: 700;

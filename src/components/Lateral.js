@@ -36,7 +36,7 @@ function Lateral(props){
                     
                 <div className="logout">
                     <a><Link to='./login'><i class="fas fa-sign-out-alt"></i></Link></a>
-                    <CustomLink onClick={handleLogout} tag='button' to='./login' className="logout">Cerrar sesión</CustomLink>
+                    <CustomLink onClick={handleLogout} tag='button' to='/login' className="logout">Cerrar sesión</CustomLink>
                 </div>
             </div>
             
@@ -50,7 +50,7 @@ function Lateral(props){
                         {props.tabs.map((ventana) => 
                             <li key={ventana}><Link to={'/'+(ventana.replace(/ /g, ""))}>{ventana}</Link></li>
                         )}
-                        <li><button className="logoutMobileMenu" onClick={handleLogout}><Link to='./login'>Cerrar sesión <i class="fas fa-sign-out-alt"></i></Link></button></li>
+                        <li><button className="logoutMobileMenu" onClick={handleLogout}><Link to='/login'>Cerrar sesión <i class="fas fa-sign-out-alt"></i></Link></button></li>
                     </ul>
                 </div>
             </nav>

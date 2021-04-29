@@ -198,15 +198,14 @@
         width: 90vw;
     }
 
-    .contentPageExtendido .inputFormularios:not(:placeholder-shown) ~ .etiquetaInputs{
+    .contentPageExtendido .inputFormularios:not(:hover) ~ .etiquetaInputs{
         font-size: 12px;
-        color: white;
+        color: transparent;
     }
 
     .contentPageExtendido .inputFormularios:focus ~ .etiquetaInputs {
         font-size: 12px;
-        color: white;
-        
+        color: transparent;
     }
 
     .contentPageExtendido .menu {
