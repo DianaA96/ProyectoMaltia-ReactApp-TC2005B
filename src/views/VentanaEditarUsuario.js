@@ -16,7 +16,7 @@ function VentanaEditarUsuario(props) {
     let tiendasAsociadas =[];
     let departamentos =[];
     let departamentoAsociado = '';
-    
+    const [TabFocus, setTabFocus] = useState(0);
     //React Select Styles
     const customSelectStyles = {
         control: (base, state) => ({
@@ -45,6 +45,11 @@ function VentanaEditarUsuario(props) {
             ...base,
             padding: 0,
             borderRadius: "25px",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+                fontSize: "4.5vw"
+            },
           }),
           dropdownIndicator: base => ({
             ...base,
@@ -269,7 +274,7 @@ function VentanaEditarUsuario(props) {
             <React.Fragment>
                 <main>
                     <aside>
-                        <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
+                        <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} TabFocus={TabFocus}  setTabFocus = {setTabFocus}/>
                     </aside>
                     <section className='contentPageForms'>
                         <header>

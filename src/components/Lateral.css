@@ -43,7 +43,7 @@
     flex-direction: column;
 }
 
-a:focus .tab{
+.tab-foc{
     text-align: left;
     width: 95%;
     padding: 1.75vh;;

@@ -220,7 +220,7 @@ function ModalContactoAsesor(props) {
                                 tag='button' 
                                 disabled={checkboxChecked&&optionSelected?false:true}
                                 onClick={enviarDatosContacto} 
-                                className="botonSalmon">
+                                className="botonSalmon btnModal">
                                 Guardar cambios
                             </button>
                         </form>

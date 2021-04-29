@@ -23,7 +23,7 @@ function Eprospecto(props) {
     const [ prospect, setProspect ] = useState({});
     const [ statusForm, setStatusForm ] = useState('pristine');
     const [ errorForm, setErrorForm ] = useState(null);
-
+    const [TabFocus, setTabFocus] = useState(0);
 
     // Se hace la petición al API de los datos del usuario específico que se va a editar para prellenar el formulario
     useEffect( () => {
@@ -93,7 +93,7 @@ function Eprospecto(props) {
         <main>
 
             <aside>
-                <Lateral img = {asesor} usuario={`Asesor ${idLoggedAssessor}`} tabs={tabs} />
+                <Lateral img = {asesor} usuario={`Asesor ${idLoggedAssessor}`} tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
             </aside>
 
             <div className='contentPageForms'>
@@ -139,8 +139,7 @@ function Eprospecto(props) {
                         <CustomLink 
                             tag='button' 
                             className="botonSalmon" 
-                            disabled={statusForm === 'pristine'}
-                            to='/administrarProspectos' 
+                            disabled={statusForm === 'pristine'} 
                             type="submit">Guardar cambios</CustomLink>
                     </section>
 

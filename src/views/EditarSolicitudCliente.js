@@ -22,8 +22,8 @@ function EditarSolicitudCliente(props) {
     const[ref2,setRef2]=useState({});
     const[ref3,setRef3]=useState({});
     const[refViejitas,setRefViejitas]=useState({});
+    const [TabFocus, setTabFocus] = useState(2);
     const idAssessor= "1"
-
     const customSelectStyles = {
         control: (base, state) => ({
             ...base,
@@ -32,13 +32,13 @@ function EditarSolicitudCliente(props) {
             boxShadow: state.isFocused ? null : null,
             padding: "7px 30px",
             fontSize: "1.2vw",
+            marginTop:"1em",
             fontFamily: "Raleway",
             fontWeight: "600",
-            marginTop: "1em",
-            marginLeft: ".5em",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
                 background:"#F2F5FA",
+                fontSize: "4.5vw"
             },
           }),
           menu: base => ({
@@ -52,6 +52,11 @@ function EditarSolicitudCliente(props) {
             ...base,
             padding: 0,
             borderRadius: "25px",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+                fontSize: "4.5vw"
+            },
           }),
           dropdownIndicator: base => ({
             ...base,
@@ -59,10 +64,10 @@ function EditarSolicitudCliente(props) {
           }),
           container: base => ({
             ...base,
-            width:"48%",
+            width:"46%",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
-                width:"90%",
+                width:"100%"
             },
           })
     }
@@ -221,11 +226,12 @@ function EditarSolicitudCliente(props) {
         <img  src={zorrito} alt= "zorroError" />
         )
     }
+
     if(status === 'resolved'){
         return(
             <main id='mainSolicitudCliente'>
                 <aside>
-                    <Lateral tabs = {tabs} img = {asesor} />
+                    <Lateral tabs = {tabs} img = {asesor} usuario="Asesor #1234" TabFocus={TabFocus} setTabFocus={setTabFocus}/>
                 </aside>
                 <section className='contentPageExtendido'>
                     <header className='headerSolicitudCliente'>

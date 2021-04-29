@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './LandingAdminUsuarios.css'; //Toma estilos de Vista con mismas clases
 import './AdministracionClientesAsesor.css'
 import Lateral from '../components/Lateral';
@@ -13,11 +13,12 @@ import '../components/Boton.css';
 function AdministracionClientesAsesor() {
 
     let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar clientes"];
+    const [TabFocus, setTabFocus] = useState(2);
 
     return(
         <main>
             <aside>
-                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs}/>
+                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
             </aside>
             <section className='contentPage'>
                 <header>

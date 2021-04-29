@@ -11,12 +11,14 @@ import Select from 'react-select';
 import axios from 'axios';
 
 function SolicitudCliente(props) {
+    const idLoggedAssessor = '#1234'
     const [status, setStatus]= useState('idle');
     const [datos , setDatos] = useState([]);
     const [error, setError] = useState(null);
     const [SelectValue, setSelectValue] = useState([]);
     const [fullApplication, setFullApplication] = useState({});
     const [isCheck, setIsCheck] = useState(false);
+    const [TabFocus, setTabFocus] = useState(0);
     const idAssessor= "1"
 
     const customSelectStyles = {
@@ -27,12 +29,13 @@ function SolicitudCliente(props) {
             boxShadow: state.isFocused ? null : null,
             padding: "7px 30px",
             fontSize: "1.2vw",
+            marginTop:"1em",
             fontFamily: "Raleway",
             fontWeight: "600",
-            marginTop: "1em",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
                 background:"#F2F5FA",
+                fontSize: "4.5vw"
             },
           }),
           menu: base => ({
@@ -46,6 +49,11 @@ function SolicitudCliente(props) {
             ...base,
             padding: 0,
             borderRadius: "25px",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+                fontSize: "4.5vw"
+            },
           }),
           dropdownIndicator: base => ({
             ...base,
@@ -56,7 +64,7 @@ function SolicitudCliente(props) {
             width:"46%",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
-                width:"90%",
+                width:"100%"
             },
           })
     }
@@ -198,7 +206,7 @@ function SolicitudCliente(props) {
         return(
             <main id='mainSolicitudCliente'>
                 <aside>
-                    <Lateral tabs = {tabs} img = {asesor} />
+                    <Lateral tabs = {tabs} img = {asesor} TabFocus={TabFocus} setTabFocus={setTabFocus} usuario={`Asesor ${idLoggedAssessor}`}/>
                 </aside>
                 <section className='contentPageExtendido'>
                     <header className='headerSolicitudCliente'>

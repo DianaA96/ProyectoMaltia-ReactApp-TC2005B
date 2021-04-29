@@ -280,7 +280,7 @@
     }
 
     .tarjetaReferencia input:nth-child(n) {
-        background-color: #CACACA;
+        background: #f2f5fa;
         height: 5vw;
         width: 73vw;
         margin-left: 10vw;

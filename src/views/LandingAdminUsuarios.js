@@ -14,11 +14,12 @@ const LandingAdminUsuarios = () => {
     const [status, setStatus] = useState('hidden');
     let tabs = ["Administrar Usuarios", "Agregar Usuario"];
     const [modalData, setModalData] = useState({});
-
+    const [TabFocus, setTabFocus] = useState(0);
+    
     return(
         <main>
             <aside>
-                 <Lateral img = {admin} usuario="Admin #1234" tabs={tabs}/>
+                 <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} setTabFocus={setTabFocus} TabFocus={TabFocus}/>
             </aside>
             <section className='contentPage'>
                 <header>
