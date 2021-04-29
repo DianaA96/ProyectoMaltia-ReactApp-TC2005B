@@ -29,8 +29,8 @@ function Lateral(props){
                 </div>
 
                 <div className='tabs'>
-                    {props.tabs.map((ventana) =>
-                        <TabLateral key={ventana} name={ventana}/>
+                    {props.tabs.map((ventana, index) =>
+                        <TabLateral key={ventana} idx={index} name={ventana} setTabFocus={props.setTabFocus} TabFocus={props.TabFocus}/>
                     )}
                 </div>
                     
@@ -48,7 +48,9 @@ function Lateral(props){
                     <span></span>
                     <ul id="foldingMenu">
                         {props.tabs.map((ventana) => 
-                            <li key={ventana}><Link to={'/'+(ventana.replace(/ /g, ""))}>{ventana}</Link></li>
+                            <React.Fragment >
+                                <li key={ventana}><Link to={'/'+(ventana.replace(/ /g, ""))}>{ventana} </Link></li>
+                            </React.Fragment>
                         )}
                         <li><button className="logoutMobileMenu" onClick={handleLogout}><Link to='/login'>Cerrar sesión <i class="fas fa-sign-out-alt"></i></Link></button></li>
                     </ul>

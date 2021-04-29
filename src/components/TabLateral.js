@@ -8,9 +8,15 @@ import {
   } from 'react-router-dom';
 
 function TabLateral(props) {
+
+    function changeFocus(){
+        props.setTabFocus(true)
+    }
+    console.log(props.idx, props.TabFocus)
+
     return (
         <Link to={`/${props.name.replace(/ /g, "")}`}>
-            <div className='tab'>
+            <div className={`${props.idx === props.TabFocus ? "tab-foc" : "tab"}`} onFocus={changeFocus}>
                 {props.name ? props.name.split(" ")[0] : null}
                 <br />
                 {props.name.split(" ")[1] ? props.name.split(" ")[1] : null}

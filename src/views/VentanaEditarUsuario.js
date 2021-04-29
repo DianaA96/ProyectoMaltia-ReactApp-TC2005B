@@ -45,6 +45,11 @@ function VentanaEditarUsuario(props) {
             ...base,
             padding: 0,
             borderRadius: "25px",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+                fontSize: "4.5vw"
+            },
           }),
           dropdownIndicator: base => ({
             ...base,

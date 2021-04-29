@@ -18,6 +18,7 @@ function VentanaAgregarUsuario(props) {
     const [stores, setStores] = useState([]);
     const [SelectStatus, setSelectStatus] = useState('hidden');
     const [SelectValue, setSelectValue] = useState([]);
+    const [TabFocus, setTabFocus] = useState(1);
 
     useEffect(()=>{
         //Obtiene lista de tiendas
@@ -76,6 +77,11 @@ function VentanaAgregarUsuario(props) {
             ...base,
             padding: 0,
             borderRadius: "25px",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+                fontSize: "4.5vw"
+            },
           }),
           dropdownIndicator: base => ({
             ...base,
@@ -236,7 +242,7 @@ function VentanaAgregarUsuario(props) {
             <React.Fragment>
                 <main>
                     <aside>
-                        <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} />
+                        <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
                     </aside>
                     <section className='contentPageForms'>
                         <header>
