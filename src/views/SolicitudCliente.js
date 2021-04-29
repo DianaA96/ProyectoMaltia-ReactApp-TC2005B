@@ -11,7 +11,7 @@ import Select from 'react-select';
 import axios from 'axios';
 
 function SolicitudCliente(props) {
-    const idLoggedAssessor = '#1234'
+    const idLoggedAssessor = `http://localhost:5000/employees/assessor?thisAssessor=zorro5`
     const [status, setStatus]= useState('idle');
     const [datos , setDatos] = useState([]);
     const [error, setError] = useState(null);
@@ -206,7 +206,7 @@ function SolicitudCliente(props) {
         return(
             <main id='mainSolicitudCliente'>
                 <aside>
-                    <Lateral tabs = {tabs} img = {asesor} TabFocus={TabFocus} setTabFocus={setTabFocus} usuario={`Asesor ${idLoggedAssessor}`}/>
+                    <Lateral tabs = {tabs} img = {asesor} TabFocus={TabFocus} setTabFocus={setTabFocus} usuario={idLoggedAssessor}/>
                 </aside>
                 <section className='contentPageExtendido'>
                     <header className='headerSolicitudCliente'>

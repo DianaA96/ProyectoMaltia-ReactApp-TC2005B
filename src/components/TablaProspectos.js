@@ -17,7 +17,6 @@ function TablaProspectos(props) {
   const [ status, setStatus ] = useState('idle');
   const [ error, setError ] = useState(null);
   const [ prospects, setProspects ] = useState([]);
-  const [ queryInputProvided, setQueryInputProvided ] = useState(false);
 
   useEffect(()=>{
     setStatus('loading')

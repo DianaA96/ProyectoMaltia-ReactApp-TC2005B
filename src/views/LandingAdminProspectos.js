@@ -1,6 +1,5 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import './LandingAdminUsuarios.css';
-import CustomLink from '../components/CustomLink';
 import Lateral from '../components/Lateral';
 import Bienvenida from '../components/Bienvenida';
 import InputBuscar from '../components/InputBuscar';
@@ -8,13 +7,16 @@ import TablaProspectos from '../components/TablaProspectos';
 import InputFiltrar from '../components/InputFiltrar';
 import asesor from '../assets/asesor.png';
 import ModalContactoAsesor from './ModalContactoAsesor'
-import '../components/Boton.css'
+import '../components/Boton.css';
+import axios from 'axios';
 
 function LandingAdminProspectos() {
 
     const [ visibility, setVisibility] = useState('hidden');
     const [ userId, setUserId ] = useState('1');
     const [ queryInput, setQueryInput ] = useState('')
+    const [ status, setStatus ] = useState('idle');
+    const [ error, setError ] = useState(null);
 
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
     const [TabFocus, setTabFocus] = useState(0);
@@ -22,7 +24,7 @@ function LandingAdminProspectos() {
     return(
         <main>
             <aside>
-                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
+                <Lateral img = {asesor} tabs={tabs} TabFocus={TabFocus} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro5`} setTabFocus={setTabFocus}/>
             </aside>
             <section className='contentPage'>
                 <header>
