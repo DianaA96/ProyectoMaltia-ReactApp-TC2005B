@@ -27,6 +27,8 @@ function Aprospecto(){
     const [ statusForm, setStatusForm ] = useState('pristine');
     const [ stores, setStores] = useState([]);
     const [ SelectValue, setSelectValue ] = useState();
+    const [TabFocus, setTabFocus] = useState(1);
+    const [idProspect, setidProspect] = useState(null);
 
     let tiendas =[];
 
@@ -54,6 +56,7 @@ function Aprospecto(){
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
                 background:"#F2F5FA",
+                fontSize: "4.5vw"
             },
           }),
           menu: base => ({
@@ -67,6 +70,11 @@ function Aprospecto(){
             ...base,
             padding: 0,
             borderRadius: "25px",
+            "@media only screen and (max-width: 576px)": {
+                ...base["@media only screen and (max-width: 576px)"],
+                background:"#F2F5FA",
+                fontSize: "4.5vw"
+            },
           }),
           dropdownIndicator: base => ({
             ...base,
@@ -77,7 +85,7 @@ function Aprospecto(){
             width:"48%",
             "@media only screen and (max-width: 576px)": {
                 ...base["@media only screen and (max-width: 576px)"],
-                width:"90%",
+                width:"100%",
             },
           })
     }
@@ -85,15 +93,14 @@ function Aprospecto(){
     const handleSelectChange = selectedOption => {
         let { label, value } = selectedOption
         setSelectValue(value);
+        console.log(SelectValue)
     }
     
     function handleChange(event) {
-        console.log(SelectValue)
         let nuevaInfo = {
             ...prospect,
             idAssessor: idLoggedAssessor,
-            [event.target.name]: event.target.value,
-            idStore: SelectValue
+            [event.target.name]: event.target.value
         }
         setProspect(nuevaInfo)
         console.log(nuevaInfo)
@@ -104,19 +111,24 @@ function Aprospecto(){
         event.preventDefault()
         setStatusForm('loading')
         setError(null)
-        console.log(prospect)
-        
+        const prospectBack = {...prospect, idStore: SelectValue}
+        console.log(prospectBack)
         axios({
             method: 'post',
             url: 'http://localhost:5000/prospects/',
             data: {
-                body: {prospect},
+                body: {prospectBack},
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                     }
                 }
             }
         )
+        .then((result)=>{
+            console.log(result)
+            setidProspect(result.data.idProspect);
+            alert('Prospecto registrado correctamente');
+        })
     }
 
     tiendas = stores.map(function(registro, indice){ 
@@ -126,7 +138,7 @@ function Aprospecto(){
     return(
         <main>
             <aside>
-                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} />
+                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} TabFocus ={TabFocus} setTabFocus={setTabFocus}/>
             </aside>
 
             <div className='contentPageForms'>
@@ -162,13 +174,13 @@ function Aprospecto(){
                             <label htmlFor="name" className="etiquetaInputs">Correo electrónico*</label>
                         </div>
             
-                        <Select name="idStore" placeholder = "RED"  options={tiendas} styles = {customSelectStyles} onChange = {handleSelectChange}/>
+                        <Select name="idStore" placeholder = "Tienda*"  options={tiendas} styles = {customSelectStyles} onChange = {handleSelectChange}/>
                     </section>
 
-                    <section className='botonesContentPage'>
+                    <section className='botonesContentPage ml-1'>
                         <CustomLink tag='button' to='./administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
-                        <CustomLink onClick={handleSave} type="submit" tag='button' to='./solicitudCliente' className="botonSalmon mr">Continuar solicitud</CustomLink>
-                        <CustomLink onClick={handleSave} type="submit" tag='button' to='./administrarProspectos' className="botonSalmon mr">Registrar</CustomLink>
+                        <CustomLink onClick={handleSave} type="submit" tag='button' to={`/solicitudCliente/${idProspect}`} className="botonSalmon mr" disabled={idProspect===null}>Continuar solicitud</CustomLink>
+                        <CustomLink onClick={handleSave} type="submit" tag='button' className="botonSalmon mr">Registrar</CustomLink>
                     </section>
                 </form>
 

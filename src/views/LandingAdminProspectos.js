@@ -14,13 +14,13 @@ function LandingAdminProspectos() {
 
     const [ visibility, setVisibility] = useState('hidden');
     const [ userId, setUserId ] = useState('1');
-
     let tabs = ["Administrar prospectos", "Agregar prospectos","Administrar clientes"];
+    const [TabFocus, setTabFocus] = useState(0);
 
     return(
         <main>
             <aside>
-                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} />
+                <Lateral img = {asesor} usuario="Asesor #1234" tabs={tabs} TabFocus={TabFocus} setTabFocus={setTabFocus}/>
             </aside>
             <section className='contentPage'>
                 <header>
