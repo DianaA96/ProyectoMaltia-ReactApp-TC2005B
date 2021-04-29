@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LandingAnalista.css';
 import Lateral from '../components/Lateral';
 import Bienvenida from '../components/Bienvenida';
@@ -32,11 +32,12 @@ function LandingAnalista() {
       };
 
     let tabs = ["Solicitudes", "Generar reportes"];
+    const [TabFocus, setTabFocus] = useState(0);
 
     return(
         <main>
             <aside>
-                <Lateral img = {analista} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs}/>
+                <Lateral img = {analista} TabFocus={TabFocus} setTabFocus ={setTabFocus} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs}/>
             </aside>
             <section className='contentPage'>
                 <header>

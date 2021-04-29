@@ -18,7 +18,8 @@ import ErrorScreen from '../components/ErrorScreen'
 function SeguimientoCliente3(props) {
         let enlaces = ["./", "./nuevo-usuario"]
         let tabs = ["Solicitudes", "Generar Reportes"];
-
+        const [TabFocus, setTabFocus] = useState(0);
+        const [seguimientoFocus, setSeguimientoFocus] = useState(3)
         //
         const [ status, setStatus ] = useState('idle');
         const [ error, setError ] = useState(null);
@@ -98,7 +99,7 @@ function SeguimientoCliente3(props) {
                 <React.Fragment>
                     <main>
                         <aside>
-                            <Lateral img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs} enlaces={enlaces}/>
+                            <Lateral TabFocus={TabFocus} setTabFocus={setTabFocus} img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs} enlaces={enlaces}/>
                         </aside>
                         <section className='contentPageSeguimiento'>
                             <header>
@@ -107,7 +108,7 @@ function SeguimientoCliente3(props) {
                             </header>
                             <section className="pasosContentPageSeguimiento">
                                 <h2 className="nombreCliente">{prospect.nombre} {prospect.apellidoPaterno} {prospect.apellidoMaterno}</h2>
-                                <PasosSeguimiento id1={props.match.params.idProspect}/>
+                                <PasosSeguimiento id1={props.match.params.idProspect} seguimientoFocus={seguimientoFocus} setSeguimientoFocus={setSeguimientoFocus}/>
                             </section>
                             <section className="mainContentPageSeguimiento">
                             <form onSubmit={handleSave}>
