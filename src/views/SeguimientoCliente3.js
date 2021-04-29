@@ -22,57 +22,41 @@ function SeguimientoCliente3(props) {
         //
         const [ status, setStatus ] = useState('idle');
         const [ error, setError ] = useState(null);
+        const [ formStatus, setFormStatus ] = useState('pristine');
+        const [ montoAutorizado, setMontoAutorizado ] = useState(0);
+        const [ montoDispuesto, setMontoDispuesto ] = useState(0);
 
-        const [prospect, setProspect] = useState([]);
-        const[ref,setRef]=useState([]);
 
-        function handleChange(event){
-            let {	capacidadZorro,
-                idApplication,
-                antiguedadZorro,
-                altaIsi,
-                fechaAlta,
-                auditoriaBuro,
-                creditoAutorizado,
-                fechaAuditoria,
-                montoAutorizado,
-                montoDispuesto,
-                estatus}=prospect;
+        const [ prospect, setProspect ] = useState([]);
+        const [ ref, setRef ] = useState([]);
 
-            let solicitudNueva={
-                idApplication,
-                capacidadZorro,
-                antiguedadZorro,
-                altaIsi,
-                fechaAlta,
-                auditoriaBuro,
-                creditoAutorizado,
-                fechaAuditoria,
-                montoAutorizado,
-                montoDispuesto,
-                estatus,
-                [event.target.name]: event.target.value
-            }
-            //console.log(solicitudNueva);
-            setProspect(solicitudNueva);
-            console.log(prospect);
+        function handleChangeMontoAut(event){
+            setMontoAutorizado(event.target.value)
+            setFormStatus('dirty')
+        }
+
+        function handleChangeMontoDisp(event){
+            setMontoDispuesto(event.target.value)
+            setFormStatus('dirty')
         }
 
         function handleSave(event){
             event.preventDefault();
-            //prospect.antiguedadZorro=antiguedad;
-
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
-                body: prospect,
+                body: {
+                    montoAutorizado,
+                    montoDispuesto
+                },
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                 }
             })
                 .then((result)=>{
-
+                    setStatus('resolved')
                 })
                 .catch(error =>{
-
+                    setError(error)
+                    setStatus('error')
                 })
         }
 
@@ -83,10 +67,11 @@ function SeguimientoCliente3(props) {
            
             axios.get(`http://localhost:5000/applications/full-application-data/${props.match.params.idProspect}`) 
                 .then((result)=>{
-                    
                     setProspect(result.data.infoSolicitud[0])
                     setRef(result.data.referencias[0])
                     setStatus('resolved')
+                    setMontoAutorizado(result.data.infoSolicitud[0].montoAutorizado)
+                    setMontoDispuesto(result.data.infoSolicitud[0].montoDispuesto)
                 })
                 .catch((error)=>{
                     setError(error)
@@ -126,9 +111,9 @@ function SeguimientoCliente3(props) {
                             <section className="mainContentPageSeguimiento">
                             <form onSubmit={handleSave}>
                                 <div className="accionesSeguimiento">
-                                    <input className= "input-gral w-1" type="text" name="montoAutorizado" placeholder={prospect.montoAutorizado} onChange = {handleChange}/>
-                                    <input className= "input-gral w-1" type="text" name="montoDispuesto"  placeholder={prospect.montoDispuesto} onChange = {handleChange}/>
-                                    <button className="botonSalmon btn-guardar-cambios"  type='submit'>Guardar Cambios</button>
+                                    <input className= "input-gral w-1" type="text" name="montoAutorizado" value={montoAutorizado} onChange = {handleChangeMontoAut}/>
+                                    <input className= "input-gral w-1" type="text" name="montoDispuesto"  value={montoDispuesto} onChange = {handleChangeMontoDisp}/>
+                                    <button className="botonSalmon btn-guardar-cambios"  type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>
                                 </div>
                             </form>
                                 <div className="lineaSeguimiento"></div>

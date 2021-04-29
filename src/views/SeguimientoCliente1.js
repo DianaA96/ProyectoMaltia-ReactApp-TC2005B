@@ -12,7 +12,6 @@ import '../components/Boton.css'
 
 import axios from 'axios'
 
-
 import React, {useState, useEffect} from 'react'
 import IdleStateView from '../components/IdleStateView'
 import ErrorScreen from '../components/ErrorScreen'
@@ -23,61 +22,57 @@ function SeguimientoCliente1(props) {
       
         let enlaces = ["./", "./nuevo-usuario"]
         let tabs = ["Solicitudes", "Generar Reportes"];
-//
 
         const [ status, setStatus ] = useState('idle');
         const [ error, setError ] = useState(null);
+        const [ formStatus, setFormStatus ] = useState('pristine');
 
-        const [prospect, setProspect] = useState([]);
-        const[ref,setRef]=useState([]);
+        const [ antiguedadMinima, setAntiguedadMinima ] = useState(false);
+        const [ capacidadPago, setCapacidadPago ] = useState(false);
 
-        function handleChange(event){
-            let {	capacidadZorro,
-                idApplication,
-                antiguedadZorro,
-                altaIsi,
-                fechaAlta,
-                auditoriaBuro,
-                creditoAutorizado,
-                fechaAuditoria,
-                montoAutorizado,
-                montoDispuesto,
-                estatus}=prospect;
+        const [ varAntiguedadMinima, setVarAntiguedadMinima ] = useState(0);
+        const [ varCapacidadPago, setVarCapacidadPago ] = useState(0);
 
-            let solicitudNueva={
-                idApplication,
-                capacidadZorro,
-                antiguedadZorro,
-                altaIsi,
-                fechaAlta,
-                auditoriaBuro,
-                creditoAutorizado,
-                fechaAuditoria,
-                montoAutorizado,
-                montoDispuesto,
-                estatus,
-                [event.target.name]: event.target.value
-            }
-            //console.log(solicitudNueva);
-            setProspect(solicitudNueva);
-            console.log(prospect);
+        const [ prospect, setProspect ] = useState([]);
+        const [ ref, setRef ] = useState([]);
+
+        function handleChangeAntiguedad(event){
+            setAntiguedadMinima(!antiguedadMinima)
+        }
+
+        function handleChangeCapacidad(event){
+            setCapacidadPago(!capacidadPago)
+        }
+
+        function handleChangeVarAntiguedad(event){
+            setVarAntiguedadMinima(event.target.value)
+            setFormStatus('dirty')
+        }
+
+        function handleChangeVarCapacidad(event){
+            setVarCapacidadPago(event.target.value)
+            setFormStatus('dirty')
         }
 
         function handleSave(event){
             event.preventDefault();
-            //prospect.antiguedadZorro=antiguedad;
-
+            
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
-                body: prospect,
+                body: {
+                    antiguedadZorro: varAntiguedadMinima,
+                    capacidadZorro: varCapacidadPago
+                },
+
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                 }
             })
                 .then((result)=>{
-
+                    setStatus('resolved')
                 })
                 .catch(error =>{
-
+                    setError(error)
+                    setStatus('error')
                 })
         }
 
@@ -86,10 +81,13 @@ function SeguimientoCliente1(props) {
            
             axios.get(`http://localhost:5000/applications/full-application-data/${props.match.params.idProspect}`) 
                 .then((result)=>{
-                    
                     setProspect(result.data.infoSolicitud[0])
                     setRef(result.data.referencias[0])
                     setStatus('resolved')
+                    setVarAntiguedadMinima(result.data.infoSolicitud[0].antiguedadZorro)
+                    setVarCapacidadPago(result.data.infoSolicitud[0].capacidadZorro)
+                    setAntiguedadMinima(result.data.infoSolicitud[0].antiguedadZorro?true:false)
+                    setCapacidadPago(result.data.infoSolicitud[0].capacidadZorro?true:false)
                 })
                 .catch((error)=>{
                     setError(error)
@@ -113,7 +111,6 @@ function SeguimientoCliente1(props) {
         if(status === 'resolved'){
             //prospect.antiguedadZorro=2;
             return(
-                <React.Fragment>
                     <main>
                         <aside>
                             <Lateral img = {analista} usuario="Admin #1234" tabs={tabs} enlaces={enlaces}/>
@@ -131,13 +128,13 @@ function SeguimientoCliente1(props) {
                                 <section className="mainContentPageSeguimiento">
                                     <div className="accionesSeguimiento">
                                         <p className="pregunta-antiguedad">¿Cumple con la antigüedad mínima?</p>
-                                        <Checkbox/>
-                                        <input className = "input-gral w-1" type="text" name="antiguedadZorro" id="" placeholder={prospect.antiguedadZorro} onChange = {handleChange}/>
+                                        <Checkbox isDefaultChecked={antiguedadMinima} isDisabled={null} setCheckTrue={handleChangeAntiguedad}/>
+                                        <input className = "input-gral w-1" type="date" name="antiguedadZorro" id="dateInput" value={varAntiguedadMinima} onChange={handleChangeVarAntiguedad} />
                                         <p className="texto-ayuda"></p>
                                         <p className="pregunta-capacidad">¿Cumple con la capacidad de pago mínima?</p>
-                                        <Checkbox/>
-                                        <input className = "input-gral w-1" type="text" name="capacidadZorro" id="" placeholder={prospect.capacidadZorro} onChange = {handleChange}/>
-                                        <button className="botonSalmon btn-guardar-cambios" type='submit'>Guardar Cambios</button>
+                                        <Checkbox isDefaultChecked={capacidadPago} isDisabled={null} setCheckTrue={handleChangeCapacidad}/>
+                                        <input className = "input-gral w-1" type="text" name="capacidadZorro" id="" value={varCapacidadPago} onChange={handleChangeVarCapacidad} />
+                                        <button className="botonSalmon btn-guardar-cambios" type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>
                                     </div>
                                     <div className="lineaSeguimiento"></div>
                                 <InfoSolicitud id={props.match.params.idProspect}/>
@@ -145,7 +142,6 @@ function SeguimientoCliente1(props) {
                             </form>
                         </section>
                     </main>
-                </React.Fragment>
             );
         }
     
