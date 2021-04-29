@@ -5,31 +5,10 @@ import Bienvenida from '../components/Bienvenida';
 import InputBuscar from '../components/InputBuscar';
 import TablaClientes from '../components/TablaClientes';
 import InputFiltrar from '../components/InputFiltrar';
-import  analista from '../assets/analista.png';
+import analista from '../assets/analista.png';
 import '../components/Boton.css';
 
 function LandingAnalista() {
-
-    let datosProspect = {
-        data: [
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Dispuesto"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Dispuesto"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoAutorizado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoRevisado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "NoRevisado"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Dispuesto"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"},
-            {nombres: "Harry José", apellidos: "Potter Hernández", estatusCliente: "Pendiente"}
-        ]
-      };
 
     let tabs = ["Solicitudes", "Generar reportes"];
     const [TabFocus, setTabFocus] = useState(0);
@@ -37,7 +16,13 @@ function LandingAnalista() {
     return(
         <main>
             <aside>
-                <Lateral img = {analista} TabFocus={TabFocus} setTabFocus ={setTabFocus} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs}/>
+                <Lateral 
+                    img = {analista} 
+                    TabFocus={TabFocus} 
+                    setTabFocus ={setTabFocus} 
+                    usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} 
+                    tabs={tabs}
+                />
             </aside>
             <section className='contentPage'>
                 <header>
@@ -46,7 +31,7 @@ function LandingAnalista() {
                 <section className="filtrosContentPageLanding">
                 </section>
                 <section className="tablaContentPageAnalista">
-                    <TablaClientes {...datosProspect} />
+                    <TablaClientes/>
                 </section>
                 <section className='semaforos'>
                     <div className='tarjetaSemaforo'>

@@ -39,17 +39,19 @@
     font-size: 50px;
     color:#722C2D
 }
+
 .err .cabeza{
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+
 .centro{
     display: flex;
     justify-content: center;
     flex-direction: column;
-
 }
+
 .btns{
     width: 100%;
     display: flex;
@@ -78,13 +80,11 @@
     font-weight: normal;
 }
 
-
-
-
 @media only screen and (max-width:576px){
     .modalPadre{
         padding-top: 10vh;
     }
+
     .err{
         width: 75vw;
         margin-top: -10vh;
@@ -94,12 +94,15 @@
     .eliminando{
         font-size: 7vw;
     }
+
     .err i{
         font-size: 30px;
     }
+
     .err .num{
         margin: 0 0.2em;
     }
+    
     .err .centro{
         font-size: 6vw;
     }

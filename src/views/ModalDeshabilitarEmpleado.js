@@ -1,6 +1,5 @@
 import '../components/Boton.css';
 import './ModalDeshabilitarEmpleado.css';
-import CustomLink from '../components/CustomLink';
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import IdleStateView from '../components/IdleStateView';
@@ -77,4 +76,5 @@ function Deshabilitar(props){
         );
     }
 }
+
 export default Deshabilitar;
