@@ -6,6 +6,7 @@
   background: #cacaca;
   border-radius: 50px;
   font-weight: 600;
+  width: 75%;
   /* margin-bottom: 2%;
     margin-left: 1%;
     margin-right: 1%; */
@@ -36,6 +37,33 @@
   position: relative;
   padding: 15px 0 0;
   width: 50%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.grupoInput-2 {
+  font-weight: 600;
+  position: relative;
+  padding: 15px 0 0;
+  width: 50%;
+  text-align: center;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.grupoInput-3 {
+  font-weight: 600;
+  position: relative;
+  padding: 15px 0 0;
+  width: 33%;
+  text-align: center;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -104,29 +132,39 @@
 }
 
 .w-2 {
-  width: 43%;
+  width: 84%;
 }
 
 .w-1 {
   width: 70%;
 }
 
-@media only screen and(max-width: 1080px) {
+@media (max-width: 1180px) {
   .w-3 {
     width: 40%;
   }
+
+  .grupoInput-2 {
+    width: 48%;
+  }
+
+  .grupoInput-3 {
+    width: 31%;
+  }
+
+ 
 }
 
 @media only screen and (max-width: 860px) {
   .input-gral {
     font-size: 1.8vw;
   }
-  .w-3 {
-    width: 70%;
+  .grupoInput-2 {
+    width: 45%;
   }
 
-  .w-2 {
-    width: 70%;
+  .grupoInput-3 {
+    width: 28%;
   }
 }
 
@@ -134,12 +172,26 @@
   .input-gral {
     background: #f2f5fa;
     font-size: 4.5vw;
+    width: 80%;
   }
 
-  .w-3 {
-    width: 90%;
+  .grupoInput-3 {
+    width: 120%;
   }
+
+  .grupoInput-3 input{
+    height: auto !important;
+  }
+
+  .grupoInput-2 {
+    width: 120%;
+  }
+
+  .grupoInput-2 input{
+    height: auto !important;
+  }
+
   .w-2 {
-    width: 90%;
+    width: 80%;
   }
 }
