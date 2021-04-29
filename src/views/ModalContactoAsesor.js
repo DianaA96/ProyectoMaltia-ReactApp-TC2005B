@@ -52,9 +52,10 @@ function ModalContactoAsesor(props) {
                 body: {contacto},
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
+                    }
                 }
             }
-        })
+        )
         props.setVisibility('hidden')
     }
 

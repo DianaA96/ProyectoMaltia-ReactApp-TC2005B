@@ -23,60 +23,38 @@ function SeguimientoCliente2(props) {
         const [ error, setError ] = useState(null);
         const [ statusToggle1,setStatusToggle1 ] = useState(false);
         const [ statusToggle2,setStatusToggle2 ] = useState(false);
-        const [ statusToggle,setStatusToggle] = useState(false);
-        const [prospect, setProspect] = useState([]);
-        const [ref,setRef]=useState([]);
+        const [ prospect, setProspect] = useState([]);
+        const [ ref, setRef] = useState([]);
+        const [ formStatus, setFormStatus ] = useState('pristine');
 
         function setToggle1(event){
-            setStatusToggle(!statusToggle);
+            setStatusToggle1(!statusToggle1);
+            setFormStatus('dirty')
         }
 
-        function handleChange(event){
-            let {	capacidadZorro,
-                idApplication,
-                antiguedadZorro,
-                altaIsi,
-                fechaAlta,
-                auditoriaBuro,
-                creditoAutorizado,
-                fechaAuditoria,
-                montoAutorizado,
-                montoDispuesto,
-                estatus}=prospect;
-
-            let solicitudNueva={
-                idApplication,
-                capacidadZorro,
-                antiguedadZorro,
-                altaIsi,
-                fechaAlta,
-                auditoriaBuro,
-                creditoAutorizado,
-                fechaAuditoria,
-                montoAutorizado,
-                montoDispuesto,
-                estatus,
-                [event.target.name]: event.target.value
-            }
-            
-            setProspect(solicitudNueva);
-            console.log(prospect);
+        function setToggle2(event){
+            setStatusToggle2(!statusToggle2);
+            setFormStatus('dirty')
         }
 
         function handleSave(event){
             event.preventDefault();
 
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
-                body: prospect,
+                body: {
+                    altaIsi: statusToggle1,
+                    auditoriaBuro: statusToggle2
+                },
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                 }
-            })
+                })
                 .then((result)=>{
-
+                    setStatus('resolved')
                 })
                 .catch(error =>{
-
+                    setError(error)
+                    setStatus('error')
                 })
         }
 
@@ -86,10 +64,11 @@ function SeguimientoCliente2(props) {
            
             axios.get(`http://localhost:5000/applications/full-application-data/${props.match.params.idProspect}`) 
                 .then((result)=>{
-                    
                     setProspect(result.data.infoSolicitud[0])
                     setRef(result.data.referencias[0])
                     setStatus('resolved')
+                    setStatusToggle1(result.data.infoSolicitud[0].altaIsi)
+                    setStatusToggle2(result.data.infoSolicitud[0].auditoriaBuro)
                 })
                 .catch((error)=>{
                     setError(error)
@@ -98,12 +77,9 @@ function SeguimientoCliente2(props) {
 
         }, [])
 
-        console.log(prospect) 
-
         if(status === 'idle' || status === 'loading'){
             return <IdleStateView/>
         }
-
 
         if(status === 'error'){
             return (
@@ -132,13 +108,13 @@ function SeguimientoCliente2(props) {
                                 <div className="accionesSeguimiento">
                                     <div className="toggle-cont">
                                         <p className="alta-isi">Alta en ISI</p>
-                                        <ToggleSwitch checked={prospect.altaIsi} onChange={setStatusToggle1}/>
+                                        <ToggleSwitch isChecked={prospect.altaIsi} setToggle={setToggle1}/>
                                     </div>
                                     <div className="toggle-cont">
                                         <p className="auditoria-buro">Auditado</p>
-                                        <ToggleSwitch checked={prospect.auditoriaBuro}/>                                        
+                                        <ToggleSwitch isChecked={prospect.auditoriaBuro} setToggle={setToggle2}/>                                        
                                     </div>
-                                    <button className="botonSalmon btn-guardar-cambios" type='submit'>Guardar Cambios</button>
+                                    <button className="botonSalmon btn-guardar-cambios" type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>
                                 </div>
                             </form>
                             <div className="lineaSeguimiento"></div>
