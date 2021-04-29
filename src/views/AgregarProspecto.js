@@ -164,7 +164,7 @@ function Aprospecto(){
                         </div>
                        
                         <div className='grupoInput-2'>
-                            <input name="numTelefono" className = "input-gral w-2 inputFormularios" type="number" required placeholder="Número de teléfono*"onChange={handleChange} required/>
+                            <input name="numTelefono" pattern=".{10,10}" className = "input-gral w-2 inputFormularios" type="number" required placeholder="Número de teléfono*"onChange={handleChange} required/>
                             <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)*</label>
                         </div>
 
