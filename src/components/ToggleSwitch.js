@@ -11,5 +11,4 @@ function ToggleSwitch(props){
     )
 }
 
-
 export default ToggleSwitch;

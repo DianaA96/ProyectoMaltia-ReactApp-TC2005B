@@ -21,8 +21,8 @@ function SeguimientoCliente2(props) {
         //
         const [ status, setStatus ] = useState('idle');
         const [ error, setError ] = useState(null);
-        const [ statusToggle1,setStatusToggle1 ] = useState({});
-        const [ statusToggle2,setStatusToggle2 ] = useState({});
+        const [ statusToggle1,setStatusToggle1 ] = useState(prospect.altaIsi);
+        const [ statusToggle2,setStatusToggle2 ] = useState(prospect.auditoriaBuro);
         const [ statusToggle,setStatusToggle] = useState(false);
         const [prospect, setProspect] = useState([]);
         const [ref,setRef]=useState([]);
@@ -30,12 +30,6 @@ function SeguimientoCliente2(props) {
         function setToggle1(event){
             setStatusToggle(!statusToggle);
         }
-
-        /*function setToggle2(event){
-            [event.target.name],
-            setStatusToggle(!statusToggle);
-        }
-        */
 
         function handleChange(event){
             let {	capacidadZorro,
@@ -64,14 +58,13 @@ function SeguimientoCliente2(props) {
                 estatus,
                 [event.target.name]: event.target.value
             }
-            //console.log(solicitudNueva);
+            
             setProspect(solicitudNueva);
             console.log(prospect);
         }
 
         function handleSave(event){
             event.preventDefault();
-            //prospect.antiguedadZorro=antiguedad;
 
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
                 body: prospect,
@@ -118,7 +111,6 @@ function SeguimientoCliente2(props) {
             )
         }
 
-
         if(status === 'resolved'){
             return(
                 <React.Fragment>
@@ -130,7 +122,6 @@ function SeguimientoCliente2(props) {
                             <header>
                                 <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Seguimiento de solicitudes"/>
                                 <BotonRegresar/> 
-                                {/*tienes que indicar la ruta bro*/}
                             </header>
                             <section className="pasosContentPageSeguimiento">
                                 <h2 className="nombreCliente">{prospect.nombre} {prospect.apellidoPaterno} {prospect.apellidoMaterno}</h2>

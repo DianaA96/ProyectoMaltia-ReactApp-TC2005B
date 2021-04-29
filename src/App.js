@@ -42,7 +42,7 @@ import NavegacionDemo from './components/NavegacionDemo';
 function App() {
 
   const { user, getToken } = useAuth();
-  console.log(user)
+  console.log(user.[0])
   useEffect(() => {
     getToken();
   }, [user])
@@ -55,21 +55,21 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/login' exact={true}>{user?<Redirect to='/'/>:<VentanaInicioSesion/>}</Route>
+        <Route path='/login' exact={true}>{user.[0]?<Redirect to='/'/>:<VentanaInicioSesion/>}</Route>
 
-        <Route path='/administrarUsuarios' exact={true}>{user?<LandingAdminUsuarios/>:<Redirect to='/login'/>}</Route>
-        <Route path='/agregarUsuario' exact={true}>{user?<VentanaAgregarUsuario/>:<Redirect to='/login'/>}</Route>
+        <Route path='/administrarUsuarios' exact={true}>{user.[0]?<LandingAdminUsuarios/>:<Redirect to='/login'/>}</Route>
+        <Route path='/agregarUsuario' exact={true}>{user.[0]?<VentanaAgregarUsuario/>:<Redirect to='/login'/>}</Route>
         <Route 
           path="/editarUsuario/:idEmployee/:puesto"
           render={(props)=>
             <VentanaEditarUsuario {...props}/>
           }/>
-        <Route path='/eliminarUsuario' exact={true}>{user?<Deshabilitar/>:<Redirect to='/login'/>}</Route>
-        <Route path='/user-not-found1' exact={true}>{user?<UsuarioNoEncontrado1/>:<Redirect to='/login'/>}</Route>
+        <Route path='/eliminarUsuario' exact={true}>{user.[0]?<Deshabilitar/>:<Redirect to='/login'/>}</Route>
+        <Route path='/user-not-found1' exact={true}>{user.[0]?<UsuarioNoEncontrado1/>:<Redirect to='/login'/>}</Route>
 
-        <Route path='/administrarProspectos' exact={true}>{user?<LandingAdminProspectos/>:<Redirect to='/login'/>}</Route>
-        <Route path='/contactarProspecto' exact={true}>{user?<ContactoAsesor/>:<Redirect to='/login'/>}</Route>
-        <Route path='/agregarProspectos' exact={true}>{user?<AgregarProspecto/>:<Redirect to='/login'/>}</Route>
+        <Route path='/administrarProspectos' exact={true}>{user.[0]?<LandingAdminProspectos/>:<Redirect to='/login'/>}</Route>
+        <Route path='/contactarProspecto' exact={true}>{user.[0]?<ContactoAsesor/>:<Redirect to='/login'/>}</Route>
+        <Route path='/agregarProspectos' exact={true}>{user.[0]?<AgregarProspecto/>:<Redirect to='/login'/>}</Route>
         <Route 
           path="/editarProspecto/:idProspect"
           render={(props) => 
@@ -81,18 +81,18 @@ function App() {
                 render={(props) => 
            <SolicitudCliente {...props}/>
           }/>  
-        <Route path='/administrarClientes' exact={true}>{user?<AdministracionClientesAsesor/>:<Redirect to='/login'/>}</Route>
+        <Route path='/administrarClientes' exact={true}>{user.[0]?<AdministracionClientesAsesor/>:<Redirect to='/login'/>}</Route>
 
 
-        <Route path='/user-not-found2' exact={true}>{user?<UsuarioNoEncontrado2/>:<Redirect to='/login'/>}</Route>
-        <Route path='/user-not-found21' exact={true}>{user?<UsuarioNoEncontrado21/>:<Redirect to='/login'/>}</Route>
+        <Route path='/user-not-found2' exact={true}>{user.[0]?<UsuarioNoEncontrado2/>:<Redirect to='/login'/>}</Route>
+        <Route path='/user-not-found21' exact={true}>{user.[0]?<UsuarioNoEncontrado21/>:<Redirect to='/login'/>}</Route>
         <Route path='/editarSolicitudCliente/:idProspect' 
           exact={true}
           render={(props) => 
             <EditarSolicitudCliente {...props}/>
             }/>
         
-        <Route path='/solicitudes' exact={true}>{user?<LandingAnalista/>:<Redirect to='/login'/>}</Route>
+        <Route path='/solicitudes' exact={true}>{user.[0]?<LandingAnalista/>:<Redirect to='/login'/>}</Route>
         <Route path='/seguimientoCliente1/:idProspect'
           exact={true}
           render={(props) => 
@@ -111,9 +111,9 @@ function App() {
           <SeguimientoCliente3 {...props}/>
          }/>
 
-        <Route path='/user-not-found3' exact={true}>{user?<UsuarioNoEncontrado3/>:<Redirect to='/login'/>}</Route>
+        <Route path='/user-not-found3' exact={true}>{user.[0]?<UsuarioNoEncontrado3/>:<Redirect to='/login'/>}</Route>
         
-        <Route path='/' exact={true}>{user?<NavegacionDemo/>:<Redirect to='/login'/>}</Route>
+        <Route path='/' exact={true}>{user.[0]?<NavegacionDemo/>:<Redirect to='/login'/>}</Route>
         <Route>¡Ups! Parece que esta ruta todavía no te llevará a ninguna parte :c</Route>
       </Switch>
     </Router>
