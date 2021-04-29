@@ -12,8 +12,6 @@ function TabLateral(props) {
     function changeFocus(){
         props.setTabFocus(true)
     }
-    console.log(props.idx, props.TabFocus)
-
     return (
         <Link to={`/${props.name.replace(/ /g, "")}`}>
             <div className={`${props.idx === props.TabFocus ? "tab-foc" : "tab"}`} onFocus={changeFocus}>

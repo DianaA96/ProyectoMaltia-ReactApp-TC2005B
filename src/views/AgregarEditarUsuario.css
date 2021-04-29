@@ -4,7 +4,7 @@
     height: 91vh;
     width: 85%;
     margin: 0%;
-    padding: 30px;
+    padding: 1vw;
 }
 
 .contentPageForms header{
@@ -85,7 +85,6 @@
 }
 
 @media only screen and (max-width: 576px) {
-
     header{
         flex-direction: column;
     }
@@ -121,11 +120,17 @@
     .botonesContentPage{
         margin-top: 2em;
         padding-bottom: 5em;
-        padding-left: 8%;
+        margin-left: 10%;
+    }
+
+    .ml-1{
+        margin-left: 15%;
     }
 
     .mt-5{
         padding-top: 1em;
     }
-   
+    .tag-fecha{
+        margin-left: 6%;
+    }
 }

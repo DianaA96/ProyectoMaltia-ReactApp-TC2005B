@@ -11,12 +11,14 @@ import Select from 'react-select';
 import axios from 'axios';
 
 function SolicitudCliente(props) {
+    const idLoggedAssessor = '#1234'
     const [status, setStatus]= useState('idle');
     const [datos , setDatos] = useState([]);
     const [error, setError] = useState(null);
     const [SelectValue, setSelectValue] = useState([]);
     const [fullApplication, setFullApplication] = useState({});
     const [isCheck, setIsCheck] = useState(false);
+    const [TabFocus, setTabFocus] = useState(0);
     const idAssessor= "1"
 
     const customSelectStyles = {
@@ -198,7 +200,7 @@ function SolicitudCliente(props) {
         return(
             <main id='mainSolicitudCliente'>
                 <aside>
-                    <Lateral tabs = {tabs} img = {asesor} />
+                    <Lateral tabs = {tabs} img = {asesor} TabFocus={TabFocus} setTabFocus={setTabFocus} usuario={`Asesor ${idLoggedAssessor}`}/>
                 </aside>
                 <section className='contentPageExtendido'>
                     <header className='headerSolicitudCliente'>
