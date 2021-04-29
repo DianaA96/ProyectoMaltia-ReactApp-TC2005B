@@ -18,7 +18,8 @@ import ErrorScreen from '../components/ErrorScreen'
 function SeguimientoCliente2(props) {
         let enlaces = ["./", "./nuevo-usuario"]
         let tabs = ["Solicitudes", "Generar Reportes"];
-        //
+        const [TabFocus, setTabFocus] = useState(0);
+
         const [ status, setStatus ] = useState('idle');
         const [ error, setError ] = useState(null);
         const [ statusToggle1,setStatusToggle1 ] = useState(false);
@@ -26,6 +27,7 @@ function SeguimientoCliente2(props) {
         const [ prospect, setProspect] = useState([]);
         const [ ref, setRef] = useState([]);
         const [ formStatus, setFormStatus ] = useState('pristine');
+        const [seguimientoFocus, setSeguimientoFocus] = useState(2)
 
         function setToggle1(event){
             setStatusToggle1(!statusToggle1);
@@ -92,7 +94,7 @@ function SeguimientoCliente2(props) {
                 
                     <main>
                         <aside>
-                            <Lateral img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs} enlaces={enlaces}/>
+                            <Lateral TabFocus={TabFocus} setTabFocus ={setTabFocus} img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs} enlaces={enlaces}/>
                         </aside>
                         <section className='contentPageSeguimiento'>
                             <header>
@@ -101,7 +103,7 @@ function SeguimientoCliente2(props) {
                             </header>
                             <section className="pasosContentPageSeguimiento">
                                 <h2 className="nombreCliente">{prospect.nombre} {prospect.apellidoPaterno} {prospect.apellidoMaterno}</h2>
-                                <PasosSeguimiento id1={props.match.params.idProspect}/>
+                                <PasosSeguimiento id1={props.match.params.idProspect} seguimientoFocus={seguimientoFocus} setSeguimientoFocus={setSeguimientoFocus}/>
                             </section>
                             <section className="mainContentPageSeguimiento">
                             <form onSubmit={handleSave}>

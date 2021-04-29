@@ -39,7 +39,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 50vh;
+    margin-top: 5em;
+}
+
+.accionesSeguimiento .grupoInput{
+    margin-top: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+.accionesSeguimiento .grupoInput .w-1{
+    width: 80%;
 }
 
 .btn-guardar-cambios{
@@ -87,8 +97,13 @@
 }
 
 
+
 @media only screen and (max-width:576px){
 
+
+    .toggle-cont{
+        flex-direction: column !important;
+    }
     aside{
         margin-right: -3vw;
     }
@@ -102,6 +117,7 @@
     .pasosContentPageSeguimiento{
         text-align: center;
         font-size: 5vw;
+        margin-left: 8%;
     }
 
     .mainContentPageSeguimiento{
@@ -113,11 +129,15 @@
         color: #fff;
         height: auto;
         font-size: 5vw;
+        margin-left: 15%;
     }
 
     .accionesSeguimiento input{
         font-size: 5vw;
+        height: auto;
+        margin-top: 1em;
     }
+
 
     .lineaSeguimiento{
         display: none;
@@ -128,6 +148,7 @@
         align-items: center;
         height: 70vh;
         border-bottom: 1px solid rgb(255, 255, 255);
+        margin-top: 2em;
     }
 
    
@@ -137,9 +158,9 @@
     }
 
 
-    .btn-guardar-cambios{
+    .btn-guardar-cambios {
         margin: 2em 0;
-        width: 70%;
+        width: auto !important;
         font-size: 5vw;
     }
 }

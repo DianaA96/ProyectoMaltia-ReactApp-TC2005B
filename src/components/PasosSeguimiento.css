@@ -32,6 +32,7 @@
     height: 80px;
     border-radius: 50px;
     background: #C4C4C4;
+    border-style: none;
 }
 
 .circulo-seguimiento img{
@@ -53,6 +54,22 @@
 
 .cont-seguimiento button:hover .circulo-texto h4{
     color: #0F123F;
+}
+
+
+.circulo-focus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background: #90B4DE;
+    border-style: none;
+}
+
+.circulo-focus img{
+    width: 60%;
 }
 
 .lineaPasos{
