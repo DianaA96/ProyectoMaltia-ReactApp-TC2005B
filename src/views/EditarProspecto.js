@@ -66,11 +66,9 @@ function Eprospecto(props) {
 
     // Función que se hace cargo del evento onSave, que se lanza al enviar el formulario
     function handleSave(event) {
-        // Evitamos que se refresque la página al dar clic en el botón submit
-        event.preventDefault()
-        setStatusForm('loading')
+        
+        setStatusForm('pristine')
         setErrorForm(null)
-        console.log(prospect)
 
         axios.patch(`http://localhost:5000/prospects/${idProspect}`, {
             body: {...prospect},
@@ -81,6 +79,7 @@ function Eprospecto(props) {
         .then((result) => {
             setProspect(...result.data.prospectoActualizado)
             setStatusForm('pristine')
+            console.log("aaaa")
         })
         .catch(err => {
             setErrorForm(err);
@@ -105,27 +104,27 @@ function Eprospecto(props) {
                 <form onSubmit={handleSave}>
                     <section className='inputsContentPage mt-5'>
                         <div className='grupoInput-3'>
-                                <input name="nombre" className = "input-gral inputFormularios" type="text" value={nombre} placeholder="Nombre(s)*"onChange={handleChange} required/>
+                                <input name="nombre" className = "input-gral inputFormularios" type="text" value={nombre} required placeholder="Nombre(s)*"onChange={handleChange} required/>
                                 <label htmlFor="name" className="etiquetaInputs">Nombre(s)*</label>
                         </div>
                         
                         <div className='grupoInput-3'>
-                            <input name="apellidoPaterno" className = "input-gral inputFormularios" type="text" value={apellidoPaterno}placeholder="Apellido paterno*"onChange={handleChange} required/>
+                            <input name="apellidoPaterno" className = "input-gral inputFormularios" type="text" value={apellidoPaterno} required placeholder="Apellido paterno*"onChange={handleChange} required/>
                             <label htmlFor="name" className="etiquetaInputs">Apellido Paterno*</label>
                         </div>
 
                         <div className='grupoInput-3'>
-                            <input name="apellidoMaterno" className = "input-gral inputFormularios" type="text" value={apellidoMaterno} placeholder="Apellido materno"onChange={handleChange}/>
+                            <input name="apellidoMaterno" className = "input-gral inputFormularios" type="text" value={apellidoMaterno} required placeholder="Apellido materno"onChange={handleChange}/>
                             <label htmlFor="name" className="etiquetaInputs">Apellido Materno</label>
                         </div>
 
                         <div className='grupoInput-2'>
-                            <input name="numTelefono" className = "input-gral w-2 inputFormularios" type="number" value={numTelefono} placeholder="Número de teléfono*"onChange={handleChange} required/>
+                            <input name="numTelefono" className = "input-gral w-2 inputFormularios" type="number" value={numTelefono} required placeholder="Número de teléfono*"onChange={handleChange} required/>
                             <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)*</label>
                         </div>
 
                         <div className='grupoInput-2'>
-                            <input name="correoElectronico"  className = "input-gral w-2 inputFormularios"  type="email"  value={correoElectronico}placeholder="Correo electrónico*" onChange={handleChange} required/>
+                            <input name="correoElectronico"  className = "input-gral w-2 inputFormularios"  type="email"  required value={correoElectronico}placeholder="Correo electrónico*" onChange={handleChange} required/>
                             <label htmlFor="name" className="etiquetaInputs">Correo electrónico*</label>
                         </div>
                     </section>

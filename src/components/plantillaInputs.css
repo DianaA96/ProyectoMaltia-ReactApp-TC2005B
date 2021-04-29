@@ -197,6 +197,7 @@
   
   .inputFormularios:not(:placeholder-shown) ~ .etiquetaInputs {
     color: #f2f5fa;
+    font-size: 15px;
   }
 
   .input-gral {

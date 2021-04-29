@@ -38,8 +38,7 @@ function SeguimientoCliente2(props) {
         }
 
         function handleSave(event){
-            event.preventDefault();
-
+            
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
                 body: {
                     altaIsi: statusToggle1,
@@ -56,6 +55,7 @@ function SeguimientoCliente2(props) {
                     setError(error)
                     setStatus('error')
                 })
+            formStatus !== 'error'? alert("¡Seguimiento realizado correctamente!😎🦊") : alert("Ocurrió un error al actualizar :(")
         }
 
 
@@ -89,7 +89,7 @@ function SeguimientoCliente2(props) {
 
         if(status === 'resolved'){
             return(
-                <React.Fragment>
+                
                     <main>
                         <aside>
                             <Lateral img = {admin} usuario="Admin #1234" tabs={tabs} enlaces={enlaces}/>
@@ -123,7 +123,7 @@ function SeguimientoCliente2(props) {
                         </section>
                     </section>
                 </main>
-            </React.Fragment>
+            
         );
     }
 }

@@ -28,18 +28,17 @@ function Aprospecto(){
     const [ stores, setStores] = useState([]);
     const [ SelectValue, setSelectValue ] = useState();
     const [TabFocus, setTabFocus] = useState(1);
-    const [idProspect, setidProspect] = useState(null);
+    const [idProspect, setidProspect] = useState(0);
 
     let tiendas =[];
 
     useEffect(()=>{
-        //Obtiene lista de tiendas
         axios.get(`http://localhost:5000/stores/allStores`)
             .then((result)=>{
                 setStores(result.data.tiendas)
             })
             .catch((error)=>{
-                
+                <ErrorScreen mensaje={error.message}/>
             });
     }, [])
 
@@ -125,8 +124,8 @@ function Aprospecto(){
             }
         )
         .then((result)=>{
-            console.log(result)
-            setidProspect(result.data.idProspect);
+            console.log(result.data.nuevoProspecto.idProspect)
+            setidProspect(result.data.nuevoProspecto.idProspect);
             alert('Prospecto registrado correctamente');
         })
     }
@@ -150,12 +149,12 @@ function Aprospecto(){
                 <form onSubmit={handleSave}>
                     <section className="inputsContentPage mt-5">
                         <div className='grupoInput-3'>
-                            <input name="nombre" className = "input-gral inputFormularios" type="text" placeholder="Nombre(s)*"onChange={handleChange} required/>
+                            <input name="nombre" className = "input-gral inputFormularios" type="text" placeholder="Nombre(s)*" required onChange={handleChange} required/>
                             <label htmlFor="name" className="etiquetaInputs">Nombre(s)*</label>
                         </div>
                         
                         <div className='grupoInput-3'>
-                            <input name="apellidoPaterno" className = "input-gral inputFormularios" type="text" placeholder="Apellido paterno*"onChange={handleChange} required/>
+                            <input name="apellidoPaterno" className = "input-gral inputFormularios" type="text" required placeholder="Apellido paterno*"onChange={handleChange} required/>
                             <label htmlFor="name" className="etiquetaInputs">Apellido Paterno*</label>
                         </div>
                         
@@ -165,22 +164,22 @@ function Aprospecto(){
                         </div>
                        
                         <div className='grupoInput-2'>
-                            <input name="numTelefono" className = "input-gral w-2 inputFormularios" type="number" placeholder="Número de teléfono*"onChange={handleChange} required/>
+                            <input name="numTelefono" className = "input-gral w-2 inputFormularios" type="number" required placeholder="Número de teléfono*"onChange={handleChange} required/>
                             <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)*</label>
                         </div>
 
                         <div className='grupoInput-2'>
-                            <input name="correoElectronico"  className = "input-gral w-2 inputFormularios"  type="email"  placeholder="Correo electrónico*" onChange={handleChange} required/>
+                            <input name="correoElectronico"  className = "input-gral w-2 inputFormularios"  type="email" required placeholder="Correo electrónico*" onChange={handleChange} required/>
                             <label htmlFor="name" className="etiquetaInputs">Correo electrónico*</label>
                         </div>
             
-                        <Select name="idStore" placeholder = "Tienda*"  options={tiendas} styles = {customSelectStyles} onChange = {handleSelectChange}/>
+                        <Select name="idStore" placeholder = "Tienda*"  options={tiendas} styles = {customSelectStyles} required onChange = {handleSelectChange}/>
                     </section>
 
                     <section className='botonesContentPage ml-1'>
                         <CustomLink tag='button' to='./administrarProspectos' className="botonAzulMarino">Cancelar</CustomLink>
-                        <CustomLink onClick={handleSave} type="submit" tag='button' to={`/solicitudCliente/${idProspect}`} className="botonSalmon mr" disabled={idProspect===null}>Continuar solicitud</CustomLink>
-                        <CustomLink onClick={handleSave} type="submit" tag='button' className="botonSalmon mr">Registrar</CustomLink>
+                        <CustomLink onSubmit={handleSave} type="submit" tag='button' to={`/solicitudCliente/${idProspect}`} className="botonSalmon mr" disabled={idProspect===null}>Continuar solicitud</CustomLink>
+                        <CustomLink onSubmit={handleSave} type="submit" tag='button' className="botonSalmon mr">Registrar</CustomLink>
                     </section>
                 </form>
 
