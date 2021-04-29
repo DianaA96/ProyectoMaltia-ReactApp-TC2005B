@@ -103,4 +103,8 @@
     .err .centro{
         font-size: 6vw;
     }
+
+    .botonAzulMarino span{
+        color: #EE786C;
+    }
 }

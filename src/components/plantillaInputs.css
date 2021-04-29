@@ -12,6 +12,7 @@
 .input-gral:disabled {
   background: #8f8f8f;
   color: rgb(199, 198, 198);
+  cursor:not-allowed;
 }
 
 .inputFormularios {
@@ -181,6 +182,23 @@
 }
 
 @media only screen and (max-width: 576px) {
+
+  .inputFormularios{
+    background: #f2f5fa;
+  }
+
+  .inputFormularios:hover ~ .etiquetaInputs {
+    color: #f2f5fa;
+  }
+
+  .inputFormularios:focus ~ .etiquetaInputs {
+    color: #f2f5fa;
+  }
+  
+  .inputFormularios:not(:placeholder-shown) ~ .etiquetaInputs {
+    color: #f2f5fa;
+  }
+
   .input-gral {
     background: #f2f5fa;
     font-size: 4.5vw;

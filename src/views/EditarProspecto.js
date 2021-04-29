@@ -139,8 +139,7 @@ function Eprospecto(props) {
                         <CustomLink 
                             tag='button' 
                             className="botonSalmon" 
-                            disabled={statusForm === 'pristine'}
-                            to='/administrarProspectos' 
+                            disabled={statusForm === 'pristine'} 
                             type="submit">Guardar cambios</CustomLink>
                     </section>
 
