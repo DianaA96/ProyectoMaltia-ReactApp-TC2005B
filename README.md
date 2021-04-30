@@ -1,3 +1,4 @@
+[DocumentacionMaltiaPropuesta3.pdf](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/files/6405852/DocumentacionMaltiaPropuesta3.pdf)
 [DocumentacionMaltiaPropuesta3.pdf](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/files/6404358/DocumentacionMaltiaPropuesta3.pdf)
 # Maltia App
 
@@ -11,7 +12,7 @@ https://github.com/DianaA96/ProyectoMaltia-ExpressJSApp-TC2005B
 
 ## Documentación y Manual de Usuario
 
-[Documentacion Maltia Propuesta 3](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/files/6404361/DocumentacionMaltiaPropuesta3.pdf)
+[Documentacion Maltia Propuesta 3](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/files/6405854/DocumentacionMaltiaPropuesta3.pdf)
 
 ## Base de Datos
 [Script de la Base de datos](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/files/6403825/ScriptBDMaltia.txt)
