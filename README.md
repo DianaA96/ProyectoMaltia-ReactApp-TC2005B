@@ -12,7 +12,7 @@ https://github.com/DianaA96/ProyectoMaltia-ExpressJSApp-TC2005B
 
 ## Base de Datos
 [Script de la Base de datos](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/files/6403825/ScriptBDMaltia.txt)
-[Registros de prueba](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/files/6403898/ValoresPruebaBDMaltia.txt)
+\\[Registros de prueba](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/files/6403898/ValoresPruebaBDMaltia.txt)
 
 ## Scripts disponibles
 
