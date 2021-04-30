@@ -127,7 +127,7 @@ function SolicitudCliente(props) {
             numTelefonoReferencia2,
             refName3,
             numTelefonoReferencia3
-        } = fullApplication
+        }=fullApplication
 
         const applicationBack={
             client : {
@@ -184,6 +184,8 @@ function SolicitudCliente(props) {
         .catch((error)=>{
             setStatus('error')
         })
+        
+
     }
 
     function setCheckTrue(){
@@ -200,10 +202,12 @@ function SolicitudCliente(props) {
     let varFecha = `${fecha.getDate()} de ${fecha.toLocaleString('default', { month: 'long' })} del ${fecha.getFullYear()}`;
     let tabs = ["Administrar prospectos", "Agregar prospectos", "Administrar Clientes"];
 
+        //cambiar por el de diana
     if(status=== 'idle' || status === 'loading'){
        return<h1>loading...</h1>
     }
 
+    //no c 
     if(status === 'error'){
         return<h1>oops</h1>
     }
@@ -232,122 +236,43 @@ function SolicitudCliente(props) {
                     <form  onSubmit={handleSave}>
                         <section className='inputsDatosCliente'>
                             <div className='grupoInput'>
-                                <input 
-                                    type='text' 
-                                    className='inputFormularios w-2' 
-                                    name="fechaNacimiento" 
-                                    placeholder='Fecha de nacimiento*' 
-                                    onFocus={(e) => {e.currentTarget.type = 'date'}} 
-                                    required 
-                                    onChange = {handleChange} >
-                                </input>                            
+                                <input type='text' className='inputFormularios w-2' name="fechaNacimiento" placeholder='Fecha de nacimiento*' onFocus={(e) => {e.currentTarget.type = 'date'}} required onChange = {handleChange} ></input>                            
                                 <label htmlFor="name" className="etiquetaInputs">Fecha de nacimiento* (formato dd/mm/aaaa)</label>
                             </div>
                             <div className='grupoInput'>
-                                <input 
-                                    type='text' 
-                                    className='inputFormularios w-2' 
-                                    name="direccion" 
-                                    placeholder='Dirección*' 
-                                    required  
-                                    onChange = {handleChange}>
-                                </input>
-                                <label 
-                                    htmlFor="name" 
-                                    className="etiquetaInputs">
-                                    Dirección*(calle, número, ciudad, estado, código postal)
-                                </label>
+                                <input type='text' className='inputFormularios w-2' name="direccion" placeholder='Dirección*' required  onChange = {handleChange}></input>
+                                <label htmlFor="name" className="etiquetaInputs">Dirección*(calle, número, ciudad, estado, código postal)</label>
                             </div>
                             <div className='grupoInput'>
-                                <input 
-                                type='number' 
-                                className='inputFormularios w-2' 
-                                name='numClienteZorro' 
-                                placeholder='No. de cliente Zorro Abarrotero*' 
-                                required  
-                                onChange = {handleChange}></input>
+                                <input type='number' className='inputFormularios w-2' name='numClienteZorro' placeholder='No. de cliente Zorro Abarrotero*' required  onChange = {handleChange}></input>
                                 <label htmlFor="name" className="etiquetaInputs">No. de cliente Zorro Abarrotero*</label>
                             </div>
                             <div className='grupoInput'>
-                                <input 
-                                type='number' 
-                                className='inputFormularios w-2' 
-                                name='numIne' 
-                                placeholder='INE*' 
-                                required  
-                                onChange = {handleChange}>
-
-                                </input>
+                                <input type='number' className='inputFormularios w-2' name='numIne' placeholder='INE*' required  onChange = {handleChange}></input>
                                 <label htmlFor="name" className="etiquetaInputs">INE*(10 dígitos de la parte posterior)</label>
                             </div>
                             
                             <div className='grupoInput'>
-                                <input 
-                                    type='number' 
-                                    className='inputFormularios w-2' 
-                                    name='montoSolicitado' 
-                                    placeholder='Monto solicitado*' 
-                                    required  
-                                    onChange = {handleChange}>
-                                </input>
-                                <label 
-                                    htmlFor="name" 
-                                    className="etiquetaInputs">
-                                        Monto solicitado*(coloque sólo el valor numérico)
-                                </label>
+                                <input type='number' className='inputFormularios w-2' name='montoSolicitado' placeholder='Monto solicitado*' required  onChange = {handleChange}></input>
+                                <label htmlFor="name" className="etiquetaInputs">Monto solicitado*(coloque sólo el valor numérico)</label>
                             </div>
-                            <Select 
-                                placeholder = "Tipo de crédito"  
-                                options={tiposCredito} 
-                                styles = {customSelectStyles} 
-                                onChange = {handleSelectChange}
-                            />
+                            <Select placeholder = "Tipo de crédito"  options={tiposCredito} styles = {customSelectStyles} onChange = {handleSelectChange}/>
                         </section>
                         <section className='inputsReferenciasCliente'>
                             <div className='tarjetaReferencia'>
-                                <h1>Referencia 1:</h1>
-                                <input 
-                                    type='text' 
-                                    className='input-gral' 
-                                    placeholder='Nombre' 
-                                    name="refName1"  
-                                    onChange = {handleChange}></input>
-                                <input 
-                                    type='text' 
-                                    className='input-gral' 
-                                    placeholder='Teléfono' 
-                                    name='numTelefonoReferencia1'  
-                                    onChange = {handleChange}></input>
+                                <h1>Referencia 1: *</h1>
+                                <input type='text' className='input-gral' placeholder='Nombre' name="refName1"  onChange = {handleChange} required></input>
+                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia1'  onChange = {handleChange} required></input>
                             </div>
                             <div className='tarjetaReferencia'>
-                                <h1>Referencia 2:</h1>
-                                <input 
-                                    type='text' 
-                                    className='input-gral' 
-                                    placeholder='Nombre' 
-                                    name="refName2"  
-                                    onChange = {handleChange}></input>
-                                <input 
-                                    type='text' 
-                                    className='input-gral' 
-                                    placeholder='Teléfono' 
-                                    name='numTelefonoReferencia2'  
-                                    onChange = {handleChange}></input>
+                                <h1>Referencia 2: *</h1>
+                                <input type='text' className='input-gral' placeholder='Nombre' name="refName2"  onChange = {handleChange} required></input>
+                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia2'  onChange = {handleChange}required></input>
                             </div>
                             <div className='tarjetaReferencia'>
-                                <h1>Referencia 3:</h1>
-                                <input 
-                                    type='text' 
-                                    className='input-gral' 
-                                    placeholder='Nombre' 
-                                    name="refName3"  
-                                    onChange = {handleChange}></input>
-                                <input 
-                                    type='text' 
-                                    className='input-gral' 
-                                    placeholder='Teléfono' 
-                                    name='numTelefonoReferencia3'  
-                                    onChange = {handleChange}></input>
+                                <h1>Referencia 3: *</h1>
+                                <input type='text' className='input-gral' placeholder='Nombre' name="refName3"  onChange = {handleChange} required></input>
+                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia3'  onChange = {handleChange}required></input>
                             </div>
                         </section>
                         <section className='botonesEnviarSolicitud'>
