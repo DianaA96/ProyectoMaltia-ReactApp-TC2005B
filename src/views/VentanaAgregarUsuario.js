@@ -21,7 +21,6 @@ function VentanaAgregarUsuario(props) {
     const [TabFocus, setTabFocus] = useState(1);
 
     useEffect(()=>{
-        //Obtiene lista de tiendas
         axios.get(`http://localhost:5000/stores/allStores`)
             .then((result)=>{
                 setStores(result.data.tiendas)
@@ -37,18 +36,6 @@ function VentanaAgregarUsuario(props) {
     const departamentos = [
         {value: 'OFICINA CENTRAL', label: 'OFICINA CENTRAL'}
     ]
-
-    const {
-        idEmployee,
-        nombre,
-        apellidoPaterno,
-        apellidoMaterno,
-        correoElectronico,
-        numTelefono,
-        contrasena,
-    } = employee;
-
-    
 
     const customSelectStyles = {
         control: (base, state) => ({
@@ -112,8 +99,6 @@ function VentanaAgregarUsuario(props) {
         setSelectValue(selectedOption);
     }
 
-
-    //Función que se ejecuta al registrar un empleado
     function handleSave(event){
         event.preventDefault();
         console.log(SelectValue)
@@ -137,14 +122,14 @@ function VentanaAgregarUsuario(props) {
 
             let analistaBack={
                 employee:{
-                        idEmployee,
-                        nombre,
-                        apellidoPaterno,
-                        apellidoMaterno,
-                        correoElectronico,
-                        numTelefono,
-                        puesto,
-                        contrasena
+                    idEmployee,
+                    nombre,
+                    apellidoPaterno,
+                    apellidoMaterno,
+                    correoElectronico,
+                    numTelefono,
+                    puesto,
+                    contrasena
                 },
                 analyst:{
                     departamento
@@ -180,14 +165,14 @@ function VentanaAgregarUsuario(props) {
 
             let asesorBack={
                 employee:{
-                        idEmployee,
-                        nombre,
-                        apellidoPaterno,
-                        apellidoMaterno,
-                        correoElectronico,
-                        numTelefono,
-                        puesto,
-                        contrasena
+                    idEmployee,
+                    nombre,
+                    apellidoPaterno,
+                    apellidoMaterno,
+                    correoElectronico,
+                    numTelefono,
+                    puesto,
+                    contrasena
                 }
             }
 
@@ -200,7 +185,6 @@ function VentanaAgregarUsuario(props) {
                 }
             })
                 .then((result)=>{
-                    // alert('Asesor registrado correctamente.')
                     for(let i=0; i<idTiendas.length;i++){
                         console.log(typeof(idTiendas[i]), asesorBack.employee.idEmployee)
         
@@ -212,7 +196,6 @@ function VentanaAgregarUsuario(props) {
                                 }
                             })
                             .then((result)=>{
-                                // props.onSave(result.data.data);
                                 alert('Asesor registrado correctamente.')
                             })
                             .catch(error =>{
@@ -255,32 +238,89 @@ function VentanaAgregarUsuario(props) {
                             </section>
                             <section className="inputsContentPage">
                                 <div className='grupoInput-3'>
-                                    <input className = "input-gral inputFormularios" type="text" name="nombre"  placeholder="Nombre(s)*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Nombre(s)*</label>
+                                    <input 
+                                        className = "input-gral inputFormularios" 
+                                        type="text" 
+                                        name="nombre"  
+                                        placeholder="Nombre(s)*" 
+                                        onChange = {handleChange} 
+                                        required/>
+                                    <label 
+                                        htmlFor="name" 
+                                        className="etiquetaInputs">
+                                            Nombre(s)*
+                                    </label>
                                 </div>
                                 <div className='grupoInput-3'>
-                                    <input className = "input-gral inputFormularios" type="text" name="apellidoPaterno"  placeholder="Apellido Paterno*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Apellido Paterno*</label>
+                                    <input 
+                                        className = "input-gral inputFormularios" 
+                                        type="text" 
+                                        name="apellidoPaterno"  
+                                        placeholder="Apellido Paterno*" 
+                                        onChange = {handleChange} 
+                                        required/>
+                                    <label 
+                                        htmlFor="name" 
+                                        className="etiquetaInputs">
+                                            Apellido Paterno*
+                                        </label>
                                 </div>
                                 <div className='grupoInput-3'>
-                                    <input className = "input-gral inputFormularios" type="text" name="apellidoMaterno" placeholder="Apellido Materno" onChange = {handleChange} />
-                                    <label htmlFor="name" className="etiquetaInputs">Apellido Materno</label>
+                                    <input 
+                                        className = "input-gral inputFormularios" 
+                                        type="text" 
+                                        name="apellidoMaterno" 
+                                        placeholder="Apellido Materno" 
+                                        onChange = {handleChange} />
+                                    <label 
+                                        htmlFor="name" 
+                                        className="etiquetaInputs">
+                                            Apellido Materno
+                                    </label>
                                 </div>
                                 <div className='grupoInput-2'>
-                                    <input className = "input-gral inputFormularios w-2" type="text" name="idEmployee" placeholder="ID de Empleado*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">ID de Empleado*</label>
+                                    <input 
+                                        className = "input-gral inputFormularios w-2" 
+                                        type="text" 
+                                        name="idEmployee" 
+                                        placeholder="ID de Empleado*" 
+                                        onChange = {handleChange} 
+                                        required/>
+                                    <label 
+                                        htmlFor="name" className="etiquetaInputs">ID de Empleado*</label>
                                 </div>
                                 <div className='grupoInput-2'>
-                                    <input className = "input-gral inputFormularios w-2" type="password" name="contrasena" placeholder="Contraseña*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Contraseña*</label>
+                                    <input 
+                                        className = "input-gral inputFormularios w-2" 
+                                        type="password" 
+                                        name="contrasena" 
+                                        placeholder="Contraseña*" 
+                                        onChange = {handleChange} 
+                                        required/>
+                                    <label 
+                                        htmlFor="name" className="etiquetaInputs">Contraseña*</label>
                                 </div>
                                 <div className='grupoInput-2'>
-                                    <input className = "input-gral inputFormularios w-2" type="tel" name="numTelefono"  placeholder="Número de teléfono*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)* </label>
+                                    <input 
+                                        className = "input-gral inputFormularios w-2" 
+                                        type="tel" 
+                                        name="numTelefono"  
+                                        placeholder="Número de teléfono*" 
+                                        onChange = {handleChange} 
+                                        required/>
+                                    <label 
+                                        htmlFor="name" className="etiquetaInputs">Número de teléfono (10 dígitos)* </label>
                                 </div>
                                 <div className='grupoInput-2'>
-                                <input className = "input-gral inputFormularios w-2" type="email" name="correoElectronico" placeholder="Correo electrónico*" onChange = {handleChange} required/>
-                                    <label htmlFor="name" className="etiquetaInputs">Correo Electrónico* (Se usará para iniciar sesión)</label>
+                                <input 
+                                    className = "input-gral inputFormularios w-2" 
+                                    type="email" 
+                                    name="correoElectronico" 
+                                    placeholder="Correo electrónico*" 
+                                    onChange = {handleChange} 
+                                    required/>
+                                    <label 
+                                        htmlFor="name" className="etiquetaInputs">Correo Electrónico* (Se usará para iniciar sesión)</label>
                                 </div>
                                 {SelectStatus === 'analista' ? <Select placeholder = "Departamento"  options={departamentos} styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}
                                 {SelectStatus === 'asesor' ? <Select  placeholder = "Tiendas"  options={tiendas} isMulti styles = {customSelectStyles} onChange = {handleSelectChange}/> : null}

@@ -108,88 +108,87 @@ function SeguimientoCliente1(props) {
         }
 
 
-        if(status === 'resolved'){
-            return(
-                <main>
-                    <aside>
-                        <Lateral 
-                            TabFocus={TabFocus} 
-                            setTabFocus={setTabFocus} 
-                            img = {analista} 
-                            usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} 
-                            tabs={tabs} 
-                            enlaces={enlaces}
+    if(status === 'resolved'){
+        return(
+            <main>
+                <aside>
+                    <Lateral 
+                        TabFocus={TabFocus} 
+                        setTabFocus={setTabFocus} 
+                        img = {analista} 
+                        usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} 
+                        tabs={tabs} 
+                        enlaces={enlaces}
+                    />
+                </aside>
+                <section className='contentPageSeguimiento'>
+                    <header>
+                        <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Seguimiento de solicitudes"/>
+                        <BotonRegresar/>
+                    </header>
+                    <section className="pasosContentPageSeguimiento">
+                        <h2 className="nombreCliente">{prospect.nombre} {prospect.apellidoPaterno} {prospect.apellidoMaterno}</h2>
+                        <PasosSeguimiento 
+                            id1={props.match.params.idProspect} 
+                            seguimientoFocus={seguimientoFocus} 
+                            setSeguimientoFocus={setSeguimientoFocus}
                         />
-                    </aside>
-                    <section className='contentPageSeguimiento'>
-                        <header>
-                            <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Seguimiento de solicitudes"/>
-                            <BotonRegresar/>
-                        </header>
-                        <section className="pasosContentPageSeguimiento">
-                            <h2 className="nombreCliente">{prospect.nombre} {prospect.apellidoPaterno} {prospect.apellidoMaterno}</h2>
-                            <PasosSeguimiento 
-                                id1={props.match.params.idProspect} 
-                                seguimientoFocus={seguimientoFocus} 
-                                setSeguimientoFocus={setSeguimientoFocus}
-                            />
-                        </section>
-                        <form onSubmit={handleSave}>
-                            <section className="mainContentPageSeguimiento">
-                                <div className="accionesSeguimiento">
-                                    <p className="pregunta-antiguedad">¿Cumple con la antigüedad mínima?</p>
-                                    <Checkbox isDefaultChecked={antiguedadMinima} isDisabled={null} setCheckTrue={handleChangeAntiguedad}/>
-                                    <div className='grupoInput'>
-                                        <input 
-                                            placeholder="Antigüedad Zorro abarrotero"
-                                            className = "input-gral w-1 inputFormularios" 
-                                            type="date" 
-                                            name="antiguedadZorro" 
-                                            id="dateInput" 
-                                            value={varAntiguedadMinima} 
-                                            onChange={handleChangeVarAntiguedad} 
-                                        />                            
-                                        <label 
-                                            htmlFor="name" 
-                                            className="etiquetaInputs">Cliente Zorro Abarrotero desde: (formato dd/mm/aaaa)
-                                        </label>
-                                    </div>
-                                    <p className="texto-ayuda"></p>
-                                    <p className="pregunta-capacidad">¿Cumple con la capacidad de pago mínima?</p>
-                                    <Checkbox isDefaultChecked={capacidadPago} isDisabled={null} setCheckTrue={handleChangeCapacidad}/>
-                                    <div className='grupoInput'>
-                                        <input 
-                                            className = "input-gral w-1 inputFormularios" 
-                                            placeholder="Capacidad de pago" 
-                                            type="text" 
-                                            name="capacidadZorro" 
-                                            id= "" 
-                                            value={varCapacidadPago} 
-                                            onChange={handleChangeVarCapacidad} 
-                                        />                            
-                                        <label 
-                                            htmlFor="name" 
-                                            className="etiquetaInputs">
-                                                Especifique la capacidad de pago: (%)
-                                        </label>
-                                    </div>
-                                    
-                                    <button 
-                                        className="botonSalmon btn-guardar-cambios" 
-                                        type='submit' 
-                                        disabled={formStatus === 'pristine'?true:null}>
-                                            Guardar cambios
-                                    </button>
-                                </div>
-                                <div className="lineaSeguimiento"></div>
-                            <InfoSolicitud id={props.match.params.idProspect}/>
-                            </section>
-                        </form>
                     </section>
-                </main>
-            );
-        }
-    
+                    <form onSubmit={handleSave}>
+                        <section className="mainContentPageSeguimiento">
+                            <div className="accionesSeguimiento">
+                                <p className="pregunta-antiguedad">¿Cumple con la antigüedad mínima?</p>
+                                <Checkbox isDefaultChecked={antiguedadMinima} isDisabled={null} setCheckTrue={handleChangeAntiguedad}/>
+                                <div className='grupoInput'>
+                                    <input 
+                                        placeholder="Antigüedad Zorro abarrotero"
+                                        className = "input-gral w-1 inputFormularios" 
+                                        type="date" 
+                                        name="antiguedadZorro" 
+                                        id="dateInput" 
+                                        value={varAntiguedadMinima} 
+                                        onChange={handleChangeVarAntiguedad} 
+                                    />                            
+                                    <label 
+                                        htmlFor="name" 
+                                        className="etiquetaInputs">Cliente Zorro Abarrotero desde: (formato dd/mm/aaaa)
+                                    </label>
+                                </div>
+                                <p className="texto-ayuda"></p>
+                                <p className="pregunta-capacidad">¿Cumple con la capacidad de pago mínima?</p>
+                                <Checkbox isDefaultChecked={capacidadPago} isDisabled={null} setCheckTrue={handleChangeCapacidad}/>
+                                <div className='grupoInput'>
+                                    <input 
+                                        className = "input-gral w-1 inputFormularios" 
+                                        placeholder="Capacidad de pago" 
+                                        type="text" 
+                                        name="capacidadZorro" 
+                                        id= "" 
+                                        value={varCapacidadPago} 
+                                        onChange={handleChangeVarCapacidad} 
+                                    />                            
+                                    <label 
+                                        htmlFor="name" 
+                                        className="etiquetaInputs">
+                                            Especifique la capacidad de pago: (%)
+                                    </label>
+                                </div>
+                                
+                                <button 
+                                    className="botonSalmon btn-guardar-cambios" 
+                                    type='submit' 
+                                    disabled={formStatus === 'pristine'?true:null}>
+                                        Guardar cambios
+                                </button>
+                            </div>
+                            <div className="lineaSeguimiento"></div>
+                        <InfoSolicitud id={props.match.params.idProspect}/>
+                        </section>
+                    </form>
+                </section>
+            </main>
+        );
+    }
 }
 
 export default SeguimientoCliente1;
