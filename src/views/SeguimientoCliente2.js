@@ -1,4 +1,3 @@
-//import React from 'react';
 import Lateral from '../components/Lateral';
 import Bienvenida from '../components/Bienvenida';
 import PasosSeguimiento from '../components/PasosSeguimiento'
@@ -43,6 +42,7 @@ function SeguimientoCliente2(props) {
             
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
                 body: {
+                    estatus: "Revision",
                     altaIsi: statusToggle1,
                     auditoriaBuro: statusToggle2
                 },
@@ -91,39 +91,41 @@ function SeguimientoCliente2(props) {
 
         if(status === 'resolved'){
             return(
-                <main>
-                    <aside>
-                        <Lateral TabFocus={TabFocus} setTabFocus ={setTabFocus} img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs} enlaces={enlaces}/>
-                    </aside>
-                    <section className='contentPageSeguimiento'>
-                        <header>
-                            <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Seguimiento de solicitudes"/>
-                            <BotonRegresar/> 
-                        </header>
-                        <section className="pasosContentPageSeguimiento">
-                            <h2 className="nombreCliente">{prospect.nombre} {prospect.apellidoPaterno} {prospect.apellidoMaterno}</h2>
-                            <PasosSeguimiento id1={props.match.params.idProspect} seguimientoFocus={seguimientoFocus} setSeguimientoFocus={setSeguimientoFocus}/>
+                
+                    <main>
+                        <aside>
+                            <Lateral TabFocus={TabFocus} setTabFocus ={setTabFocus} img = {admin} usuario={`http://localhost:5000/employees/assessor?thisAssessor=zorro14`} tabs={tabs} enlaces={enlaces}/>
+                        </aside>
+                        <section className='contentPageSeguimiento'>
+                            <header>
+                                <Bienvenida txtBienvenida = "Bienvenido, Administrador" txtVentana="Seguimiento de solicitudes"/>
+                                <BotonRegresar/> 
+                            </header>
+                            <section className="pasosContentPageSeguimiento">
+                                <h2 className="nombreCliente">{prospect.nombre} {prospect.apellidoPaterno} {prospect.apellidoMaterno}</h2>
+                                <PasosSeguimiento id1={props.match.params.idProspect} seguimientoFocus={seguimientoFocus} setSeguimientoFocus={setSeguimientoFocus}/>
+                            </section>
+                            <section className="mainContentPageSeguimiento">
+                            <form onSubmit={handleSave}>
+                                <div className="accionesSeguimiento">
+                                    <div className="toggle-cont">
+                                        <p className="alta-isi">Alta en ISI</p>
+                                        <ToggleSwitch isChecked={prospect.altaIsi} setToggle={setToggle1}/>
+                                    </div>
+                                    <div className="toggle-cont">
+                                        <p className="auditoria-buro">Auditado en buró</p>
+                                        <ToggleSwitch isChecked={prospect.auditoriaBuro} setToggle={setToggle2}/>                                        
+                                    </div>
+                                    <button className="botonSalmon btn-guardar-cambios" type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>
+                                </div>
+                            </form>
+                            <div className="lineaSeguimiento"></div>
+                            
+                            <InfoSolicitud id={props.match.params.idProspect}/>
                         </section>
-                        <section className="mainContentPageSeguimiento">
-                        <form onSubmit={handleSave}>
-                            <div className="accionesSeguimiento">
-                                <div className="toggle-cont">
-                                    <p className="alta-isi">Alta en ISI</p>
-                                    <ToggleSwitch isChecked={prospect.altaIsi} setToggle={setToggle1}/>
-                                </div>
-                                <div className="toggle-cont">
-                                    <p className="auditoria-buro">Auditado</p>
-                                    <ToggleSwitch isChecked={prospect.auditoriaBuro} setToggle={setToggle2}/>                                        
-                                </div>
-                                <button className="botonSalmon btn-guardar-cambios" type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>
-                            </div>
-                        </form>
-                        <div className="lineaSeguimiento"></div>
-                        
-                        <InfoSolicitud id={props.match.params.idProspect}/>
                     </section>
-                </section>
-            </main>
+                </main>
+            
         );
     }
 }

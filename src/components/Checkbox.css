@@ -38,6 +38,11 @@
 
 .container-check .checkbox:checked~.checkmark {
     background-color: #CACACA;
+    cursor: not-allowed;
+}
+
+.container-check .checkbox:disabled~.checkmark {
+    cursor: not-allowed;
 }
 
 .container-check .checkmark:after {
@@ -45,7 +50,6 @@
     position: absolute;
     display: none;
 }
-
 
 .container-check .checkbox:checked~.checkmark:after {
     display: block;
