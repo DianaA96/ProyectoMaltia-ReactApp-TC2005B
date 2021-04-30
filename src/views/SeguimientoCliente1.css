@@ -11,6 +11,7 @@
     font-family: 'Raleway';
 }
 
+
 .contentPageSeguimiento header{
     display: flex;
     flex-direction: row;
@@ -44,7 +45,7 @@
 .accionesSeguimiento .grupoInput{
     margin-top: 1em;
     text-align: center;
-    width: 100%;
+    width: 110%;
 }
 
 .accionesSeguimiento .grupoInput .w-1{
@@ -95,6 +96,14 @@
     border-radius: 50px;
 }
 
+
+.etiqueta-info{
+    text-align: center;
+    font-size: 0.8vw;
+    font-weight: 500;
+    width: 80%;
+    margin-top: 1em;
+}
 
 
 @media only screen and (max-width:576px){

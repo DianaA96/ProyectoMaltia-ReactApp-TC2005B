@@ -37,7 +37,7 @@
 	margin-left: 10%;
 }
 
-#semaforoEstatusDispuesto {
+#semaforoEstatusRevision {
     background-color:#f17b0d ;
     color: #f17b0d;
     border-radius: 100%;
@@ -166,7 +166,7 @@ tr:hover {background-color: #F2F5FA;}
 		height: 20px;
 	}
 
-	#semaforoEstatusDispuesto { 
+	#semaforoEstatusRevision { 
 		width: 20px;
 		height: 20px;
 	}

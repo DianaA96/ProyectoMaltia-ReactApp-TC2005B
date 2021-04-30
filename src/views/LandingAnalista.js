@@ -48,7 +48,7 @@ function LandingAnalista() {
                     </div>
                     <div className="tarjetaSemaforo">
                         <p className="semaforor"></p>
-                        <p className="gris">Crédito dispuesto</p>
+                        <p className="gris">Crédito en revisión</p>
                     </div>
                 </section>
             </section>
