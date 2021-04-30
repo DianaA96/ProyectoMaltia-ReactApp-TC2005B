@@ -48,6 +48,10 @@ function AdministracionClientesAsesor() {
                         <p className="semaforog"></p>
                         <p className="gris">Crédito no revisado</p>
                     </div>
+                    <div className="tarjetaSemaforo">
+                        <p className="semaforor"></p>
+                        <p className="gris">Crédito en revisión</p>
+                    </div>
                 </section>
             </section>
         </main>

@@ -59,6 +59,7 @@ function SeguimientoCliente1(props) {
                         
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
                 body: {
+                    estatus: "Revision",
                     antiguedadZorro: varAntiguedadMinima,
                     capacidadZorro: varCapacidadPago
                 },

@@ -43,6 +43,7 @@ function SeguimientoCliente2(props) {
             
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
                 body: {
+                    estatus: "Revision",
                     altaIsi: statusToggle1,
                     auditoriaBuro: statusToggle2
                 },
@@ -113,7 +114,7 @@ function SeguimientoCliente2(props) {
                                         <ToggleSwitch isChecked={prospect.altaIsi} setToggle={setToggle1}/>
                                     </div>
                                     <div className="toggle-cont">
-                                        <p className="auditoria-buro">Auditado</p>
+                                        <p className="auditoria-buro">Auditado en buró</p>
                                         <ToggleSwitch isChecked={prospect.auditoriaBuro} setToggle={setToggle2}/>                                        
                                     </div>
                                     <button className="botonSalmon btn-guardar-cambios" type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>

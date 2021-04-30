@@ -45,6 +45,7 @@ function SeguimientoCliente3(props) {
             
             axios.patch(`http://localhost:5000/applications/${prospect.idApplication}`, {
                 body: {
+                    estatus: "Autorizado",
                     montoAutorizado,
                     montoDispuesto
                 },
@@ -115,15 +116,15 @@ function SeguimientoCliente3(props) {
                                 <div className="accionesSeguimiento">
                                     <div className='grupoInput'>
                                         <input className= "input-gral w-1 inputFormularios" placeholder="Monto autorizado" type="text" name="montoAutorizado" value={montoAutorizado} onChange = {handleChangeMontoAut}/>                            
-                                        <label htmlFor="name" className="etiquetaInputs">Monto autorizado del crédito (Numero entero, sin comas)</label>
+                                        <label htmlFor="name" className="etiquetaInputs">Monto autorizado del crédito  $(Numero entero, sin comas)</label>
                                     </div>
                                     <div className='grupoInput'>
-                                    <input className= "input-gral w-1 inputFormularios" placeholder="Monto dispuesto del crédito" type="text" name="montoDispuesto"  value={montoDispuesto} onChange = {handleChangeMontoDisp}/>                            
-                                        <label htmlFor="name" className="etiquetaInputs">Monto dispuesto del crédito (Numero entero, sin comas)</label>
+                                        <input className= "input-gral w-1 inputFormularios" placeholder="Monto dispuesto del crédito" type="text" name="montoDispuesto"  value={montoDispuesto} onChange = {handleChangeMontoDisp}/>                            
+                                        <label htmlFor="name" className="etiquetaInputs">Monto dispuesto del crédito  $(Numero entero, sin comas)</label>
                                     </div>
                                     
-                                    
-                                    <button className="botonSalmon btn-guardar-cambios"  type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>
+                                    <button id = "btn-autorizar" className="botonSalmon btn-guardar-cambios"  type='submit' disabled={formStatus === 'pristine'?true:null}>Guardar Cambios</button>
+                                    <label className="etiqueta-info" htmlFor="btn-autorizar"><b>Nota:</b> Una vez que se guarden los cambios en esta ventana, el estatus de la solicitud pasará a "Crédito Autorizado"</label>
                                 </div>
                             </form>
                                 <div className="lineaSeguimiento"></div>

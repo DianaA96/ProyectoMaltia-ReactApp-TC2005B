@@ -44,16 +44,18 @@ function InfoSolicitud(props) {
         return (
             <div className="solicitudSeguimiento">
                 <div className="header-sol">
-                    <h4 className="credito-solicitado-sol"> Credito Solicitado: {prospect.montoAutorizado}</h4>
+                    <h4 className="credito-solicitado-sol"> Monto de crédito solicitado: ${prospect.montoSolicitado}</h4>
                     <h4 className="asesor-sol"> <span>Atendido por: </span> Asesor #{prospect.idAssessor}</h4>
                     <h4 className="contactos-sol"> <span>Contactos realizados: </span> {prospect.numeroContactos}</h4>
                 </div>
-                <p className="num-telefono-sol"><span>Numero telefónico </span> : {prospect.numTelefono}</p>
+                <p className="red-sol"> <span>Num. Cliente Zorro: </span>{prospect.numClienteZorro}</p>
+                <p className="numIne-sol"><span>Número INE: </span>{prospect.numIne}</p>
+                <p className="num-telefono-sol"><span>Número telefónico </span> : {prospect.numTelefono}</p>
                 <p className="correo-sol"><span>Correo Electrónico: </span>  {prospect.correoElectronico}</p>
-                <p className="red-sol"> <span>RED: </span>{prospect.numClienteZorro}</p>
+
                 <p className="nacimiento-sol"><span>Fecha de nacimiento: </span>{prospect.fechaNacimiento}7</p>
                 <p className="direccion-sol"><span>Dirección: </span> {prospect.direccion}</p>
-                <p className="numIne-sol"><span>Número INE: </span>{prospect.numIne}</p>
+                
                 <h2 className="titulo-referencias">Referencias</h2>
                 <div className="cont-referencias">
                 <div className="referencia-sol">

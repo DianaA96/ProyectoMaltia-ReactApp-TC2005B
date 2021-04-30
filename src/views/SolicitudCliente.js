@@ -260,19 +260,19 @@ function SolicitudCliente(props) {
                         </section>
                         <section className='inputsReferenciasCliente'>
                             <div className='tarjetaReferencia'>
-                                <h1>Referencia 1:</h1>
-                                <input type='text' className='input-gral' placeholder='Nombre' name="refName1"  onChange = {handleChange}></input>
-                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia1'  onChange = {handleChange}></input>
+                                <h1>Referencia 1: *</h1>
+                                <input type='text' className='input-gral' placeholder='Nombre' name="refName1"  onChange = {handleChange} required></input>
+                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia1'  onChange = {handleChange} required></input>
                             </div>
                             <div className='tarjetaReferencia'>
-                                <h1>Referencia 2:</h1>
-                                <input type='text' className='input-gral' placeholder='Nombre' name="refName2"  onChange = {handleChange}></input>
-                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia2'  onChange = {handleChange}></input>
+                                <h1>Referencia 2: *</h1>
+                                <input type='text' className='input-gral' placeholder='Nombre' name="refName2"  onChange = {handleChange} required></input>
+                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia2'  onChange = {handleChange}required></input>
                             </div>
                             <div className='tarjetaReferencia'>
-                                <h1>Referencia 3:</h1>
-                                <input type='text' className='input-gral' placeholder='Nombre' name="refName3"  onChange = {handleChange}></input>
-                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia3'  onChange = {handleChange}></input>
+                                <h1>Referencia 3: *</h1>
+                                <input type='text' className='input-gral' placeholder='Nombre' name="refName3"  onChange = {handleChange} required></input>
+                                <input type='text' className='input-gral' placeholder='Teléfono' name='numTelefonoReferencia3'  onChange = {handleChange}required></input>
                             </div>
                         </section>
                         <section className='botonesEnviarSolicitud'>
