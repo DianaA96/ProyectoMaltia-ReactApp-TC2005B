@@ -12,7 +12,7 @@ En modo de desarrollo:
 
 Inicia la aplicación en [http://localhost:3000](http://localhost:3000) para visualizarla en el navegador.
 
-## Enlace al repositorio complementario de backend (Express API)
+## Enlace al repositorio complementario de backend (Express API REST)
 
 https://github.com/DianaA96/ProyectoMaltia-ExpressJSApp-TC2005B
 
