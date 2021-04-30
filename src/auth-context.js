@@ -6,7 +6,6 @@ export const AuthContext = React.createContext({});
 export function AuthProvider({ children }) {
 
     const [ user, setUser ] = useState(useState(window.localStorage.getItem('gn3ivluxXGi0CNE')));
-    const [ status, setStatus ] = useState('idle')
     const [ error, setError ] = useState(null)
 
     function login({ correoElectronico, contrasena }) {
@@ -33,8 +32,8 @@ export function AuthProvider({ children }) {
         .catch((err)=>{
             console.error('Credenciales inválidas')
             setError('error')
-            //setStatus('error')
-        })
+            }
+        )
     }
 
     function logout() {
@@ -91,5 +90,3 @@ export function useAuth() {
 }
 
 export default AuthContext;
-
-// import AuthContext, { useAuth, AuthProvider} from './auth-context.js'
