@@ -2,6 +2,8 @@
 
 Aplicación web (cliente) desarrollada como parte del bloque Construcción de software y toma de decisiones
 
+![alt text](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/blob/main/src/assets/2.png?raw=true)
+
 ## Scripts disponibles
 
 En modo de desarrollo:
