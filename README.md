@@ -15,14 +15,6 @@ https://github.com/DianaA96/ProyectoMaltia-ExpressJSApp-TC2005B
 
 [Registros de prueba](https://github.com/DianaA96/ProyectoMaltia-ReactApp-TC2005B/files/6403898/ValoresPruebaBDMaltia.txt)
 
-## Scripts disponibles
-
-En modo de desarrollo:
-
-### `npm start`
-
-Inicia la aplicación en [http://localhost:3000](http://localhost:3000) para visualizarla en el navegador.
-
 ## Herramientas usadas
 
 ### `react-router-dom`
